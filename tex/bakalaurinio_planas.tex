@@ -12,6 +12,7 @@
 \usepackage{listings}
 \usepackage{subfig}
 \usepackage{wrapfig}
+\usepackage{enumitem}
 
 % Titulinio aprašas
 \university{Vilniaus universitetas}
@@ -41,107 +42,44 @@
 %     Padėkos asmenims ir/ar organizacijoms
 % \end{center}
 
-\sectionnonumnocontent{Santrauka}
-Glaustai aprašomas darbo turinys: pristatoma nagrinėta problema ir padarytos
-išvados. Santraukos apimtis ne didesnė nei 0,5 puslapio. Santraukų gale
-nurodomi darbo raktiniai žodžiai. 
-% Nurodomi iki 5 svarbiausių temos raktinių žodžių (terminų).
-% Vienas terminas gali susidėti iš kelių žodžių.
-\raktiniaizodziai{raktinis žodis 1, raktinis žodis 2, raktinis žodis 3, raktinis žodis 4, raktinis žodis 5}   
+\section{Darbo planas}
 
-\sectionnonumnocontent{Summary}
-Santrauka anglų kalba. Santraukos apimtis ne didesnė nei 0,5 puslapio.
-\keywords{keyword 1, keyword 2, keyword 3, keyword 4, keyword 5}
+\subsection{Tyrimo objektas ir aktualumas}
+Kompiuterinės regos (\textit{angl.} computer vision) technologijos tampa vis svarbesnės, mokslui ir technologijų gigantams atkreipiant dėmesį į dirbtinį intelektą ir su juo susijusius metodus, siekiant sudėtingus darbus algoritmizuoti, taip išvengiant žmogiškųjų klaidų. Krepšinis - vienas iš sportų, galintis gauti daug naudos iš kompiuterinės regos ir dirbtinio intelekto research: sporto intensyvumas ir dinamiškumas lemia tai, jog teisėjams neretai tampa sunku teisingai įvertinti, kada buvo pažeistos taisyklės. Šiame darbe bus analizuojami ir įgyvendinami kompiuterinės regos metodai ir algoritmai, padedantys atpažinti, kada krepšinio žaidėjas pažeidė žingsnių bei dvigubo varymo taisykles. 
 
-\tableofcontents
+\subsection{Darbo tikslas}
+Darbo tikslas - sukurti žingsnių bei dvigubo varymo taisyklių pažeidimo atpažinimo programinę įrangą, įgyvendinančią vaizdo atpažinimo algoritmus naudojantis kompiuterinės regos metodais.
 
-\sectionnonum{Įvadas}
-Įvade nurodomas darbo tikslas ir uždaviniai, kuriais bus įgyvendinamas tikslas,
-aprašomas temos aktualumas, apibrėžiamas tiriamasis objektas akcentuojant
-neapibrėžtumą, kuris bus išspręstas darbe, aptariamos teorinės darbo prielaidos
-bei metodika, apibūdinami su tema susiję literatūros ar kitokie šaltiniai,
-temos analizės tvarka, darbo atlikimo aplinkybės, pateikiama žinių apie
-naudojamus instrumentus (programas ir kt., jei darbe yra eksperimentinė dalis).
-Darbo įvadas neturi būti dėstymo santrauka. Įvado apimtis 2 -- 4 puslapiai.
+\subsection{Uždaviniai ir laukiami rezultatai}
+Darbo uždaviniai:
+\begin{itemize}[topsep=5pt,itemsep=-1ex,partopsep=2ex,parsep=2ex]
+ \item Išanalizuoti ir palyginti galimus metodus žmogaus kūno dalims vaizdinėje medžiagoje atpažinti.
+ \item Apibrėžti ir įgyvendinti algoritmus, atpažįstančius žingsnių taisyklės pažeidimą trimatinėje erdvėje iš skirtingų kampų.
+ \item Apibrėžti ir įgyvendinti algoritmus, sugebančius atskirti dvigubo varymo taisyklės pažeidimą nuo kitų veiksmų, nepažeidžiančių taisyklės.
+ \item Pravaliduoti ir palyginti įgyvendintus algoritmus su vaizdine medžiaga ir išanalizuoti rezultatus.
+\end{itemize}
 
-\section{Medžiagos darbo tema dėstymo skyriai}
-Medžiagos darbo tema dėstymo skyriuose išsamiai pateikiamos nagrinėjamos temos
-detalės: pradiniai duomenys, jų analizės ir apdorojimo metodai, sprendimų
-įgyvendinimas, gautų rezultatų apibendrinimas.
+Laukiami rezultatai:
+\begin{itemize}[topsep=5pt,itemsep=-1ex,partopsep=2ex,parsep=2ex]
+ \item Išnagrinėta naujausia kompiuterinės regos medžiaga, išnagrinėti bei palyginti galimi kompiuterinės regos metodai.
+ \item Apibrėžtas algoritmas, atpažįstantis žmogaus kūno dalis.
+ \item Apibrėžtas algoritmai, atpažįstantys žingsnių bei dvigubo varymo taisyklių pažeidimus.
+ \item Algoritmai įgyvendinti sukuriant programinę įrangą.
+\end{itemize}
 
-Medžiaga turi būti dėstoma aiškiai, pateikiant argumentus. Tekste dėstomas
-trečiuoju asmeniu, t.y. rašoma ne „aš manau“, bet „autorius mano“, „autoriaus
-nuomone“. Reikėtų vengti informacijos nesuteikiančių frazių, pvz., „...kaip jau
-buvo minėta...“, „...kaip visiems žinoma...“ ir pan., vengti grožinės
-literatūros ar publicistinio stiliaus, gausių metaforų ar panašių meninės
-išraiškos priemonių.
+\subsection{Tyrimo metodas}
+Tyrimo metodas - sukaupti vaizdinę medžiagą su įvairių taisyklių pažeidimais ir be jų ir leisti sukurtai programinei įrangai atpažinti pažeistas krepšinio taisykles, išvedant teisingų ir neteisingų atpažinimų rezultatus.
 
-Skyriai gali turėti poskyrius ir smulkesnes sudėtines dalis, kaip punktus ir
-papunkčius.
+\subsection{Darbo atlikimo procesas}
+Darbas bus pradedamas literatūros šaltinių analize. Vėliau bus išanalizuoti ir pasirinkti tinkami kompiuterinės regos metodai, kuriais remiantis bus apibrėžti taisyklių pažeidimo algoritmai. Algoritmai bus įgyvendinami programine įranga, parašyta Python kalba, naudojantis OpenCV ir kitomis susijusiomis bibliotekomis. Taip pat bus nufilmuota vaizdinė medžiaga, kurioje žaidėjai atliks tam tikrus krepšinio veiksmus, dalis iš jų pažeis taisykles, dalis - ne. Vaizdo medžiaga bus paduota į programą kaip įteiktis, gavus rezultatus - jie bus išanalizuoti ir pasiektos išvados. 
 
-\subsection{Poskyris}
-Citavimo pavyzdžiai: cituojamas vienas šaltinis \cite{PvzStraipsnLt}; cituojami
-keli šaltiniai \cite{PvzStraipsnEn, PvzKonfLt, PvzKonfEn, PvzKnygLt, PvzKnygEn,
-PvzElPubLt, PvzElPubEn, PvzMagistrLt, PvzPhdEn}.
-
-\subsubsection{Skirsnis}
-\subsubsubsection{Straipsnis}
-\subsubsection{Skirsnis}
-\section{Skyrius}
-\subsection{Poskyris}
-\subsection{Poskyris}
-
-\sectionnonum{Rezultatai ir išvados}
-Rezultatų ir išvadų dalyje išdėstomi pagrindiniai darbo rezultatai (kažkas
-išanalizuota, kažkas sukurta, kažkas įdiegta), toliau pateikiamos išvados
-(daromi nagrinėtų problemų sprendimo metodų palyginimai, siūlomos
-rekomendacijos, akcentuojamos naujovės). Rezultatai ir išvados pateikiami
-sunumeruotų (gali būti hierarchiniai) sąrašų pavidalu. Darbo rezultatai turi
-atitikti darbo tikslą.
-
-\printbibliography[heading=bibintoc]  % Šaltinių sąraše nurodoma panaudota
-% literatūra, kitokie šaltiniai. Abėcėlės tvarka išdėstomi darbe panaudotų
-% (cituotų, perfrazuotų ar bent paminėtų) mokslo leidinių, kitokių publikacijų
-% bibliografiniai aprašai. Šaltinių sąrašas spausdinamas iš naujo puslapio.
-% Aprašai pateikiami netransliteruoti. Šaltinių sąraše negali būti tokių
-% šaltinių, kurie nebuvo paminėti tekste. Šaltinių sąraše rekomenduojame
-% necituoti savo kursinio darbo, nes tai nėra oficialus literatūros šaltinis.
-% Jei tokių nuorodų reikia, pateikti jas tekste.
-
-% \sectionnonum{Sąvokų apibrėžimai}
-\sectionnonum{Santrumpos}
-Sąvokų apibrėžimai ir santrumpų sąrašas sudaromas tada, kai darbo tekste
-vartojami specialūs paaiškinimo reikalaujantys terminai ir rečiau sutinkamos
-santrumpos.
-
-\appendix  % Priedai
-% Prieduose gali būti pateikiama pagalbinė, ypač darbo autoriaus savarankiškai
-% parengta, medžiaga. Savarankiški priedai gali būti pateikiami ir
-% kompaktiniame diske. Priedai taip pat numeruojami ir vadinami. Darbo tekstas
-% su priedais susiejamas nuorodomis.
-
-\section{Neuroninio tinklo struktūra}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{img/MLP}
-    \caption{Paveikslėlio pavyzdys}
-    \label{img:mlp}
-\end{figure}
+\subsection{Literatūros šaltiniai}
+Darbui aktualūs literatūros šaltiniai: Computer Vision: Models, Learning, and Inference By Simon J. D. Prince, Computer Vision: Algorithms and Applications By Richard Szeliski, 
+Learning OpenCV: Computer Vision with the OpenCV Library By Gary Bradski, Adrian Kaehler, A Guide to Convolutional Neural Networks for Computer Vision
+By Salman Khan, Hossein Rahmani, Syed Afaq Ali Shah, Mohammed Bennamoun, Deep Learning for Computer Vision: Expert techniques to train advanced ...
+By Rajalingappaa Shanmugamani, Machine Learning with TensorFlow 1.x by Quan Hua, Shams Ul Azeem, Saif Ahmed
 
 
-\section{Eksperimentinio palyginimo rezultatai}
-% tablesgenerator.com - converts calculators (e.g. excel) tables to LaTeX
-\begin{table}[H]\footnotesize
-  \centering
-  \caption{Lentelės pavyzdys}
-  {\begin{tabular}{|l|c|c|} \hline
-    Algoritmas & $\bar{x}$ & $\sigma^{2}$ \\
-    \hline
-    Algoritmas A  & 1.6335    & 0.5584       \\
-    Algoritmas B  & 1.7395    & 0.5647       \\
-    \hline
-  \end{tabular}}
-  \label{tab:table example}
-\end{table}
+
 
 \end{document}
