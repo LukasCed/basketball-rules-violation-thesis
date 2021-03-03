@@ -1,0 +1,14 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'bakalaurinio_planas.blg'
+[154] biber-MSWIN64:340> INFO - === 
+[220] Biber.pm:415> INFO - Reading 'bakalaurinio_planas.bcf'
+[373] Biber.pm:952> INFO - Found 5 citekeys in bib section 0
+[390] Biber.pm:4340> INFO - Processing section 0
+[403] Biber.pm:4531> INFO - Looking for bibtex format file './bibliografija_planas.bib' for section 0
+[513] bibtex.pm:1689> INFO - LaTeX decoding ...
+[543] bibtex.pm:1494> INFO - Found BibTeX data source './bibliografija_planas.bib'
+[609] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'variable = shifted' with 'variable = non-ignorable'
+[609] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[609] Biber.pm:4168> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'lt-LT'
+[615] bbl.pm:654> INFO - Writing 'bakalaurinio_planas.bbl' with encoding 'UTF-8'
+[619] bbl.pm:757> INFO - Output to bakalaurinio_planas.bbl

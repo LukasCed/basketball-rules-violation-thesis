@@ -1,0 +1,205 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{HuaMachineLearning}{book}{}
+      \name{author}{3}{}{%
+        {{hash=801621f5f8b883166706285b84dc605d}{%
+           family={Hua},
+           familyi={H\bibinitperiod},
+           given={Q.},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=97dad4d302fbfea800fce90f6f002faf}{%
+           family={Azeem},
+           familyi={A\bibinitperiod},
+           given={S.\bibnamedelimi Ul},
+           giveni={S\bibinitperiod\bibinitdelim U\bibinitperiod}}}%
+        {{hash=fde8792ec7d2823373ea27f21e256a49}{%
+           family={Ahmed},
+           familyi={A\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Birmingham, UK}%
+      }
+      \list{publisher}{1}{%
+        {Packt Publishing Ltd}%
+      }
+      \strng{namehash}{b5ec2ef0383c8b87e41325e295604578}
+      \strng{fullhash}{b5ec2ef0383c8b87e41325e295604578}
+      \strng{bibnamehash}{b5ec2ef0383c8b87e41325e295604578}
+      \strng{authorbibnamehash}{b5ec2ef0383c8b87e41325e295604578}
+      \strng{authornamehash}{b5ec2ef0383c8b87e41325e295604578}
+      \strng{authorfullhash}{b5ec2ef0383c8b87e41325e295604578}
+      \field{labelalpha}{HAA17}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Machine Learning with TensorFlow 1.x: Second generation machine learning with Google's brainchild - TensorFlow 1.x}
+      \field{year}{2017}
+    \endentry
+    \entry{KhanConvVision}{book}{}
+      \name{author}{6}{}{%
+        {{hash=13d13b7dcfe57b1229ff1035a86ef3a9}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e0c527bfeba6facae8817e484bf6ad55}{%
+           family={Rahmani},
+           familyi={R\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=7050a6ef5c569d61bb40e0ea8c145552}{%
+           family={Shah},
+           familyi={S\bibinitperiod},
+           given={S.\bibnamedelimi A.\bibnamedelimi A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=1b1a901ec56fa8ef4d564d68ab97470e}{%
+           family={Bennamoun},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=acbba358ad76850337b53c14ddbfe840}{%
+           family={Medioni},
+           familyi={M\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=1d3149fa157fba31426cad1eac9633b8}{%
+           family={Dickinson},
+           familyi={D\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {USA}%
+      }
+      \list{publisher}{1}{%
+        {Morgan \& Claypool Publishers}%
+      }
+      \strng{namehash}{07738d9d7b43e59361aa2a300f134edd}
+      \strng{fullhash}{07738d9d7b43e59361aa2a300f134edd}
+      \strng{bibnamehash}{07738d9d7b43e59361aa2a300f134edd}
+      \strng{authorbibnamehash}{07738d9d7b43e59361aa2a300f134edd}
+      \strng{authornamehash}{07738d9d7b43e59361aa2a300f134edd}
+      \strng{authorfullhash}{07738d9d7b43e59361aa2a300f134edd}
+      \field{labelalpha}{KRS\textsuperscript {+}18}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{A Guide to Convolutional Neural Networks for Computer Vision}
+      \field{year}{2018}
+    \endentry
+    \entry{PrinceCompVision}{book}{}
+      \name{author}{1}{}{%
+        {{hash=68e874543a797d4e668ae4e95464fefb}{%
+           family={Prince},
+           familyi={P\bibinitperiod},
+           given={S.\bibnamedelimi J.\bibnamedelimi D.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, UK}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{68e874543a797d4e668ae4e95464fefb}
+      \strng{fullhash}{68e874543a797d4e668ae4e95464fefb}
+      \strng{bibnamehash}{68e874543a797d4e668ae4e95464fefb}
+      \strng{authorbibnamehash}{68e874543a797d4e668ae4e95464fefb}
+      \strng{authornamehash}{68e874543a797d4e668ae4e95464fefb}
+      \strng{authorfullhash}{68e874543a797d4e668ae4e95464fefb}
+      \field{labelalpha}{Pri12}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Computer Vision: Models, Learning, and Inference}
+      \field{year}{2012}
+    \endentry
+    \entry{ShanDeepVision}{book}{}
+      \name{author}{1}{}{%
+        {{hash=1e1bb937df6227523db7b1eeb0f76f77}{%
+           family={Shanmugamani},
+           familyi={S\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Birmingham, UK}%
+      }
+      \list{publisher}{1}{%
+        {Packt Publishing Ltd}%
+      }
+      \strng{namehash}{1e1bb937df6227523db7b1eeb0f76f77}
+      \strng{fullhash}{1e1bb937df6227523db7b1eeb0f76f77}
+      \strng{bibnamehash}{1e1bb937df6227523db7b1eeb0f76f77}
+      \strng{authorbibnamehash}{1e1bb937df6227523db7b1eeb0f76f77}
+      \strng{authornamehash}{1e1bb937df6227523db7b1eeb0f76f77}
+      \strng{authorfullhash}{1e1bb937df6227523db7b1eeb0f76f77}
+      \field{labelalpha}{Sha18}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Deep Learning for Computer Vision: Expert techniques to train advanced neural networks using TensorFlow and Keras}
+      \field{year}{2018}
+    \endentry
+    \entry{SzeliskiCompVision}{book}{}
+      \name{author}{1}{}{%
+        {{hash=d19846bb0d3c0031f9f746e0a1188ab8}{%
+           family={Szeliski},
+           familyi={S\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Base, Switzerland}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{d19846bb0d3c0031f9f746e0a1188ab8}
+      \strng{fullhash}{d19846bb0d3c0031f9f746e0a1188ab8}
+      \strng{bibnamehash}{d19846bb0d3c0031f9f746e0a1188ab8}
+      \strng{authorbibnamehash}{d19846bb0d3c0031f9f746e0a1188ab8}
+      \strng{authornamehash}{d19846bb0d3c0031f9f746e0a1188ab8}
+      \strng{authorfullhash}{d19846bb0d3c0031f9f746e0a1188ab8}
+      \field{labelalpha}{Sze21}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Computer Vision: Algorithms and Applications}
+      \field{year}{2021}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

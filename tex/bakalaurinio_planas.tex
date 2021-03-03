@@ -13,6 +13,8 @@
 \usepackage{subfig}
 \usepackage{wrapfig}
 \usepackage{enumitem}
+\addbibresource{./bibliografija_planas.bib}
+
 
 % Titulinio aprašas
 \university{Vilniaus universitetas}
@@ -30,7 +32,7 @@
 
 % Nustatymai
 % \setmainfont{Palemonas}   % Pakeisti teksto šriftą į Palemonas (turi būti įdiegtas sistemoje)
-\bibliography{bibliografija}
+% \bibliography{aaaa.bib}
 
 \begin{document}
 \maketitle
@@ -45,23 +47,23 @@
 \section{Darbo planas}
 
 \subsection{Tyrimo objektas ir aktualumas}
-Kompiuterinės regos (\textit{angl.} computer vision) technologijos ir metodai yra aktualūs kompiuterizuojant sudėtingų vaizdinių uždavinių sprendimus, taip padedant išvengti žmogiškųjų klaidų. Krepšinis - vienas iš sportų, galintis gauti daug naudos iš kompiuterinės regos ir dirbtinio intelekto tyrimų, kadangi sporto intensyvumas ir dinamiškumas lemia tai, jog teisėjams neretai tampa sunku teisingai įvertinti, kada buvo pažeistos taisyklės, todėl atsiranda poreikis pasinaudoti kompiuterio pagalba. Darbe bus analizuojami ir įgyvendinami kompiuterinės regos metodai ir algoritmai, padedantys atpažinti, kada krepšinio žaidėjas pažeidė žingsnių bei dvigubo varymo taisykles. 
+Krepšinis - dinamiškas ir intensyvus sportas, kuriame galimi veiksmai su kamuoliu yra apriboti taisyklių, tokių kaip dvigubo varymo, žingsnių taisyklės ir daug kitų. Tai lemia, jog teisėjams neretai tampa sunku teisingai įvertinti, kada buvo pažeistos taisyklės, todėl atsiranda poreikis pasinaudoti kompiuterio pagalba. Žmogaus judesių atpažinimo ir sekimo problematikai galima pasinaudoti kompiuterinės regos ir dirbtinio intelekto technologijomis. Kompiuterinės regos (\textit{angl.} computer vision) metodai yra aktualūs kompiuterizuojant sudėtingų vaizdinių uždavinių sprendimus, taip padedant išvengti žmogiškųjų klaidų. Darbe bus analizuojami ir įgyvendinami kompiuterinės regos metodai ir algoritmai, padedantys atpažinti, kada krepšinio žaidėjas pažeidė žingsnių bei dvigubo varymo taisykles. 
 
 \subsection{Darbo tikslas}
-Darbo tikslas - sukurti žingsnių bei dvigubo varymo taisyklių pažeidimo atpažinimo programinę įrangą, įgyvendinančią vaizdo atpažinimo algoritmus naudojantis kompiuterinės regos metodais.
+Darbo tikslas - pasiulyti žingsnių bei dvigubo varymo taisyklių pažeidimo atpažinimo algoritmą ir jį realizuojančią programinę įrangą naudojantis kompiuterinės regos metodais.
 
 \subsection{Uždaviniai ir laukiami rezultatai}
 Darbo uždaviniai:
 \begin{itemize}[topsep=5pt,itemsep=-1ex,partopsep=2ex,parsep=2ex]
  \item Išanalizuoti ir palyginti galimus metodus žmogaus kūno dalims vaizdinėje medžiagoje atpažinti.
- \item Apibrėžti ir įgyvendinti algoritmus, atpažįstančius žingsnių taisyklės pažeidimą trimatėje erdvėje iš skirtingų kampų.
- \item Apibrėžti ir įgyvendinti algoritmus, sugebančius atskirti dvigubo varymo taisyklės pažeidimą nuo kitų veiksmų, nepažeidžiančių taisyklės.
- \item Palyginti įgyvendintų algoritmų su vaizdine medžiaga korektiškumą.
+ \item Apibrėžti ir įgyvendinti algoritmus, nustatytu tikslumu atpažįstančius žingsnių taisyklės pažeidimą trimatėje erdvėje iš skirtingų kampų.
+ \item Apibrėžti ir įgyvendinti algoritmus, nustatytu tikslumu sugebančius atskirti dvigubo varymo taisyklės pažeidimą nuo kitų veiksmų, nepažeidžiančių taisyklės.
+ \item Palyginti įgyvendintų algoritmų su vaizdine medžiaga korektiškumą. 
 \end{itemize}
 
 Laukiami rezultatai:
 \begin{itemize}[topsep=5pt,itemsep=-1ex,partopsep=2ex,parsep=2ex]
- \item Išnagrinėta naujausia kompiuterinės regos medžiaga, išnagrinėti bei palyginti galimi kompiuterinės regos metodai.
+ \item Palyginti galimi kompiuterinės regos metodai.
  \item Apibrėžtas algoritmas, atpažįstantis žmogaus kūno dalis.
  \item Apibrėžtas algoritmai, atpažįstantys žingsnių bei dvigubo varymo taisyklių pažeidimus.
  \item Algoritmai įgyvendinti sukuriant programinę įrangą.
@@ -74,7 +76,15 @@ Tyrimo metodas - sukaupti vaizdinę medžiagą su įvairių taisyklių pažeidim
 Darbas bus pradedamas literatūros šaltinių analize. Vėliau bus išanalizuoti ir pasirinkti tinkami kompiuterinės regos metodai, kuriais remiantis bus apibrėžti taisyklių pažeidimo algoritmai. Algoritmai bus įgyvendinami programine įranga, parašyta Python kalba, naudojantis OpenCV ir kitomis susijusiomis bibliotekomis. Taip pat bus nufilmuota vaizdinė medžiaga, kurioje žaidėjai atliks tam tikrus krepšinio veiksmus, dalis iš jų pažeis taisykles, dalis - ne. Vaizdo medžiaga bus paduota į programą kaip įvesties informacija, gavus rezultatus - jie bus išanalizuoti ir pasiektos išvados. 
 
 \subsection{Literatūros šaltiniai}
-Darbui aktualūs literatūros šaltiniai daugiausiai susiję su kompiuterinės regos ir neuroninių tinklų teorija: Simon J. D. Prince - Computer Vision: Models, Learning, and Inference, Richard Szeliski - Computer Vision: Algorithms and Applications, Gary Bradski, Adrian Kaehler - Learning OpenCV: Computer Vision with the OpenCV Library, Salman Khan, Hossein Rahmani, Syed Afaq Ali Shah, Mohammed Bennamoun - A Guide to Convolutional Neural Networks for Computer Vision, Rajalingappaa Shanmugamani - Deep Learning for Computer Vision: Expert techniques to train advanced neural networks using TensorFlow and Keras, Quan Hua, Shams Ul Azeem, Saif Ahmed - Machine Learning with TensorFlow 1.x.
+Darbui aktualūs literatūros šaltiniai daugiausiai susiję su kompiuterinės regos ir neuroninių tinklų teorija. Teorinius bei matematinius vaizdų atpažinimo pagrindus padengia Simon J. D. Prince knyga \textit{Computer Vision: Models, Learning, and Inference} \cite{PrinceCompVision}. Daugiau praktinių pavyzdžių galima rasti Richard Szeliski knygoje \textit{Computer Vision: Algorithms and Applications}, kur darbui aktualiausi skyriai yra susiję su segmentacija pagal spalvą, morfologinėmis operacijomis ir panašiais būdais atpažinti įvairias figūras \cite{SzeliskiCompVision}. Gary Bradski ir Adrian Kaehler knyga \textit{Learning OpenCV: Computer Vision with the OpenCV Library} supažindina su kompiuterinės regos programinės įrangos įgyvendinimu naudojantis OpenCV \cite{SzeliskiCompVision}. Salman Khan, Hossein Rahmani, Syed Afaq Ali Shah bei Mohammed Bennamoun knygoje \textit{A Guide to Convolutional Neural Networks for Computer Vision} yra glaustai aprašytas kompiuterinės regos sąryšįs su konvoliuciniais neuroniniais tinklais \cite{KhanConvVision}. Likusios dvi knygos yra susijusios su praktiniu problemų sprendimu pasitelkiant gilųjį mokymą: Rajalingappaa Shanmugamani knygoje \textit{Deep Learning for Computer Vision: Expert techniques to train advanced neural networks using TensorFlow and Keras} aprašytas giliojo mokymo metodų įgyvendinimas TensorFlow ir Keras biblioteka \cite{ShanDeepVision}, tuo tarpu Quan Hua, Shams Ul Azeem, Saif Ahmed knyga \textit{Machine Learning with TensorFlow} 1.x, nors ir yra šiek tiek laisvesnės formos, turi daug naudingų praktinių pavyzdžių, pavyzdžiui, žmogaus pozos estimavimą naudojantis neuroniniais tinklais \cite{HuaMachineLearning}.
 
+\printbibliography[heading=bibintoc]  % Šaltinių sąraše nurodoma panaudota
+% literatūra, kitokie šaltiniai. Abėcėlės tvarka išdėstomi darbe panaudotų
+% (cituotų, perfrazuotų ar bent paminėtų) mokslo leidinių, kitokių publikacijų
+% bibliografiniai aprašai. Šaltinių sąrašas spausdinamas iš naujo puslapio.
+% Aprašai pateikiami netransliteruoti. Šaltinių sąraše negali būti tokių
+% šaltinių, kurie nebuvo paminėti tekste. Šaltinių sąraše rekomenduojame
+% necituoti savo kursinio darbo, nes tai nėra oficialus literatūros šaltinis.
+% Jei tokių nuorodų reikia, pateikti jas tekste.
 
 \end{document}
