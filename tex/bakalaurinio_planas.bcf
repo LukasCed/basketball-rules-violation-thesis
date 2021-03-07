@@ -2342,12 +2342,17 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">./bibliografija_planas.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">PrinceCompVision</bcf:citekey>
+    <bcf:citekey order="1">VERHES_LAHI_2005</bcf:citekey>
     <bcf:citekey order="2">SzeliskiCompVision</bcf:citekey>
-    <bcf:citekey order="3">SzeliskiCompVision</bcf:citekey>
-    <bcf:citekey order="4">KhanConvVision</bcf:citekey>
-    <bcf:citekey order="5">ShanDeepVision</bcf:citekey>
-    <bcf:citekey order="6">HuaMachineLearning</bcf:citekey>
+    <bcf:citekey order="3">4717823</bcf:citekey>
+    <bcf:citekey order="4">4767941</bcf:citekey>
+    <bcf:citekey order="5">KhanConvVision</bcf:citekey>
+    <bcf:citekey order="6">THOMAS20173</bcf:citekey>
+    <bcf:citekey order="7">Chen_2018_CVPR</bcf:citekey>
+    <bcf:citekey order="8">6224370</bcf:citekey>
+    <bcf:citekey order="9">BradskiOpenCV</bcf:citekey>
+    <bcf:citekey order="10">ShanDeepVision</bcf:citekey>
+    <bcf:citekey order="11">HuaMachineLearning</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">

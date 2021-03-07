@@ -19,6 +19,120 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
+    \entry{BradskiOpenCV}{book}{}
+      \name{author}{2}{}{%
+        {{hash=7cb92723a011baf2e0abeeb403d03960}{%
+           family={Bradski},
+           familyi={B\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=960b699c1dffe66fa47623f901723928}{%
+           family={Kaehler},
+           familyi={K\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {USA}%
+      }
+      \list{publisher}{1}{%
+        {O'Reilly Media, Inc.}%
+      }
+      \strng{namehash}{2f08c517a181fa5a7bd5a3c2959afdfd}
+      \strng{fullhash}{2f08c517a181fa5a7bd5a3c2959afdfd}
+      \strng{bibnamehash}{2f08c517a181fa5a7bd5a3c2959afdfd}
+      \strng{authorbibnamehash}{2f08c517a181fa5a7bd5a3c2959afdfd}
+      \strng{authornamehash}{2f08c517a181fa5a7bd5a3c2959afdfd}
+      \strng{authorfullhash}{2f08c517a181fa5a7bd5a3c2959afdfd}
+      \field{labelalpha}{BK08}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Learning OpenCV: Computer Vision with the OpenCV Library}
+      \field{year}{2008}
+    \endentry
+    \entry{6224370}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=6b6f93010ee56aca377a5c2ae78ecdec}{%
+           family={Chakraborty},
+           familyi={C\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=68b2006d6f941ab17985fa9a68eba921}{%
+           family={Meher},
+           familyi={M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{2f1ec75c2a7de6f73d0e6946f93c813e}
+      \strng{fullhash}{2f1ec75c2a7de6f73d0e6946f93c813e}
+      \strng{bibnamehash}{2f1ec75c2a7de6f73d0e6946f93c813e}
+      \strng{authorbibnamehash}{2f1ec75c2a7de6f73d0e6946f93c813e}
+      \strng{authornamehash}{2f1ec75c2a7de6f73d0e6946f93c813e}
+      \strng{authorfullhash}{2f1ec75c2a7de6f73d0e6946f93c813e}
+      \field{labelalpha}{CM12}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2012 IEEE International Conference on Signal Processing, Computing and Control}
+      \field{title}{Real-time position estimation and tracking of a basketball}
+      \field{year}{2012}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+    \endentry
+    \entry{Chen_2018_CVPR}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=ff38b98d2dc65002f66d028a85b9d58d}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=cc4aadc875d7abdbaf96dfa4a83d8b77}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=eefecab16de668c90ab3009ecad53304}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=5ee5d3d5470ac29a2e7c8df70ed54725}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=50305b2e4e9276b66f15ea8d1076d81b}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=2d21a4c5b1b7b1da5165b2f8f62e700c}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{677f937d9bc9e027f6c4ae10510e1b0c}
+      \strng{fullhash}{677f937d9bc9e027f6c4ae10510e1b0c}
+      \strng{bibnamehash}{677f937d9bc9e027f6c4ae10510e1b0c}
+      \strng{authorbibnamehash}{677f937d9bc9e027f6c4ae10510e1b0c}
+      \strng{authornamehash}{677f937d9bc9e027f6c4ae10510e1b0c}
+      \strng{authorfullhash}{677f937d9bc9e027f6c4ae10510e1b0c}
+      \field{labelalpha}{CWP\textsuperscript {+}18}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{month}{5}
+      \field{title}{Cascaded Pyramid Network for Multi-Person Pose Estimation}
+      \field{year}{2018}
+      \field{pages}{7103\bibrangedash 7112}
+      \range{pages}{10}
+    \endentry
     \entry{HuaMachineLearning}{book}{}
       \name{author}{3}{}{%
         {{hash=801621f5f8b883166706285b84dc605d}{%
@@ -54,9 +168,86 @@
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{langid}{english}
       \field{title}{Machine Learning with TensorFlow 1.x: Second generation machine learning with Google's brainchild - TensorFlow 1.x}
       \field{year}{2017}
+    \endentry
+    \entry{4767941}{article}{}
+      \name{author}{3}{}{%
+        {{hash=739e326492d0a53e16dae093120d3d91}{%
+           family={Haralick},
+           familyi={H\bibinitperiod},
+           given={R.\bibnamedelimi M.},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=0dfd90474643bda0d2d32ce451979c2a}{%
+           family={Sternberg},
+           familyi={S\bibinitperiod},
+           given={S.\bibnamedelimi R.},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=b92e342e4bd706bab54829c294dcd004}{%
+           family={Zhuang},
+           familyi={Z\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{1ffa6dc1c9ed7cf5952c89cab6a5530f}
+      \strng{fullhash}{1ffa6dc1c9ed7cf5952c89cab6a5530f}
+      \strng{bibnamehash}{1ffa6dc1c9ed7cf5952c89cab6a5530f}
+      \strng{authorbibnamehash}{1ffa6dc1c9ed7cf5952c89cab6a5530f}
+      \strng{authornamehash}{1ffa6dc1c9ed7cf5952c89cab6a5530f}
+      \strng{authorfullhash}{1ffa6dc1c9ed7cf5952c89cab6a5530f}
+      \field{labelalpha}{HSZ87}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{number}{4}
+      \field{title}{Image Analysis Using Mathematical Morphology}
+      \field{volume}{PAMI-9}
+      \field{year}{1987}
+      \field{pages}{532\bibrangedash 550}
+      \range{pages}{19}
+    \endentry
+    \entry{4717823}{article}{}
+      \name{author}{4}{}{%
+        {{hash=844a67dee8743d60cbc8d1ac577476ef}{%
+           family={Juang},
+           familyi={J\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=39df4de56d3cd222098658f388d75b46}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=c9667b22c99aad50bf67c2b9c7a7e6e3}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=98056d9ddecda0076a31a183e3e69326}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{f3b560793e27b2d9f8cd4900bd050aaf}
+      \strng{fullhash}{f3b560793e27b2d9f8cd4900bd050aaf}
+      \strng{bibnamehash}{f3b560793e27b2d9f8cd4900bd050aaf}
+      \strng{authorbibnamehash}{f3b560793e27b2d9f8cd4900bd050aaf}
+      \strng{authornamehash}{f3b560793e27b2d9f8cd4900bd050aaf}
+      \strng{authorfullhash}{f3b560793e27b2d9f8cd4900bd050aaf}
+      \field{labelalpha}{JCW\textsuperscript {+}09}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Systems, Man, and Cybernetics - Part A: Systems and Humans}
+      \field{title}{Computer Vision-Based Human Body Segmentation and Posture Estimation}
+      \field{volume}{39}
+      \field{year}{2009}
+      \field{pages}{119\bibrangedash 133}
+      \range{pages}{15}
     \endentry
     \entry{KhanConvVision}{book}{}
       \name{author}{6}{}{%
@@ -108,38 +299,34 @@
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{langid}{english}
       \field{title}{A Guide to Convolutional Neural Networks for Computer Vision}
       \field{year}{2018}
     \endentry
-    \entry{PrinceCompVision}{book}{}
+    \entry{VERHES_LAHI_2005}{thesis}{}
       \name{author}{1}{}{%
-        {{hash=68e874543a797d4e668ae4e95464fefb}{%
-           family={Prince},
-           familyi={P\bibinitperiod},
-           given={S.\bibnamedelimi J.\bibnamedelimi D.},
-           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=0c75da4aa0bb30e5d0a3eaf98a72ca90}{%
+           family={Llahí},
+           familyi={L\bibinitperiod},
+           given={J.\bibnamedelimi Vergés},
+           giveni={J\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {Cambridge, UK}%
+      \list{institution}{1}{%
+        {UPC, Departament d'Enginyeria de Sistemes, Automàtica i Informàtica Industrial}%
       }
-      \list{publisher}{1}{%
-        {Cambridge University Press}%
-      }
-      \strng{namehash}{68e874543a797d4e668ae4e95464fefb}
-      \strng{fullhash}{68e874543a797d4e668ae4e95464fefb}
-      \strng{bibnamehash}{68e874543a797d4e668ae4e95464fefb}
-      \strng{authorbibnamehash}{68e874543a797d4e668ae4e95464fefb}
-      \strng{authornamehash}{68e874543a797d4e668ae4e95464fefb}
-      \strng{authorfullhash}{68e874543a797d4e668ae4e95464fefb}
-      \field{labelalpha}{Pri12}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \strng{namehash}{0c75da4aa0bb30e5d0a3eaf98a72ca90}
+      \strng{fullhash}{0c75da4aa0bb30e5d0a3eaf98a72ca90}
+      \strng{bibnamehash}{0c75da4aa0bb30e5d0a3eaf98a72ca90}
+      \strng{authorbibnamehash}{0c75da4aa0bb30e5d0a3eaf98a72ca90}
+      \strng{authornamehash}{0c75da4aa0bb30e5d0a3eaf98a72ca90}
+      \strng{authorfullhash}{0c75da4aa0bb30e5d0a3eaf98a72ca90}
+      \field{labelalpha}{Lla05}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{langid}{english}
-      \field{title}{Computer Vision: Models, Learning, and Inference}
-      \field{year}{2012}
+      \field{title}{Color Constancy and Image Segmentation Techniques for Applications to Mobile Robotics}
+      \field{type}{phdthesis}
+      \field{year}{2005}
     \endentry
     \entry{ShanDeepVision}{book}{}
       \name{author}{1}{}{%
@@ -166,7 +353,6 @@
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{langid}{english}
       \field{title}{Deep Learning for Computer Vision: Expert techniques to train advanced neural networks using TensorFlow and Keras}
       \field{year}{2018}
     \endentry
@@ -195,9 +381,54 @@
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{langid}{english}
       \field{title}{Computer Vision: Algorithms and Applications}
       \field{year}{2021}
+    \endentry
+    \entry{THOMAS20173}{article}{}
+      \name{author}{5}{}{%
+        {{hash=075198971c9be351ed6c549965193cd6}{%
+           family={Thomas},
+           familyi={T\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=9e4c34c0ddbd69d27613e7c2f365c8e0}{%
+           family={Gade},
+           familyi={G\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=3166f26e2907cef753105f576fc79a25}{%
+           family={Moeslund},
+           familyi={M\bibinitperiod},
+           given={T.\bibnamedelimi B.},
+           giveni={T\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=8769b562d9e2ed12d5cb826068e384c9}{%
+           family={Carr},
+           familyi={C\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=aa95c363fb514bcb984edc256be345ef}{%
+           family={Hilton},
+           familyi={H\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{abbbe950d7921cb4b5a23d9cf6350809}
+      \strng{fullhash}{abbbe950d7921cb4b5a23d9cf6350809}
+      \strng{bibnamehash}{abbbe950d7921cb4b5a23d9cf6350809}
+      \strng{authorbibnamehash}{abbbe950d7921cb4b5a23d9cf6350809}
+      \strng{authornamehash}{abbbe950d7921cb4b5a23d9cf6350809}
+      \strng{authorfullhash}{abbbe950d7921cb4b5a23d9cf6350809}
+      \field{labelalpha}{TGM\textsuperscript {+}17}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Vision and Image Understanding}
+      \field{title}{Computer vision for sports: Current applications and research topics}
+      \field{volume}{159}
+      \field{year}{2017}
+      \field{pages}{3\bibrangedash 18}
+      \range{pages}{16}
     \endentry
   \enddatalist
 \endrefsection
