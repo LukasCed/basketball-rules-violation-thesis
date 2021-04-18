@@ -1,0 +1,201 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{Andriluka_2014_CVPR}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=179ff7227278bb542704b73acc3e138f}{%
+           family={Andriluka},
+           familyi={A\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d0bf922a0cf989718e4354e6a7d2fb15}{%
+           family={Pishchulin},
+           familyi={P\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=149bfa8766932e7060663fe305dbd45e}{%
+           family={Gehler},
+           familyi={G\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=973905c3dee4c2dbd8d57f0f0aa2b886}{%
+           family={Schiele},
+           familyi={S\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{0e518198e0d63405f874b33d81fd5d62}
+      \strng{fullhash}{0e518198e0d63405f874b33d81fd5d62}
+      \strng{bibnamehash}{0e518198e0d63405f874b33d81fd5d62}
+      \strng{authorbibnamehash}{0e518198e0d63405f874b33d81fd5d62}
+      \strng{authornamehash}{0e518198e0d63405f874b33d81fd5d62}
+      \strng{authorfullhash}{0e518198e0d63405f874b33d81fd5d62}
+      \field{labelalpha}{APG\textsuperscript {+}14}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{month}{6}
+      \field{title}{2D Human Pose Estimation: New Benchmark and State of the Art Analysis}
+      \field{year}{2014}
+    \endentry
+    \entry{BradskiOpenCV}{book}{}
+      \name{author}{2}{}{%
+        {{hash=7cb92723a011baf2e0abeeb403d03960}{%
+           family={Bradski},
+           familyi={B\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=960b699c1dffe66fa47623f901723928}{%
+           family={Kaehler},
+           familyi={K\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {USA}%
+      }
+      \list{publisher}{1}{%
+        {O'Reilly Media, Inc.}%
+      }
+      \strng{namehash}{2f08c517a181fa5a7bd5a3c2959afdfd}
+      \strng{fullhash}{2f08c517a181fa5a7bd5a3c2959afdfd}
+      \strng{bibnamehash}{2f08c517a181fa5a7bd5a3c2959afdfd}
+      \strng{authorbibnamehash}{2f08c517a181fa5a7bd5a3c2959afdfd}
+      \strng{authornamehash}{2f08c517a181fa5a7bd5a3c2959afdfd}
+      \strng{authorfullhash}{2f08c517a181fa5a7bd5a3c2959afdfd}
+      \field{labelalpha}{BK08}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Learning OpenCV: Computer Vision with the OpenCV Library}
+      \field{year}{2008}
+    \endentry
+    \entry{cao2019openpose}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=68bd613c80ef7cb7b4d7d333770ab71c}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=e92a5b4102f1eb7a164ff3792beca4c4}{%
+           family={Hidalgo},
+           familyi={H\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=8749ea8867e86c70b9b347f135676869}{%
+           family={Simon},
+           familyi={S\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=0bc7b488656886f59a0b4fb019932408}{%
+           family={Wei},
+           familyi={W\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d102e95b8227a581f411d16cdd978da4}{%
+           family={Sheikh},
+           familyi={S\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{822450ac2bca07cf99c41ab3480d0e4b}
+      \strng{fullhash}{822450ac2bca07cf99c41ab3480d0e4b}
+      \strng{bibnamehash}{822450ac2bca07cf99c41ab3480d0e4b}
+      \strng{authorbibnamehash}{822450ac2bca07cf99c41ab3480d0e4b}
+      \strng{authornamehash}{822450ac2bca07cf99c41ab3480d0e4b}
+      \strng{authorfullhash}{822450ac2bca07cf99c41ab3480d0e4b}
+      \field{labelalpha}{CHS\textsuperscript {+}19}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{title}{OpenPose: Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields}
+      \field{year}{2019}
+      \verb{eprint}
+      \verb 1812.08008
+      \endverb
+    \endentry
+    \entry{KaewTraKulPong2002}{book}{}
+      \name{author}{2}{}{%
+        {{hash=21bf028f4b39f52cc68c360a6c80c3c2}{%
+           family={KaewTraKulPong},
+           familyi={K\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=8432bb156af952d766985d198afcdada}{%
+           family={Bowden},
+           familyi={B\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston, MA}%
+      }
+      \list{publisher}{1}{%
+        {Springer US}%
+      }
+      \strng{namehash}{2c00901e586b4b856ffc3ce4d7685313}
+      \strng{fullhash}{2c00901e586b4b856ffc3ce4d7685313}
+      \strng{bibnamehash}{2c00901e586b4b856ffc3ce4d7685313}
+      \strng{authorbibnamehash}{2c00901e586b4b856ffc3ce4d7685313}
+      \strng{authornamehash}{2c00901e586b4b856ffc3ce4d7685313}
+      \strng{authorfullhash}{2c00901e586b4b856ffc3ce4d7685313}
+      \field{labelalpha}{KB02}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Video-Based Surveillance Systems: Computer Vision and Distributed Processing}
+      \field{title}{An Improved Adaptive Background Mixture Model for Real-time Tracking with Shadow Detection}
+      \field{year}{2002}
+      \field{pages}{135\bibrangedash 144}
+      \range{pages}{10}
+    \endentry
+    \entry{Python}{book}{}
+      \name{author}{1}{}{%
+        {{hash=1a3485de33be7741c5ab16ba16f039b2}{%
+           family={Kuhlman},
+           familyi={K\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{1a3485de33be7741c5ab16ba16f039b2}
+      \strng{fullhash}{1a3485de33be7741c5ab16ba16f039b2}
+      \strng{bibnamehash}{1a3485de33be7741c5ab16ba16f039b2}
+      \strng{authorbibnamehash}{1a3485de33be7741c5ab16ba16f039b2}
+      \strng{authornamehash}{1a3485de33be7741c5ab16ba16f039b2}
+      \strng{authorfullhash}{1a3485de33be7741c5ab16ba16f039b2}
+      \field{labelalpha}{Kuh12}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A Python Book: Beginning Python, Advanced Python, and Python Exercises}
+      \field{year}{2012}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

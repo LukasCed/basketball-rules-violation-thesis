@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.1) (format=lualatex 2021.2.28)  7 MAR 2021 21:21
+This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.1) (format=lualatex 2021.2.28)  11 APR 2021 20:43
  restricted system commands enabled.
 **bakalaurinio_planas.tex
 (./bakalaurinio_planas.tex
@@ -213,11 +213,11 @@ braces):
 >  {lithuanian/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {lithuanian/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 Module polyglossia Info: Language data for lithuanian
-(polyglossia)            righthyphenmin	2
-(polyglossia)            loader	loadhyph-lt.tex
 (polyglossia)            synonyms	
-(polyglossia)            hyphenation	
 (polyglossia)            lefthyphenmin	2
+(polyglossia)            loader	loadhyph-lt.tex
+(polyglossia)            hyphenation	
+(polyglossia)            righthyphenmin	2
 (polyglossia)            patterns	hyph-lt.pat.txt on input line 11
 Module polyglossia Info: Language lithuanian was not yet loaded; created with id
  2 on input line 11
@@ -1095,7 +1095,19 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'bakalaurinio_planas.bbl' found.
- (./bakalaurinio_planas.bbl)
+ (./bakalaurinio_planas.bbl
+LaTeX Font Info:    Trying to load font information for U+msa on input line 135
+.
+
+(C:/Users/Lukas/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 135
+.
+
+(C:/Users/Lukas/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
 Package biblatex Info: Reference section=0 on input line 37.
 Package biblatex Info: Reference segment=0 on input line 37.
 
@@ -1124,62 +1136,15 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 LaTeX Info: Redefining \rmfamily on input line 37.
 LaTeX Info: Redefining \sffamily on input line 37.
 LaTeX Info: Redefining \ttfamily on input line 37.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 38.
+ [1
 
+{C:/Users/Lukas/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
 
-(C:/Users/Lukas/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
+LaTeX Warning: Citation 'kafka' on page 1 undefined on input line 50.
 
-
-(C:/Users/Lukas/AppData/Local/Programs/MiKTeX/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 [1
 
-{C:/Users/Lukas/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [1
-
-]
-
-LaTeX Warning: Citation 'VERHES_LAHI_2005' on page 2 undefined on input line 80
-.
-
-
-LaTeX Warning: Citation 'SzeliskiCompVision' on page 2 undefined on input line 
-80.
-
-
-LaTeX Warning: Citation '4717823' on page 2 undefined on input line 80.
-
-
-LaTeX Warning: Citation '4767941' on page 2 undefined on input line 80.
-
-
-LaTeX Warning: Citation 'KhanConvVision' on page 2 undefined on input line 80.
-
-
-LaTeX Warning: Citation 'THOMAS20173' on page 2 undefined on input line 80.
-
-
-LaTeX Warning: Citation 'Chen_2018_CVPR' on page 2 undefined on input line 80.
-
-
-LaTeX Warning: Citation '6224370' on page 2 undefined on input line 80.
-
-
-LaTeX Warning: Citation 'BradskiOpenCV' on page 2 undefined on input line 80.
-
-
-LaTeX Warning: Citation 'ShanDeepVision' on page 2 undefined on input line 80.
-
-
-LaTeX Warning: Citation 'HuaMachineLearning' on page 2 undefined on input line 
-80.
-
-
-LaTeX Warning: Empty bibliography on input line 82.
-
+] [2]
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -1230,7 +1195,9 @@ braces):
 >  {english/babelname}  =>  {american}
 >  {english/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {english/Localnumeral}  =>  {polyglossia@C@localnumeral}.
-[2] (./bakalaurinio_planas.aux
+ [3
+
+] (./bakalaurinio_planas.aux
 LaTeX Info: Redefining \rmfamily on input line 6.
 LaTeX Info: Redefining \sffamily on input line 6.
 LaTeX Info: Redefining \ttfamily on input line 6.
@@ -1249,22 +1216,22 @@ Package logreq Info: Writing requests to 'bakalaurinio_planas.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 19283 strings out of 478819
+ 19356 strings out of 478819
  125038,1373583 words of node,token memory allocated
- 718 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 7 attribute, 98 glue_spec,
- 7 attribute_list, 1 write nodes
-   avail lists: 1:2,2:228,3:166,4:48,5:300,6:50,7:5958,8:1,9:211,10:36,11:987
- 38259 multiletter control sequences out of 65536+200000
- 69 fonts using 10634487 bytes
- 125i,11n,141p,1379b,1453s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Lukas/AppData/Local/Programs/MiKTeX/fonts/opentype/public/tex-gyre/tex
-gyretermes-italic.otf><C:/Users/Lukas/AppData/Local/Programs/MiKTeX/fonts/openty
-pe/public/tex-gyre/texgyretermes-bold.otf><C:/Users/Lukas/AppData/Local/Programs
-/MiKTeX/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf>
-Output written on bakalaurinio_planas.pdf (3 pages, 26207 bytes).
+ 724 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 6 attribute, 100 glue_spec
+, 6 attribute_list, 1 write nodes
+   avail lists: 1:1,2:636,3:222,4:52,5:436,6:51,7:5997,8:2,9:213,10:36,11:990
+ 38332 multiletter control sequences out of 65536+200000
+ 97 fonts using 12653415 bytes
+ 125i,11n,141p,1346b,1453s stack positions out of 5000i,500n,10000p,200000b,50000s
+<//?/c:/users/lukas/appdata/local/programs/miktex/fonts/opentype/public/tex-gyre
+/texgyretermes-italic.otf><//?/c:/users/lukas/appdata/local/programs/miktex/font
+s/opentype/public/tex-gyre/texgyretermes-bold.otf><//?/c:/users/lukas/appdata/lo
+cal/programs/miktex/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf>
+Output written on bakalaurinio_planas.pdf (4 pages, 35260 bytes).
 
-PDF statistics: 34 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 37 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 

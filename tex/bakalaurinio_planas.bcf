@@ -2342,7 +2342,8 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">./bibliografija_planas.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">VERHES_LAHI_2005</bcf:citekey>
+    <bcf:citekey order="1">kafka</bcf:citekey>
+    <bcf:citekey order="2">VERHES_LAHI_2005</bcf:citekey>
     <bcf:citekey order="2">SzeliskiCompVision</bcf:citekey>
     <bcf:citekey order="3">4717823</bcf:citekey>
     <bcf:citekey order="4">4767941</bcf:citekey>
@@ -2352,7 +2353,7 @@
     <bcf:citekey order="8">6224370</bcf:citekey>
     <bcf:citekey order="9">BradskiOpenCV</bcf:citekey>
     <bcf:citekey order="10">ShanDeepVision</bcf:citekey>
-    <bcf:citekey order="11">HuaMachineLearning</bcf:citekey>
+    <bcf:citekey order="10">HuaMachineLearning</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">

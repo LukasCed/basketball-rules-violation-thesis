@@ -19,12 +19,12 @@
 \institute{Informatikos institutas}  % Užkomentavus šią eilutę - institutas neįtraukiamas į titulinį
 \department{Programų sistemų bakalauro studijų programa}
 \papertype{Bakalauro baigiamasis darbas}
-\title{Programų sistemų kūrimo metodų tyrimas}
-\titleineng{Investigation Methods of Software Development}
-\author{Vardenis Pavardenis}
+\title{Krepšinio taisyklių pažeidimo automatinis nustatymas}
+\titleineng{Recognizing violations of basketball rules using computer vision}
+\author{Lukas Cedronas}
 % \secondauthor{Vardonis Pavardonis}   % Pridėti antrą autorių
-\supervisor{prof. habil. dr. Vardaitis Pavardaitis}
-\reviewer{doc. dr. Vardauskas Pavardauskas}
+\supervisor{partn. prof., dr. Vytautas Ašeris}
+\reviewer{lekt. Donatas Kimutis}
 \date{Vilnius – \the\year}
 
 % Nustatymai
@@ -64,32 +64,68 @@ temos analizės tvarka, darbo atlikimo aplinkybės, pateikiama žinių apie
 naudojamus instrumentus (programas ir kt., jei darbe yra eksperimentinė dalis).
 Darbo įvadas neturi būti dėstymo santrauka. Įvado apimtis 2 -- 4 puslapiai.
 
-\section{Medžiagos darbo tema dėstymo skyriai}
-Medžiagos darbo tema dėstymo skyriuose išsamiai pateikiamos nagrinėjamos temos
-detalės: pradiniai duomenys, jų analizės ir apdorojimo metodai, sprendimų
-įgyvendinimas, gautų rezultatų apibendrinimas.
+\section{Naudoti įrankiai}
 
-Medžiaga turi būti dėstoma aiškiai, pateikiant argumentus. Tekste dėstomas
-trečiuoju asmeniu, t.y. rašoma ne „aš manau“, bet „autorius mano“, „autoriaus
-nuomone“. Reikėtų vengti informacijos nesuteikiančių frazių, pvz., „...kaip jau
-buvo minėta...“, „...kaip visiems žinoma...“ ir pan., vengti grožinės
-literatūros ar publicistinio stiliaus, gausių metaforų ar panašių meninės
-išraiškos priemonių.
+Kompiuterinės regos ir taisyklių pažeidimo atpažinimo algoritmams įgyvendinti buvo pasirinkta Python programavimo kalba. Python - interpretuojama, lengvai skaitoma kalba, puikiai tinkama įvairioms problemoms spręsti \cite{Python}. Dėl kalbos paprastumo ji dažnai naudojama kompiuterinės regos ir giliojo mokymo srityse, kadangi kalba leidžia susifokusuoti į abstrakcijas. Kadangi kalba yra plačiai naudojama, nesunku rasti daug pavyzdžių bei šaltinių. 
 
-Skyriai gali turėti poskyrius ir smulkesnes sudėtines dalis, kaip punktus ir
-papunkčius.
+Objektų atpažinimui buvo pasirinkta OpenCV biblioteka. Tai - nemokama biblioteka, plačiai naudojama spręsti kompiuterinės regos uždavinius, kurios fokusas - įgalinti kurti aplikacijas leidžiančias efektyviai spręsti kompiuterinės regos problemas realiu laiku \cite{BradskiOpenCV}.
 
-\subsection{Poskyris}
-Citavimo pavyzdžiai: cituojamas vienas šaltinis \cite{PvzStraipsnLt}; cituojami
-keli šaltiniai \cite{PvzStraipsnEn, PvzKonfLt, PvzKonfEn, PvzKnygLt, PvzKnygEn,
-PvzElPubLt, PvzElPubEn, PvzMagistrLt, PvzPhdEn}.
+Vaizdo medžiaga rinkta filmuojant Xiaomi Redmi 8 Pro kamera.  
 
-\subsubsection{Skirsnis}
-\subsubsubsection{Straipsnis}
-\subsubsection{Skirsnis}
-\section{Skyrius}
-\subsection{Poskyris}
-\subsection{Poskyris}
+\section{Vaizdo medžiagos paruošimas}
+
+Šio darbo metu sukurtai programinei įrangai paruošta vaizdo medžiaga, kurioje žaidėjas atlieka įvairius judesius su krepšinio kamuoliu. Siekiant supaprastinti vaizdo atpažinimo algoritmą, medžiagai keliami reikalavimai yra: aiškiai matomas žaidėjas, telpantis į kadrą ir užimantis nemažą dalį vaizdo. Vaizdo atpažinimui pagal spalvą algoritmui žaidėjas taip pat privalo dėvėti skirtingų spalvų pirštines, batus bei mušinėti atskiros spalvos kamuolį. Žaidėjas turi būti kiek galima labiau skirtis nuo fono, kad algoritmas veiktų kuo efektyviau, kadangi įvairių formų ir spalvų objektai fone pasunkina tikslų atpažinimą. Vaizdo medžiagoje žaidėjas mušinėja kamuolį ir atlieka įvairius judesius, dalis kurių pažeidžia taisykles, pavyzdžiui - pamušinėjęs kamuolį jį pasiima į rankas ir padaro keletą žingsnių. Programinė įranga turi atpažinti, jog tai - taisyklės pažeidimas. Vaizdo kokybė yra itin svarbi siekiant tikslių rezultatų, todėl buvo filmuojama kuo didesne raiška - Xiaomi Redmi Note 8 Pro kameros maksimali raiška yra 4K, 30 kadrų per sekundę. 
+
+\section{Vaizdo atpažinimo metodai}
+\subsection{Spalvinis atpažinimas}
+\subsubsection{Segmentavimas}
+\subsubsection{Morfologinės transformacijos}
+\subsubsection{Kontūrų radimas}
+\subsection{Atpažinimas remiantis skirtumais}
+\subsubsection{Fono pašalinimas}
+Fono pašalinimas yra vienas iš esminių metodų kompiuterinėje regoje, naudojamas išskirti dominančius vaizdus ir pašalinti nereikalingus statiškus objektus iš fono. Pavyzdžiui, jei yra filmuojama lauke, fone besimatantys medžiai gali trukdyti tolimesniam atpažinimui, tad žinant, jog mus domina tik žaidėjas, pašalinius objektus galima pabandyti pašalinti. Vienas iš būdų yra iš anksto turėti fono paveiksliuką ir apdorojant kitus kadrus jį išimti, bet tai dažnai nepasiteisina dėl to, kad fonas gali kisti - gali atsirasti šešėlių, pasikeisti apšvietimas, gali būti įvairaus pašalinio judėjimo, pavyzdžiui - linguojantys medžiai, vaikštantys sirgaliai ir pan. 2002 m.  P. KaewTraKulPong pasiūlė algoritmą, išsprendžiantį šią problemą \cite{KaewTraKulPong2002}. Algoritmas kiekvieną pikselį sumodeliuoja į Gauso skirstinį pagal tai, kiek pikselio spalva keičiasi bėgant laikui. Kuo mažiau pikseliai keičiasi, tuo didesnė tikimybė, kad jie priklauso fonui. Naudojantis šiuo atradimu galima sėkmingai atsikratyti fono, taip išskiriant mus dominantį vaizdą. Šis metodas ypač tinkamas atpažinti judėjimui - vietoje stovintis žaidėjas bus priskirtas fonui, tačiau jam judant, lengvai galima išskirti jo siluetą.  
+
+\begin{figure}[H]
+    \centering
+    \subfloat[\centering Vaizdas prieš fono pašalinimą.]{{\includegraphics[width=5cm]{img/background-substraction-before} }}
+    \qquad
+    \subfloat[\centering Vaizdas po fono pašalinimo.]{{\includegraphics[width=5cm]{img/background-substraction} }}
+    \caption{Fono pašalinimas naudojantis Gauso skirstiniu paremtu fono segmentavimo algoritmu.}
+    \label{fig:example}
+\end{figure}
+
+
+Paveikslėlyje matome, jog algoritmas atpažino žmogaus siluetą. Šiame pavyzdyje ranka priskirta fonui dėl to, jog spalva sutampa su sienos spalva, tačiau kitos kūno dalys išskiriamos iš fono.
+
+\subsubsection{Judesio atpažinimas}
+
+Žaidėjui vaikštant, kai kurios kūno dalys juda greičiau, nei kitos. Kūnas išlieka santykinai statiškas palyginus su kojomis. Žingsniavimo mechanika yra tokia, kad atliekant žingsnį, viena koja lieka vienoje vietoje, kol kita yra perstatoma iš vienos pozicijos į kitą. Tam, kad pagauti tą kojos judesį, galima paprasčiausiai iš antro kadro atimti pirmą. Padalijus kadrą į dvi dalis - viršutinę ir apatinę - ir darant prielaidą, jog apatinėje dalyje matysis tik kojų judesiai, galima teigti, kad jei atėmus antrą kadrą iš pirmo yra skirtumas, buvo atliktas žingsnis. Koją pastačius ant žemės, tam tikrą laiką skirtumai sumažėja iki nustatytos ribos - pasinaudojus visa šia informacija galima apskaičiuoti, kiek žingsnių buvo atlikta. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{img/steps}
+    \caption{Aktyvių pikselių kiekis kiekviename kadre, indikuojantis žmogaus judėjimą. }
+    \label{img:mlp}
+\end{figure}
+
+2 pav. pateiktoje lentelėje matyti, kiek buvo aktyvių pikselių kiekvieną kadrą panaudojus fono pašalinimą bei kadrų skirtumo algoritmus. Ši informacija rodo judėjimo kiekį tam tikrame kadro regione. Žalia linija žymi minimalų judėjimo kiekį, kuris gali atsirasti dėl triukšmo ir pašalinio judėjimo. Viršijus šią liniją galima teigti, jog žaidėjas juda. Oranžinė linija žymi ribą, kada galima sakyti, jog jokio judesio nėra, t.y. žaidėjas pastatė koją ir ruošiasi atlikti kitą žingsnį. 
+
+\subsection{Žmogaus kūno dalių atpažinimas}
+
+Šiuolaikinėje kompiuterinės regos srityje daug naudos galima gauti pasinaudojus neuroninių tinklų pagalba. Neuroniniai tinklai naudojami sprendžiant įvairias problemas, šiam darbui aktualiausia yra objektų atpažinimo problema. Turint tam tikrą kadrą, taisyklių pažeidimo algoritmui būtina, kad būtų atskirtos rankos, kojos ir kamuolys. Žmogaus kūno dalių klasifikavimas yra sudėtinga problema, kadangi dauguma algoritmų yra priklausomi nuo surinktų duomenų. Kompleksija tampa akivaizdi sprendžiant sporto problemas, kadangi labai dažnai žaidėjai daro įvairiausius judesius, apsirengę įvairiausiais rūbais ir pan., kas apsunkina žaidėjo kūno dalių atpažinimą \cite{Andriluka_2014_CVPR}. Tam reikalinga turtinga ir didelė duomenų aibė, dėl ko neuroninio tinklo apmokymo laikas išauga. 
+
+Bene visi šiuolaikiniai metodai remiasi tuo pačiu principu: apmokinamas neuroninių tinklų modelis, jiems paruošiant teigiamus ir neigiamus pavyzdžius (pvz., siekiant sukurti kojų atpažinimo algoritmą, paveiksliukai, kuriuose yra koja pažymimi kaip teigiami, tie, kuriuose kojos nėra tampa neigiamais). Mokinimo procesas gali trukti daug laiko - kartais net savaites, todėl daug paprasčiau yra surasti jau sukurtą modelį ir jį pasinaudoti. Vienas iš modelių buvo pasiūlytas 2018 m., pavadinimu OpenPose \cite{cao2019openpose}. Modelio architektūra paremta konvoliuciniais neuroniniais tinklais. Modelis suskirstytas į dvi šakas. Viena jų priskiria tikimybes, kad tam tikras regionas yra tam tikra kūno dalis, kita - asociacijas tarp skirtingų kūno dalių. Atpažinimas vyksta keliais etapais, siekiant gauti kuo tikslesnius rezultatus. 
+
+Šiame darbe kuriamas vaizdo atpažinimo algoritmas kiekvieną kadrą pateikia OpenPose modeliui, o rezultate gaunamos skirtingomis spalvomis sužymėtos kūno dalys. Taisyklių pažeidimo atpažinimo algoritmui aktualios yra rankų ir pėdų sritis. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{img/body-parts}
+    \caption{OpenPose algoritmo pagalba atpažintos kūno dalys.}
+    \label{img:mlp}
+\end{figure}
+
+Vienas iš algoritmo trūkūmų yra tai, kad be optimizavimo su kiekvienu kadru gauti rezultatą užtrunka iki 0.5 sekundės. Galimas optimizavimo būdas yra sumažinti kadro dydį prieš pateikiant jį į neuroninį tinklą, tačiau tokiu atveju rezultatų tikslumas yra atvirkščiai proporcingas kadro dimensijom. 
 
 \sectionnonum{Rezultatai ir išvados}
 Rezultatų ir išvadų dalyje išdėstomi pagrindiniai darbo rezultatai (kažkas
