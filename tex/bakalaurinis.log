@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.1) (format=lualatex 2021.2.28)  28 MAR 2021 22:09
+This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.1) (format=lualatex 2021.2.28)  24 APR 2021 02:28
  restricted system commands enabled.
 **bakalaurinis.tex
 (./bakalaurinis.tex
@@ -213,9 +213,9 @@ braces):
 >  {lithuanian/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {lithuanian/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 Module polyglossia Info: Language data for lithuanian
-(polyglossia)            righthyphenmin	2
-(polyglossia)            lefthyphenmin	2
 (polyglossia)            synonyms	
+(polyglossia)            lefthyphenmin	2
+(polyglossia)            righthyphenmin	2
 (polyglossia)            patterns	hyph-lt.pat.txt
 (polyglossia)            loader	loadhyph-lt.tex
 (polyglossia)            hyphenation	 on input line 11
@@ -914,7 +914,16 @@ LaTeX Info: Redefining \sffamily on input line 6.
 LaTeX Info: Redefining \ttfamily on input line 6.
 
 
+LaTeX Warning: Label `fig:example' multiply defined.
+
+
+LaTeX Warning: Label `fig:example' multiply defined.
+
+
 LaTeX Warning: Label `img:mlp' multiply defined.
+
+
+LaTeX Warning: Label `fig:example' multiply defined.
 
 
 LaTeX Warning: Label `img:mlp' multiply defined.
@@ -1156,45 +1165,86 @@ LaTeX Info: Redefining \ttfamily on input line 3.
 ] [6
 
 ]
-<img/background-substraction-before.png, id=25, 251.43938pt x 411.03563pt>
+<img/hand_before_segmentation.png, id=25, 170.88844pt x 256.70906pt>
+File: img/hand_before_segmentation.png Graphic file (type png)
+<use img/hand_before_segmentation.png>
+Package luatex.def Info: img/hand_before_segmentation.png  used on input line 9
+9.
+(luatex.def)             Requested size: 142.26378pt x 213.7226pt.
+<img/hand_after_segmentation.png, id=26, 170.88844pt x 257.46187pt>
+File: img/hand_after_segmentation.png Graphic file (type png)
+<use img/hand_after_segmentation.png>
+Package luatex.def Info: img/hand_after_segmentation.png  used on input line 10
+1.
+(luatex.def)             Requested size: 142.26378pt x 214.34935pt.
+ [7
+
+]
+
+LaTeX Warning: Reference `4767941' on page 8 undefined on input line 119.
+
+[8<./img/hand_before_segmentation.png><./img/hand_after_segmentation.png>]
+<img/ball_contours_before.png, id=42, 169.38281pt x 251.43938pt>
+File: img/ball_contours_before.png Graphic file (type png)
+<use img/ball_contours_before.png>
+Package luatex.def Info: img/ball_contours_before.png  used on input line 138.
+(luatex.def)             Requested size: 142.26378pt x 211.18845pt.
+<img/ball_contours_after.png, id=43, 161.10187pt x 239.39438pt>
+File: img/ball_contours_after.png Graphic file (type png)
+<use img/ball_contours_after.png>
+Package luatex.def Info: img/ball_contours_after.png  used on input line 140.
+(luatex.def)             Requested size: 142.26378pt x 211.40923pt.
+
+[9<./img/ball_contours_before.png><./img/ball_contours_after.png>]
+<img/background-substraction-before.png, id=48, 251.43938pt x 411.03563pt>
 File: img/background-substraction-before.png Graphic file (type png)
 <use img/background-substraction-before.png>
 Package luatex.def Info: img/background-substraction-before.png  used on input 
-line 90.
+line 151.
 (luatex.def)             Requested size: 142.26378pt x 232.56169pt.
-<img/background-substraction.png, id=26, 251.43938pt x 411.03563pt>
+<img/background-substraction.png, id=49, 251.43938pt x 411.03563pt>
 File: img/background-substraction.png Graphic file (type png)
 <use img/background-substraction.png>
-Package luatex.def Info: img/background-substraction.png  used on input line 92
-.
+Package luatex.def Info: img/background-substraction.png  used on input line 15
+3.
 (luatex.def)             Requested size: 142.26378pt x 232.56169pt.
- [7
-
-<./img/background-substraction-before.png><./img/background-substraction.png>]
-<img/steps.png, id=31, 450.9347pt x 352.31625pt>
+ [10<./img/background-substraction-before.png><./img/background-substraction.png
+>]
+<img/steps.png, id=55, 450.9347pt x 352.31625pt>
 File: img/steps.png Graphic file (type png)
 <use img/steps.png>
-Package luatex.def Info: img/steps.png  used on input line 106.
+Package luatex.def Info: img/steps.png  used on input line 167.
 (luatex.def)             Requested size: 360.74825pt x 281.85338pt.
- [8<./img/steps.png>]
-<img/body-parts.png, id=35, 223.58531pt x 409.53pt>
+ [11<./img/steps.png>]
+<img/body-parts.png, id=59, 223.58531pt x 409.53pt>
 File: img/body-parts.png Graphic file (type png)
 <use img/body-parts.png>
-Package luatex.def Info: img/body-parts.png  used on input line 123.
+Package luatex.def Info: img/body-parts.png  used on input line 184.
 (luatex.def)             Requested size: 178.86847pt x 327.62444pt.
- [9<./img/body-parts.png>] [10] [11
+ [12<./img/body-parts.png>]
+<img/ball_circled.png, id=63, 93.34875pt x 109.91063pt>
+File: img/ball_circled.png Graphic file (type png)
+<use img/ball_circled.png>
+Package luatex.def Info: img/ball_circled.png  used on input line 202.
+(luatex.def)             Requested size: 142.26378pt x 167.51196pt.
+<img/ball_notfound.png, id=64, 74.52844pt x 91.84312pt>
+File: img/ball_notfound.png Graphic file (type png)
+<use img/ball_notfound.png>
+Package luatex.def Info: img/ball_notfound.png  used on input line 204.
+(luatex.def)             Requested size: 142.26378pt x 175.34456pt.
+ [13<./img/ball_circled.png><./img/ball_notfound.png>] [14
 
-] [12
+] [15
 
-] [13
+] [16
 
 ]
-<img/MLP.png, id=54, 481.8pt x 207.77625pt>
+<img/MLP.png, id=80, 481.8pt x 207.77625pt>
 File: img/MLP.png Graphic file (type png)
 <use img/MLP.png>
-Package luatex.def Info: img/MLP.png  used on input line 162.
+Package luatex.def Info: img/MLP.png  used on input line 241.
 (luatex.def)             Requested size: 240.8994pt x 103.88786pt.
- [14
+ [17
 
 <./img/MLP.png>]
 The property list \polyglossia@langsetup contains the pairs (without outer
@@ -1247,13 +1297,16 @@ braces):
 >  {english/babelname}  =>  {american}
 >  {english/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {english/Localnumeral}  =>  {polyglossia@C@localnumeral}.
- [15
+ [18
 
 ] (./bakalaurinis.aux
 LaTeX Info: Redefining \rmfamily on input line 6.
 LaTeX Info: Redefining \sffamily on input line 6.
 LaTeX Info: Redefining \ttfamily on input line 6.
 )
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -1263,27 +1316,33 @@ Package logreq Info: Writing requests to 'bakalaurinis.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 19126 strings out of 478819
+ 19238 strings out of 478819
  125038,1373583 words of node,token memory allocated
- 723 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 7 attribute, 99 glue_spec,
- 7 attribute_list, 1 write nodes
-   avail lists: 1:3,2:317,3:167,4:48,5:267,6:55,7:5066,8:10,9:302,10:38,11:791
- 38057 multiletter control sequences out of 65536+200000
- 108 fonts using 13681263 bytes
- 125i,11n,141p,1354b,1538s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 744 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 11 attribute, 100 glue_spe
+c, 11 attribute_list, 1 write nodes
+   avail lists: 1:3,2:582,3:200,4:52,5:554,6:62,7:7916,8:26,9:316,10:38,11:1189
+ 38115 multiletter control sequences out of 65536+200000
+ 109 fonts using 14024471 bytes
+ 125i,11n,141p,1360b,1538s stack positions out of 5000i,500n,10000p,200000b,50000s
 <//?/c:/users/lukas/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmon
-o12-regular.otf><C:/Users/Lukas/AppData/Local/Programs/MiKTeX/fonts/opentype/pub
-lic/tex-gyre/texgyretermes-italic.otf><C:/Users/Lukas/AppData/Local/Programs/MiK
-TeX/fonts/opentype/public/tex-gyre/texgyretermes-bold.otf><C:/Users/Lukas/AppDat
-a/Local/Programs/MiKTeX/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf
-><C:/Users/Lukas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-mi10.pfb><C:/Users/Lukas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb><C:/Users/Lukas/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmr7.pfb>
-Output written on bakalaurinis.pdf (16 pages, 532367 bytes).
+o12-regular.otf><//?/c:/users/lukas/appdata/local/programs/miktex/fonts/opentype
+/public/tex-gyre/texgyretermes-italic.otf><//?/c:/users/lukas/appdata/local/prog
+rams/miktex/fonts/opentype/public/tex-gyre/texgyretermes-bold.otf><//?/c:/users/
+lukas/appdata/local/programs/miktex/fonts/opentype/public/tex-gyre/texgyretermes
+-regular.otf><C:/Users/Lukas/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmex10.pfb><C:/Users/Lukas/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi10.pfb><C:/Users/Lukas/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Lukas/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Lukas/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lukas/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lukas/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lukas/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/User
+s/Lukas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on bakalaurinis.pdf (19 pages, 914554 bytes).
 
-PDF statistics: 101 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 145 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 

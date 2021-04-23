@@ -137,6 +137,46 @@
       \verb 1812.08008
       \endverb
     \endentry
+    \entry{4767941}{article}{}
+      \name{author}{3}{}{%
+        {{hash=66d80b3b1c68fe14c878e56b6942be35}{%
+           family={Haralick},
+           familyi={H\bibinitperiod},
+           given={Robert\bibnamedelima M.},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=ac48eac1139ce41d0bdc6eeb9f3bdefb}{%
+           family={Sternberg},
+           familyi={S\bibinitperiod},
+           given={Stanley\bibnamedelima R.},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=6482ba63b4bd5f8744e8984202a18e26}{%
+           family={Zhuang},
+           familyi={Z\bibinitperiod},
+           given={Xinhua},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{89cade545764c2f40b24cab8393a8447}
+      \strng{fullhash}{89cade545764c2f40b24cab8393a8447}
+      \strng{bibnamehash}{89cade545764c2f40b24cab8393a8447}
+      \strng{authorbibnamehash}{89cade545764c2f40b24cab8393a8447}
+      \strng{authornamehash}{89cade545764c2f40b24cab8393a8447}
+      \strng{authorfullhash}{89cade545764c2f40b24cab8393a8447}
+      \field{labelalpha}{HSZ87}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{number}{4}
+      \field{title}{Image Analysis Using Mathematical Morphology}
+      \field{volume}{PAMI-9}
+      \field{year}{1987}
+      \field{pages}{532\bibrangedash 550}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1109/TPAMI.1987.4767941
+      \endverb
+    \endentry
     \entry{KaewTraKulPong2002}{book}{}
       \name{author}{2}{}{%
         {{hash=21bf028f4b39f52cc68c360a6c80c3c2}{%
@@ -194,6 +234,131 @@
       \field{labeltitlesource}{title}
       \field{title}{A Python Book: Beginning Python, Advanced Python, and Python Exercises}
       \field{year}{2012}
+    \endentry
+    \entry{1039893}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=0c3bb2625d92599a7df7d96021e7219d}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Na},
+           giveni={N\bibinitperiod}}}%
+        {{hash=a2c383d5bb68d735356592e3eefce2f2}{%
+           family={Bu},
+           familyi={B\bibinitperiod},
+           given={Jiajun},
+           giveni={J\bibinitperiod}}}%
+        {{hash=4e4b72d446c103d25655b62922e530d7}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Chun},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{e3d0ecc34e0ec46cde00b89edde27df6}
+      \strng{fullhash}{e3d0ecc34e0ec46cde00b89edde27df6}
+      \strng{bibnamehash}{e3d0ecc34e0ec46cde00b89edde27df6}
+      \strng{authorbibnamehash}{e3d0ecc34e0ec46cde00b89edde27df6}
+      \strng{authornamehash}{e3d0ecc34e0ec46cde00b89edde27df6}
+      \strng{authorfullhash}{e3d0ecc34e0ec46cde00b89edde27df6}
+      \field{labelalpha}{LBC02}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings. International Conference on Image Processing}
+      \field{title}{Real-time video object segmentation using HSV space}
+      \field{volume}{2}
+      \field{year}{2002}
+      \field{pages}{II\bibrangedash II}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1109/ICIP.2002.1039893
+      \endverb
+    \endentry
+    \entry{SzeliskiCompVision}{book}{}
+      \name{author}{1}{}{%
+        {{hash=d19846bb0d3c0031f9f746e0a1188ab8}{%
+           family={Szeliski},
+           familyi={S\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Base, Switzerland}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{d19846bb0d3c0031f9f746e0a1188ab8}
+      \strng{fullhash}{d19846bb0d3c0031f9f746e0a1188ab8}
+      \strng{bibnamehash}{d19846bb0d3c0031f9f746e0a1188ab8}
+      \strng{authorbibnamehash}{d19846bb0d3c0031f9f746e0a1188ab8}
+      \strng{authornamehash}{d19846bb0d3c0031f9f746e0a1188ab8}
+      \strng{authorfullhash}{d19846bb0d3c0031f9f746e0a1188ab8}
+      \field{labelalpha}{Sze21}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Computer Vision: Algorithms and Applications}
+      \field{year}{2021}
+    \endentry
+    \entry{7457892}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=a5231a9f4abf95501926d3f878d3cd52}{%
+           family={Wan},
+           familyi={W\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=bde721f31eafb238f212e5c58aceba5a}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Qiqiang},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{943670352b65f66a8309a51c31397705}
+      \strng{fullhash}{943670352b65f66a8309a51c31397705}
+      \strng{bibnamehash}{943670352b65f66a8309a51c31397705}
+      \strng{authorbibnamehash}{943670352b65f66a8309a51c31397705}
+      \strng{authornamehash}{943670352b65f66a8309a51c31397705}
+      \strng{authorfullhash}{943670352b65f66a8309a51c31397705}
+      \field{labelalpha}{WC15}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 Visual Communications and Image Processing (VCIP)}
+      \field{title}{Joint image dehazing and contrast enhancement using the HSV color space}
+      \field{year}{2015}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
+    \endentry
+    \entry{Welzl91smallestenclosing}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=7e7a262e881af79aff11cd5076388ae8}{%
+           family={Welzl},
+           familyi={W\bibinitperiod},
+           given={Emo},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{7e7a262e881af79aff11cd5076388ae8}
+      \strng{fullhash}{7e7a262e881af79aff11cd5076388ae8}
+      \strng{bibnamehash}{7e7a262e881af79aff11cd5076388ae8}
+      \strng{authorbibnamehash}{7e7a262e881af79aff11cd5076388ae8}
+      \strng{authornamehash}{7e7a262e881af79aff11cd5076388ae8}
+      \strng{authorfullhash}{7e7a262e881af79aff11cd5076388ae8}
+      \field{labelalpha}{Wel91}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Results and New Trends in Computer Science}
+      \field{title}{Smallest Enclosing Disks (balls and Ellipsoids)}
+      \field{year}{1991}
+      \field{pages}{359\bibrangedash 370}
+      \range{pages}{12}
     \endentry
   \enddatalist
 \endrefsection
