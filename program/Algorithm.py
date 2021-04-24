@@ -1,12 +1,14 @@
 from ImageProcessingUtils import *
 import cv2
 import numpy as np
-from skimage.measure import compare_ssim
+#from skimage.measure import compare_ssim
 import sys
-sys.path.append('./openpose')
+#sys.path.append('./openpose')
 #sys.path.append('./op2')
+sys.path.append('./lightweighthpe')
 
-from OpenPose import OpenPoseAlgorithm
+# from OpenPose import OpenPoseAlgorithm
+from lightweighthpe.app import *
 #from OpenPose2 import OpenPoseAlgorithm2
 
 lower_green = np.array([74, 80, 42])
@@ -16,17 +18,18 @@ upper_yellow = np.array([28,255,255])
 lower_red = np.array([173,100,100])
 upper_red = np.array([180,250,255])
 
-openPoseAlgorithm = OpenPoseAlgorithm()
+# openPoseAlgorithm = OpenPoseAlgorithm()
 #openPoseAlgorithm = OpenPoseAlgorithm2()
 
 class Algorithm:
 
-    def __init__(this):
+    def __init__(this, cpu):
         this.step_count = 0
         this.feet_intersection = False
         this.ball_in_hands_counter = 0
         this.turnover = False
         this.frame_count = 0
+        this.net = this.setup_lightweight(cpu)
 
     def ball_in_hands(this):
         return this.ball_in_hands_counter > 0
@@ -83,18 +86,17 @@ class Algorithm:
             # # cv2.imshow("Thresh", cropped_top)
             plot_data.append((this.frame_count, pixel_pctg))
             this.frame_count = this.frame_count + 1
-            
             #diff = cv2.subtract(gray2, gray1)
             #diff = dilate(erode(diff, 2), 3)
             #diff = morph_dilate(morph_open(diff))
             #print_img(diff)
         return (made, steps)
         
-    def execute_openpose2(this, img):
-        return openPoseAlgorithm.execute(img)
-
     def execute_openpose(this, img):
         return openPoseAlgorithm.execute(img)
+        
+    def execute_lightweight_openpose(this, img, cpu):
+        return run_lightweight(this.net, img, cpu = cpu)
     
     def execute(this, img):
         txt1 = ""
@@ -178,3 +180,11 @@ class Algorithm:
             put_text(img, "TURNOVER! TRAVEL", (1000, 800), (0,0,255))
 
         return img;
+        
+    def setup_lightweight(this, cpu): 
+        net = PoseEstimationWithMobileNet()
+        checkpoint = torch.load("./lightweighthpe/checkpoint_iter_370000.pth", map_location='cpu')
+        load_state(net, checkpoint)     
+        net = setup(net, cpu)
+        return net
+

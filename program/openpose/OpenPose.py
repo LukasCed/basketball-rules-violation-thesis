@@ -1,5 +1,10 @@
 # To use Inference Engine backend, specify location of plugins:
 # export LD_LIBRARY_PATH=/opt/intel/deeplearning_deploymenttoolkit/deployment_tools/external/mklml_lnx/lib:$LD_LIBRARY_PATH
+
+# taken from https://github.com/quanhua92/human-pose-estimation-opencv
+# paper https://arxiv.org/abs/1801.04381
+# paper https://arxiv.org/pdf/1812.08008.pdf
+# paper https://arxiv.org/abs/1811.12004
 import cv2 as cv
 import numpy as np
 import argparse
@@ -21,15 +26,15 @@ class OpenPoseAlgorithm:
                        "LShoulder": 5, "LElbow": 6, "LWrist": 7, "RHip": 8, "RKnee": 9,
                        "RAnkle": 10, "LHip": 11, "LKnee": 12, "LAnkle": 13, "REye": 14,
                        "LEye": 15, "REar": 16, "LEar": 17, "Background": 18 }
-        '''
+       
         POSE_PAIRS = [ ["Neck", "RShoulder"], ["Neck", "LShoulder"], ["RShoulder", "RElbow"],
                        ["RElbow", "RWrist"], ["LShoulder", "LElbow"], ["LElbow", "LWrist"],
                        ["Neck", "RHip"], ["RHip", "RKnee"], ["RKnee", "RAnkle"], ["Neck", "LHip"],
                        ["LHip", "LKnee"], ["LKnee", "LAnkle"], ["Neck", "Nose"], ["Nose", "REye"],
                        ["REye", "REar"], ["Nose", "LEye"], ["LEye", "LEar"] ]
-        '''               
-        POSE_PAIRS = [ ["", "LAnkle"], ["", "RAnkle"], ["", "LWrist"], ["", "RWrist"] ]
-        POSE_COLORS = [ (0, 0, 255), (0, 0, 255), (0, 255, 0), (0, 255, 0)]
+                    
+        #POSE_PAIRS = [ ["", "LAnkle"], ["", "RAnkle"], ["", "LWrist"], ["", "RWrist"] ]
+        #POSE_COLORS = [ (0, 0, 255), (0, 0, 255), (0, 255, 0), (0, 255, 0)]
 
         inWidth = args.width
         inHeight = args.height
@@ -61,20 +66,20 @@ class OpenPoseAlgorithm:
 
         
         for i, pair in enumerate(POSE_PAIRS):
-            #partFrom = pair[0]
+            partFrom = pair[0]
             partTo = pair[1]
-            color = POSE_COLORS[i]
+           # color = POSE_COLORS[i]
            # assert(partFrom in BODY_PARTS)
             assert(partTo in BODY_PARTS)
 
-           # idFrom = BODY_PARTS[partFrom]
+            idFrom = BODY_PARTS[partFrom]
             idTo = BODY_PARTS[partTo]
 
-           # if points[idFrom] and points[idTo]:
-            if points[idTo]:
-              #  cv.line(frame, points[idFrom], points[idTo], (0, 255, 0), 3)
-               # cv.ellipse(frame, points[idFrom], (3, 3), 0, 0, 360, (0, 0, 255), cv.FILLED)
-                cv.ellipse(frame, points[idTo], (30, 30), 0, 0, 360, color, cv.FILLED)
+            if points[idFrom] and points[idTo]:
+           # if points[idTo]:
+                cv.line(frame, points[idFrom], points[idTo], (0, 255, 0), 3)
+                cv.ellipse(frame, points[idFrom], (3, 3), 0, 0, 360, (0, 0, 255), cv.FILLED)
+                cv.ellipse(frame, points[idTo], (30, 30), 0, 0, 360, (0, 0, 255), cv.FILLED)
 
         t, _ = net.getPerfProfile()
         freq = cv.getTickFrequency() / 1000

@@ -4,7 +4,7 @@ import cv2 as cv
 import numpy as np
 import argparse
 
-class OpenPoseAlgorithm2:
+class OpenPoseAlgorithm:
     def __init__(this):
         protoFile = "C:/Users/Lukas/Desktop/BD/bachelor-thesis/program/op2/openpose_pose_mpi_faster_4_stages.prototxt"
         weightsFile = "C:/Users/Lukas/Desktop/BD/bachelor-thesis/program/op2/pose_iter_160000.caffemodel"
@@ -38,6 +38,11 @@ class OpenPoseAlgorithm2:
         W = out.shape[3]
         # Empty list to store the detected keypoints
         points = []
+        
+        t, _ = this.net.getPerfProfile()
+        freq = cv.getTickFrequency() / 1000
+        cv.putText(frame, '%.2fms' % (t / freq), (10, 20), cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0))
+
         for i in range(len(out[0])):
             # confidence map of corresponding body's part.
             probMap = out[0, i, :, :]

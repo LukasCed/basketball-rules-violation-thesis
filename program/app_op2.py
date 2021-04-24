@@ -3,10 +3,10 @@ import cv2
 from matplotlib import pyplot as plt
 from PIL import Image
 from Algorithm import Algorithm
-from ImageProcessingUtils import print_img    
+from ImageProcessingUtils import *    
 
-vid = cv2.VideoCapture('vids/test.mp4')
-algorithm = Algorithm()
+vid = cv2.VideoCapture('vids/camera.mp4')
+algorithm = Algorithm(False)
 
 while(True):
     # Capture frame-by-frame
@@ -15,7 +15,10 @@ while(True):
 
 
     print("frame loaded")
-    algorithm.execute_openpose2(frame)
+    # algorithm.execute_openpose(frame)
+    frame = resize(frame, 100)
+    img = algorithm.execute_lightweight_openpose(frame, False)
+    cv2.imshow("result", img)
 
     # Display the resulting frame
     #print_img(frame)

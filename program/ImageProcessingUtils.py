@@ -54,3 +54,9 @@ def create_background(image, coordStart, coordEnd):
 	box_coords = ((coordStart[0], coordStart[1]), (coordEnd[0], coordEnd[1]))
 	cv2.rectangle(image, box_coords[0], box_coords[1], rectangle_bgr, cv2.FILLED)
 
+def resize(image, percent):
+    width = int(image.shape[1] * percent / 100)
+    height = int(image.shape[0] * percent / 100)
+    dim = (width, height)
+    return cv2.resize(image, dim, fx = 2, fy = 2, interpolation = cv2.INTER_LANCZOS4)
+
