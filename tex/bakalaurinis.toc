@@ -24,18 +24,24 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.2.2.}Judesio atpažinimas}{10}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.}Žmogaus kūno dalių atpažinimas}{11}{}%
+\contentsline {subsection}{\numberline {3.3.}Žmogaus kūno dalių atpažinimas neuroniniais tinklais}{11}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.}Kamuolio atpažinimas}{12}{}%
+\contentsline {subsubsection}{\numberline {3.3.1.}Atpažinimo neuroniniais tinklais optimizavimas}{13}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Rezultatai ir išvados}{14}{}%
+\contentsline {subsection}{\numberline {3.4.}Kamuolio atpažinimas Hough transformacija}{13}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literatūra}{15}{}%
+\contentsline {subsection}{\numberline {3.5.}Nagrinėtų atpažinimo metodų palyginimas}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Santrumpos}{16}{}%
+\contentsline {section}{\numberline {4.}Krepšinio taisyklių pažeidimo algoritmas}{17}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\MakeUppercase {Priedai}}{16}{}%
+\contentsline {section}{Rezultatai ir išvados}{18}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{1 priedas.\nobreakspace {}Neuroninio tinklo struktūra}{17}{}%
+\contentsline {section}{Literatūra}{19}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2 priedas.\nobreakspace {}Eksperimentinio palyginimo rezultatai}{18}{}%
+\contentsline {section}{Santrumpos}{21}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\MakeUppercase {Priedai}}{21}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{1 priedas.\nobreakspace {}Neuroninio tinklo struktūra}{22}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{2 priedas.\nobreakspace {}Eksperimentinio palyginimo rezultatai}{23}{}%

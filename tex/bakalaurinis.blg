@@ -1,14 +1,14 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'bakalaurinis.blg'
-[147] biber-MSWIN64:340> INFO - === 
-[196] Biber.pm:415> INFO - Reading 'bakalaurinis.bcf'
-[361] Biber.pm:952> INFO - Found 10 citekeys in bib section 0
-[380] Biber.pm:4340> INFO - Processing section 0
-[395] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliografija.bib' for section 0
-[489] bibtex.pm:1689> INFO - LaTeX decoding ...
-[521] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliografija.bib'
-[624] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'variable = shifted' with 'variable = non-ignorable'
-[625] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[625] Biber.pm:4168> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'lt-LT'
-[637] bbl.pm:654> INFO - Writing 'bakalaurinis.bbl' with encoding 'UTF-8'
-[643] bbl.pm:757> INFO - Output to bakalaurinis.bbl
+[143] biber-MSWIN64:340> INFO - === 
+[193] Biber.pm:415> INFO - Reading 'bakalaurinis.bcf'
+[352] Biber.pm:952> INFO - Found 18 citekeys in bib section 0
+[375] Biber.pm:4340> INFO - Processing section 0
+[391] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliografija.bib' for section 0
+[490] bibtex.pm:1689> INFO - LaTeX decoding ...
+[533] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliografija.bib'
+[662] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[663] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'variable = shifted' with 'variable = non-ignorable'
+[663] Biber.pm:4168> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'lt-LT'
+[687] bbl.pm:654> INFO - Writing 'bakalaurinis.bbl' with encoding 'UTF-8'
+[696] bbl.pm:757> INFO - Output to bakalaurinis.bbl

@@ -15,21 +15,24 @@ lower_green = np.array([74, 80, 42])
 upper_green = np.array([84, 255, 200])
 lower_yellow = np.array([17,140,130])
 upper_yellow = np.array([28,255,255])
-lower_red = np.array([173,100,100])
-upper_red = np.array([180,250,255])
+lower_red1 = np.array([0,100,50])
+upper_red1 = np.array([10,200,160])
+lower_red2 = np.array([170,100,50])
+upper_red2 = np.array([180,200,160])
 
 # openPoseAlgorithm = OpenPoseAlgorithm()
 #openPoseAlgorithm = OpenPoseAlgorithm2()
 
 class Algorithm:
 
-    def __init__(this, cpu):
+    def __init__(this, cpu = False, dnn = False):
         this.step_count = 0
         this.feet_intersection = False
         this.ball_in_hands_counter = 0
         this.turnover = False
         this.frame_count = 0
-        this.net = this.setup_lightweight(cpu)
+        if dnn:
+            this.net = this.setup_lightweight(cpu)
 
     def ball_in_hands(this):
         return this.ball_in_hands_counter > 0
@@ -43,12 +46,20 @@ class Algorithm:
             this.feet_intersection = False
             if this.ball_in_hands_counter == 0:
                 this.step_count = 0
+                
+    def compute_step_temp(this, shoe_contours):
+        if  len(shoe_contours) == 1 and not this.feet_intersection:
+            this.feet_intersection = True
+            this.step_count = this.step_count + 1
+
+        elif len(shoe_contours) > 1:
+            this.feet_intersection = False
 
     def compute_turnover(this):
         if this.step_count > 2:
             this.turnover = True
             
-    def execute1(this, gray1, gray2, made, steps, plot_data):
+    def execute_diff(this, gray1, gray2, made, steps, plot_data):
         if gray1 is not None and gray2 is not None:
             #img1  = flip_img(img1)
             #img2  = flip_img(img2)
@@ -102,32 +113,42 @@ class Algorithm:
         txt1 = ""
         txt2 = ""
         txt = ""
-
-        img  = flip_img(img)
+        
+        img = flip_img(img)
         hsv = convert_to_hsv(img)
 
         mask_for_ball = segment_by_color(hsv, lower_green, upper_green)
         mask_for_hand = segment_by_color(hsv, lower_yellow, upper_yellow)
-        mask_for_shoes = segment_by_color(hsv, lower_red, upper_red)
+        mask_for_shoes1 = segment_by_color(hsv, lower_red1, upper_red1)
+        mask_for_shoes2 = segment_by_color(hsv, lower_red2, upper_red2)
+        mask_for_shoes = mask_for_shoes1 | mask_for_shoes2
+        height, width = mask_for_shoes.shape[:2]
+        start_row, start_col = int(height * .4), int(0)
+        end_row, end_col = int(height), int(width)
+        mask_for_shoes = mask_for_shoes[start_row:end_row, start_col:end_col]
 
         mask_for_ball = morph_dilate(morph_open(mask_for_ball))
         mask_for_hand = morph_dilate(morph_open(mask_for_hand))
         mask_for_shoes =  morph_dilate(morph_open(mask_for_shoes))
-         
+
         # creating an inverted mask to segment out the ball from the rest of the frame
         maskForNotBall = cv2.bitwise_not(mask_for_ball)
         mask_for_hand = cv2.bitwise_and(mask_for_hand, maskForNotBall)
 
         mask_for_ball = erode(dilate(mask_for_ball, 15), 3)
         mask_for_hand = dilate(erode(mask_for_hand, 3), 7)
-        mask_for_shoes = dilate(erode(mask_for_shoes, 3), 15)
+        mask_for_shoes = dilate(erode(mask_for_shoes, 6), 15)
+        #cv2.imshow("mask for shoes", mask_for_shoes)
 
-        _, ball_contours, h = find_contours(mask_for_ball)
-        _, hand_contours, h = find_contours(mask_for_hand)
-        _, shoe_contours, h = find_contours(mask_for_shoes)
+        ball_contours, h = find_contours(mask_for_ball)
+        hand_contours, h = find_contours(mask_for_hand)
+        #shoe_contours, h = choose_n_largest_contours(find_contours(mask_for_shoes), 2)
+        shoe_contours, h = find_contours(mask_for_shoes)
 
-        this.compute_step(shoe_contours)
+       # this.compute_step(shoe_contours)
+        this.compute_step_temp(shoe_contours)
         this.compute_turnover()
+        print(this.step_count)
         
         if len(hand_contours) < 1:
             return img;    
@@ -187,4 +208,21 @@ class Algorithm:
         load_state(net, checkpoint)     
         net = setup(net, cpu)
         return net
+        
+    def compute_step_lightweight(this, img):
+        lower_red = np.array([0,255,255])
+        upper_red = np.array([0,255,255])
 
+        img = flip_img(img)
+        hsv = convert_to_hsv(img)
+
+        mask_for_shoes = segment_by_color(hsv, lower_red, upper_red)
+
+        mask_for_shoes =  morph_dilate(morph_open(mask_for_shoes))
+
+        shoe_contours, h = find_contours(mask_for_shoes)
+
+        this.compute_step_temp(shoe_contours)
+        this.compute_turnover()
+        print(this.step_count)
+    
