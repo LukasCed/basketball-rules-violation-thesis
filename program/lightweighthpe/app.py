@@ -162,7 +162,6 @@ def run_lightweight(net, img, height_size = 256, cpu = False, track = False, smo
     delay = 1
     
     orig_img = img.copy()
-    print('Original Dimensions : ',orig_img.shape)
 
     ts_netw1 = time.time()
     heatmaps, pafs, scale, pad = infer_fast(net, img, height_size, stride, upsample_ratio, cpu)

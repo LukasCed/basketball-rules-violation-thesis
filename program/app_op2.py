@@ -5,7 +5,7 @@ from PIL import Image
 from Algorithm import Algorithm
 from ImageProcessingUtils import *    
 
-vid = cv2.VideoCapture('vids/camera.mp4')
+vid = cv2.VideoCapture('vids/long.mp4')
 algorithm = Algorithm(False)
 
 while(True):
@@ -16,7 +16,7 @@ while(True):
 
     print("frame loaded")
     # algorithm.execute_openpose(frame)
-    frame = resize(frame, 100)
+    # frame = resize(frame, 100)
     img = algorithm.execute_lightweight_openpose(frame, False)
     cv2.imshow("result", img)
 

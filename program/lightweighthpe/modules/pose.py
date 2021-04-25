@@ -12,6 +12,7 @@ class Pose:
                  'r_hip', 'r_knee', 'r_ank', 'l_hip', 'l_knee', 'l_ank',
                  'r_eye', 'l_eye',
                  'r_ear', 'l_ear']
+                 # relevant (4,7) - hand   (2, 5) - shoe, 
     sigmas = np.array([.26, .79, .79, .72, .62, .79, .72, .62, 1.07, .87, .89, 1.07, .87, .89, .25, .25, .35, .35],
                       dtype=np.float32) / 10.0
     vars = (sigmas * 2) ** 2
@@ -48,16 +49,35 @@ class Pose:
         assert self.keypoints.shape == (Pose.num_kpts, 2)
 
         for part_id in range(len(BODY_PARTS_PAF_IDS) - 2):
+            a_draw_color = Pose.color
+            b_draw_color = Pose.color
+
             kpt_a_id = BODY_PARTS_KPT_IDS[part_id][0]
+            kpt_b_id = BODY_PARTS_KPT_IDS[part_id][1]
+            
+            if kpt_a_id == 10 or kpt_a_id == 13:
+                a_draw_color = [0, 0, 255]
+                
+            if kpt_b_id == 10 or kpt_b_id == 13:
+                b_draw_color = [0, 0, 255]
+                                   
+            if kpt_a_id == 4 or kpt_a_id == 7:
+                a_draw_color = [0, 255, 0]
+                
+            if kpt_b_id == 4 or kpt_b_id == 7:
+                b_draw_color = [0, 255, 0]
+
             global_kpt_a_id = self.keypoints[kpt_a_id, 0]
+            global_kpt_b_id = self.keypoints[kpt_b_id, 0]
+
             if global_kpt_a_id != -1:
                 x_a, y_a = self.keypoints[kpt_a_id]
-                cv2.circle(img, (int(x_a), int(y_a)), 3, Pose.color, -1)
-            kpt_b_id = BODY_PARTS_KPT_IDS[part_id][1]
-            global_kpt_b_id = self.keypoints[kpt_b_id, 0]
+                cv2.circle(img, (int(x_a), int(y_a)), 10, a_draw_color, -1)
+
             if global_kpt_b_id != -1:
                 x_b, y_b = self.keypoints[kpt_b_id]
-                cv2.circle(img, (int(x_b), int(y_b)), 3, Pose.color, -1)
+                cv2.circle(img, (int(x_b), int(y_b)), 10, b_draw_color, -1)
+                
             if global_kpt_a_id != -1 and global_kpt_b_id != -1:
                 cv2.line(img, (int(x_a), int(y_a)), (int(x_b), int(y_b)), Pose.color, 2)
 
