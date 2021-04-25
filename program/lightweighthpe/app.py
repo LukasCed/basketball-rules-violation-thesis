@@ -166,7 +166,7 @@ def run_lightweight(net, img, height_size = 256, cpu = False, track = False, smo
     ts_netw1 = time.time()
     heatmaps, pafs, scale, pad = infer_fast(net, img, height_size, stride, upsample_ratio, cpu)
     ts_netw2 = time.time()
-    print("network time", (ts_netw2 - ts_netw1) * 1000, "ms")
+   # print("network time", (ts_netw2 - ts_netw1) * 1000, "ms")
     total_keypoints_num = 0
     all_keypoints_by_type = []
     for kpt_idx in range(num_keypoints):  # 19th for bg
@@ -193,7 +193,7 @@ def run_lightweight(net, img, height_size = 256, cpu = False, track = False, smo
         previous_poses = current_poses
     for pose in current_poses:
         pose.draw(img)
-    img = cv2.addWeighted(orig_img, 0.6, img, 0.4, 0)
+    #img = cv2.addWeighted(orig_img, 0.6, img, 0.4, 0)
     for pose in current_poses:
         cv2.rectangle(img, (pose.bbox[0], pose.bbox[1]),
                       (pose.bbox[0] + pose.bbox[2], pose.bbox[1] + pose.bbox[3]), (0, 255, 0))

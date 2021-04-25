@@ -4,21 +4,26 @@ from matplotlib import pyplot as plt
 from PIL import Image
 from Algorithm import Algorithm
 from ImageProcessingUtils import *    
+import time
 
-vid = cv2.VideoCapture('vids/long.mp4')
-algorithm = Algorithm(False)
+vid = cv2.VideoCapture('vids/ball_img_2_small_double.jpg')
+algorithm = Algorithm(False, True)
+ts1 = time.time()
 
 while(True):
     # Capture frame-by-frame
     ret, frame = vid.read()
     # frame = cv2.imread("Capture.jpg")
+    if frame is None:
+        break
 
-
-    print("frame loaded")
+    #print("frame loaded")
     # algorithm.execute_openpose(frame)
     # frame = resize(frame, 100)
     img = algorithm.execute_lightweight_openpose(frame, False)
+    algorithm.compute_step_lightweight(img)
     cv2.imshow("result", img)
+    input()
 
     # Display the resulting frame
     #print_img(frame)
@@ -36,7 +41,9 @@ while(True):
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
-
+                
+ts2 = time.time()
+print("time taken ms", (ts2 - ts1) * 1000)
 # When everything done, release the capture
 vid.release()
 cv2.destroyAllWindows()

@@ -25,6 +25,16 @@ def choose_largest_contours(contours):
 		return contour[0]
 	else:
 		return None
+        
+def choose_n_largest_contours(contours, number):
+	contour = sorted(contours, key=bySize)
+	if len(contour) > 0:
+		return contour[0:number]
+	else:
+		return None
+        
+def bySize(contor):
+    return len(contor)
 
 def flip_img(image):
 	# Laterally invert the image / flip the image

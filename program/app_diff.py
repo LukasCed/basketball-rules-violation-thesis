@@ -4,9 +4,11 @@ from matplotlib import pyplot as plt
 from PIL import Image
 from Algorithm import Algorithm
 from ImageProcessingUtils import print_img
+import time
     
+ts1 = time.time()
 
-vid = cv2.VideoCapture('vids/test.mp4')
+vid = cv2.VideoCapture('vids/6.mp4')
 algorithm = Algorithm()
 fgbg = cv2.bgsegm.createBackgroundSubtractorMOG()
 prev = None
@@ -23,7 +25,7 @@ while(True):
     ret, frame = vid.read()
     frame = fgbg.apply(frame)
     
-    made, steps = algorithm.execute1(prev, frame, made, steps, plot_data)
+    made, steps = algorithm.execute_diff(prev, frame, made, steps, plot_data)
     if frame is not None:
         prev = frame.copy()
     else:
@@ -47,11 +49,13 @@ while(True):
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
+ts2 = time.time()
+print("time taken ms", (ts2 - ts1) * 1000)
 
 # When everything done, release the capture
 vid.release()
-x = [list(t) for t in zip(*plot_data)]
-print(x)
+#x = [list(t) for t in zip(*plot_data)]
+#print(x)
 plt.plot(x[0], x[1])
 plt.plot(x[0], [0.1] * len(x[0]))
 plt.plot(x[0], [0.5] * len(x[0]))

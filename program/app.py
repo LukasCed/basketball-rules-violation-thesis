@@ -4,19 +4,22 @@ from matplotlib import pyplot as plt
 from PIL import Image
 from Algorithm import Algorithm
 from ImageProcessingUtils import print_img
-    
+import time
 
-vid = cv2.VideoCapture('vids/test.mp4')
+vid = cv2.VideoCapture('vids/2.mp4')
 algorithm = Algorithm()
+ts1 = time.time()
 
 while(True):
     # Capture frame-by-frame
     ret, frame = vid.read()
+    if frame is None:
+        break
 
-    algorithm.execute_openpose(frame)
+    frame = algorithm.execute(frame)
 
     # Display the resulting frame
-    #print_img(frame)
+    print_img(frame)
     key = cv2.waitKey(1) & 0xff
 
     if key == ord('p'):
@@ -32,6 +35,8 @@ while(True):
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
 
+ts2 = time.time()
+print("time taken ms", (ts2 - ts1) * 1000)
 # When everything done, release the capture
 vid.release()
 cv2.destroyAllWindows()

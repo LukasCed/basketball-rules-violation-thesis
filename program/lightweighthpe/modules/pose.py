@@ -3,6 +3,8 @@ import numpy as np
 
 from modules.keypoints import BODY_PARTS_KPT_IDS, BODY_PARTS_PAF_IDS
 from modules.one_euro_filter import OneEuroFilter
+# https://github.com/2xic/openpose-pigs
+# https://github.com/Daniil-Osokin/lightweight-human-pose-estimation.pytorch
 
 
 class Pose:

@@ -63,12 +63,18 @@ bei metodika, apibūdinami su tema susiję literatūros ar kitokie šaltiniai,
 temos analizės tvarka, darbo atlikimo aplinkybės, pateikiama žinių apie
 naudojamus instrumentus (programas ir kt., jei darbe yra eksperimentinė dalis).
 Darbo įvadas neturi būti dėstymo santrauka. Įvado apimtis 2 –– 4 puslapiai.
+Vaizdo atpažinimas kompiuteriu - tai sparčiai besivystanti sritis. Egzistuoja daug algoritmų, kurių pagalba galima atpažinti objektus. Sportas. //@todo fix Sudetingesniems objektams dažnai yra naudojami giliuoju mokymu paremti metodai, šiame darbe išnagrinėti keli iš jų.  
+//@todo Krepšinyje atpažinimas state of the art
 
 \section{Naudoti įrankiai}
 
 Kompiuterinės regos ir taisyklių pažeidimo atpažinimo algoritmams įgyvendinti buvo pasirinkta Python programavimo kalba. Python – interpretuojama, lengvai skaitoma kalba, puikiai tinkama įvairioms problemoms spręsti \cite{Python}. Dėl kalbos paprastumo ji dažnai naudojama kompiuterinės regos ir giliojo mokymo srityse, kadangi kalba leidžia susifokusuoti į abstrakcijas. Kadangi kalba yra plačiai naudojama, nesunku rasti daug pavyzdžių bei šaltinių. 
 
-Objektų atpažinimui buvo pasirinkta OpenCV biblioteka. Tai – nemokama biblioteka, plačiai naudojama spręsti kompiuterinės regos uždavinius, kurios fokusas – įgalinti kurti aplikacijas leidžiančias efektyviai spręsti kompiuterinės regos problemas realiu laiku \cite{BradskiOpenCV}.
+Objektų atpažinimui buvo pasirinkta OpenCV biblioteka \cite{opencv}. Tai – nemokama biblioteka, plačiai naudojama spręsti kompiuterinės regos uždavinius, kurios fokusas – įgalinti kurti aplikacijas leidžiančias efektyviai spręsti kompiuterinės regos problemas realiu laiku \cite{BradskiOpenCV}.
+
+Python paketų, įgyvendinančių įvairius kompiuterinės regos algoritmus ir pagalbines funkcijas, siuntimui ir jų valdymui naudota Miniconda \cite{conda}. Ši biblioteka leidžia susikurti skirtingas aplinkas su tam tikrais reikalingais Python moduliais ir jas itin lengvai keisti priklausomai nuo norimo vykdyti kodo.
+
+Vaizdo apdorojimui neuroniniais tinklais naudojama PyTorch biblioteka \cite{pytorch}, skirta lengvai valdyti neuroninių tinklų modelius bei juos integruoti į Python kodą. Taip pat PyTorch įgalina vaizdo apdorojimą naudojantis GPU. 
 
 Vaizdo medžiaga rinkta filmuojant Xiaomi Redmi 8 Pro kamera.  
 
@@ -78,20 +84,18 @@ Vaizdo medžiaga rinkta filmuojant Xiaomi Redmi 8 Pro kamera.
 
 \section{Vaizdo atpažinimo metodai}
 
-Vaizdo atpažinimas kompiuteriu yra vis dar problema. Egzistuoja daug algoritmų, kurių pagalba galima atpažinti objektus. Sudetingesniems objektams dažnai yra naudojami giliuoju mokymu paremti metodai, šiame darbe išnagrinėti keli iš jų. 
-Atpažinti objektą reiškia priskirti jam kažkokį kontekstą. Tačiau kartais užtenka tiesiog 
-//@todo Krepšinyje atpažinimas kažką pavaryti apie state of the art
-
+Šiame darbe aprašytas krepšinio taisyklių atpažinimo algoritmas naudojasi informacija apie žaidėjo kūno dalis (rankas, pėdas ir pan.), gautas po vaizdo įrašo kadro apdorojimo kompiuterinės regos metodais. Šiame darbe apsvarstyti keli metodai. Pirmieji - tie, kurie remdamiesi turima informacija apie kadre egzistuojančias spalvas išskiria dominančius regionus bei prireikus apdoroja naudojantis morfologinėmis operacijomis ar randant regionus apimančius kontūrus. Dėl atpažinimo pagal spalvą ribotimo taip pat išbandyti metodai nepriklausantys nuo spalvų. Vienas jų - kamuolio atpažinimo algoritmas paremtas Hough transformacijomis, taip pat - judesio atpažinimas remiantis fono pašalinimu ir skirtumų tarp kadrų atradimu. Likę atpažinimo metodai paremti neuroniniais tinklais: išbandomas žmogaus skeleto atpažinimas naudojantis OpenPose bei Lightweight OpenPose tinklais. Skyriaus pabaigoje visi šie metodai palyginami praktiškai, sukuriant minimalų žingsnių skaičiavimo algoritmą, įgyvendintą minėtais metodais, išryškinant jų privalumus bei trūkumus. 
 
 \subsection{Spalvinis atpažinimas}
-Vienas iš elementariausių būdų išskirti objektus ir priskirti jiems kontekstą yra tada, kai žinome jų spalvą iš anksto //@todo rasti kuo paremti. Tuomet pagal spalvų reikšmes nesunkiai galime išskirti regionus, juos reprezentuojant vienetukų ir nuliukų matricomis, ir atlikti įvairias logines operacijas. 
+Vienas iš paprasčiausių būdų išskirti ir atpažinti objektus yra tada, kai žinome jų spalvą iš anksto. Tuomet pagal spalvų reikšmes nesunkiai galime išskirti regionus, juos reprezentuojant vienetukų ir nuliukų matricomis, ir atlikti įvairias logines operacijas. 
 
 Tokio būdo trūkumas yra tai, jog norint panaudoti šį metodą atpažinti rankai ar kamuoliui, reikia iš anksto žinoti, kokios spalvos bus tie objektai. Negana to, labai sudėtinga išskirti atskiras kūno dalis naudojantis informacija apie odos spalvą, kadangi ne tik žaidėjo rankos, kojos bei veidas tikėtina bus tos pačios spalvos, bet galimai sutaps ir su kitų žaidėjų. 
 
-Naudojantis spalvomis limitacijos yra labai aiškios... Siekiant ištirti spalvinių metodų efektyvumą ir pritaikomumą, būtina naudoti tam tikros spalvos pirštines, batus bei kamuolį, tačiau realiame pasaulyje žaidėjus priversti nešioti skirtingų spalvų batus, pirštines būtų itin nepraktiška. //@todo iškelti į išvadas ir pagrįsti Šie būdai tinkami tam tikrais išimtiniais atvejais. Šiame darbe taip pat bus nagrinėjami dar keli būdai, nepriklausantys nuo spalvų. 
+//@todo not fixed Naudojantis spalvomis limitacijos yra labai aiškios... Siekiant ištirti spalvinių metodų efektyvumą ir pritaikomumą, būtina naudoti tam tikros spalvos pirštines, batus bei kamuolį, tačiau realiame pasaulyje žaidėjus priversti nešioti skirtingų spalvų batus, pirštines būtų itin nepraktiška. //@todo paminėti išvadose ir pagrįsti Šie būdai tinkami tam tikrais išimtiniais atvejais. Šiame darbe taip pat bus nagrinėjami dar keli būdai, nepriklausantys nuo spalvų. 
 \subsubsection{Segmentavimas}
 Segmentavimą kompiuterinėje regoje galima suprasti kaip radimą grupės panašių pikselių. Kai paveikslėliai segmentuojami pagal spalvą, panašumą galima išmatuoti pagal reikšmių skirtumą RGB arba HSV modeliuose. Tai – gan paprastas būdas išskirti dominantį regioną, kadangi užtenka apsibrėžti tam tikrą intervalą spalvų, paveikslėlyje, reprezentuotame trimatine matrica, ir atfiltruoti matricos reikšmes nepatenkančias į duotąjį intervalą. 
-RGB modelis, spalvą koduojantis trimis reikšmėmis, nusakančiomis raudonumą, žalsvumą ir mėlynumą. Turi trūkumą - keičiantis apšvietimui nenuspėjamai gali pasikeisti spalvos RGB reikšmė, kas filtravimą padaro itin sudėtingą. Problemą išssprendžia HSV modelis, kurio modelis spalvą reprezentuoja atspalviu, ryškumu ir šviesumu. HSV modelis puikiai tinka spalvų atpažinimui, kadangi H (atspalvio) reikšmė mažai kinta paveikslėliuose atsiradus šešėliams \cite{1039893} ar miglotumui \cite{7457892}. Atspalvis dažniausiai išlieka tas pats nepriklausomai nuo pašalinių efektų, todėl lengva nusistatyti reikšmių intervalą. Konvertavimas iš RGB ir HSV yra pakankamai trivialus, implementuotas cvtColor metodu. 
+
+RGB modelis, spalvą koduojantis trimis reikšmėmis, nusakančiomis raudonumą, žalsvumą ir mėlynumą. Turi trūkumą - keičiantis apšvietimui nenuspėjamai gali pasikeisti spalvos RGB reikšmė, kas filtravimą padaro itin sudėtingą. Problemą išssprendžia HSV modelis, kurio modelis spalvą reprezentuoja atspalviu, ryškumu ir šviesumu. HSV modelis puikiai tinka spalvų atpažinimui, kadangi H (atspalvio) reikšmė mažai kinta paveikslėliuose atsiradus šešėliams \cite{1039893} ar miglotumui \cite{7457892}. Atspalvis dažniausiai išlieka tas pats nepriklausomai nuo pašalinių efektų, todėl lengva nusistatyti reikšmių intervalą. Konvertavimas iš RGB ir HSV yra pakankamai trivialus, implementuotas cvtColor() funkcija. 
 
 Turint intervalą užtenka atfiltruoti visus pikselius, kurių reikšmė nepatenka į duotą intervalą. Tiems, kurie patenka OpenCV priskiria 1, o kurie ne - 0. Rezultate gauname išskirtą regioną kur žinome, kad tai - tam tikra dalis, kadangi tik ji turėjo tą spalvą. //@todo style
 \begin{figure}[H]
@@ -99,11 +103,11 @@ Turint intervalą užtenka atfiltruoti visus pikselius, kurių reikšmė nepaten
 	\subfloat[\centering Vaizdas prieš segmentavimo pagal pirštinės spalvą]{{\includegraphics[width=5cm]{img/hand_before_segmentation} }}
 	\qquad
 	\subfloat[\centering Vaizdas po segmentavimo pagal pirštinės spalvą]{{\includegraphics[width=5cm]{img/hand_after_segmentation} }}
-	\caption{Fono Aaaa.}
+	\caption{Segmentavimo pavyzdys}
 	\label{fig:example}
 \end{figure}
 
-Šiame darbe naudojamų spalvų rėžiai //@todo add spalvos .  //@todo pagalvoti ar reikia <Pastebėta, jog lauke esančių paveikslėlių saturacija žymiai didesnė, nei kambaryje>
+Šiame darbe naudojamų spalvų rėžiai //@todo add spalvos .
 
 \subsubsection{Morfologinės transformacijos}
 Atlikus segmentavimą pagal spalvą, rezultate dažnai lieka triukšmo ar bereikalingų artifaktų, kurie gali affectinti tolimesnį apdorojimą. @todo fix
@@ -116,7 +120,7 @@ Tokiais atvejais apsivalyti nuo triukšmo gan dažnai naudojamos slenkstinės (\
 
 \ref{eq:erozija} lygtyje A žymi dominantį paveikslėlį, išreikštą matrica, o B - filtrą arba kitaip - struktūrinį elementą, su kuriuo A matricoje pakartotinai atliekamos sankirtos.  
 
-Erozijai priešinga operacija yra plėstis \ref{4767941}. Ši operacija leidžia padidinti išskirtų regionų plotą. Plėstis naudinga tuomet, kai po erozijos operacijos objektai praranda per daug ploto. Plėstį galima užrašyti šitaip:
+Erozijai priešinga operacija yra plėstis \cite{4767941}. Ši operacija leidžia padidinti išskirtų regionų plotą. Plėstis naudinga tuomet, kai po erozijos operacijos objektai praranda per daug ploto. Plėstį galima užrašyti šitaip:
 
 \begin{equation}\label{eq:plestis}
 	A \oplus B = \bigcup_ {b \in B } (A)_{b} .
@@ -124,11 +128,10 @@ Erozijai priešinga operacija yra plėstis \ref{4767941}. Ši operacija leidžia
 
 Atliekant bandymus pastebėta, jog siekiant geriausių rezultatų šalinant triukšmą, plėstį reikėtų vykdyti po erozijos, priešingu atveju triukšmas gali nebūti panaikintas. 
 
-OpenCV įgyvendina funkcijas erode ir dilate, kurios priema paveikslėlio matricą ir struktūrinį elementą. Taip pat egzistuoja funkcija morphologyEx, kuri, priklausomai nuo paduodamų parametrų keičia savo veikimą: su MORPH\_OPEN atliekama plėstis po erozijos, su MORPH\_CLOSE - atvirkščiai. 
+OpenCV įgyvendina funkcijas erode ir dilate, kurios priema paveikslėlio matricą ir struktūrinį elementą. Taip pat egzistuoja funkcija morphologyEx(), kuri, priklausomai nuo paduodamų parametrų keičia savo veikimą: su MORPH\_OPEN atliekama plėstis po erozijos, su MORPH\_CLOSE - atvirkščiai. 
 
 \subsubsection{Kamuolio kontūrų radimas}
 
-//@todo pagalvoti ar prie spalvu turi eit
 Siekiant iš paveikslikų išgauti daugiau kontekstualios informacijos, pavyzdžiui, ar kamuolys yra rankose, išsiskirti tarpusavy nesusikertančius regionus neužtenka. Tam, kad gauti šią informacijos dalį, reikia rasti, kada rankos ir kamuolio regionai susikerta, t.y. jų matricų sankirta yra netuščia. Tam reikia žinoti, kokią erdvę apima kamuolys - šios informacijos trūksta po segmentavimo pagal spalvą, jei kamuolys yra uždengtas, pavyzdžiui, rankos. 
 
 Vienas iš būdų šią problemą išspręsti - pabandyti atspėti, kokią sritį užima kamuolys randant jo kontūrus. Skritulių kontūrams rasti 1991 metais E. Welzl pasiūlė algoritmą, rekursiškai apskaičiuojantį tam tikrai taškų aibei mažiausią ją apimantį apskritimą \cite{Welzl91smallestenclosing}. Šis algoritmas - tiesinio kompleksiškumo, jį įgyvendina OpenCV funkcija minEnclosingCircle().       
@@ -138,7 +141,7 @@ Vienas iš būdų šią problemą išspręsti - pabandyti atspėti, kokią srit�
 	\subfloat[\centering Kamuolio kontūrai prieš mažiausio aibę apimančio apskritimo radimo algoritmą]{{\includegraphics[width=5cm]{img/ball_contours_before} }}
 	\qquad
 	\subfloat[\centering Kamuolio kontūrai po mažiausio aibę apimančio apskritimo radimo algoritmo]{{\includegraphics[width=5cm]{img/ball_contours_after} }}
-	\caption{Fono Aaaa.}
+	\caption{Kontūrų radimo algoritmo pavyzdys}
 	\label{fig:example}
 \end{figure}
 
@@ -158,7 +161,7 @@ Fono pašalinimas yra vienas iš esminių metodų kompiuterinėje regoje, naudoj
 
 Paveikslėlyje matome, jog algoritmas atpažino žmogaus siluetą. Šiame pavyzdyje ranka priskirta fonui dėl to, jog spalva sutampa su sienos spalva, tačiau kitos kūno dalys išskiriamos iš fono.
 
-\subsubsection{Judesio atpažinimas}
+\subsubsection{Judesio atpažinimas}\label{section:movement}
 
 Žaidėjui vaikštant, kai kurios kūno dalys juda greičiau, nei kitos. Kūnas išlieka santykinai statiškas palyginus su kojomis. Žingsniavimo mechanika yra tokia, kad atliekant žingsnį, viena koja lieka vienoje vietoje, kol kita yra perstatoma iš vienos pozicijos į kitą. Tam, kad pagauti tą kojos judesį, galima paprasčiausiai iš antro kadro atimti pirmą. Padalijus kadrą į dvi dalis – viršutinę ir apatinę – ir darant prielaidą, jog apatinėje dalyje matysis tik kojų judesiai, galima teigti, kad jei atėmus antrą kadrą iš pirmo yra skirtumas, buvo atliktas žingsnis. Koją pastačius ant žemės, tam tikrą laiką skirtumai sumažėja iki nustatytos ribos – pasinaudojus visa šia informacija galima apskaičiuoti, kiek žingsnių buvo atlikta. 
 
@@ -166,16 +169,16 @@ Paveikslėlyje matome, jog algoritmas atpažino žmogaus siluetą. Šiame pavyzd
     \centering
     \includegraphics[scale=0.8]{img/steps}
     \caption{Aktyvių pikselių kiekis kiekviename kadre, indikuojantis žmogaus judėjimą. }
-    \label{img:mlp}
+    \label{img:steps}
 \end{figure}
 
-2 pav. pateiktoje lentelėje matyti, kiek buvo aktyvių pikselių kiekvieną kadrą panaudojus fono pašalinimą bei kadrų skirtumo algoritmus. Ši informacija rodo judėjimo kiekį tam tikrame kadro regione. Žalia linija žymi minimalų judėjimo kiekį, kuris gali atsirasti dėl triukšmo ir pašalinio judėjimo. Viršijus šią liniją galima teigti, jog žaidėjas juda. Oranžinė linija žymi ribą, kada galima sakyti, jog jokio judesio nėra, t.y. žaidėjas pastatė koją ir ruošiasi atlikti kitą žingsnį. 
+\ref{img:steps} paveikslėlyje matyti, kiek buvo aktyvių pikselių kiekvieną kadrą panaudojus fono pašalinimą bei kadrų skirtumo algoritmus. Ši informacija rodo judėjimo kiekį tam tikrame kadro regione. Žalia linija žymi minimalų judėjimo kiekį, kuris gali atsirasti dėl triukšmo ir pašalinio judėjimo. Viršijus šią liniją galima teigti, jog žaidėjas šiuo metu juda. Oranžinė linija žymi ribą, iki kurios galima sakyti, jog jokio judesio nėra, t.y. žaidėjas pastatė koją ir ruošiasi atlikti kitą žingsnį. 
 
 \subsection{Žmogaus kūno dalių atpažinimas neuroniniais tinklais}
 
 Šiuolaikinėje kompiuterinės regos srityje daug naudos galima gauti pasinaudojus neuroninių tinklų pagalba. Neuroniniai tinklai naudojami sprendžiant įvairias problemas, šiam darbui aktualiausia yra objektų atpažinimo problema. Turint tam tikrą kadrą, taisyklių pažeidimo algoritmui būtina, kad būtų atskirtos rankos, kojos ir kamuolys. Žmogaus kūno dalių klasifikavimas yra sudėtinga problema, kadangi dauguma algoritmų yra priklausomi nuo surinktų duomenų. Kompleksija tampa akivaizdi sprendžiant sporto problemas, kadangi labai dažnai žaidėjai daro įvairiausius judesius, apsirengę įvairiausiais rūbais ir pan., kas apsunkina žaidėjo kūno dalių atpažinimą \cite{Andriluka_2014_CVPR}. Tam reikalinga turtinga ir didelė duomenų aibė, dėl ko neuroninio tinklo apmokymo laikas išauga. 
 
-Bene visi šiuolaikiniai metodai remiasi tuo pačiu principu: apmokinamas neuroninių tinklų modelis, jiems paruošiant teigiamus ir neigiamus pavyzdžius (pvz., siekiant sukurti kojų atpažinimo algoritmą, paveiksliukai, kuriuose yra koja pažymimi kaip teigiami, tie, kuriuose kojos nėra tampa neigiamais). Mokinimo procesas gali trukti daug laiko – kartais net savaites, todėl daug paprasčiau yra surasti jau sukurtą modelį ir jį pasinaudoti. Vienas iš modelių buvo pasiūlytas 2018 m., pavadinimu OpenPose \cite{cao2019openpose}. Modelio architektūra paremta konvoliuciniais neuroniniais tinklais. Modelis suskirstytas į dvi šakas. Viena jų priskiria tikimybes, kad tam tikras regionas yra tam tikra kūno dalis, kita – asociacijas tarp skirtingų kūno dalių. Atpažinimas vyksta keliais etapais, siekiant gauti kuo tikslesnius rezultatus. 
+Bene visi šiuolaikiniai metodai remiasi tuo pačiu principu: apmokinamas neuroninių tinklų modelis, jiems paruošiant teigiamus ir neigiamus pavyzdžius (pvz., siekiant sukurti kojų atpažinimo algoritmą, paveiksliukai, kuriuose yra koja pažymimi kaip teigiami, tie, kuriuose kojos nėra tampa neigiamais). Mokinimo procesas gali trukti daug laiko – kartais net savaites, todėl daug paprasčiau yra pasinaudoti jau sukurtu modeliu. Vienas iš modelių, pavadinimu OpenPose, buvo pasiūlytas 2018 metais \cite{cao2019openpose}. Modelio architektūra paremta konvoliuciniais neuroniniais tinklais. Modelis suskirstytas į dvi šakas. Viena jų priskiria tikimybes, kad tam tikras regionas yra tam tikra kūno dalis, kita – asociacijas tarp skirtingų kūno dalių. Atpažinimas vyksta keliais etapais, siekiant gauti kuo tikslesnius rezultatus. 
 
 Šiame darbe kuriamas vaizdo atpažinimo algoritmas kiekvieną kadrą pateikia OpenPose modeliui, o rezultate gaunamos skirtingomis spalvomis sužymėtos kūno dalys. Taisyklių pažeidimo atpažinimo algoritmui aktualios yra rankų ir pėdų sritis. 
 
@@ -186,35 +189,190 @@ Bene visi šiuolaikiniai metodai remiasi tuo pačiu principu: apmokinamas neuron
     \label{img:mlp}
 \end{figure}
 
-//@todo parasyti apie lightweight stuff
 Vienas iš algoritmo trūkūmų yra tai, kad be optimizavimo su kiekvienu kadru gauti rezultatą užtrunka iki 0.5 sekundės. Galimas optimizavimo būdas yra sumažinti kadro dydį prieš pateikiant jį į neuroninį tinklą, tačiau tokiu atveju rezultatų tikslumas yra atvirkščiai proporcingas kadro dimensijom. 
 
-\subsection{Kamuolio atpažinimas Hough Detection algoritmu}
-@todo fix
-Atpažinti kamuolį intitutyviai labai paprasta. Intuitive sako, jog reikia ieškoti apvalių kontūrų. Vienas iš nagrinėtų būdų – Hough Detection. Šį algoritmą natively supportina OpenCV. 
+2018 m. buvo pasiūlytas OpenPose modelio patobulinimas, įgalinantis žmogaus kūno atpažinimą beveik realiu laiku \cite{osokin2018realtime}. Lightweight optimizuoja OpenPose modelio architektūrą sumažinant sluoksnių skaičių, ryškiai pagerinant atpažinimo greitį nežymiai prarandant tikslumą. 
 
-Hough Detection – trumpai aprašyti theory here
+Atliekant bandymus su vaizdo medžiaga pastebėta, jog Lightweight modelis žaidėjo pozą atpažįsta ne tik greičiau, bet ir tiksliau. Eksperimentui buvo sukurti penki vaizdo įrašai, kuriuose žmogus atlieka tam tikrus veiksmus. Tikslumas buvo apskaičiuotas už teisingą kūno dalies atpažinimą kiekviename kadre pridedant 1 tašką, už neteisingą atpažinimą atimant 1, o gautą rezultatą padalinant iš kūno dalių skaičiaus, kurį atpažįsta modelis.
 
-OpenCV turi metodą, įgyvendinantį algoritmą. 
-Patikrinus algoritmą su vaizdo įrašu tapo akivaizdu, jog šis algoritmas tinka tik statiškam kamuoliui, o ne judančiam, kadangi jis visiškai praranda formą. 
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{OpenPose ir Lightweight modelių palyginimas}
+	{\begin{tabular}{|c|c|c|} \hline
+			\textbf{Modelis} & \textbf{Vidutinė trukmė apdoroti vieną kadrą (ms)} & \textbf{Vidutinis rezultatų tikslumas (\%)} \\
+			\hline
+			OpenPose  & 581    & 62       \\
+			\hline
+			Lightweight  & 163    & 91       \\
+			\hline
+	\end{tabular}}
+	\label{tab:openposevslightweight}
+\end{table}
 
-\subsection{Body Part Segmentation}
-@todo fix
-Atpažinti kamuolį intitutyviai labai paprasta. Intuitive sako, jog reikia ieškoti apvalių kontūrų. Vienas iš nagrinėtų būdų – Hough Detection. Šį algoritmą natively supportina OpenCV. 
+Dalį Lightweight modelio tikslumo pranašumo galėjo lemti OpenPose parametrų ir paduodamo kadro dimensijų neatitikimas, o spartumo - tai, jog duomenų apskaičiavimas OpenPose tinklu buvo įgyvendintas su OpenCV dnn moduliu, kuris bandymų metu nebuvo sukonfigūruotas naudoti GPU akceleravimą. Kadangi po optimizacijos Lightweight modelis tenkino tikslumo ir greičio lūkesčius, toliau nuspręsta naudoti jį. 
 
-Hough Detection – trumpai aprašyti theory here
+\subsubsection{Atpažinimo neuroniniais tinklais optimizavimas}
 
-OpenCV turi metodą, įgyvendinantį algoritmą. 
-Patikrinus algoritmą su vaizdo įrašu tapo akivaizdu, jog šis algoritmas tinka tik statiškam kamuoliui, o ne judančiam, kadangi jis visiškai praranda formą. 
+Atliekant bandymus pastebėta, jog atpažinimą Lightweight modeliu galima optimizuoti. Viena iš optimizacijų, kuri buvo atlikta, tai skaičiavimo perkėlimas ant GPU. Tam galima panaudoti CUDA - NVIDIA sukurtą API parareliems skaičiavimams \cite{cuda}. OpenCV puslapyje rašoma, jog su CUDA paveikslėlių apdorojimas gali pagreitėti iki 30 kartų \cite{opencv-cuda}. Be GPU akceleracijos Lightweight tinklas vieną kadrą užtrukdavo apdoroti iki 680 ms. 
+
+Pastebėta, jog apdorojimo greičiui įtakos turi ir kadro dimensijos. Jei į neuroninį tinklą paduodamo kadro plotis yra didesnis, nei jo aukštis, apdorojimo greitis pakyla iki 5 kartų. Tačiau tai buvo mitiguota atnaujinus OpenCV versiją iš 4.0.1 į 4.5.1 - po šio atnaujinimo, apdorojimo greičiai tapo nebepriklausomi nuo santykio tarp paveikslėlio aukščio ir pločio. 
+
+Dar viena išbandyta optimizacija - neuroninio tinklo pradinio sluoksnio įvesties dydžio sumažinimas. Dvigubai sumažinus įvesties kanalų skaičių iš 256 į 128 rezultatų tikslumas pasikeitė sąlyginai nedaug. Žiūrint į vaizdo įrašą, plika akimi galima pamatyti, jog atpažintas skeletas yra labiau "klibantis", t.y. kiekvienos kūno dalies koordinatės nežymiai skiriasi, kai įvesties dydis yra mažesnis, tačiau pačios kūno dalys dažnai lieka atpažintos teisingai. Siekiant tikslesnių rezultatų, siūloma pasilikti prie 256 kanalų skaičio, tačiau norint vaizdą apdoroti realiu laiku, galima rasti kompromisą tarp tikslumo ir greičio. 
+
+Atliekant žmogaus skeleto atpažinimo bandymus su mažesnės rezoliucijos kadrais spartumo bei tikslumo pagerėjimų nepastebėta.
+
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Lightweight optimizavimas sumažinus įvesties kanalų skaičių}
+	{\begin{tabular}{|c|c|c|} \hline
+			\textbf{Kanalų skaičius} & \textbf{Vidutinė trukmė apdoroti vieną kadrą (ms)} & \textbf{Vidutinis rezultatų tikslumas (\%)} \\
+			\hline
+			256  & 28    & 91       \\
+			\hline
+			128  & 16    & 86       \\
+			\hline
+	\end{tabular}}
+	\label{tab:openposevslightweight}
+\end{table}
+
+\subsection{Kamuolio atpažinimas Hough transformacija}
+
+Kompiuterinės regos srityje vieni iš pirmųjų algoritmų, skirtų atpažinti objektus pagal jų formas, yra Hough transformacijos.
+Hough transformacija paremtas algoritmas, skirtas skritulių bei apskritimų radimui, buvo aprašytas H. K. Yuen, J. Princen, J. Illingworth ir kitų \cite{YUEN199071}. Būtent šį algoritmą OpenCV įgyvendina kaip numatytąjį, bandant rasti apskritimų kontūrus paveikslėliuose.
+
+Patikrinus algoritmą su vaizdo įrašu tapo akivaizdu, jog šis jis tinka tik idealios formoms sferoms ir apskritimams, tačiau judėdamas kamuolys praranda apvalią formą. Darant prielaidą, jog tokiu atveju kamuolio forma tampa panaši į elipsės, kamuolio radimui išbandytas Hough transformacija paremtas algoritmas elipsėms rasti \cite{1048464}, tačiau šio algoritmo sparta pasirodė itin prasta - atlikus bandymus su keliais vaizdo įrašais, vienam kadrui apdoroti užtrukdavo iki 10 minučių.
 
 \begin{figure}[H]
 	\centering
 	\subfloat[\centering Atrastas kamuolys]{{\includegraphics[width=5cm]{img/ball_circled} }}
 	\qquad
-	\subfloat[\centering Kamuolys deformuotas dėl judėjimo]{{\includegraphics[width=5cm]{img/ball_notfound} }}
-	\caption{Fono Aaaa.}
+	\subfloat[\centering Kamuolys nerastas, kadangi jis deformuotas dėl judėjimo]{{\includegraphics[width=5cm]{img/ball_notfound} }}
+	\caption{Kamuolio kontūrų radimas}
 	\label{fig:example}
 \end{figure}
+
+Dėl šių trūkumų tolimesniam vaizdo atpažinimui nuspręsta taikyti kamuolio atpažimo pagal spalvą metodus.
+
+\subsection{Nagrinėtų atpažinimo metodų palyginimas}
+
+Tam, kad būtų palygintas šių metodų spartumas bei tikslumas tarpusavy, nuspręsta juos panaudoti sprendžiant praktinę problemą: vaizdo įraše suskaičiuoti, kiek žmogus atliko žingsnių. Žingsnių skaičiavimo algoritmas - gana paprastas, nereikalaujantis daug papildomų sudėtingų skaičiavimų, tad jis puikiai tinka įvertinti pačio vaizdo atpažinimo metodo tinkamumą.  
+
+Žingsnių skaičiavimo algoritmas yra žingsnių taisyklės pažeidimo atpažinimo dalis, plačiau apibūdintas 4 skyriuje. Žmogaus skeleto (pozos) bei spalvinio atpažinimo metodai įgyvendinti tuo pačiu algoritmu, kurio metu pėdų (batų) regionai yra išskiriami, ir laikoma, jog žingsnis yra atliktas tada, kai išskirti regionai persikloja - tai reiškia, jog žiūrint iš šono, įprasto vaikščiojimo metu viena koja trumpai pridengė kitą. Neuroninių tinklų atpažinimo metu prie atpažintų kojų priskiriamos spalvos, tolimesnis atpažinimas panašus į spalvinį.
+
+Metodo, besiremiančio skirtumais tarp kadrų, žingsnių atpažinimo procesas aprašytas 3.2.2 poskyryje.
+
+Visuose vaizdo įrašuose žmogus dėvi raudonus batus, tam, kad veiktų spalvomis paremti atpažinimo metodai ir juos būtų galima lyginti su kitais. Vaizdo įrašų sukurta septyni, juose - skirtingas apšvietimas, nuotolis iki žmogaus, žingsniai atliekami skirtingu tempu ir kamera filmuoja skirtingais kampais. 
+
+Algoritmai buvo patikrinti kelis kartus su tais pačiais įrašais, siekiant sumažinti įvairių kitų kompiuteryje vykstančių procesų įtaką vaizdo apdorojimo greičiui. 
+
+
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Vaizdo įrašai ir jų aprašymai}
+	{\begin{tabular}{|p{2cm}|p{8cm}|p{2cm}|} \hline
+			\textbf{Vaizdo įrašo nr.} & \textbf{Aprašymas}  & \textbf{Trukmė (s)} \\
+			\hline
+			1  & Besikeičiantis apšvietimas, žaidėjas eina įstrižai nuo kameros, vaizdo įrašas filmuotas vertikaliai & 12      \\
+			\hline
+			2  & Žaidėjas eina atgal, kamera filmuoja iš priekio, filmuota horizontaliai          & 2 \\
+			\hline
+			3  & Žaidėjas vaikšto gan tolokai nuo kameros, filmuota horizontaliai       	 & 5 \\ 
+			\hline
+			4  & Žaidėjas labai arti kameros, filmuota horizontaliai       
+		 	& 7  \\ \hline
+			5  & Žaidėjas vaikšto gan tolokai nuo kameros, filmuota vertikaliai, žaidėjas matomas pilnai    & 8    \\
+			\hline
+			6  & Prastas apšvietimas, žaidėjas gan arti kameros, filmuota horizontaliai       
+			& 8 \\
+			\hline
+			7  & Žaidėjas toli nuo kameros, atsiranda antras žaidėjas, filmuota horizontaliai. Tikimasi, kad bus suskaičiuota abiejų žaidėjų žingsnių suma   & 10     \\
+			\hline
+	\end{tabular}}
+	\label{tab:openposevslightweight}
+\end{table}
+
+
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Spalvinio vaizdo atpažinimo žingsnių skaičiavimo eksperimento rezultatai}
+	{\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|} \hline
+			\textbf{Vaizdo įrašo nr.} & \textbf{Atlikta žingsnių} & \textbf{Algoritmo suskaičiuota žingsnių} & \textbf{Vidutinė vaizdo apdorojimo trukmė (ms)} \\
+			\hline
+			1  & 10    & 13    & 6035    \\
+			\hline
+			2  & 3    & 0  & 4681     \\
+			\hline
+			3  & 4    & 2   & 12600    \\
+			\hline
+			4  & 7    & 7  & 4126     \\
+			\hline
+			5  & 5    & 5  & 4029     \\
+			\hline
+			6  & 7    & 6  & 3949     \\
+			\hline
+			7  & 10    & 6  & 4235     \\
+			\hline
+	\end{tabular}}
+	\label{tab:colorresults}
+\end{table}
+
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Vaizdo atpažinimo pagal skirtumus žingsnių skaičiavimo eksperimento rezultatai}
+	{\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|} \hline
+			\textbf{Vaizdo įrašo nr.} & \textbf{Atlikta žingsnių} & \textbf{Algoritmo suskaičiuota žingsnių} & \textbf{Vidutinė vaizdo apdorojimo trukmė (ms)} \\
+			\hline
+			1  & 10    & 9    & 4807    \\
+			\hline
+			2  & 3    & 4  & 5488     \\
+			\hline
+			3  & 4    & 4   & 11529    \\
+			\hline
+			4  & 7    & 10  & 2164     \\
+			\hline
+			5  & 5    & 2  & 3147     \\
+			\hline
+			6  & 7    & 8  & 3012     \\
+			\hline
+			7  & 6    & 4  & 3983     \\
+			\hline
+	\end{tabular}}
+	\label{tab:diffresults}
+\end{table}
+
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Vaizdo atpažinimo su neuroniniais tinklais žingsnių skaičiavimo eksperimento rezultatai}
+	{\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|} \hline
+			\textbf{Vaizdo įrašo nr.} & \textbf{Atlikta žingsnių} & \textbf{Algoritmo suskaičiuota žingsnių} & \textbf{Vidutinė vaizdo apdorojimo trukmė (ms)} \\
+			\hline
+			1  & 10    & 8    & 12859    \\
+			\hline
+			2  & 3    & 0  & 7196     \\
+			\hline
+			3  & 4    & 4   & 14565    \\
+			\hline
+			4  & 7    & 0  & 1257     \\
+			\hline
+			5  & 5    & 5  & 11638     \\
+			\hline
+			6  & 7    & 8  & 12438     \\
+			\hline
+			7  & 6    & 6  & 10045     \\
+			\hline
+	\end{tabular}}
+	\label{tab:poseresults}
+\end{table}
+
+Palyginę rezultatus matome, jog neuroniniais tinklais paremtas atpažinimas yra tiksliausias, nors ir apdoroti vaizdo įrašą užtrunka daugiausiai laiko. Atpažinimas remiantis skirtumais - greičiausias, tačiau mažiausias yra jo tikslumas, o atpažinimas paremtas spalvomis yra per vidurį. 
+
+Spalvomis paremtas atpažinimas yra mažiausiai tikslus, kai varijuoja apšvietimas arba jis yra prastas, taip pat - jei kadre yra kitų objektų ar žaidėjų, kurių spalvos sutampa su dominančiomis spalvomis. Taip pat šiuo atpažinimu paremtas algoritmas vienintelis, galintis apskaičiuoti žaidėjo atliktus žingsnius iš priekio. 
+
+Iš rezultatų apdorojant vaizdo įrašą nr. 4 galime pastebėti, jog neuroniniais tinklais paremtas atpažinimo metodas neatpažįsta žingsnių, kai žaidėjas yra per arti kameros ir nebesimato jo pilnos figūros, tuo tarpu vaizdo įrašas nr. 7 parodo, jog šis atpažinimo metodas puikiai susidoroja su atvejais, kai yra daugiau žmonių, nei vienas. 
+
+Apibendrinus - spalviniai vaizdo atpažinimo metodai tinka tuomet, kai prie dominančių objektų galime priskirti unikalias spalvas, jos nekinta, neatsiranda naujų, o apšvietimas išlieka puikus - visa tai indikuoja, jog vaizdo įraše fonas ir aplinka turi būti griežtai kontroliuojami ir iš anksto paruošti. Skirtumais paremti atpažinimo metodai labiausiai tinka tais atvejais, kai juos naudojantys algoritmai yra paprasti bei nereikalaujantys didelio tikslumo, siekiant išgauti didžiausią spartumą. Neuroniniais tinklais paremti atpažinimo metodai yra itin tikslūs, tačiau apdorojimo trukmė yra šiek tiek ilgesnė.
+
+\section{Krepšinio taisyklių pažeidimo algoritmas}
 
 \sectionnonum{Rezultatai ir išvados}
 Rezultatų ir išvadų dalyje išdėstomi pagrindiniai darbo rezultatai (kažkas
