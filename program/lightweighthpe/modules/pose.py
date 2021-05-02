@@ -91,11 +91,11 @@ class Pose:
 
         if global_kpt_a_id != -1:
             x_a, y_a = self.keypoints[4]
-            cv2.circle(img, (int(x_a), int(y_a)), 20, [0, 127, 0], -1)
+            cv2.circle(img, (int(x_a), int(y_a)), 30, [0, 127, 0], -1)
             
         if global_kpt_b_id != -1:
             x_a, y_a = self.keypoints[7]
-            cv2.circle(img, (int(x_a), int(y_a)), 20, [0, 255, 0], -1)
+            cv2.circle(img, (int(x_a), int(y_a)), 30, [0, 255, 0], -1)
             
         if global_kpt_c_id != -1:
             x_a, y_a = self.keypoints[10]

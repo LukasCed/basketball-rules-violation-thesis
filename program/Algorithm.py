@@ -37,8 +37,8 @@ class Algorithm:
     def ball_in_hands(this):
         return this.ball_in_hands_counter > 0
 
-    def compute_step(this, shoe_contours):
-        if this.ball_in_hands() and len(shoe_contours) == 1 and not this.feet_intersection:
+    def compute_step(this, shoe_contours, any_empty):
+        if this.ball_in_hands() and len(shoe_contours) == 1 and not this.feet_intersection and not any_empty:
             this.feet_intersection = True
             this.step_count = this.step_count + 1
 
@@ -210,6 +210,7 @@ class Algorithm:
         return net
         
     def compute_step_lightweight(this, img):
+        txt = ""
         left_hand_color_range = np.array([60, 255, 255]) #green
         right_hand_color_range = np.array([60, 255, 127])
         left_leg_color_range = np.array([0, 255, 255]) #red
@@ -235,12 +236,30 @@ class Algorithm:
 
         mask_for_shoes_left = segment_by_color(hsv, left_leg_color_range, left_leg_color_range)
         mask_for_shoes_right = segment_by_color(hsv, right_leg_color_range, right_leg_color_range)
-        cv2.imshow("shoe mask", mask_for_shoes_left | mask_for_shoes_right)
-        cv2.imshow("ball mask", mask_for_ball)
-
+        mask_for_hand_left = segment_by_color(hsv, left_hand_color_range, left_hand_color_range)
+        mask_for_hand_right = segment_by_color(hsv, right_hand_color_range, right_hand_color_range)
+        #cv2.imshow("shoe mask", mask_for_shoes_left | mask_for_shoes_right)
+        #cv2.imshow("ball mask", mask_for_ball)
+        
+        hand_and_ball = (mask_for_ball & mask_for_hand_right) | (mask_for_ball & mask_for_hand_left)
+        cv2.imshow("hand and ball", hand_and_ball)
+        
         shoe_contours_total, h = find_contours(mask_for_shoes_left | mask_for_shoes_right)
         any_empty = np.all(mask_for_shoes_left == 0) or np.all(mask_for_shoes_right == 0)
-        this.compute_step_temp(shoe_contours_total, any_empty)
+        this.compute_step(shoe_contours_total, any_empty)
         this.compute_turnover()
+        
+        pixel_pctg = hand_and_ball[np.where(hand_and_ball >= 1)].size / hand_and_ball.size * 100
+        txt2 = "Zinsgniai: " + str(this.step_count)
+
+        if pixel_pctg > 0.001: 
+            txt = "rankose, " + str(pixel_pctg) 
+            this.ball_in_hands_counter = 3
+        else: 
+            this.ball_in_hands_counter = max(this.ball_in_hands_counter - 1, 0)
+            if this.ball_in_hands_counter == 0: txt = "ne rankose, " + str(pixel_pctg) 
+
+        print(txt)
         print(this.step_count)
+        print(this.turnover)
     
