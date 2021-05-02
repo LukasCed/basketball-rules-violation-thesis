@@ -47,8 +47,8 @@ class Algorithm:
             if this.ball_in_hands_counter == 0:
                 this.step_count = 0
                 
-    def compute_step_temp(this, shoe_contours):
-        if  len(shoe_contours) == 1 and not this.feet_intersection:
+    def compute_step_temp(this, shoe_contours, any_empty):
+        if  len(shoe_contours) == 1 and not this.feet_intersection and not any_empty:
             this.feet_intersection = True
             this.step_count = this.step_count + 1
 
@@ -210,19 +210,37 @@ class Algorithm:
         return net
         
     def compute_step_lightweight(this, img):
-        lower_red = np.array([0,255,255])
-        upper_red = np.array([0,255,255])
-
-        img = flip_img(img)
+        left_hand_color_range = np.array([60, 255, 255]) #green
+        right_hand_color_range = np.array([60, 255, 127])
+        left_leg_color_range = np.array([0, 255, 255]) #red
+        right_leg_color_range = np.array([0, 255, 127])
+        
+        ball_lower_range = np.array([61, 42, 42])
+        ball_upper_range = np.array([84, 255, 200])
+                        
         hsv = convert_to_hsv(img)
+        mask_for_ball = segment_by_color(hsv, ball_lower_range, ball_upper_range)
+        mask_for_ball = morph_dilate(morph_open(mask_for_ball))
+        mask_for_ball = erode(dilate(mask_for_ball, 8), 3)
+        
+        ball_contours, h = find_contours(mask_for_ball)
+        ball_contour = choose_largest_contours(ball_contours)
+        
+        if ball_contour is not None:
+            (x,y),radius = cv2.minEnclosingCircle(ball_contour)
+            center = (int(x),int(y))
+            cv2.circle(mask_for_ball,center,int(radius),(255,0,0), -1)
+            bc, h = find_contours(mask_for_ball)
+            cv2.drawContours(img, bc, -1, (0,255,0), 3)
 
-        mask_for_shoes = segment_by_color(hsv, lower_red, upper_red)
+        mask_for_shoes_left = segment_by_color(hsv, left_leg_color_range, left_leg_color_range)
+        mask_for_shoes_right = segment_by_color(hsv, right_leg_color_range, right_leg_color_range)
+        cv2.imshow("shoe mask", mask_for_shoes_left | mask_for_shoes_right)
+        cv2.imshow("ball mask", mask_for_ball)
 
-        mask_for_shoes =  morph_dilate(morph_open(mask_for_shoes))
-
-        shoe_contours, h = find_contours(mask_for_shoes)
-
-        this.compute_step_temp(shoe_contours)
+        shoe_contours_total, h = find_contours(mask_for_shoes_left | mask_for_shoes_right)
+        any_empty = np.all(mask_for_shoes_left == 0) or np.all(mask_for_shoes_right == 0)
+        this.compute_step_temp(shoe_contours_total, any_empty)
         this.compute_turnover()
         print(this.step_count)
     

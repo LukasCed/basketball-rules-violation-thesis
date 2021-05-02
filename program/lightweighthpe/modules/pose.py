@@ -82,6 +82,29 @@ class Pose:
                 
             if global_kpt_a_id != -1 and global_kpt_b_id != -1:
                 cv2.line(img, (int(x_a), int(y_a)), (int(x_b), int(y_b)), Pose.color, 2)
+                
+    def draw_only_relevant(self, img):
+        global_kpt_a_id = self.keypoints[4, 0]
+        global_kpt_b_id = self.keypoints[7, 0]
+        global_kpt_c_id = self.keypoints[10, 0]
+        global_kpt_d_id = self.keypoints[13, 0]
+
+        if global_kpt_a_id != -1:
+            x_a, y_a = self.keypoints[4]
+            cv2.circle(img, (int(x_a), int(y_a)), 20, [0, 127, 0], -1)
+            
+        if global_kpt_b_id != -1:
+            x_a, y_a = self.keypoints[7]
+            cv2.circle(img, (int(x_a), int(y_a)), 20, [0, 255, 0], -1)
+            
+        if global_kpt_c_id != -1:
+            x_a, y_a = self.keypoints[10]
+            cv2.circle(img, (int(x_a), int(y_a)), 20, [0, 0, 127], -1)
+
+        if global_kpt_d_id != -1:
+            x_a, y_a = self.keypoints[13]
+            cv2.circle(img, (int(x_a), int(y_a)), 20, [0, 0, 255], -1)
+     
 
 
 def get_similarity(a, b, threshold=0.5):

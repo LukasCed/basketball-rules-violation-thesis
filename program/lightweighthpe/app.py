@@ -192,11 +192,13 @@ def run_lightweight(net, img, height_size = 256, cpu = False, track = False, smo
         track_poses(previous_poses, current_poses, smooth=smooth)
         previous_poses = current_poses
     for pose in current_poses:
-        pose.draw(img)
+      #  pose.draw(img)
+        pose.draw_only_relevant(img)
     #img = cv2.addWeighted(orig_img, 0.6, img, 0.4, 0)
     for pose in current_poses:
-        cv2.rectangle(img, (pose.bbox[0], pose.bbox[1]),
-                      (pose.bbox[0] + pose.bbox[2], pose.bbox[1] + pose.bbox[3]), (0, 255, 0))
+       #relevant only for demonstration
+       # cv2.rectangle(img, (pose.bbox[0], pose.bbox[1]),
+        #              (pose.bbox[0] + pose.bbox[2], pose.bbox[1] + pose.bbox[3]), (0, 255, 0))
         if track:
             cv2.putText(img, 'id: {}'.format(pose.id), (pose.bbox[0], pose.bbox[1] - 16),
                         cv2.FONT_HERSHEY_COMPLEX, 0.5, (0, 0, 255))

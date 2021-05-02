@@ -6,7 +6,7 @@ from Algorithm import Algorithm
 from ImageProcessingUtils import print_img
 import time
 
-vid = cv2.VideoCapture('vids/2.mp4')
+vid = cv2.VideoCapture('vids/5.mp4')
 algorithm = Algorithm()
 ts1 = time.time()
 
