@@ -4,7 +4,7 @@ My bachelor thesis about basketball rules violation recognition
 
 Currently work in progress, so some things might not work as expected
 
-How to run:
+### How to run: ###
 
 1) Install conda
 2) cd into program folder 
