@@ -32,16 +32,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.5.}Nagrinėtų atpažinimo metodų palyginimas}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.}Krepšinio taisyklių pažeidimo algoritmas}{17}{}%
+\contentsline {section}{\numberline {4.}Krepšinio taisyklių pažeidimo atpažinimas}{17}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Rezultatai ir išvados}{18}{}%
+\contentsline {subsection}{\numberline {4.1.}Žingsnių taisyklė}{17}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literatūra}{19}{}%
+\contentsline {subsection}{\numberline {4.2.}Žingsnių taisyklės pažeidimo atpažinimo algoritmas}{17}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Santrumpos}{21}{}%
+\contentsline {section}{Rezultatai ir išvados}{19}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\MakeUppercase {Priedai}}{21}{}%
+\contentsline {section}{Literatūra}{20}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{1 priedas.\nobreakspace {}Neuroninio tinklo struktūra}{22}{}%
+\contentsline {section}{Santrumpos}{22}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2 priedas.\nobreakspace {}Eksperimentinio palyginimo rezultatai}{23}{}%
+\contentsline {section}{\MakeUppercase {Priedai}}{22}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{1 priedas.\nobreakspace {}Neuroninio tinklo struktūra}{23}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{2 priedas.\nobreakspace {}Eksperimentinio palyginimo rezultatai}{24}{}%

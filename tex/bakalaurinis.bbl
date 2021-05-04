@@ -349,6 +349,28 @@
       \verb 10.1109/ICIP.2002.1039893
       \endverb
     \endentry
+    \entry{nba-rules}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=52b6d6fc82db6aef110362f4755a1fe8}{%
+           family={{NBA}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{52b6d6fc82db6aef110362f4755a1fe8}
+      \strng{fullhash}{52b6d6fc82db6aef110362f4755a1fe8}
+      \strng{bibnamehash}{52b6d6fc82db6aef110362f4755a1fe8}
+      \strng{authorbibnamehash}{52b6d6fc82db6aef110362f4755a1fe8}
+      \strng{authornamehash}{52b6d6fc82db6aef110362f4755a1fe8}
+      \strng{authorfullhash}{52b6d6fc82db6aef110362f4755a1fe8}
+      \field{labelalpha}{NBA21}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://official.nba.com/rule-no-10-violations-and-penalties/}}
+      \field{note}{tikrinta 2021-05-04}
+      \field{title}{RULE NO. 10: Violations and Penalties}
+      \field{year}{2021}
+    \endentry
     \entry{cuda}{misc}{}
       \name{author}{1}{}{%
         {{hash=a2fe9051fe051f819bd739ef3e340377}{%

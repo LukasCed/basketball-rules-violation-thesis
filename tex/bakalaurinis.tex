@@ -372,7 +372,41 @@ Iš rezultatų apdorojant vaizdo įrašą nr. 4 galime pastebėti, jog neuronini
 
 Apibendrinus - spalviniai vaizdo atpažinimo metodai tinka tuomet, kai prie dominančių objektų galime priskirti unikalias spalvas, jos nekinta, neatsiranda naujų, o apšvietimas išlieka puikus - visa tai indikuoja, jog vaizdo įraše fonas ir aplinka turi būti griežtai kontroliuojami ir iš anksto paruošti. Skirtumais paremti atpažinimo metodai labiausiai tinka tais atvejais, kai juos naudojantys algoritmai yra paprasti bei nereikalaujantys didelio tikslumo, siekiant išgauti didžiausią spartumą. Neuroniniais tinklais paremti atpažinimo metodai yra itin tikslūs, tačiau apdorojimo trukmė yra šiek tiek ilgesnė.
 
-\section{Krepšinio taisyklių pažeidimo algoritmas}
+\section{Krepšinio taisyklių pažeidimo atpažinimas}
+
+Šiame darbe bus nagrinėjamos kelios taisyklės.
+
+\subsection{Žingsnių taisyklė}
+Žingsnių (\textit{angl.} traveling) taisyklė yra aprašyta oficialioje NBA taisyklių knygelės 10 taisyklės 13 skyriuje. Jos formuluotė, kuria remiasi analizė, atlikta šiame darbe, yra tokia: 
+\begin{itemize}
+	\item Žaidėjas, varydamas kamuolį, gali padaryti du žingsnius prieš sustojant arba kamuolį metant ar atiduodant \cite{nba-rules}. 
+\end{itemize}
+Būdų pažeisti šią taisyklę yra gausu, tačiau šiame darbe fokusuojamasi į atvejį, kai žaidėjas suėmęs kamuolį atlieka daugiau nei du žingsnius. Tam, kad atlikti žingsniai būtų laikomi kaip pažeidžiantys taisyklę, kamuolys turi būti nemušamas į žemę, o laikomas rankose - krepšinyje tai dažniausiai nutinka prieš metant kamuolį į krepšį, kai yra atliekamas dvižingsnis - NBA kontekste tai vadinama surinkimu (\textit{angl.} gathering). Taigi, algoritmas, siekiantis atpažinti šios taisyklės pažeidimą, privalo taip pat gebėti atpažinti, kada kamuolys yra rankose, ir tuomet skaičiuoti atliktų žingsnių skaičių. 
+\subsection{Žingsnių taisyklės pažeidimo atpažinimo algoritmas}
+
+Algoritmo reikalavimai: nustatytos rankų, kojų bei kamuolio vietos paveikslėlyje. Apibendrintas algoritmas užsirašytų šitaip: 
+
+\begin{itemize}
+	\item Nuskaitomas kadras.
+	\item Nustatoma, ar kamuolys yra laikomas rankose.
+	\item Tol, kol kamuolys yra rankose, skaičiuojami atlikti žingsniai.
+	\item Jei per intervalą, kai kamuolys yra laikomas rankose, buvo atlikti daugiau nei 2 žingsniai - taisyklė pažeista.
+\end{itemize}
+
+Programine įranga, sukurta pagal aprašytąjį algoritmą, vaizdo įrašą išskiria į kadrus bei juos apdoroja vienas po kito.  
+Po anksčiau aprašytų atpažinimo metodų turima pakankamai informacijos nustatyti, kur kiekviename kadre yra ranka, kojos ir kamuolys. OpenCV įgalina visų minėtųjų metodų metu išgautą informaciją reprezentuoti loginėse vienetų bei nulių matricose, kur vienetai žymi objekto buvimą tam tikrame plote. 
+Tam, kad būtų nustatyta, ar kamuolys yra laikomas rankose, su kamuolio bei rankų regiono matricomis atliekama Būlio disjunkcija. Rezultate gaunama matrica, kurioje vienetai žymi sritį, kur rankos bei kamuolys persikloja. Praktiškai tai reiškia, jog kadre rankos dalis pridengia kamuolį - taip yra todėl, kad rankos ir kamuolys yra tame pačiame lygyje, tačiau rankos yra arčiau kameros. 
+Žingsnių skaičiavimas yra gan kompleksiška problema: ganėtinai sunku apibrėžti universalų būdą atpažinti atliktus žingsnius iš bet kokio kampo. Paprastumo dėlei nuspręsta žingsniųs skaičiuoti tik iš žiūrint šono. Žingsnių skaičiavimo algoritmas remiasi išskirtų kojų regionų kontūrų skaičiavimu. Jei kontūrų suskaičiuota vienas, o prieš tai jų buvo du, galima teigti kad 1) Nerasta informacijos apie vieną iš pėdų (išėjo iš kadro arba nepavyko atpažinimas) arba 2) Žingsnis, žiūrint iš šono, yra toje fazėje, kai viena pėda pridengia (arba yra netoli) kitą. Tam, kad būtų galima atmesti pirmąjį atvejį, laikoma informacija apie atpažintus objektus - jei jų yra vienas, tuomet tai, kad rastas tik vienas kontūras, nekeičia turimų suskaičiuotų žingsnių kiekio.
+Šis žingsniavimo atpažinimo metodas taikytinas tik tada, kai žingsnis yra kiek galima labiau natūralus, t.y. kojos nėra keliamos per aukštai ir pėdos įpusėjus atliekamam žingsniui yra netoli viena kitos. Lankstesnis yra skirtumais tarp kadrų paremtas algoritmas, atpažįstantis, kada atliktas bet koks judėjimas, tačiau jo tikslumas yra prastas.
+
+
+\begin{itemize}
+	\item Išskiriami kojų (batų) regionai.
+	\item Suskaičiuojami kontūrai.
+	\item .
+	\item Jei per intervalą, kai kamuolys yra laikomas rankose, buvo atlikti daugiau nei 2 žingsniai - taisyklė pažeista.
+\end{itemize}
+
 
 \sectionnonum{Rezultatai ir išvados}
 Rezultatų ir išvadų dalyje išdėstomi pagrindiniai darbo rezultatai (kažkas
