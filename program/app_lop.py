@@ -2,11 +2,12 @@ import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 from PIL import Image
-from Algorithm import Algorithm
+#from Algorithm import Algorithm
+from DoubleDribbleAlgorithm import Algorithm
 from ImageProcessingUtils import *    
 import time
 
-vid = cv2.VideoCapture('vids/test_outside.mp4')
+vid = cv2.VideoCapture('vids/double-dribble.mp4')
 algorithm = Algorithm(False, True)
 ts1 = time.time()
 
@@ -21,7 +22,7 @@ while(True):
     # algorithm.execute_openpose(frame)
     # frame = resize(frame, 100)
     img = algorithm.execute_lightweight_openpose(frame, False)
-    algorithm.compute_step_lightweight(img)
+    algorithm.compute_double_dribble(img)
     cv2.imshow("result", img)
     input()
 

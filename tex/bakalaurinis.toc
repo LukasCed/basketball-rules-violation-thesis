@@ -38,14 +38,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.}Žingsnių taisyklės pažeidimo atpažinimo algoritmas}{17}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Rezultatai ir išvados}{19}{}%
+\contentsline {subsection}{\numberline {4.3.}Dvigubo varymo taisyklė}{18}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literatūra}{20}{}%
+\contentsline {subsection}{\numberline {4.4.}Dvigubo varymo taisyklės atpažinimo algoritmas}{19}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Santrumpos}{22}{}%
+\contentsline {section}{Rezultatai ir išvados}{20}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\MakeUppercase {Priedai}}{22}{}%
+\contentsline {section}{Literatūra}{21}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{1 priedas.\nobreakspace {}Neuroninio tinklo struktūra}{23}{}%
+\contentsline {section}{Santrumpos}{23}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2 priedas.\nobreakspace {}Eksperimentinio palyginimo rezultatai}{24}{}%
+\contentsline {section}{\MakeUppercase {Priedai}}{23}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{1 priedas.\nobreakspace {}Neuroninio tinklo struktūra}{24}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{2 priedas.\nobreakspace {}Eksperimentinio palyginimo rezultatai}{25}{}%

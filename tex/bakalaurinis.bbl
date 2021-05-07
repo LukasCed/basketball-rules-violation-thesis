@@ -195,9 +195,6 @@
       \field{year}{1987}
       \field{pages}{532\bibrangedash 550}
       \range{pages}{19}
-      \verb{doi}
-      \verb 10.1109/TPAMI.1987.4767941
-      \endverb
     \endentry
     \entry{YUEN199071}{article}{}
       \name{author}{4}{}{%
@@ -233,7 +230,6 @@
       \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0262-8856}
       \field{journaltitle}{Image and Vision Computing}
       \field{number}{1}
       \field{title}{Comparative study of Hough Transform methods for circle finding}
@@ -241,9 +237,6 @@
       \field{year}{1990}
       \field{pages}{71\bibrangedash 77}
       \range{pages}{7}
-      \verb{doi}
-      \verb https://doi.org/10.1016/0262-8856(90)90059-E
-      \endverb
       \verb{urlraw}
       \verb https://www.sciencedirect.com/science/article/pii/026288569090059E
       \endverb
@@ -606,9 +599,6 @@
       \field{year}{2002}
       \field{pages}{957\bibrangedash 960 vol.2}
       \range{pages}{-1}
-      \verb{doi}
-      \verb 10.1109/ICPR.2002.1048464
-      \endverb
     \endentry
   \enddatalist
 \endrefsection
