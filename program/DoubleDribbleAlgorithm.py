@@ -216,17 +216,47 @@ class Algorithm:
         
     def compute_double_dribble(this, img):
         txt = ""
-        left_hand_color_range = np.array([60, 255, 255]) #green
-        right_hand_color_range = np.array([60, 255, 127])
+        left_hand_color_range = np.array([20, 100, 210]) #green
+        #left_hand_color_range = np.array([60, 255, 255]) #green
+        right_hand_color_range = np.array([25, 150, 255])
+        #right_hand_color_range = np.array([60, 255, 127])
         
-        ball_lower_range = np.array([61, 20, 32])
-        ball_upper_range = np.array([84, 255, 200])
+        ball_lower_range = np.array([60, 90, 70])
+        #ball_lower_range = np.array([61, 20, 32])
+        ball_upper_range = np.array([100, 150, 140])
+        #ball_upper_range = np.array([84, 255, 200])       
+
+
+        shoe_lower_range = np.array([0, 65, 65])
+        #ball_lower_range = np.array([61, 20, 32])
+        shoe_upper_range = np.array([12, 255, 255])
+        #ball_upper_range = np.array([84, 255, 200])
+        
+        print("colors")
+        r0 = np.uint8([[[21,21,82 ]]])
+        r1 = np.uint8([[[78,78,207 ]]])
+        r2 = np.uint8([[[56,63,158 ]]])
+
+        print("r0", cv2.cvtColor(r0,cv2.COLOR_BGR2HSV))
+        print("r1", cv2.cvtColor(r1,cv2.COLOR_BGR2HSV))
+        print("r2", cv2.cvtColor(r2,cv2.COLOR_BGR2HSV))
                         
         hsv = convert_to_hsv(img)
         mask_for_ball = segment_by_color(hsv, ball_lower_range, ball_upper_range)
         mask_for_ball = morph_dilate(morph_open(mask_for_ball))
-        mask_for_ball = erode(dilate(mask_for_ball, 8), 3)
         
+        mask_for_shoes = erode(dilate(erode(segment_by_color(hsv, shoe_lower_range, shoe_upper_range), 6), 4), 3)
+        shoe_contours, h = find_contours(mask_for_shoes)
+        print("contours", len(shoe_contours))
+        m  = cv2.cvtColor(mask_for_shoes, cv2.COLOR_GRAY2BGR)
+        cv2.drawContours(m, shoe_contours, -1, (0,255,0), 3)
+
+        cv2.imshow("shoes", m)
+
+        mask_for_ball = erode(dilate(mask_for_ball, 25), 8)
+        
+
+
         ball_contours, h = find_contours(mask_for_ball)
         ball_contour = choose_largest_contours(ball_contours)
         
@@ -237,14 +267,15 @@ class Algorithm:
             bc, h = find_contours(mask_for_ball)
             cv2.drawContours(img, bc, -1, (0,255,0), 3)
 
-        mask_for_hand_left = segment_by_color(hsv, left_hand_color_range, left_hand_color_range)
+        mask_for_hand_left = segment_by_color(hsv, left_hand_color_range, right_hand_color_range)
         mask_for_hand_right = segment_by_color(hsv, right_hand_color_range, right_hand_color_range)
         #cv2.imshow("shoe mask", mask_for_shoes_left | mask_for_shoes_right)
-        cv2.imshow("ball mask", mask_for_ball)
         
         hand_and_ball = (mask_for_ball & mask_for_hand_right) | (mask_for_ball & mask_for_hand_left)
-        cv2.imshow("hand and ball", hand_and_ball)
-        
+        print(hand_and_ball)
+       
+        #print('\n'.join([''.join(['{:4}'.format(item) for item in row]) for row in hand_and_ball]))
+
         hand_and_ball_countours, h = find_contours(hand_and_ball)
         contour_count = len(hand_and_ball_countours)
         

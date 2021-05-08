@@ -63,6 +63,8 @@ bei metodika, apibūdinami su tema susiję literatūros ar kitokie šaltiniai,
 temos analizės tvarka, darbo atlikimo aplinkybės, pateikiama žinių apie
 naudojamus instrumentus (programas ir kt., jei darbe yra eksperimentinė dalis).
 Darbo įvadas neturi būti dėstymo santrauka. Įvado apimtis 2 –– 4 puslapiai.
+
+
 Vaizdo atpažinimas kompiuteriu - tai sparčiai besivystanti sritis. Egzistuoja daug algoritmų, kurių pagalba galima atpažinti objektus. Sportas. //@todo fix Sudetingesniems objektams dažnai yra naudojami giliuoju mokymu paremti metodai, šiame darbe išnagrinėti keli iš jų.  
 //@todo Krepšinyje atpažinimas state of the art
 
@@ -84,7 +86,16 @@ Vaizdo medžiaga rinkta filmuojant Xiaomi Redmi 8 Pro kamera.
 
 \section{Vaizdo atpažinimo metodai}
 
-Šiame darbe aprašytas krepšinio taisyklių atpažinimo algoritmas naudojasi informacija apie žaidėjo kūno dalis (rankas, pėdas ir pan.), gautas po vaizdo įrašo kadro apdorojimo kompiuterinės regos metodais. Šiame darbe apsvarstyti keli metodai. Pirmieji - tie, kurie remdamiesi turima informacija apie kadre egzistuojančias spalvas išskiria dominančius regionus bei prireikus apdoroja naudojantis morfologinėmis operacijomis ar randant regionus apimančius kontūrus. Dėl atpažinimo pagal spalvą ribotimo taip pat išbandyti metodai nepriklausantys nuo spalvų. Vienas jų - kamuolio atpažinimo algoritmas paremtas Hough transformacijomis, taip pat - judesio atpažinimas remiantis fono pašalinimu ir skirtumų tarp kadrų atradimu. Likę atpažinimo metodai paremti neuroniniais tinklais: išbandomas žmogaus skeleto atpažinimas naudojantis OpenPose bei Lightweight OpenPose tinklais. Skyriaus pabaigoje visi šie metodai palyginami praktiškai, sukuriant minimalų žingsnių skaičiavimo algoritmą, įgyvendintą minėtais metodais, išryškinant jų privalumus bei trūkumus. 
+Šiame darbe apibrėžtiems algoritmams, atpažįstantiems krepšinio taisyklių pažeidimus, reikalinga tam tikra pradinė informacija apie žaidėjo kūno dalis ar objektus (rankas, pėdas, kamuolį ir pan.). Ši informacija yra gaunama vaizdo įrašo kadrus apdorojant kompiuterinės regos metodais. 
+Nagrinėjamus metodus galima sugrupuoti į tris grupes: 
+
+\begin{itemize}
+	\item Metodai, kurių pagalba remiantis kadre iš anksto žinomi spalvomis galima išskirti dominančius regionus (pvz. segmentavimas) bei metodai, papildomai apdorojantys gautus rezultatus (pvz. atliekant morfologines operacijas ar randant regionus apimančius kontūrus).
+	\item Metodai, kuriais naudojantis atpažinimą vykdyti galima nepriklausomai nuo spalvų, pavyzdžiui, kamuolio atpažinimo algoritmas paremtas Hough transformacijomis, taip pat - judesio atpažinimas remiantis fono pašalinimu ir skirtumų tarp kadrų atradimu.
+	\item Metodai paremti neuroniniais tinklais - žmogaus skeleto atpažinimas naudojantis OpenPose bei Lightweight modeliais. 
+\end{itemize}
+
+Skyriaus pabaigoje visi šie metodai palyginami praktiškai, sukuriant minimalų žingsnių skaičiavimo algoritmą, įgyvendintą minėtais metodais, išryškinant jų privalumus bei trūkumus. 
 
 \subsection{Spalvinis atpažinimas}
 Vienas iš paprasčiausių būdų išskirti ir atpažinti objektus yra tada, kai žinome jų spalvą iš anksto. Tuomet pagal spalvų reikšmes nesunkiai galime išskirti regionus, juos reprezentuojant vienetukų ir nuliukų matricomis, ir atlikti įvairias logines operacijas. 
@@ -248,7 +259,7 @@ Patikrinus algoritmą su vaizdo įrašu tapo akivaizdu, jog šis jis tinka tik i
 	\qquad
 	\subfloat[\centering Kamuolys nerastas, kadangi jis deformuotas dėl judėjimo]{{\includegraphics[width=5cm]{img/ball_notfound} }}
 	\caption{Kamuolio kontūrų radimas}
-	\label{fig:example}
+	\label{fig:contours}
 \end{figure}
 
 Dėl šių trūkumų tolimesniam vaizdo atpažinimui nuspręsta taikyti kamuolio atpažimo pagal spalvą metodus.
@@ -398,6 +409,19 @@ Algoritmui vienas po kito pateikiami vaizdo įrašo kadrai, kurie yra apdorojami
 
 Tam, kad būtų nustatyta, ar kamuolys yra laikomas rankose, su išskirtomis kamuolio ir rankų užimamą erdvę kadre reprezentuojančiomis loginėmis matricomis atliekama Hadamardo daugyba, t.y. kiekvienam matricos elementui atliekama disjunkcija su toje pačioje vietoje esančiu elementu iš kitos matricos. Rezultate gaunama matrica, žyminti sritį, kur rankos bei kamuolys persikloja. Tai reiškia, jog kamuolio ir rankų pozicija kadre sutampa, tačiau tam tikra rankos dalis yra arčiau kameros ir šiek tiek užstoja kamuolį. 
 
+\begin{figure}[H]
+	\centering
+	\subfloat[\centering Ranka]{{\includegraphics[width=5cm]{img/hand.png} }}
+	\qquad
+	\subfloat[\centering Kamuolys]{{\includegraphics[width=5cm]{img/ball.png} }}
+	\qquad
+	\subfloat[\centering Ranka arba kamuolys]{{\includegraphics[width=5cm]{img/hand_or_ball.png} }}
+	\qquad
+	\subfloat[\centering Ranka ir kamuolys (Hadamardo daugyba)]{{\includegraphics[width=5cm]{img/hand_and_ball.png} }}
+	\caption{Kamuolio ir rankų santykio nustatymas}
+	\label{fig:hand_and_ball}
+\end{figure}
+
 Žingsnių skaičiavimas yra gan kompleksiška problema: ganėtinai sunku apibrėžti universalų būdą atpažinti atliktus žingsnius iš bet kokio kampo. Paprastumo dėlei nuspręsta žingsniųs skaičiuoti tik iš žiūrint šono. Žingsnių skaičiavimo algoritmas remiasi išskirtų kojų regionų kontūrų skaičiavimu. Jei kontūrų suskaičiuota vienas, o prieš tai jų buvo du, galima teigti kad 1) Nerasta informacijos apie vieną iš pėdų (išėjo iš kadro arba nepavyko atpažinimas) arba 2) Žingsnis, žiūrint iš šono, yra toje fazėje, kai viena pėda pridengia (arba yra netoli) kitą. Tam, kad būtų galima atmesti pirmąjį atvejį, laikoma informacija apie atpažintus objektus - jei jų yra vienas, tuomet tai, kad rastas tik vienas kontūras, nekeičia turimų suskaičiuotų žingsnių kiekio. 
 
 Žingsnių skaičiavimo algoritmą, kuris taikytinas reikiamą informaciją išgavus spalviniais atpažinimo metodais arba neuroninių tinklų pagalba, galima apibrėžti taip:
@@ -406,13 +430,47 @@ Tam, kad būtų nustatyta, ar kamuolys yra laikomas rankose, su išskirtomis kam
 	\item Išskiriami kojų (batų) regionai.
 	\item Suskaičiuojami kontūrai.
 	\item Jei kontūrų yra daugiau nei vienas - pasižymima, jog sankirta neįvyko. 
-	\item Jei kontūras yra vienas, sankirta dar nebuvo įvykus ir išskirtų regionų skaičius yra daugiau, nei 1vienas- pasižymima, jog sankirta įvyko ir padidinamas žingsnių skaičius. 
+	\item Jei kontūras yra vienas, sankirta dar nebuvo įvykus ir išskirtų regionų skaičius yra daugiau, nei vienas- pasižymima, jog sankirta įvyko ir padidinamas žingsnių skaičius. 
 \end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\subfloat[\centering Žingsnio pradžia, randami du kontūrai]{{\includegraphics[width=5cm]{img/step_contours1.png} }}
+	\qquad
+	\subfloat[\centering Žingsnis tęsiasi, kontūrai vis dar du]{{\includegraphics[width=5cm]{img/step_contours2.png} }}
+	\qquad
+	\subfloat[\centering Įpusėjęs žingsnis, kontūrai susilieja į vieną]{{\includegraphics[width=5cm]{img/step_contours3.png} }}
+	\caption{Žingsnio atpažinimo procesas skaičiuojant kontūrus}
+	\label{fig:hand_and_ball}
+\end{figure}
 
 Šis žingsniavimo atpažinimo metodas taikytinas tik tada, kai žingsnis yra kiek galima labiau natūralus, t.y. kojos nėra keliamos per aukštai ir pėdos įpusėjus atliekamam žingsniui yra netoli viena kitos. Lankstesnis yra skirtumais tarp kadrų paremtas algoritmas, atpažįstantis, kada atliktas bet koks judėjimas, tačiau jo tikslumas yra prastas.
 
 Turint informaciją apie kamuolio laikymą tam tikrame laiko intervale ir per jį atliktų žingsnių kiekį, galime daryti išvadą, kad žingsnių taisyklė yra pažeista, kai per minėtą intervalą yra atlikti daugiau nei 2 žingsniai. 
 
+\subsubsection{Būsenos saugojimas}
+Atliekant pradinius bandymus su algoritmu pastebėta, jog viena iš problemų, kylančių iš metodų, nustatančių, ar kamuolys yra rankose, tai išskirtų rankų bei kamuolio regionų plotų nepastovumas priklausomai nuo apšvietimo ir kitų faktorių. Tai reiškia, jog laiko intervalas, kada kamuolys yra laikomas rankose, gali būti su trūkiais, indikuojančiais, kad tą laiko momentą nepavyko nustatyti, ar kamuolys yra rankose. Žingsnių skaičiavimo algoritmas skaičiuoja žingsnius tik tada, kai kamuolys yra rankose, tad intervalui nutrūkus dėl netikslaus atpažinimo, skaičiavimas prasidės iš naujo. 
+
+Informacija apie kamuolio buvimą rankose yra renkama ne iš vieno kadro, o iš kelių, ir darant prielaidą, jog rankose esančio kamuolio judėjimo greitis yra arti nulio, galima teigti, jog tokia būsena turėtų nepasikeisti tam tikrą skaičių kadrų. Kitaip tariant, su kiekvienu kadru išsaugoma būsena, ar kamuolys yra rankose ar ne:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{img/state}
+	\caption{Būsenos saugojimo pavyzdys kiekviename kadre}
+	\label{img:state}
+\end{figure}
+
+Išsaugojus būseną suskaičiuojama, kokia buvo jos vidutinė reikšmė per pastaruosius n kadrų: 
+
+\begin{equation}\label{eq:avg_state}
+	M_{\textit{vid. būsena}} = \sum_{n=i-x}^{i} \frac{S(n)}{n},
+\end{equation}
+
+kur \textit{i} žymi einamo kadro numerį, \textit{x} - konstantą, nurodančią dominančių kadrų skaičių, \textit{S} - \textit{n}-tojo kadro būseną, kur 1 indikuoja kamuolio buvimą rankose, o 0 - atvirkščiai.
+
+Jei vidutinė būsena yra didesnė už tam tikrą iš anksto nustatytą konstantą, pvz., 0.3, galima teigti, jog kamuolys vis dar yra rankose - tam, kad ši reikšmė pasikeistų, turi praeiti bent keli kadrai, pakeičiantys būsenos vidurkį. 
+
+Šis būsenos skaičiavimo būdas atliekant pradinius bandymus su programinės įrangos kodu pasirodė gana naudingas siekiant sumažinti įvarius būsenų svyravymus, kylančius iš atpažinimo netikslumo, tad jis taip pat yra įgyvendintas ir kitame taisyklės pažeidimo algoritme. 
 
 \subsection{Dvigubo varymo taisyklė}
 Pagal NBA taisyklių knygelės 10 taisyklės 2 skyriaus c dalį, žaidėjas negali tęsti kamuolio varymo jei jį pats sustabdė. Scenarijai, kada varymas laikomas sustabdytu, aprašyti 4 taisyklės 2 skyriuje. Varymas sustoja, kai kamuolys yra suimamas abejomis rankomis, atiduodamas kitam žaidėjui, metamas į krepšį ar prarandamas kuriuo nors kitu būdu. 
@@ -440,7 +498,9 @@ Varymo sustabdymą indikuoja tai, jog po varymo kamuolys buvo suimtas abejomis r
 
 \ref{eq:double_dribble} lygtyje M reiškia loginę matricą, reprezentuojančią tam tikros kūno dalies sritį kadre. 
 
-Šis būdas netinkamas tada, kai žaidėjas yra filmuojamas iš šono - tuomet spalviniais bei žmogaus pozos atpažinimo metodais neįmanoma nustatyti, kur yra žaidėjo užstojama ranka, nes jos tiesiog nesimato. Šią problemą mitiguoti nuspręsta //@todo state fix.
+Šis būdas netinkamas tada, kai žaidėjas yra filmuojamas iš šono - tuomet spalviniais bei žmogaus pozos atpažinimo metodais neįmanoma nustatyti, kur yra žaidėjo užstojama ranka, nes jos tiesiog nesimato. Tam, kad dalinai išspręsti šią problemą, galima pasinaudoti įžvalga, jog sustabdžius varymą ir kamuolį suėmus abejomis rankomis, kamuolys bent tam tikrą laiko tarpą lieka rankose. Šis laiko tarpas yra pakankamai reikšmingas, kad būtų galima jį atpažinti apdorojant kadrus vienas po kito. 
+
+Laiko tarpui, kai kamuolys laikomas rankose, nustatymui galima pasinaudoti 4.2.1. poskyriuje aprašytu būsenos saugojimo algoritmu. 
 
 \sectionnonum{Rezultatai ir išvados}
 Rezultatų ir išvadų dalyje išdėstomi pagrindiniai darbo rezultatai (kažkas

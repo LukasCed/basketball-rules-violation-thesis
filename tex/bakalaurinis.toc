@@ -22,34 +22,36 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.2.1.}Fono pašalinimas}{10}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.2.}Judesio atpažinimas}{10}{}%
+\contentsline {subsubsection}{\numberline {3.2.2.}Judesio atpažinimas}{11}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.}Žmogaus kūno dalių atpažinimas neuroniniais tinklais}{11}{}%
+\contentsline {subsection}{\numberline {3.3.}Žmogaus kūno dalių atpažinimas neuroniniais tinklais}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1.}Atpažinimo neuroniniais tinklais optimizavimas}{13}{}%
+\contentsline {subsubsection}{\numberline {3.3.1.}Atpažinimo neuroniniais tinklais optimizavimas}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.}Kamuolio atpažinimas Hough transformacija}{13}{}%
+\contentsline {subsection}{\numberline {3.4.}Kamuolio atpažinimas Hough transformacija}{14}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.5.}Nagrinėtų atpažinimo metodų palyginimas}{14}{}%
+\contentsline {subsection}{\numberline {3.5.}Nagrinėtų atpažinimo metodų palyginimas}{15}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.}Krepšinio taisyklių pažeidimo atpažinimas}{17}{}%
+\contentsline {section}{\numberline {4.}Krepšinio taisyklių pažeidimo atpažinimas}{18}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.}Žingsnių taisyklė}{17}{}%
+\contentsline {subsection}{\numberline {4.1.}Žingsnių taisyklė}{18}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.}Žingsnių taisyklės pažeidimo atpažinimo algoritmas}{17}{}%
+\contentsline {subsection}{\numberline {4.2.}Žingsnių taisyklės pažeidimo atpažinimo algoritmas}{18}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.}Dvigubo varymo taisyklė}{18}{}%
+\contentsline {subsubsection}{\numberline {4.2.1.}Būsenos saugojimas}{20}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.}Dvigubo varymo taisyklės atpažinimo algoritmas}{19}{}%
+\contentsline {subsection}{\numberline {4.3.}Dvigubo varymo taisyklė}{21}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Rezultatai ir išvados}{20}{}%
+\contentsline {subsection}{\numberline {4.4.}Dvigubo varymo taisyklės atpažinimo algoritmas}{21}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literatūra}{21}{}%
+\contentsline {section}{Rezultatai ir išvados}{23}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Santrumpos}{23}{}%
+\contentsline {section}{Literatūra}{24}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\MakeUppercase {Priedai}}{23}{}%
+\contentsline {section}{Santrumpos}{26}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{1 priedas.\nobreakspace {}Neuroninio tinklo struktūra}{24}{}%
+\contentsline {section}{\MakeUppercase {Priedai}}{26}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2 priedas.\nobreakspace {}Eksperimentinio palyginimo rezultatai}{25}{}%
+\contentsline {subsection}{1 priedas.\nobreakspace {}Neuroninio tinklo struktūra}{27}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{2 priedas.\nobreakspace {}Eksperimentinio palyginimo rezultatai}{28}{}%

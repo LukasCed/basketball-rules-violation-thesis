@@ -7,7 +7,7 @@ from DoubleDribbleAlgorithm import Algorithm
 from ImageProcessingUtils import *    
 import time
 
-vid = cv2.VideoCapture('vids/double-dribble.mp4')
+vid = cv2.VideoCapture('images/step3.png')
 algorithm = Algorithm(False, True)
 ts1 = time.time()
 
@@ -22,6 +22,7 @@ while(True):
     # algorithm.execute_openpose(frame)
     # frame = resize(frame, 100)
     img = algorithm.execute_lightweight_openpose(frame, False)
+
     algorithm.compute_double_dribble(img)
     cv2.imshow("result", img)
     input()
