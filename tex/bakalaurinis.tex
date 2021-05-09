@@ -65,6 +65,11 @@ naudojamus instrumentus (programas ir kt., jei darbe yra eksperimentinė dalis).
 Darbo įvadas neturi būti dėstymo santrauka. Įvado apimtis 2 –– 4 puslapiai.
 
 
+Krepšinis yra itin intensyvus ir dinamiškas žaidimas, iš žaidėjų reikalaujantis greičio, spartaus sprendimų darymo ir reakcijos laiko. Modernizuojantis krepšinis vystosi - žaidėjai tampa didesni, stipresni bei greitesni. Žaidimo spartumas daro įtaką ir teisėjams, kurie nuolatos turi observuoti bei realiu laiku nuspręsti, kada buvo pažeistos tam tikros taisyklės. Nenuostabu, jog šis darbas yra ne tik varginantis, bet ir neatsparus žmogiškosioms klaidoms. 2015 m. atliktame tyrime nustatyta, jog tų metų sezono paskutinėmis įtempto žaidimo minutėmis teisėjų tikslumas skiriant baudas tesiekė 80.1\% \cite{Deutscher}, tuo tarpu 2018 m. analizuojant pačios NBA išsaugotas statistikas apie kiekvieno žaidimo nuo 2015 m. paskutines 2 minutes nustatyta, jog teisėjai atlieka 1.49 klaidingus sprendimus kiekvieną žaidimą, o, pavyzdžiui, žingsnių taisyklę atpažįsta tik 20.6\% tikslumu \cite{SiglerK}. Negana to, teisingo ir tikslaus teisėjavimui trukdyti gali ir tokie faktoriai kaip šališkumas: NCAA (\textit{angl.} National Collegiate Athletic Association, viena populiariausių studentų krepšinio organizacijų JAV) lygoje nustatyta, jog teisėjai labiau linkę švilpti komandos, turinčioms mažiau baudų, žaidėjams, taip pat tos, kuri žaidžia svečiuose ar pirmauja \textit{OfficiatingBias}. 
+
+Visa tai rodo, jog teisėjavimas yra sritis, kuri gali tobulėti.  
+
+
 Vaizdo atpažinimas kompiuteriu - tai sparčiai besivystanti sritis. Egzistuoja daug algoritmų, kurių pagalba galima atpažinti objektus. Sportas. //@todo fix Sudetingesniems objektams dažnai yra naudojami giliuoju mokymu paremti metodai, šiame darbe išnagrinėti keli iš jų.  
 //@todo Krepšinyje atpažinimas state of the art
 
@@ -120,8 +125,19 @@ Turint intervalą užtenka nufiltruoti visus pikselius, kurių reikšmė nepaten
 \end{figure}
 
 \subsubsubsection{Dominančių objektų spalvų rėžiai}
-Atliekant bandymus pastebėta, jog net ir naudojantis HSV spalvų erdve, dominančių objektų spalvų rėžiai itin skiriasi priklausomai nuo apšvietimo.
-Tikrieji HSV spalvos Jie skirdavosi net ir tarp skirtingų vaizdo įrašų. Šiame darbe naudojamų spalvų rėžiai //@todo add spalvos .
+Atliekant bandymus pastebėta, jog net ir naudojantis HSV spalvų erdve, dominančių objektų spalvų rėžiai itin skiriasi priklausomai nuo apšvietimo. Šiame darbe naudoti spalvų rėžiai: //@todo correct the values
+
+\begin{itemize} 
+	\item Žalsvo kamuolio - nuo [61, 20, 32] iki [84, 255, 200]
+	\item Geltonų pirštinių - nuo [,,] iki [,,]
+	\item Raudonų batų - nuo [,,] iki [,,]
+\end{itemize}
+
+Tinkamų HSV rėžių radimo procedūra buvo pasirinkus tam tikrą pradinį intervalą patikrinti, ar nufiltravus netinkamus pikselius, išskirtas regiono plotas atitinka dominančio objekto plotą. Jei išskirto regiono plotas yra mažesnis - vadinasi, rėžiai yra per siauri, tad jie buvo didinami, tuo tarpu jei plotas yra didesnis - rėžiai mažinami. 
+
+Šitaip bandymų būdu buvo sukalibruoti paruoštai vaizdo medžiagai labiausiai tinkami spalvų rėžiai. Dėl galimų artifaktų atsiradimo (pvz. triuškmo ar nesusijusių objektų) nufiltravus pikselius pagal spalvos rėžius, buvo bandoma juos turėti kuo siauresnius, tačiau kaip vėliau pasirodė iš rezultatų, net ir menkiausias apšvietimo pokytis turėjo itin didelę įtaką spalvoms. Kiekvienai vaizdo medžiagai, nufilmuotai skirtingose aplinkose, ieškomų spalvų reikšmes gali tekti kalibruoti iš naujo.
+
+Taip pat buvo pastebėta, jog lauke filmuotuose vaizdo įrašuose spalvos kito mažiau, nei kambaryje - tai, galimai, yra geresnio apšvietimo pasėkmė. 
 
 \subsubsection{Morfologinės transformacijos}
 Atlikus segmentavimą pagal spalvą, rezultate dažnai lieka triukšmo ar bereikalingų artifaktų, kurie gali affectinti tolimesnį apdorojimą. @todo fix
@@ -194,7 +210,7 @@ Paveikslėlyje matome, jog algoritmas atpažino žmogaus siluetą. Šiame pavyzd
 
 Bene visi šiuolaikiniai metodai remiasi tuo pačiu principu: apmokinamas neuroninių tinklų modelis, jiems paruošiant teigiamus ir neigiamus pavyzdžius (pvz., siekiant sukurti kojų atpažinimo algoritmą, paveiksliukai, kuriuose yra koja pažymimi kaip teigiami, tie, kuriuose kojos nėra tampa neigiamais). Mokinimo procesas gali trukti daug laiko – kartais net savaites, todėl daug paprasčiau yra pasinaudoti jau sukurtu modeliu. Vienas iš modelių, pavadinimu OpenPose, buvo pasiūlytas 2018 metais \cite{cao2019openpose}. Modelio architektūra paremta konvoliuciniais neuroniniais tinklais. Modelis suskirstytas į dvi šakas. Viena jų priskiria tikimybes, kad tam tikras regionas yra tam tikra kūno dalis, kita – asociacijas tarp skirtingų kūno dalių. Atpažinimas vyksta keliais etapais, siekiant gauti kuo tikslesnius rezultatus. 
 
-Šiame darbe kuriamas vaizdo atpažinimo algoritmas kiekvieną kadrą pateikia OpenPose modeliui, o rezultate gaunamos skirtingomis spalvomis sužymėtos kūno dalys. Taisyklių pažeidimo atpažinimo algoritmui aktualios yra rankų ir pėdų sritis. 
+Šiame darbe kuriamas vaizdo atpažinimo algoritmas kiekvieną kadrą pateikia neuroniniui tinklui, kuris apskaičiuoja ir grąžina šiluminį žemėlapį (\textit{angl.} heatmap) su sąnarių koordinatėmis ir tikimybėmis, kad tose koordinatėse jas galima rasti. Vėlesnis apdorojimas pagal grąžintas koordinates kadre skirtingomis spalvomis sužymi dominančias kūno dalis, aplink gautas koordinates nupiešiant fiksuoto spindulio ir spalvos skritulį. Taisyklių pažeidimo atpažinimo algoritmui aktualios yra rankų ir pėdų sritis. Verta pabrėžti, jog randamos yra sąnarių pozicijos, ir nuo algoritmo priklauso, ar tokia informacija yra pakankamai tiksli. 
 
 \begin{figure}[H]
     \centering
@@ -211,7 +227,7 @@ Atliekant bandymus su vaizdo medžiaga pastebėta, jog Lightweight modelis žaid
 
 \begin{table}[H]\footnotesize
 	\centering
-	\caption{OpenPose ir Lightweight modelių palyginimas}
+	\caption{OpenPose ir Lightweight modelių palyginimimas apdorojant vienodus vaizdo įrašus}
 	{\begin{tabular}{|c|c|c|} \hline
 			\textbf{Modelis} & \textbf{Vidutinė trukmė apdoroti vieną kadrą (ms)} & \textbf{Vidutinis rezultatų tikslumas (\%)} \\
 			\hline
@@ -223,11 +239,11 @@ Atliekant bandymus su vaizdo medžiaga pastebėta, jog Lightweight modelis žaid
 	\label{tab:openposevslightweight}
 \end{table}
 
-Dalį Lightweight modelio tikslumo pranašumo galėjo lemti OpenPose parametrų ir paduodamo kadro dimensijų neatitikimas, o spartumo - tai, jog duomenų apskaičiavimas OpenPose tinklu buvo įgyvendintas su OpenCV dnn moduliu, kuris bandymų metu nebuvo sukonfigūruotas naudoti GPU akceleravimą. Kadangi po optimizacijos Lightweight modelis tenkino tikslumo ir greičio lūkesčius, toliau nuspręsta naudoti jį. 
+Dalį Lightweight modelio tikslumo pranašumo galėjo lemti OpenPose parametrų ir paduodamo kadro dimensijų neatitikimas, o spartumo - tai, jog duomenų apskaičiavimas OpenPose tinklu buvo įgyvendintas su OpenCV dnn moduliu, kuris bandymų metu nebuvo sukonfigūruotas naudoti GPU akceleravimą. Kadangi po optimizacijos Lightweight modelis tenkino tikslumo ir greičio lūkesčius, toliau naudoti jį. 
 
 \subsubsection{Atpažinimo neuroniniais tinklais optimizavimas}
 
-Atliekant bandymus pastebėta, jog atpažinimą Lightweight modeliu galima optimizuoti. Viena iš optimizacijų, kuri buvo atlikta, tai skaičiavimo perkėlimas ant GPU. Tam galima panaudoti CUDA - NVIDIA sukurtą API parareliems skaičiavimams \cite{cuda}. OpenCV puslapyje rašoma, jog su CUDA paveikslėlių apdorojimas gali pagreitėti iki 30 kartų \cite{opencv-cuda}. Be GPU akceleracijos Lightweight tinklas vieną kadrą užtrukdavo apdoroti iki 680 ms. 
+Atliekant bandymus pastebėta, jog atpažinimą Lightweight modeliu galima optimizuoti. Viena iš optimizacijų, kuri buvo atlikta, tai skaičiavimo naštos perkėlimas ant GPU. Tam panaudota CUDA - NVIDIA sukurtas API paraleliems skaičiavimams \cite{cuda}. Integravus OpenCV su CUDA, paveikslėlių apdorojimas gali pagreitėti iki 30 kartų \cite{opencv-cuda}. Be GPU akceleracijos Lightweight tinklas vieną kadrą užtrukdavo apdoroti iki 680 ms. 
 
 Pastebėta, jog apdorojimo greičiui įtakos turi ir kadro dimensijos. Jei į neuroninį tinklą paduodamo kadro plotis yra didesnis, nei jo aukštis, apdorojimo greitis pakyla iki 5 kartų. Tačiau tai buvo mitiguota atnaujinus OpenCV versiją iš 4.0.1 į 4.5.1 - po šio atnaujinimo, apdorojimo greičiai tapo nebepriklausomi nuo santykio tarp paveikslėlio aukščio ir pločio. 
 
@@ -237,7 +253,7 @@ Atliekant žmogaus skeleto atpažinimo bandymus su mažesnės rezoliucijos kadra
 
 \begin{table}[H]\footnotesize
 	\centering
-	\caption{Lightweight optimizavimas sumažinus įvesties kanalų skaičių}
+	\caption{Lightweight optimizavimas sumažinus įvesties kanalų skaičių apdorojant vienodus vaizdo įrašus}
 	{\begin{tabular}{|c|c|c|} \hline
 			\textbf{Kanalų skaičius} & \textbf{Vidutinė trukmė apdoroti vieną kadrą (ms)} & \textbf{Vidutinis rezultatų tikslumas (\%)} \\
 			\hline
@@ -265,7 +281,7 @@ Patikrinus algoritmą su vaizdo įrašu tapo akivaizdu, jog šis jis tinka tik i
 	\label{fig:contours}
 \end{figure}
 
-Dėl šių trūkumų tolimesniam vaizdo atpažinimui nuspręsta taikyti kamuolio atpažimo pagal spalvą metodus.
+Dėl šių trūkumų tolimesniam vaizdo atpažinimui nuspręsta taikyti kamuolio atpažimo pagal spalvą metodus, kadangi preliminarūs rezultatai parodė, jog kadrus apdoroti spalviniu atpažinimu paremtais algoritmais užtrunka šimtus kartų mažiau laiko, nei elipsių paieškos algoritmas, taip pat - jie yra tikslesni, pasirinkus teisingus spalvos rėžius. 
 
 \subsection{Nagrinėtų atpažinimo metodų palyginimas}
 
@@ -278,7 +294,6 @@ Metodo, besiremiančio skirtumais tarp kadrų, žingsnių atpažinimo procesas a
 Visuose vaizdo įrašuose žmogus dėvi raudonus batus, tam, kad veiktų spalvomis paremti atpažinimo metodai ir juos būtų galima lyginti su kitais. Vaizdo įrašų sukurta septyni, juose - skirtingas apšvietimas, nuotolis iki žmogaus, žingsniai atliekami skirtingu tempu ir kamera filmuoja skirtingais kampais. 
 
 Algoritmai buvo patikrinti kelis kartus su tais pačiais įrašais, siekiant sumažinti įvairių kitų kompiuteryje vykstančių procesų įtaką vaizdo apdorojimo greičiui. 
-
 
 \begin{table}[H]\footnotesize
 	\centering
@@ -392,10 +407,13 @@ Apibendrinus - spalviniai vaizdo atpažinimo metodai tinka tuomet, kai prie domi
 
 \subsection{Žingsnių taisyklė}
 Žingsnių (\textit{angl.} traveling) taisyklė yra aprašyta oficialioje NBA taisyklių knygelės 10 taisyklės 13 skyriuje. Jos formuluotė, kuria remiasi analizė, atlikta šiame darbe, yra tokia: 
+
 \begin{itemize}
 	\item Žaidėjas, varydamas kamuolį, gali padaryti du žingsnius prieš sustojant arba kamuolį metant ar atiduodant \cite{nba-rules}. 
 \end{itemize}
+
 Būdų pažeisti šią taisyklę yra gausu, tačiau šiame darbe fokusuojamasi į atvejį, kai žaidėjas suėmęs kamuolį atlieka daugiau nei du žingsnius. Tam, kad atlikti žingsniai būtų laikomi kaip pažeidžiantys taisyklę, kamuolys turi būti nemušamas į žemę, o laikomas rankose - krepšinyje tai dažniausiai nutinka prieš metant kamuolį į krepšį, kai yra atliekamas dvižingsnis (NBA tai vadinama kamuolio surinkimu (\textit{angl.} gathering)). Taigi, algoritmas, siekiantis atpažinti šios taisyklės pažeidimą, privalo taip pat gebėti atpažinti, kada kamuolys yra rankose, ir tuomet skaičiuoti atliktų žingsnių skaičių. 
+
 \subsection{Žingsnių taisyklės pažeidimo atpažinimo algoritmas}
 
 Algoritmo reikalavimai: nustatytos rankų, kojų bei kamuolio vietos paveikslėlyje. Apibendrintas algoritmas užsirašytų šitaip: 
@@ -407,10 +425,13 @@ Algoritmo reikalavimai: nustatytos rankų, kojų bei kamuolio vietos paveikslėl
 	\item Jei per intervalą, kai kamuolys yra laikomas rankose, buvo atlikti daugiau nei 2 žingsniai - grąžinamas rezultatas, jog taisyklė pažeista.
 \end{enumerate}
 
-  
 Algoritmui vienas po kito pateikiami vaizdo įrašo kadrai, kurie yra apdorojami po vieną. Po anksčiau aprašytų atpažinimo metodų turima pakankamai informacijos nustatyti, kur kiekviename kadre yra ranka, kojos ir kamuolys. OpenCV įgalina visų minėtųjų metodų metu išgautą informaciją reprezentuoti loginėse vienetų bei nulių matricose, kur vienetai žymi objekto buvimą tam tikrame plote. 
 
-Tam, kad būtų nustatyta, ar kamuolys yra laikomas rankose, su išskirtomis kamuolio ir rankų užimamą erdvę kadre reprezentuojančiomis loginėmis matricomis atliekama Hadamardo daugyba, t.y. kiekvienam matricos elementui atliekama disjunkcija su toje pačioje vietoje esančiu elementu iš kitos matricos. Rezultate gaunama matrica, žyminti sritį, kur rankos bei kamuolys persikloja. Tai reiškia, jog kamuolio ir rankų pozicija kadre sutampa, tačiau tam tikra rankos dalis yra arčiau kameros ir šiek tiek užstoja kamuolį. 
+Tam, kad būtų nustatyta, ar kamuolys yra laikomas rankose, su išskirtomis kamuolio ir rankų užimamą erdvę kadre reprezentuojančiomis loginėmis matricomis atliekama Hadamardo daugyba, t.y. kiekvienam matricos elementui atliekama disjunkcija su toje pačioje vietoje esančiu elementu iš kitos matricos.
+
+Spalvinio atpažinimo metodų sukurtos matricos yra pačių kūno dalių projekcija, tačiau naudotas neuroninių tinklų modelis grąžina apytikslias sąnarių koordinates (riešo, kulkšnies), aplink kuriuos nupiešiamas skritulys - iš to galima spręsti, kur maždaug yra ranka ar pėda.  
+
+Rezultate gaunama matrica, žyminti sritį, kur rankos bei kamuolys persikloja. Tai reiškia, jog kamuolio ir rankų pozicija kadre sutampa, tačiau tam tikra rankos dalis yra arčiau kameros ir šiek tiek užstoja kamuolį. 
 
 \begin{figure}[H]
 	\centering
@@ -533,6 +554,9 @@ santrumpos.
 % parengta, medžiaga. Savarankiški priedai gali būti pateikiami ir
 % kompaktiniame diske. Priedai taip pat numeruojami ir vadinami. Darbo tekstas
 % su priedais susiejamas nuorodomis.
+
+\section{Sukurtos programinės įrangos kodo nuoroda}
+https://github.com/LukasCed/basketball-rules-violation-thesis
 
 \section{Neuroninio tinklo struktūra}
 \begin{figure}[H]
