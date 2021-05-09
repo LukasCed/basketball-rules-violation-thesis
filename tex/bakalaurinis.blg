@@ -1,16 +1,14 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'bakalaurinis.blg'
-[146] biber-MSWIN64:340> INFO - === 
-[194] Biber.pm:415> INFO - Reading 'bakalaurinis.bcf'
-[344] Biber.pm:952> INFO - Found 25 citekeys in bib section 0
-[362] Biber.pm:4340> INFO - Processing section 0
-[376] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliografija.bib' for section 0
-[454] bibtex.pm:1689> INFO - LaTeX decoding ...
-[529] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliografija.bib'
-[677] Utils.pm:395> WARN - I didn't find a database entry for 'Deutscher' (section 0)
-[721] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[721] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'variable = shifted' with 'variable = non-ignorable'
-[721] Biber.pm:4168> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'lt-LT'
-[753] bbl.pm:654> INFO - Writing 'bakalaurinis.bbl' with encoding 'UTF-8'
-[768] bbl.pm:757> INFO - Output to bakalaurinis.bbl
-[768] Biber.pm:128> INFO - WARNINGS: 1
+[142] biber-MSWIN64:340> INFO - === 
+[191] Biber.pm:415> INFO - Reading 'bakalaurinis.bcf'
+[340] Biber.pm:952> INFO - Found 26 citekeys in bib section 0
+[361] Biber.pm:4340> INFO - Processing section 0
+[375] Biber.pm:4531> INFO - Looking for bibtex format file 'bibliografija.bib' for section 0
+[467] bibtex.pm:1689> INFO - LaTeX decoding ...
+[536] bibtex.pm:1494> INFO - Found BibTeX data source 'bibliografija.bib'
+[733] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'variable = shifted' with 'variable = non-ignorable'
+[733] UCollate.pm:68> INFO - Overriding locale 'lt-LT' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[733] Biber.pm:4168> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'lt-LT'
+[770] bbl.pm:654> INFO - Writing 'bakalaurinis.bbl' with encoding 'UTF-8'
+[784] bbl.pm:757> INFO - Output to bakalaurinis.bbl

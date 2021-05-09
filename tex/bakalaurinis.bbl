@@ -41,6 +41,41 @@
       \field{title}{{Miniconda}}
       \field{year}{2021}
     \endentry
+    \entry{OfficiatingBias}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4a2c58656e133c2e3753ed3f9c200aae}{%
+           family={Anderson},
+           familyi={A\bibinitperiod},
+           given={K.\bibnamedelimi J.},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=75897302e83fe041d5cadb6c536b7df6}{%
+           family={Pierce},
+           familyi={P\bibinitperiod},
+           given={D.\bibnamedelimi A.},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{5d8274b2401ba7a95b4e3e50d46a7831}
+      \strng{fullhash}{5d8274b2401ba7a95b4e3e50d46a7831}
+      \strng{bibnamehash}{5d8274b2401ba7a95b4e3e50d46a7831}
+      \strng{authorbibnamehash}{5d8274b2401ba7a95b4e3e50d46a7831}
+      \strng{authornamehash}{5d8274b2401ba7a95b4e3e50d46a7831}
+      \strng{authorfullhash}{5d8274b2401ba7a95b4e3e50d46a7831}
+      \field{labelalpha}{AP09}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Sports Sciences}
+      \field{number}{7}
+      \field{title}{Officiating bias: The effect of foul differential on foul calls in NCAA basketball}
+      \field{volume}{27}
+      \field{year}{2009}
+      \field{pages}{687\bibrangedash 694}
+      \range{pages}{8}
+    \endentry
     \entry{Andriluka_2014_CVPR}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=179ff7227278bb542704b73acc3e138f}{%
@@ -158,6 +193,33 @@
       \verb{eprint}
       \verb 1812.08008
       \endverb
+    \endentry
+    \entry{NBA_bias_Referee}{article}{}
+      \name{author}{1}{}{%
+        {{hash=34decbf8ab00d66217a696b7f91e40ca}{%
+           family={Deutscher},
+           familyi={D\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{34decbf8ab00d66217a696b7f91e40ca}
+      \strng{fullhash}{34decbf8ab00d66217a696b7f91e40ca}
+      \strng{bibnamehash}{34decbf8ab00d66217a696b7f91e40ca}
+      \strng{authorbibnamehash}{34decbf8ab00d66217a696b7f91e40ca}
+      \strng{authornamehash}{34decbf8ab00d66217a696b7f91e40ca}
+      \strng{authorfullhash}{34decbf8ab00d66217a696b7f91e40ca}
+      \field{labelalpha}{Deu15}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Sports Analytics}
+      \field{month}{12}
+      \field{title}{No referee bias in the NBA: New evidence with leagues’ assessment data}
+      \field{volume}{1}
+      \field{year}{2015}
+      \field{pages}{91\bibrangedash 96}
+      \range{pages}{6}
     \endentry
     \entry{4767941}{article}{}
       \name{author}{3}{}{%
@@ -783,7 +845,6 @@
       \range{pages}{-1}
     \endentry
   \enddatalist
-  \missing{Deutscher}
 \endrefsection
 \endinput
 
