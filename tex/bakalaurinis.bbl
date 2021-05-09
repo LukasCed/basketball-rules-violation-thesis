@@ -281,6 +281,92 @@
       \field{pages}{135\bibrangedash 144}
       \range{pages}{10}
     \endentry
+    \entry{KAKUMANU20071106}{article}{}
+      \name{author}{3}{}{%
+        {{hash=51d4cc93f7706552257bec5f05597da4}{%
+           family={Kakumanu},
+           familyi={K\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=37a22391c997d4aaf91a9089704d0aed}{%
+           family={Makrogiannis},
+           familyi={M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cb283e32b838e6aacc6951524c4727cd}{%
+           family={Bourbakis},
+           familyi={B\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca8e9cb7f608dfd79aa164bd8ffd0c34}
+      \strng{fullhash}{ca8e9cb7f608dfd79aa164bd8ffd0c34}
+      \strng{bibnamehash}{ca8e9cb7f608dfd79aa164bd8ffd0c34}
+      \strng{authorbibnamehash}{ca8e9cb7f608dfd79aa164bd8ffd0c34}
+      \strng{authornamehash}{ca8e9cb7f608dfd79aa164bd8ffd0c34}
+      \strng{authorfullhash}{ca8e9cb7f608dfd79aa164bd8ffd0c34}
+      \field{labelalpha}{KMB07}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0031-3203}
+      \field{journaltitle}{Pattern Recognition}
+      \field{number}{3}
+      \field{title}{A survey of skin-color modeling and detection methods}
+      \field{volume}{40}
+      \field{year}{2007}
+      \field{pages}{1106\bibrangedash 1122}
+      \range{pages}{17}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.patcog.2006.06.010
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0031320306002767
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0031320306002767
+      \endverb
+    \endentry
+    \entry{1220504}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=dd638fe22849cf3f474e946680ed4b86}{%
+           family={Kovac},
+           familyi={K\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b71bd6cee04ea7b680d4aada099360eb}{%
+           family={Peer},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=60cfb0284e309e52edd6e90f5a35d53a}{%
+           family={Solina},
+           familyi={S\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{a306166af0db524aefde3693cd435fce}
+      \strng{fullhash}{a306166af0db524aefde3693cd435fce}
+      \strng{bibnamehash}{a306166af0db524aefde3693cd435fce}
+      \strng{authorbibnamehash}{a306166af0db524aefde3693cd435fce}
+      \strng{authornamehash}{a306166af0db524aefde3693cd435fce}
+      \strng{authorfullhash}{a306166af0db524aefde3693cd435fce}
+      \field{labelalpha}{KPS03}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings EC-VIP-MC 2003. 4th EURASIP Conference focused on Video/Image Processing and Multimedia Communications (IEEE Cat. No.03EX667)}
+      \field{title}{2D versus 3D colour space face detection}
+      \field{volume}{2}
+      \field{year}{2003}
+      \field{pages}{449\bibrangedash 454 vol.2}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1109/VIPMC.2003.1220504
+      \endverb
+    \endentry
     \entry{Python}{book}{}
       \name{author}{1}{}{%
         {{hash=1a3485de33be7741c5ab16ba16f039b2}{%
@@ -511,6 +597,47 @@
       \field{title}{{PyTorch Documentation}}
       \field{year}{2021}
     \endentry
+    \entry{segmentation_trends}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e48a7885ae9ec9770381bf582ed3ff91}{%
+           family={Vantaram},
+           familyi={V\bibinitperiod},
+           given={S.\bibnamedelimi R.},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=fbabd7f1d793ff3640357ceafef764bc}{%
+           family={Saber},
+           familyi={S\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SPIE}%
+      }
+      \strng{namehash}{b82ef0d1152ad01e301146aae758fb66}
+      \strng{fullhash}{b82ef0d1152ad01e301146aae758fb66}
+      \strng{bibnamehash}{b82ef0d1152ad01e301146aae758fb66}
+      \strng{authorbibnamehash}{b82ef0d1152ad01e301146aae758fb66}
+      \strng{authornamehash}{b82ef0d1152ad01e301146aae758fb66}
+      \strng{authorfullhash}{b82ef0d1152ad01e301146aae758fb66}
+      \field{labelalpha}{VS12}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Electronic Imaging}
+      \field{number}{4}
+      \field{title}{{Survey of contemporary trends in color image segmentation}}
+      \field{volume}{21}
+      \field{year}{2012}
+      \field{pages}{1\bibrangedash 28}
+      \range{pages}{28}
+      \verb{urlraw}
+      \verb https://doi.org/10.1117/1.JEI.21.4.040901
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1117/1.JEI.21.4.040901
+      \endverb
+    \endentry
     \entry{7457892}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=61be167962c63c0b3d47021a71b77efe}{%
@@ -568,6 +695,48 @@
       \field{year}{1991}
       \field{pages}{359\bibrangedash 370}
       \range{pages}{12}
+    \endentry
+    \entry{WANG20011983}{article}{}
+      \name{author}{2}{}{%
+        {{hash=61ad10c626e1d641e0b1d7b5f48d3233}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=4f9eb8924291f7c9312be9532c9769ab}{%
+           family={Yuan},
+           familyi={Y\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{43d316d33cf9139c99dd760477914513}
+      \strng{fullhash}{43d316d33cf9139c99dd760477914513}
+      \strng{bibnamehash}{43d316d33cf9139c99dd760477914513}
+      \strng{authorbibnamehash}{43d316d33cf9139c99dd760477914513}
+      \strng{authornamehash}{43d316d33cf9139c99dd760477914513}
+      \strng{authorfullhash}{43d316d33cf9139c99dd760477914513}
+      \field{labelalpha}{WY01}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0031-3203}
+      \field{journaltitle}{Pattern Recognition}
+      \field{number}{10}
+      \field{title}{A novel approach for human face detection from color images under complex background}
+      \field{volume}{34}
+      \field{year}{2001}
+      \field{pages}{1983\bibrangedash 1992}
+      \range{pages}{10}
+      \verb{doi}
+      \verb https://doi.org/10.1016/S0031-3203(00)00119-9
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0031320300001199
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0031320300001199
+      \endverb
     \endentry
     \entry{1048464}{inproceedings}{}
       \name{author}{2}{}{%

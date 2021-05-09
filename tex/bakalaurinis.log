@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.1) (format=lualatex 2021.2.28)  9 MAY 2021 01:00
+This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.1) (format=lualatex 2021.2.28)  9 MAY 2021 18:27
  restricted system commands enabled.
 **bakalaurinis.tex
 (./bakalaurinis.tex
@@ -214,10 +214,10 @@ braces):
 >  {lithuanian/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 Module polyglossia Info: Language data for lithuanian
 (polyglossia)            patterns	hyph-lt.pat.txt
-(polyglossia)            lefthyphenmin	2
 (polyglossia)            righthyphenmin	2
-(polyglossia)            loader	loadhyph-lt.tex
 (polyglossia)            hyphenation	
+(polyglossia)            lefthyphenmin	2
+(polyglossia)            loader	loadhyph-lt.tex
 (polyglossia)            synonyms	 on input line 11
 Module polyglossia Info: Language lithuanian was not yet loaded; created with id
  2 on input line 11
@@ -1174,94 +1174,94 @@ LaTeX Info: Redefining \ttfamily on input line 3.
 File: img/hand_before_segmentation.png Graphic file (type png)
 <use img/hand_before_segmentation.png>
 Package luatex.def Info: img/hand_before_segmentation.png  used on input line 1
-13.
+15.
 (luatex.def)             Requested size: 142.26378pt x 213.7226pt.
 <img/hand_after_segmentation.png, id=29, 170.88844pt x 257.46187pt>
 File: img/hand_after_segmentation.png Graphic file (type png)
 <use img/hand_after_segmentation.png>
 Package luatex.def Info: img/hand_after_segmentation.png  used on input line 11
-5.
+7.
 (luatex.def)             Requested size: 142.26378pt x 214.34935pt.
  [8<./img/hand_before_segmentation.png><./img/hand_after_segmentation.png>]
-<img/ball_contours_before.png, id=36, 169.38281pt x 251.43938pt>
+<img/ball_contours_before.png, id=35, 169.38281pt x 251.43938pt>
 File: img/ball_contours_before.png Graphic file (type png)
 <use img/ball_contours_before.png>
-Package luatex.def Info: img/ball_contours_before.png  used on input line 151.
+Package luatex.def Info: img/ball_contours_before.png  used on input line 155.
 (luatex.def)             Requested size: 142.26378pt x 211.18845pt.
-<img/ball_contours_after.png, id=37, 161.10187pt x 239.39438pt>
+<img/ball_contours_after.png, id=36, 161.10187pt x 239.39438pt>
 File: img/ball_contours_after.png Graphic file (type png)
 <use img/ball_contours_after.png>
-Package luatex.def Info: img/ball_contours_after.png  used on input line 153.
+Package luatex.def Info: img/ball_contours_after.png  used on input line 157.
 (luatex.def)             Requested size: 142.26378pt x 211.40923pt.
  [9]
 <img/background-substraction-before.png, id=47, 251.43938pt x 411.03563pt>
 File: img/background-substraction-before.png Graphic file (type png)
 <use img/background-substraction-before.png>
 Package luatex.def Info: img/background-substraction-before.png  used on input 
-line 164.
+line 168.
 (luatex.def)             Requested size: 142.26378pt x 232.56169pt.
 <img/background-substraction.png, id=48, 251.43938pt x 411.03563pt>
 File: img/background-substraction.png Graphic file (type png)
 <use img/background-substraction.png>
-Package luatex.def Info: img/background-substraction.png  used on input line 16
-6.
+Package luatex.def Info: img/background-substraction.png  used on input line 17
+0.
 (luatex.def)             Requested size: 142.26378pt x 232.56169pt.
  [10<./img/ball_contours_before.png><./img/ball_contours_after.png>]
 <img/steps.png, id=54, 450.9347pt x 352.31625pt>
 File: img/steps.png Graphic file (type png)
 <use img/steps.png>
-Package luatex.def Info: img/steps.png  used on input line 180.
+Package luatex.def Info: img/steps.png  used on input line 184.
 (luatex.def)             Requested size: 360.74825pt x 281.85338pt.
  [11<./img/background-substraction-before.png><./img/background-substraction.png
 >] [12<./img/steps.png>]
 <img/body-parts-better.png, id=62, 205.5178pt x 362.85562pt>
 File: img/body-parts-better.png Graphic file (type png)
 <use img/body-parts-better.png>
-Package luatex.def Info: img/body-parts-better.png  used on input line 197.
+Package luatex.def Info: img/body-parts-better.png  used on input line 201.
 (luatex.def)             Requested size: 164.41446pt x 290.28488pt.
  [13<./img/body-parts-better.png>]
 <img/ball_circled.png, id=67, 93.34875pt x 109.91063pt>
 File: img/ball_circled.png Graphic file (type png)
 <use img/ball_circled.png>
-Package luatex.def Info: img/ball_circled.png  used on input line 257.
+Package luatex.def Info: img/ball_circled.png  used on input line 261.
 (luatex.def)             Requested size: 142.26378pt x 167.51196pt.
 <img/ball_notfound.png, id=68, 74.52844pt x 91.84312pt>
 File: img/ball_notfound.png Graphic file (type png)
 <use img/ball_notfound.png>
-Package luatex.def Info: img/ball_notfound.png  used on input line 259.
+Package luatex.def Info: img/ball_notfound.png  used on input line 263.
 (luatex.def)             Requested size: 142.26378pt x 175.34456pt.
  [14]
-Underfull \hbox (badness 3635) in paragraph at lines 283--283
+Underfull \hbox (badness 3635) in paragraph at lines 287--287
 []\TU/texgyretermes(0)/b/n/10 Vaiz-do įra-šo
  []
 
 [15<./img/ball_circled.png><./img/ball_notfound.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 309--309
+Underfull \hbox (badness 10000) in paragraph at lines 313--313
 []\TU/texgyretermes(0)/b/n/10 Al-go-rit-mo su-skai-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--310
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
 []\TU/texgyretermes(0)/b/n/10 Vi-du-ti-nė vaiz-do
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--333
+Underfull \hbox (badness 10000) in paragraph at lines 337--337
 []\TU/texgyretermes(0)/b/n/10 Al-go-rit-mo su-skai-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--334
+Underfull \hbox (badness 10000) in paragraph at lines 337--338
 []\TU/texgyretermes(0)/b/n/10 Vi-du-ti-nė vaiz-do
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 357--357
+Underfull \hbox (badness 10000) in paragraph at lines 361--361
 []\TU/texgyretermes(0)/b/n/10 Al-go-rit-mo su-skai-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 357--358
+Underfull \hbox (badness 10000) in paragraph at lines 361--362
 []\TU/texgyretermes(0)/b/n/10 Vi-du-ti-nė vaiz-do
  []
 
@@ -1269,22 +1269,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 357--358
 <img/hand.png, id=83, 366.61969pt x 324.46219pt>
 File: img/hand.png Graphic file (type png)
 <use img/hand.png>
-Package luatex.def Info: img/hand.png  used on input line 413.
+Package luatex.def Info: img/hand.png  used on input line 417.
 (luatex.def)             Requested size: 142.26378pt x 125.90602pt.
 <img/ball.png, id=84, 367.3725pt x 322.95656pt>
 File: img/ball.png Graphic file (type png)
 <use img/ball.png>
-Package luatex.def Info: img/ball.png  used on input line 415.
+Package luatex.def Info: img/ball.png  used on input line 419.
 (luatex.def)             Requested size: 142.26378pt x 125.06552pt.
 <img/hand_or_ball.png, id=85, 364.36125pt x 323.70938pt>
 File: img/hand_or_ball.png Graphic file (type png)
 <use img/hand_or_ball.png>
-Package luatex.def Info: img/hand_or_ball.png  used on input line 417.
+Package luatex.def Info: img/hand_or_ball.png  used on input line 421.
 (luatex.def)             Requested size: 142.26378pt x 126.38939pt.
 <img/hand_and_ball.png, id=86, 366.61969pt x 322.95656pt>
 File: img/hand_and_ball.png Graphic file (type png)
 <use img/hand_and_ball.png>
-Package luatex.def Info: img/hand_and_ball.png  used on input line 419.
+Package luatex.def Info: img/hand_and_ball.png  used on input line 423.
 (luatex.def)             Requested size: 142.26378pt x 125.32178pt.
  [18
 
@@ -1292,24 +1292,24 @@ Package luatex.def Info: img/hand_and_ball.png  used on input line 419.
 <img/step_contours1.png, id=90, 569.87906pt x 197.98969pt>
 File: img/step_contours1.png Graphic file (type png)
 <use img/step_contours1.png>
-Package luatex.def Info: img/step_contours1.png  used on input line 437.
+Package luatex.def Info: img/step_contours1.png  used on input line 441.
 (luatex.def)             Requested size: 142.26378pt x 49.42479pt.
 <img/step_contours2.png, id=91, 569.87906pt x 197.23688pt>
 File: img/step_contours2.png Graphic file (type png)
 <use img/step_contours2.png>
-Package luatex.def Info: img/step_contours2.png  used on input line 439.
+Package luatex.def Info: img/step_contours2.png  used on input line 443.
 (luatex.def)             Requested size: 142.26378pt x 49.23686pt.
 <img/step_contours3.png, id=92, 566.115pt x 194.22563pt>
 File: img/step_contours3.png Graphic file (type png)
 <use img/step_contours3.png>
-Package luatex.def Info: img/step_contours3.png  used on input line 441.
+Package luatex.def Info: img/step_contours3.png  used on input line 445.
 (luatex.def)             Requested size: 142.26378pt x 48.80818pt.
  [19<./img/hand.png><./img/ball.png><./img/hand_or_ball.png><./img/hand_and_ball
 .png>]
 <img/state.png, id=100, 673.51625pt x 70.2625pt>
 File: img/state.png Graphic file (type png)
 <use img/state.png>
-Package luatex.def Info: img/state.png  used on input line 457.
+Package luatex.def Info: img/state.png  used on input line 461.
 (luatex.def)             Requested size: 404.11287pt x 42.1578pt.
  [20<./img/step_contours1.png><./img/step_contours2.png><./img/step_contours3.pn
 g><./img/state.png>] [21] [22] [23
@@ -1322,7 +1322,7 @@ g><./img/state.png>] [21] [22] [23
 <img/MLP.png, id=127, 481.8pt x 207.77625pt>
 File: img/MLP.png Graphic file (type png)
 <use img/MLP.png>
-Package luatex.def Info: img/MLP.png  used on input line 536.
+Package luatex.def Info: img/MLP.png  used on input line 540.
 (luatex.def)             Requested size: 240.8994pt x 103.88786pt.
 
 [27
@@ -1394,16 +1394,16 @@ Package logreq Info: Writing requests to 'bakalaurinis.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 19366 strings out of 478819
+ 19374 strings out of 478819
  125038,1373583 words of node,token memory allocated
  760 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 15 attribute, 100 glue_spe
 c, 15 attribute_list, 1 write nodes
-   avail lists: 1:2,2:883,3:521,4:83,5:505,6:248,7:8114,8:68,9:1684,10:38,11:126
-4
- 38192 multiletter control sequences out of 65536+200000
+   avail lists: 1:2,2:887,3:521,4:88,5:531,6:248,7:8793,8:71,9:1684,10:38,11:135
+0
+ 38200 multiletter control sequences out of 65536+200000
  112 fonts using 15054159 bytes
- 125i,12n,141p,1360b,1538s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 125i,11n,141p,1360b,1538s stack positions out of 5000i,500n,10000p,200000b,50000s
 <//?/c:/users/lukas/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmon
 o12-regular.otf><//?/c:/users/lukas/appdata/local/programs/miktex/fonts/opentype
 /public/tex-gyre/texgyretermes-italic.otf><//?/c:/users/lukas/appdata/local/prog
@@ -1421,7 +1421,7 @@ AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/
 Lukas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
 :/Users/Lukas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8
 .pfb>
-Output written on bakalaurinis.pdf (29 pages, 896155 bytes).
+Output written on bakalaurinis.pdf (29 pages, 900686 bytes).
 
 PDF statistics: 195 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
