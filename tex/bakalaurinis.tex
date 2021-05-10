@@ -413,7 +413,7 @@ Apibendrinus - spalviniai vaizdo atpažinimo metodai tinka tuomet, kai prie domi
 
 \section{Krepšinio taisyklių pažeidimo atpažinimas}
 
-Šiame darbe bus nagrinėjamos kelios taisyklės.
+Šiame skyriuje bus aprašomi algoritmai žingsnių bei dvigubo varymo taisyklių atpažinimui.
 
 \subsection{Žingsnių taisyklė}
 Žingsnių (\textit{angl.} traveling) taisyklė yra aprašyta oficialioje NBA taisyklių knygelės 10 taisyklės 13 skyriuje. Jos formuluotė, kuria remiasi analizė, atlikta šiame darbe, yra tokia: 
@@ -422,11 +422,11 @@ Apibendrinus - spalviniai vaizdo atpažinimo metodai tinka tuomet, kai prie domi
 	\item Žaidėjas, varydamas kamuolį, gali padaryti du žingsnius prieš sustojant arba kamuolį metant ar atiduodant \cite{nba-rules}. 
 \end{itemize}
 
-Būdų pažeisti šią taisyklę yra gausu, tačiau šiame darbe fokusuojamasi į atvejį, kai žaidėjas suėmęs kamuolį atlieka daugiau nei du žingsnius. Tam, kad atlikti žingsniai būtų laikomi kaip pažeidžiantys taisyklę, kamuolys turi būti nemušamas į žemę, o laikomas rankose - krepšinyje tai dažniausiai nutinka prieš metant kamuolį į krepšį, kai yra atliekamas dvižingsnis (NBA tai vadinama kamuolio surinkimu (\textit{angl.} gathering)). Taigi, algoritmas, siekiantis atpažinti šios taisyklės pažeidimą, privalo taip pat gebėti atpažinti, kada kamuolys yra rankose, ir tuomet skaičiuoti atliktų žingsnių skaičių. 
+Būdų pažeisti šią taisyklę yra gausu, tačiau šiame darbe fokusuojamasi į atvejį, kai žaidėjas suėmęs kamuolį atlieka daugiau nei du žingsnius. Tam, kad atlikti žingsniai būtų laikomi kaip pažeidžiantys taisyklę, kamuolys turi būti nemušamas į žemę, o laikomas rankose - krepšinyje tai dažniausiai nutinka prieš metant kamuolį į krepšį, kai yra atliekamas dvižingsnis. Taigi, algoritmas, siekiantis atpažinti šios taisyklės pažeidimą, privalo taip pat gebėti atpažinti, kada kamuolys yra rankose, ir tuomet skaičiuoti atliktų žingsnių skaičių. 
 
 \subsection{Žingsnių taisyklės pažeidimo atpažinimo algoritmas}
 
-Algoritmo reikalavimai: nustatytos rankų, kojų bei kamuolio vietos paveikslėlyje. Apibendrintas algoritmas užsirašytų šitaip: 
+Algoritmo reikalavimai yra nustatytos rankų, kojų bei kamuolio vietos paveikslėlyje. Apibendrintas algoritmas užsirašytų šitaip: 
 
 \begin{enumerate}
 	\item Nuskaitomas kadras.
@@ -456,7 +456,7 @@ Rezultate gaunama matrica, žyminti sritį, kur rankos bei kamuolys persikloja. 
 	\label{fig:hand_and_ball}
 \end{figure}
 
-Žingsnių skaičiavimas yra gan kompleksiška problema: ganėtinai sunku apibrėžti universalų būdą atpažinti atliktus žingsnius iš bet kokio kampo. Paprastumo dėlei nuspręsta žingsniųs skaičiuoti tik iš žiūrint šono. Žingsnių skaičiavimo algoritmas remiasi išskirtų kojų regionų kontūrų skaičiavimu. Jei kontūrų suskaičiuota vienas, o prieš tai jų buvo du, galima teigti kad 1) Nerasta informacijos apie vieną iš pėdų (išėjo iš kadro arba nepavyko atpažinimas) arba 2) Žingsnis, žiūrint iš šono, yra toje fazėje, kai viena pėda pridengia (arba yra netoli) kitą. Tam, kad būtų galima atmesti pirmąjį atvejį, laikoma informacija apie atpažintus objektus - jei jų yra vienas, tuomet tai, kad rastas tik vienas kontūras, nekeičia turimų suskaičiuotų žingsnių kiekio. 
+Šiek tiek sunkiau apibrėžti universalų būdą atpažinti atliktus žingsnius iš bet kokio kampo. Paprastumo dėlei nuspręsta žingsniųs skaičiuoti tik žiūrint iš šono. Žingsnių skaičiavimo algoritmas remiasi išskirtų kojų regionų kontūrų skaičiavimu. Jei kontūrų suskaičiuojama vienas, kai prieš tai jų buvo du, galima teigti kad: 1) nerasta informacijos apie vieną iš pėdų (išėjo iš kadro arba nepavyko atpažinimas) arba 2) žingsnis, žiūrint iš šono, yra toje fazėje, kai viena pėda pridengia (arba yra netoli) kitą. Tam, kad būtų galima atmesti pirmąjį atvejį, laikoma informacija apie atpažintus objektus - jei jų yra vienas, tuomet tai, kad rastas tik vienas kontūras, nekeičia turimų suskaičiuotų žingsnių kiekio. 
 
 Žingsnių skaičiavimo algoritmą, kuris taikytinas reikiamą informaciją išgavus spalviniais atpažinimo metodais arba neuroninių tinklų pagalba, galima apibrėžti taip:
 
@@ -483,7 +483,7 @@ Rezultate gaunama matrica, žyminti sritį, kur rankos bei kamuolys persikloja. 
 Turint informaciją apie kamuolio laikymą tam tikrame laiko intervale ir per jį atliktų žingsnių kiekį, galime daryti išvadą, kad žingsnių taisyklė yra pažeista, kai per minėtą intervalą yra atlikti daugiau nei 2 žingsniai. 
 
 \subsubsection{Būsenos saugojimas}
-Atliekant pradinius bandymus su algoritmu pastebėta, jog viena iš problemų, kylančių iš metodų, nustatančių, ar kamuolys yra rankose, tai išskirtų rankų bei kamuolio regionų plotų nepastovumas priklausomai nuo apšvietimo ir kitų faktorių. Tai reiškia, jog laiko intervalas, kada kamuolys yra laikomas rankose, gali būti su trūkiais, indikuojančiais, kad tą laiko momentą nepavyko nustatyti, ar kamuolys yra rankose. Žingsnių skaičiavimo algoritmas skaičiuoja žingsnius tik tada, kai kamuolys yra rankose, tad intervalui nutrūkus dėl netikslaus atpažinimo, skaičiavimas prasidės iš naujo. 
+Atliekant pradinius bandymus su algoritmu pastebėta, jog nustatant, ar kamuolys yra rankose, išskirtų rankų bei kamuolio regionų plotai yra nepastovūs priklausomai nuo apšvietimo ir kitų faktorių. Tai reiškia, jog laiko intervalas, kada kamuolys yra laikomas rankose, gali būti su trūkiais, indikuojančiais, kad tą laiko momentą nepavyko nustatyti, ar kamuolys yra rankose. Žingsnių skaičiavimo algoritmas skaičiuoja žingsnius tik tada, kai kamuolys yra rankose, tad intervalui nutrūkus dėl netikslaus atpažinimo, skaičiavimas prasidės iš naujo. 
 
 Informacija apie kamuolio buvimą rankose yra renkama ne iš vieno kadro, o iš kelių, ir darant prielaidą, jog rankose esančio kamuolio judėjimo greitis yra arti nulio, galima teigti, jog tokia būsena turėtų nepasikeisti tam tikrą skaičių kadrų. Kitaip tariant, su kiekvienu kadru išsaugoma būsena, ar kamuolys yra rankose ar ne:
 
