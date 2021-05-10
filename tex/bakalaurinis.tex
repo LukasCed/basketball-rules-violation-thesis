@@ -150,9 +150,9 @@ Tinkamų HSV rėžių radimo procedūra buvo pasirinkus tam tikrą pradinį inte
 Taip pat buvo pastebėta, jog lauke filmuotuose vaizdo įrašuose spalvos kito mažiau, nei kambaryje - tai, galimai, yra geresnio apšvietimo pasėkmė. 
 
 \subsubsection{Morfologinės transformacijos}
-Atlikus segmentavimą pagal spalvą, rezultate dažnai lieka triukšmo ar bereikalingų artifaktų, kurie gali affectinti tolimesnį apdorojimą. @todo fix
+Atlikus segmentavimą pagal spalvą, rezultate dažnai lieka triukšmo ar bereikalingų artifaktų, kurie gali neigiamai paveikti tolimesnį apdorojimą.
 
-Tokiais atvejais apsivalyti nuo triukšmo gan dažnai naudojamos slenkstinės (\textit{angl.} threshold) operacijos \cite[112]{SzeliskiCompVision}. Apsibrėžus tam tikrą filtrą, su juo galima atlikti operacijas ant matricų. Šiame darbe naudotos operacijos yra erozija ir plėstis. Erozija naudojama tada, norima sumažinti turimų atskirų regionų paveikslėlyje plotus, nuardant kraštus. Jei objektai yra pakankamai maži, o erozijos operacija - stipri (?), tuomet taip pašalinamas triukšmas. Formaliai erozija buvo aprašyta 1980 metais K. Y. Yoo \cite{4767941} kaip morfologinė operacija, sukombinuojanti dvi aibes naudojant vektorių atimtį aibių elementams. Matematiškai tai galima aprašyti tokia formule: 
+Tokiais atvejais apsivalyti nuo triukšmo gan dažnai naudojamos slenkstinės (\textit{angl.} threshold) operacijos \cite[112]{SzeliskiCompVision}. Apsibrėžus tam tikrą filtrą, su juo galima atlikti operacijas ant matricų. Šiame darbe naudotos operacijos yra erozija ir plėstis. Erozija naudojama tada, norima sumažinti turimų atskirų regionų paveikslėlyje plotus, nuardant kraštus. Jei objektai yra sąlyginai maži, atlikus erozijos operaciją jie visai išnyksta, taip pašalinant triukšmas. Formaliai erozija buvo aprašyta 1980 metais K. Y. Yoo \cite{4767941} kaip morfologinė operacija, sukombinuojanti dvi aibes naudojant vektorių atimtį aibių elementams. Matematiškai tai galima aprašyti tokia formule: 
 
 \begin{equation}\label{eq:erozija}
 	A \ominus B = \bigcap_ {b \in B } (A)_{-b} .

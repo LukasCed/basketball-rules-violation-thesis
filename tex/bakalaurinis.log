@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.1) (format=lualatex 2021.2.28)  10 MAY 2021 22:52
+This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.1) (format=lualatex 2021.2.28)  10 MAY 2021 23:03
  restricted system commands enabled.
 **bakalaurinis.tex
 (./bakalaurinis.tex
@@ -213,12 +213,12 @@ braces):
 >  {lithuanian/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {lithuanian/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 Module polyglossia Info: Language data for lithuanian
-(polyglossia)            loader	loadhyph-lt.tex
+(polyglossia)            righthyphenmin	2
 (polyglossia)            patterns	hyph-lt.pat.txt
-(polyglossia)            lefthyphenmin	2
 (polyglossia)            hyphenation	
 (polyglossia)            synonyms	
-(polyglossia)            righthyphenmin	2 on input line 11
+(polyglossia)            loader	loadhyph-lt.tex
+(polyglossia)            lefthyphenmin	2 on input line 11
 Module polyglossia Info: Language lithuanian was not yet loaded; created with id
  2 on input line 11
 )
@@ -1427,7 +1427,7 @@ Here is how much of LuaTeX's memory you used:
  760 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 15 attribute, 100 glue_spe
 c, 15 attribute_list, 1 write nodes
-   avail lists: 1:2,2:876,3:379,4:94,5:532,6:183,7:8876,8:114,9:1216,10:38,11:13
+   avail lists: 1:2,2:876,3:379,4:98,5:532,6:183,7:8876,8:114,9:1216,10:38,11:13
 78
  38216 multiletter control sequences out of 65536+200000
  112 fonts using 15054159 bytes
@@ -1449,7 +1449,7 @@ AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/
 Lukas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
 :/Users/Lukas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8
 .pfb>
-Output written on bakalaurinis.pdf (32 pages, 908830 bytes).
+Output written on bakalaurinis.pdf (32 pages, 908908 bytes).
 
 PDF statistics: 205 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
