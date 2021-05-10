@@ -56,22 +56,32 @@ Santrauka anglų kalba. Santraukos apimtis ne didesnė nei 0,5 puslapio.
 \tableofcontents
 
 \sectionnonum{Įvadas}
-Įvade nurodomas darbo tikslas ir uždaviniai, kuriais bus įgyvendinamas tikslas,
-aprašomas temos aktualumas, apibrėžiamas tiriamasis objektas akcentuojant
-neapibrėžtumą, kuris bus išspręstas darbe, aptariamos teorinės darbo prielaidos
-bei metodika, apibūdinami su tema susiję literatūros ar kitokie šaltiniai,
-temos analizės tvarka, darbo atlikimo aplinkybės, pateikiama žinių apie
-naudojamus instrumentus (programas ir kt., jei darbe yra eksperimentinė dalis).
-Darbo įvadas neturi būti dėstymo santrauka. Įvado apimtis 2 –– 4 puslapiai.
+% Įvade nurodomas darbo tikslas ir uždaviniai, kuriais bus įgyvendinamas tikslas,
+% aprašomas temos aktualumas, apibrėžiamas tiriamasis objektas akcentuojant
+% neapibrėžtumą, kuris bus išspręstas darbe, aptariamos teorinės darbo prielaidos
+% bei metodika, apibūdinami su tema susiję literatūros ar kitokie šaltiniai,
+% temos analizės tvarka, darbo atlikimo aplinkybės, pateikiama žinių apie
+% naudojamus instrumentus (programas ir kt., jei darbe yra eksperimentinė dalis).
+% Darbo įvadas neturi būti dėstymo santrauka. Įvado apimtis 2 –– 4 puslapiai.
 
 
-Krepšinis yra itin intensyvus ir dinamiškas žaidimas, iš žaidėjų reikalaujantis greičio, spartaus sprendimų darymo ir reakcijos laiko. Modernizuojantis krepšinis vystosi - žaidėjai tampa didesni, stipresni bei greitesni. Žaidimo spartumas daro įtaką ir teisėjams, kurie nuolatos turi observuoti bei realiu laiku nuspręsti, kada buvo pažeistos tam tikros taisyklės. Nenuostabu, jog šis darbas yra ne tik varginantis, bet ir neatsparus žmogiškosioms klaidoms. 2015 m. atliktame tyrime nustatyta, jog tų metų sezono paskutinėmis įtempto žaidimo minutėmis teisėjų tikslumas skiriant baudas tesiekė 80.1\% \cite{NBA_bias_Referee}, tuo tarpu 2018 m. analizuojant pačios NBA išsaugotas statistikas apie kiekvieno žaidimo nuo 2015 m. paskutines 2 minutes nustatyta, jog teisėjai atlieka 1.49 klaidingus sprendimus kiekvieną žaidimą, o, pavyzdžiui, žingsnių taisyklę atpažįsta tik 20.6\% tikslumu \cite{SiglerK}. Negana to, teisingo ir tikslaus teisėjavimui trukdyti gali ir tokie faktoriai kaip šališkumas: NCAA (\textit{angl.} National Collegiate Athletic Association, viena populiariausių studentų krepšinio organizacijų JAV) lygoje nustatyta, jog teisėjai labiau linkę švilpti komandos, turinčioms mažiau baudų, žaidėjams, taip pat tos, kuri žaidžia svečiuose ar pirmauja \cite{OfficiatingBias}. 
+Krepšinis - intensyvus ir dinamiškas žaidimas, iš žaidėjų reikalaujantis greičio, spartaus sprendimų darymo ir reakcijos laiko. Kaip ir visa kita, bėgant laikui krepšinis vystosi ir modernizuojasi - žaidėjai tampa stipresni bei greitesni. Žaidimo spartumas daro įtaką ir teisėjams, kurie nuolatos privalo stebėti žaidimo eigą bei realiu laiku nuspręsti, kada buvo pažeistos tam tikros taisyklės. Nenuostabu, jog šis darbas yra ne tik varginantis, bet ir neatsparus žmogiškosioms klaidoms. 2015 m. atliktame tyrime nustatyta, jog tų metų sezono paskutinėmis įtempto žaidimo minutėmis teisėjų tikslumas skiriant baudas tesiekė 80.1\% \cite{NBA_bias_Referee}. Tuo tarpu 2018 m. analizuojant pačios NBA išsaugotas statistikas apie kiekvieno žaidimo nuo 2015 m. paskutines 2 minutes nustatyta, jog teisėjai atlieka 1.49 klaidingus sprendimus kiekvieną žaidimą, o, pavyzdžiui, žingsnių taisyklę atpažįsta tik 20.6\% tikslumu \cite{SiglerK}. Negana to, teisingo ir tikslaus teisėjavimui trukdyti gali ir tokie faktoriai kaip šališkumas: NCAA (\textit{angl.} National Collegiate Athletic Association, viena populiariausių studentų krepšinio organizacijų JAV) lygoje nustatyta, jog teisėjai labiau linkę švilpti komandos, turinčioms mažiau baudų, žaidėjams, taip pat tos, kuri žaidžia svečiuose ar pirmauja \cite{OfficiatingBias}. 
 
-Visa tai rodo, jog teisėjavimas yra sritis, kuri gali tobulėti.  
+Visa tai rodo, jog teisėjavimas yra sritis, galinti tobulėti. Daug naudos krepšinyje galima išgauti tam tikrus dalykus automatizuojant. Jau nuo 2014 m. NBA teisėjams padeda itin greitai vaizdo medžiagą kurti ir apdoroti galintis „Replay Center“, suteikiantis galimybę bet kada peržiūrėti paskutines kelias žaidimo minutes ir teisingai įvertinti, ar pažeidimas buvo nustatytas teisingai \cite{NBAReplay}. Žaidimo eigos pakartojimo technologijomis jau kuris laikas naudojasi ir kitos lygos, pavyzdžiui, Eurolyga \cite{EuroleagueReplay}. Jau dabar įvairūs kompiuterinės regos ir duomenų analizavimo metodai naudojami analizuojant jau įvykusių žaidimų įrašus, pavyzdžiui, žvalgantis potencialių būsimų žvaigždžių ar kuriant strategijas prieš priešininkes komandas \cite{THOMAS20173}, tačiau realiu laiku kompiuterinės regos metodai vis dar nėra plačiai naudojami. 
 
+Šiame darbe bus bandoma išanalizuoti, ar teisėjavimas realiu laiku yra įmanomas su šiuolaikinėmis technologijomis bei žiniomis, bandant aprašyti algoritmus nustatančius, ar žaidėjas vaizdo įrašuose pažeidė tam tikras taisykles. Šio darbo tikslas yra sukurti ir įgyvendinti žingsnių bei dvigubo varymo taisklių pažeidimo atpažinimo algoritmą naudojantis kompiuterinės regos metodais. Tikslas bus įgyvendinamas įvykdžius šiuos uždavinius:
 
-Vaizdo atpažinimas kompiuteriu - tai sparčiai besivystanti sritis. Egzistuoja daug algoritmų, kurių pagalba galima atpažinti objektus. Sportas. //@todo fix Sudetingesniems objektams dažnai yra naudojami giliuoju mokymu paremti metodai, šiame darbe išnagrinėti keli iš jų.  
-//@todo Krepšinyje atpažinimas state of the art
+\begin{itemize}
+	\item Išanalizuoti ir palyginti galimus metodus žmogaus kūno dalims vaizdinėje medžiagoje atpažinti.
+	\item Apibrėžti ir įgyvendinti algoritmus, nustatytu tikslumu atpažįstančius žingsnių taisyklės pažeidimą
+	trimatėje erdvėje iš skirtingų kampų.
+	\item Apibrėžti ir įgyvendinti algoritmus, nustatytu tikslumu sugebančius atskirti dvigubo varymo
+	taisyklės pažeidimą nuo kitų veiksmų, nepažeidžiančių taisyklės.
+	\item Palyginti įgyvendintų algoritmų su vaizdine medžiaga korektiškumą.
+\end{itemize}
+
+Darbas pradedamas nagrinėjant kompiuterinės regos metodus, leidžiančius atpažinti tam tikrus objektus vaizdo įrašuose ar paveikslėliuose. Bus apžvelgiamas atpažinimas besiremiantis iš anksto žinomis spalvomis, taip pat ir kiti atpažinimo būdai. Aprašyti metodai taip pat palyginami sukuriant paprastą algoritmą, suskaičiuojantį žingsnius. Toliau darbe aprašomos nagrinėjamos taisyklės bei sukuriami algoritmai jų pažeidimui atpažinti. Aprašyti algoritmai įgyvendinami Python programavimo kalba kartu su OpenCV ir Pytorch bibliotekomis. Taip pat nufilmuota vaizdinė medžiaga, kurioje žaidėjai atlieka tam tikrus krepšinio veiksmus, dalis iš jų pažeidžia taisykles, dalis - ne. Vaizdo medžiaga paduodama į programą kaip įvesties informacija, gauti rezultatai išanalizuoti ir pasiektos išvados.
+
 
 \section{Naudoti įrankiai}
 
@@ -247,7 +257,7 @@ Atliekant bandymus pastebėta, jog atpažinimą Lightweight modeliu galima optim
 
 Pastebėta, jog apdorojimo greičiui įtakos turi ir kadro dimensijos. Jei į neuroninį tinklą paduodamo kadro plotis yra didesnis, nei jo aukštis, apdorojimo greitis pakyla iki 5 kartų. Tačiau tai buvo mitiguota atnaujinus OpenCV versiją iš 4.0.1 į 4.5.1 - po šio atnaujinimo, apdorojimo greičiai tapo nebepriklausomi nuo santykio tarp paveikslėlio aukščio ir pločio. 
 
-Dar viena išbandyta optimizacija - neuroninio tinklo pradinio sluoksnio įvesties dydžio sumažinimas. Dvigubai sumažinus įvesties kanalų skaičių iš 256 į 128 rezultatų tikslumas pasikeitė sąlyginai nedaug. Žiūrint į vaizdo įrašą, plika akimi galima pamatyti, jog atpažintas skeletas yra labiau "klibantis", t.y. kiekvienos kūno dalies koordinatės nežymiai skiriasi, kai įvesties dydis yra mažesnis, tačiau pačios kūno dalys dažnai lieka atpažintos teisingai. Siekiant tikslesnių rezultatų, siūloma pasilikti prie 256 kanalų skaičio, tačiau norint vaizdą apdoroti realiu laiku, galima rasti kompromisą tarp tikslumo ir greičio. 
+Dar viena išbandyta optimizacija - neuroninio tinklo pradinio sluoksnio įvesties dydžio sumažinimas. Dvigubai sumažinus įvesties kanalų skaičių iš 256 į 128 rezultatų tikslumas pasikeitė sąlyginai nedaug. Žiūrint į vaizdo įrašą, plika akimi galima pamatyti, jog atpažintas skeletas yra labiau „klibantis“, t.y. kiekvienos kūno dalies koordinatės nežymiai skiriasi, kai įvesties dydis yra mažesnis, tačiau pačios kūno dalys dažnai lieka atpažintos teisingai. Siekiant tikslesnių rezultatų, siūloma pasilikti prie 256 kanalų skaičiaus, tačiau norint vaizdą apdoroti realiu laiku, galima rasti kompromisą tarp tikslumo ir greičio. 
 
 Atliekant žmogaus skeleto atpažinimo bandymus su mažesnės rezoliucijos kadrais spartumo bei tikslumo pagerėjimų nepastebėta.
 
@@ -557,6 +567,9 @@ santrumpos.
 
 \section{Sukurtos programinės įrangos kodo nuoroda}
 https://github.com/LukasCed/basketball-rules-violation-thesis
+
+\section{Vaizdo įrašai, naudoti žingsnių skaičiavimui}
+https://drive.google.com/drive/folders/13BI-eH62bwaUmMGrrUmE752j4UVvtUKU?usp=sharing
 
 \section{Neuroninio tinklo struktūra}
 \begin{figure}[H]

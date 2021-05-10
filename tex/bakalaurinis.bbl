@@ -221,6 +221,28 @@
       \field{pages}{91\bibrangedash 96}
       \range{pages}{6}
     \endentry
+    \entry{EuroleagueReplay}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3ada8fbbd712902b43284c07fb7fb4a1}{%
+           family={{Eurohoops team}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{3ada8fbbd712902b43284c07fb7fb4a1}
+      \strng{fullhash}{3ada8fbbd712902b43284c07fb7fb4a1}
+      \strng{bibnamehash}{3ada8fbbd712902b43284c07fb7fb4a1}
+      \strng{authorbibnamehash}{3ada8fbbd712902b43284c07fb7fb4a1}
+      \strng{authornamehash}{3ada8fbbd712902b43284c07fb7fb4a1}
+      \strng{authorfullhash}{3ada8fbbd712902b43284c07fb7fb4a1}
+      \field{labelalpha}{Eur16}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.eurohoops.net/en/euroleague/323064/euroleague-upgrades-hawk-eye-innovations-smart-replay-solution/}}
+      \field{note}{tikrinta 2021-05-10}
+      \field{title}{{New instant replay system applied in Euroleague games}}
+      \field{year}{2016}
+    \endentry
     \entry{4767941}{article}{}
       \name{author}{3}{}{%
         {{hash=739e326492d0a53e16dae093120d3d91}{%
@@ -481,6 +503,30 @@
       \field{pages}{II\bibrangedash II}
       \range{pages}{1}
     \endentry
+    \entry{NBAReplay}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=52b6d6fc82db6aef110362f4755a1fe8}{%
+           family={{NBA}},
+           familyi={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{52b6d6fc82db6aef110362f4755a1fe8}
+      \strng{fullhash}{52b6d6fc82db6aef110362f4755a1fe8}
+      \strng{bibnamehash}{52b6d6fc82db6aef110362f4755a1fe8}
+      \strng{authorbibnamehash}{52b6d6fc82db6aef110362f4755a1fe8}
+      \strng{authornamehash}{52b6d6fc82db6aef110362f4755a1fe8}
+      \strng{authorfullhash}{52b6d6fc82db6aef110362f4755a1fe8}
+      \field{extraname}{1}
+      \field{labelalpha}{NBA21}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extraalpha}{1}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://official.nba.com/replay/}}
+      \field{note}{tikrinta 2021-05-10}
+      \field{title}{{Replay Center}}
+      \field{year}{2021}
+    \endentry
     \entry{nba-rules}{misc}{}
       \name{author}{1}{}{%
         {{hash=52b6d6fc82db6aef110362f4755a1fe8}{%
@@ -493,9 +539,11 @@
       \strng{authorbibnamehash}{52b6d6fc82db6aef110362f4755a1fe8}
       \strng{authornamehash}{52b6d6fc82db6aef110362f4755a1fe8}
       \strng{authorfullhash}{52b6d6fc82db6aef110362f4755a1fe8}
+      \field{extraname}{2}
       \field{labelalpha}{NBA21}
       \field{sortinit}{N}
       \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extraalpha}{2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://official.nba.com/rule-no-10-violations-and-penalties/}}
@@ -652,6 +700,59 @@
       \field{labeltitlesource}{title}
       \field{title}{Computer Vision: Algorithms and Applications}
       \field{year}{2021}
+    \endentry
+    \entry{THOMAS20173}{article}{}
+      \name{author}{5}{}{%
+        {{hash=61f4b19bff51a26e78b55f3bf8ef58b7}{%
+           family={Thomas},
+           familyi={T\bibinitperiod},
+           given={Graham},
+           giveni={G\bibinitperiod}}}%
+        {{hash=8a6f95fb8cf7f124fcc284305d72a038}{%
+           family={Gade},
+           familyi={G\bibinitperiod},
+           given={Rikke},
+           giveni={R\bibinitperiod}}}%
+        {{hash=13bab869a6231c2e4e4c5a51a8120dbb}{%
+           family={Moeslund},
+           familyi={M\bibinitperiod},
+           given={Thomas\bibnamedelima B.},
+           giveni={T\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=8f942ac1911200f60a35f4a6a69cf793}{%
+           family={Carr},
+           familyi={C\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=5dea3144ba12b0f069a5735888879d6d}{%
+           family={Hilton},
+           familyi={H\bibinitperiod},
+           given={Adrian},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{19247a0d518ee7983302e09d5ef29fef}
+      \strng{fullhash}{19247a0d518ee7983302e09d5ef29fef}
+      \strng{bibnamehash}{19247a0d518ee7983302e09d5ef29fef}
+      \strng{authorbibnamehash}{19247a0d518ee7983302e09d5ef29fef}
+      \strng{authornamehash}{19247a0d518ee7983302e09d5ef29fef}
+      \strng{authorfullhash}{19247a0d518ee7983302e09d5ef29fef}
+      \field{labelalpha}{TGM\textsuperscript {+}17}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Vision and Image Understanding}
+      \field{note}{Computer Vision in Sports}
+      \field{title}{Computer vision for sports: Current applications and research topics}
+      \field{volume}{159}
+      \field{year}{2017}
+      \field{pages}{3\bibrangedash 18}
+      \range{pages}{16}
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1077314217300711
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1077314217300711
+      \endverb
     \endentry
     \entry{pytorch}{misc}{}
       \name{author}{1}{}{%
