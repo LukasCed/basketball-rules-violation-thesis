@@ -31,20 +31,21 @@ class TravelDetectionAlgorithm:
 
             pixel_pctg = hand_and_ball[np.where(hand_and_ball >= 1)].size / hand_and_ball.size * 100
             
-            if pixel_pctg > 0.001 and this.average_state(this.in_hand_state, 4) >= 0.5: 
+            if this.average_state(this.in_hand_state, 10) >= 0.6: 
+            # if pixel_pctg > 0.001 and this.average_state(this.in_hand_state, 4) >= 0.5:  (palyginti percentages)
                 this.in_hands = 1
                 this.calculate_steps(left_mask_for_shoe, right_mask_for_shoe)
                 this.compute_turnover()
-            elif this.average_state(this.in_hand_state, 4) <= 0.3: # trying to make sure it has been out of hands for more than four frames
+            elif this.average_state(this.in_hand_state, 5) <= 0.3: # trying to make sure it has been out of hands for more than five frames
                 this.step_count = 0 # step counting not relevant when ball is not in hands
                 this.in_hands = 0
 
         except BallNotFoundError as e:
-              print("Caught error when executing step rule violation algorithm ", repr(e))
+              #print("Caught error when executing step rule violation algorithm ", repr(e))
               this.in_hands = 2
               
         except HandsNotFoundError as e:
-              print("Caught error when executing step rule violation algorithm ", repr(e))
+              #print("Caught error when executing step rule violation algorithm ", repr(e))
               this.in_hands = 3
     
         return [this.in_hands, this.step_count, this.turnover]
@@ -83,7 +84,7 @@ class TravelDetectionAlgorithm:
     def calculate_steps(this, mask_for_shoes_left, mask_for_shoes_right):
         shoe_contours, h = find_contours(mask_for_shoes_left | mask_for_shoes_right)
         any_empty = np.all(mask_for_shoes_left == 0) or np.all(mask_for_shoes_right == 0)
-
+                
         if len(shoe_contours) == 1 and not this.feet_intersection and not any_empty:
             this.feet_intersection = True
             this.step_count = this.step_count + 1

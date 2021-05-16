@@ -1,46 +1,90 @@
-from ProccessTurnover import proccess_turnover 
+from ProccessTurnoverTest import proccess_turnover_test
 
 class Stats:
-	def __init__(this):
-		this.fn = 0
-		this.fp = 0
-		this.t = 0
-		this.f = 0
+    def __init__(this):
+        this.fn = 0
+        this.fp = 0
+        this.t = 0
+        this.f = 0
+        this.o = 0
 
 def assert_equals(expected, result, stat):
-	if expected is True and result is False:
-		stat.fn = stat.fn + 1 # false negative
-	if expected is False and result is True:
-		stat.fp = stat.fp + 1 # false positive
-	if expected is True and result is True:
-		stat.t = stat.t + 1
-	if expected is False and result is False:
-		stat.f = stat.f + 1
+    print("Expected ", expected, " got ", result)
 
-	return stat
-	
+    if expected[0] is True and result[0] is False:
+        stat.fn = stat.fn + 1 # false negative
+    if expected[0] is False and result[0] is True:
+        stat.fp = stat.fp + 1 # false positive
+    if expected[0] is False and result[0] is False:
+        stat.f = stat.f + 1
+        
+    if expected[0] is True and result[0] is True:
+        if expected[1] != result[1]: # other - mislabeled 
+            stat.o = stat.o + 1
+        else:
+            stat.t = stat.t + 1
+
+    return stat
+    
 
 stats = Stats() 
-stats = assert_equals(False, proccess_turnover('vidai/1N.mp4'), stats)
-stats = assert_equals(False, proccess_turnover('vidai/2N.mp4'), stats)
-stats = assert_equals(False, proccess_turnover('vidai/3N.mp4'), stats)
-stats = assert_equals(False, proccess_turnover('vidai/4N.mp4'), stats)
-stats = assert_equals(False, proccess_turnover('vidai/5N.mp4'), stats)
-stats = assert_equals(False, proccess_turnover('vidai/6N.mp4'), stats)
-stats = assert_equals(False, proccess_turnover('vidai/7N.mp4'), stats)
-stats = assert_equals(False, proccess_turnover('vidai/8N.mp4'), stats)
-stats = assert_equals(False, proccess_turnover('vidai/9N.mp4'), stats)
-stats = assert_equals(False, proccess_turnover('vidai/10N.mp4'), stats)
-stats = assert_equals(False, proccess_turnover('vidai/11N.mp4'), stats)
-stats = assert_equals(True, proccess_turnover('vidai/1T.mp4'), stats)
-stats = assert_equals(True, proccess_turnover('vidai/2T.mp4'), stats)
-stats = assert_equals(True, proccess_turnover('vidai/3T.mp4'), stats)
-stats = assert_equals(True, proccess_turnover('vidai/4T.mp4'), stats)
-stats = assert_equals(True, proccess_turnover('vidai/5T.mp4'), stats)
-stats = assert_equals(True, proccess_turnover('vidai/6T.mp4'), stats)
-stats = assert_equals(True, proccess_turnover('vidai/7T.mp4'), stats)
-stats = assert_equals(True, proccess_turnover('vidai/8T.mp4'), stats)
-stats = assert_equals(True, proccess_turnover('vidai/9T.mp4'), stats)
-stats = assert_equals(True, proccess_turnover('vidai/10T.mp4'), stats)
-stats = assert_equals(True, proccess_turnover('vidai/11T.mp4'), stats)
-print("fn", stats.fn, "fp", stats.fp, "t", stats.t, "f", stats.f)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_1.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_2.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_3.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_4.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_5.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_6.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_7.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_8.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_9.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_10.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_11.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_12.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_13.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_14.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_15.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_16.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_17.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_18.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_19.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_20.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_21.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_22.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_23.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/dribble_24.mp4'), stats)
+
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/not_double_dribble_1.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/not_double_dribble_2.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/not_double_dribble_3.mp4'), stats)
+stats = assert_equals((False, 1), proccess_turnover_test('vids/videos/not_double_dribble_4.mp4'), stats)
+
+stats = assert_equals((True, 0), proccess_turnover_test('vids/videos/travel_1.mp4'), stats)
+stats = assert_equals((True, 0), proccess_turnover_test('vids/videos/travel_2.mp4'), stats)
+stats = assert_equals((True, 0), proccess_turnover_test('vids/videos/travel_3.mp4'), stats)
+stats = assert_equals((True, 0), proccess_turnover_test('vids/videos/travel_4.mp4'), stats)
+stats = assert_equals((True, 0), proccess_turnover_test('vids/videos/travel_5.mp4'), stats)
+stats = assert_equals((True, 0), proccess_turnover_test('vids/videos/travel_6.mp4'), stats)
+stats = assert_equals((True, 0), proccess_turnover_test('vids/videos/travel_7.mp4'), stats)
+stats = assert_equals((True, 0), proccess_turnover_test('vids/videos/travel_8.mp4'), stats)
+stats = assert_equals((True, 0), proccess_turnover_test('vids/videos/travel_9.mp4'), stats)
+stats = assert_equals((True, 0), proccess_turnover_test('vids/videos/travel_10.mp4'), stats)
+stats = assert_equals((True, 0), proccess_turnover_test('vids/videos/travel_11.mp4'), stats)
+stats = assert_equals((True, 0), proccess_turnover_test('vids/videos/travel_12.mp4'), stats)
+
+
+stats = assert_equals((True, 1), proccess_turnover_test('vids/videos/double_dribble_1.mp4'), stats)
+stats = assert_equals((True, 1), proccess_turnover_test('vids/videos/double_dribble_2.mp4'), stats)
+stats = assert_equals((True, 1), proccess_turnover_test('vids/videos/double_dribble_3.mp4'), stats)
+stats = assert_equals((True, 1), proccess_turnover_test('vids/videos/double_dribble_4.mp4'), stats)
+stats = assert_equals((True, 1), proccess_turnover_test('vids/videos/double_dribble_5.mp4'), stats)
+stats = assert_equals((True, 1), proccess_turnover_test('vids/videos/double_dribble_6.mp4'), stats)
+stats = assert_equals((True, 1), proccess_turnover_test('vids/videos/double_dribble_7.mp4'), stats)
+stats = assert_equals((True, 1), proccess_turnover_test('vids/videos/double_dribble_8.mp4'), stats)
+stats = assert_equals((True, 1), proccess_turnover_test('vids/videos/double_dribble_9.mp4'), stats)
+stats = assert_equals((True, 1), proccess_turnover_test('vids/videos/double_dribble_10.mp4'), stats)
+stats = assert_equals((True, 1), proccess_turnover_test('vids/videos/double_dribble_11.mp4'), stats)
+stats = assert_equals((True, 1), proccess_turnover_test('vids/videos/double_dribble_12.mp4'), stats)
+stats = assert_equals((True, 1), proccess_turnover_test('vids/videos/double_dribble_13.mp4'), stats)
+
+
+print("fn", stats.fn, "fp", stats.fp, "t", stats.t, "f", stats.f, "o", stats.o)

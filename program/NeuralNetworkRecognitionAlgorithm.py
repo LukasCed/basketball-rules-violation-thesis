@@ -11,8 +11,8 @@ right_hand_color_range = np.array([60, 255, 127])
 left_leg_color_range = np.array([0, 255, 255]) #red
 right_leg_color_range = np.array([0, 255, 127])
 
-lower_green = np.array([74, 100, 42])
-upper_green = np.array([84, 220, 150])
+lower_green = np.array([65, 80, 38])
+upper_green = np.array([84, 240, 255])
 
 class NeuralNetworkRecognitionAlgorithm:
 
