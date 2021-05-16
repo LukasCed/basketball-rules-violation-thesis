@@ -25,7 +25,7 @@ while(True):
 
     ellipses = hough_ellipse(edges, accuracy=20, threshold=500,
                        min_size=50, max_size=200)
-    print("daejo iki elipsiu")
+    print("po elipsiu")
 
     if circles is not None:
         for x, y, r in circles[0]:

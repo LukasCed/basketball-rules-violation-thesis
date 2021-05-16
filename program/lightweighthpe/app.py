@@ -89,7 +89,7 @@ def run(net, image_provider, height_size, cpu, track, smooth):
     delay = 1
     ts2 = time.time()
 
-    print("uztruko setupinti ", ts2 - ts1, " s")
+    print("setup took ", ts2 - ts1, " s")
     print(ts2)
     print(ts1)
     for img in image_provider:
@@ -212,6 +212,6 @@ def setup(net, cpu):
     net = net.eval()
 
     if not cpu:
-        print("ne cpu")
+        print("Not using CPU..")
         net = net.cuda()
     return net

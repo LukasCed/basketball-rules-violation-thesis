@@ -1,7 +1,7 @@
 import cv2
 from ImageProcessingUtils import *
 
-class StepRuleViolationAlgorithm:
+class TravelDetectionAlgorithm:
     # find out if ball is in hands
     ## needs: mask for ball, mask for hands
     # calculate steps
@@ -18,8 +18,10 @@ class StepRuleViolationAlgorithm:
     # x - whether the ball is in hands. 1 - true, 0 false, 2 - ball not found, 3 - hands not found
     # y - step count (0 to inf.)
     # z - whether it's turnover. true, false
-    def execute(this, mask_for_ball, mask_for_hand, left_mask_for_shoe, right_mask_for_shoe):
-                
+    def execute(this, mask_for_ball, left_mask_for_hand, right_mask_for_hand, left_mask_for_shoe, right_mask_for_shoe):
+    
+        mask_for_hand = left_mask_for_hand | right_mask_for_hand        
+        
         try:
             hand_and_ball = this.ball_in_hands(mask_for_hand, mask_for_ball)
             hand_and_ball_countours, h = find_contours(hand_and_ball)

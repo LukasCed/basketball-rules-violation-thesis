@@ -2,16 +2,21 @@ import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 from PIL import Image
-from ColorBasedRecognitionAlgorithm import ColorBasedRecognitionAlgorithm
-from StepRuleViolationAlgorithm import StepRuleViolationAlgorithm
+#from ColorBasedRecognitionAlgorithm import ColorBasedRecognitionAlgorithm
+from NeuralNetworkRecognitionAlgorithm import NeuralNetworkRecognitionAlgorithm
+from TravelDetectionAlgorithm import TravelDetectionAlgorithm
+#from DoubleDribbleDetectionAlgorithm import DoubleDribbleDetectionAlgorithm
 from ImageProcessingUtils import *
 import time
 import math
 
-vid = cv2.VideoCapture('vids/test_inside_colors.mp4')
+vid = cv2.VideoCapture('vids/test_outside.mp4')
 
-recognition_algorithm = ColorBasedRecognitionAlgorithm()
-rule_violation_algorithm = StepRuleViolationAlgorithm()
+# recognition_algorithm = ColorBasedRecognitionAlgorithm()
+recognition_algorithm = NeuralNetworkRecognitionAlgorithm()
+
+rule_violation_algorithm = TravelDetectionAlgorithm()
+#rule_violation_algorithm = DoubleDribbleDetectionAlgorithm()
 
 ts1 = time.time()
 
@@ -27,16 +32,22 @@ while(True):
     
     #pre processing - prepare image
     img = flip_img(frame)
+    img = recognition_algorithm.preprocess(img)
     hsv = convert_to_hsv(img)
     
-
     # get required masks (objects represented in boolean matric) from recognition algorithm
-    hand_mask = recognition_algorithm.get_hand_mask(hsv)
+    left_hand_mask = recognition_algorithm.get_left_hand_mask(hsv)
+    right_hand_mask = recognition_algorithm.get_right_hand_mask(hsv)
+    
     left_shoe_mask = recognition_algorithm.get_left_shoe_mask(hsv)
     right_shoe_mask = recognition_algorithm.get_right_shoe_mask(hsv)
+    
     ball_mask = recognition_algorithm.get_ball_mask(hsv)
-        
-    state = rule_violation_algorithm.execute(ball_mask, hand_mask, left_shoe_mask, right_shoe_mask)
+    
+    # 0 in hands - 0 no, 1 yes, 2 bal not found, 3 hands not found
+    # 1 step count - 0 - inf. -1 - no information
+    # 2 turnover - true/false
+    state = rule_violation_algorithm.execute(ball_mask, left_hand_mask, right_hand_mask, left_shoe_mask, right_shoe_mask)
     
     in_hands = state[0]
     step_count = state[1]
@@ -55,13 +66,13 @@ while(True):
         
     if in_hands == 0:
         txt = "Kamuolys ne rankose"
-        
+                
     create_background(frame, info_coord_start, info_coord_end)
     put_text(frame, txt, (info_coord_start[0], info_coord_start[1] + math.ceil(info_coord_end[1] / 4)), font_size = 0.5 * (orig_height / 665))
     put_text(frame, txt2, (info_coord_start[0], info_coord_start[1] + 3 * math.ceil(info_coord_end[1] / 4)), font_size = 0.5 * (orig_height / 665))
     
+    # todo: instead zingsniu, variable
     if turnover == True:
-        put_text(frame, "Pazeista zingsniu taisykle!", (1000, 800), (0,0,255))
         put_text(frame, "Pazeista zingsniu taisykle!", (info_coord_start[0], info_coord_start[1] + 2 * math.ceil(info_coord_end[1] / 4)), font_size = 0.7 * (orig_height / 665), color = (0,0,255), font_thickness = math.ceil(2 * (orig_height / 665)))
 
 

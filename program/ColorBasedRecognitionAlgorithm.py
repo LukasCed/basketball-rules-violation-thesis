@@ -6,8 +6,11 @@ import sys
 lower_green = np.array([74, 100, 42])
 upper_green = np.array([84, 220, 150])
 
-lower_yellow = np.array([29,55,130])
-upper_yellow = np.array([56,140,255])
+lower_yellow_left = np.array([29,55,130])
+upper_yellow_left = np.array([56,140,255])
+
+lower_yellow_right = lower_yellow_left
+upper_yellow_right = lower_yellow_left
 
 lower_red1_left = np.array([0,120,100])
 upper_red1_left = np.array([10,255,200])
@@ -24,7 +27,13 @@ class ColorBasedRecognitionAlgorithm:
     def __init__(this):
         pass
         
-    def get_hand_mask(this, hsv):        
+    def get_left_hand_mask(this, hsv):        
+        return this.get_hand_mask(hsv, lower_yellow_left, upper_yellow_left)
+        
+    def get_right_hand_mask(this, hsv):        
+        return this.get_hand_mask(hsv, lower_yellow_right, upper_yellow_right)
+
+    def get_hand_mask(this, hsv, lower_yellow, upper_yellow):        
         mask_for_ball = segment_by_color(hsv, lower_green, upper_green)
         mask_for_ball = morph_dilate(morph_open(mask_for_ball))
 
@@ -41,7 +50,6 @@ class ColorBasedRecognitionAlgorithm:
 
     def get_left_shoe_mask(this, hsv):
         return this.get_shoe_mask(hsv, lower_red1_left, upper_red1_left, lower_red2_left, upper_red2_left)
-    
     
     def get_right_shoe_mask(this, hsv):
         return this.get_shoe_mask(hsv, lower_red1_right, upper_red1_right, lower_red2_right, upper_red2_right)
@@ -68,3 +76,7 @@ class ColorBasedRecognitionAlgorithm:
         mask_for_ball = erode(dilate(mask_for_ball, 15), 3)
         #cv2.imshow("mask for shoes", mask_for_shoes)
         return mask_for_ball
+        
+    def preprocess(this, img):
+        return img
+
