@@ -10,7 +10,7 @@ from ImageProcessingUtils import *
 import time
 import math
 
-vid = cv2.VideoCapture('vids/videos/travel_3.mp4')
+vid = cv2.VideoCapture('vids/videos/travel_1.mp4')
 
 # recognition_algorithm = ColorBasedRecognitionAlgorithm()
 recognition_algorithm = NeuralNetworkRecognitionAlgorithm()
@@ -50,13 +50,15 @@ while(True):
     
     ball_mask = recognition_algorithm.get_ball_mask(hsv)
     
-    #cv2.namedWindow('left_hand', cv2.WINDOW_NORMAL)
+    ##cv2.namedWindow('left_hand', cv2.WINDOW_NORMAL)
+    ##cv2.namedWindow('right_hand', cv2.WINDOW_NORMAL)
     #cv2.namedWindow('left_shoe_mask', cv2.WINDOW_NORMAL)
     #cv2.namedWindow('ball_mask', cv2.WINDOW_NORMAL)
-    #cv2.namedWindow('frame', cv2.WINDOW_NORMAL)
+    ##cv2.namedWindow('frame', cv2.WINDOW_NORMAL)
 
-    #cv2.imshow("left_hand", left_hand_mask | right_hand_mask)
-    
+    ##cv2.imshow("left_hand", (left_hand_mask | right_hand_mask) | ball_mask)
+    ##cv2.imshow("right_hand", (left_shoe_mask | right_shoe_mask))
+
     #cv2.imshow("left_shoe_mask", left_shoe_mask | right_shoe_mask)
     
     #cv2.imshow("ball_mask", ball_mask)
@@ -68,7 +70,7 @@ while(True):
         # 1 step count - 0 - inf. -1 - no information
         # 2 turnover - true/false
         state = algorithm.execute(ball_mask, left_hand_mask, right_hand_mask, left_shoe_mask, right_shoe_mask)
-        
+
         if in_hands == -1:
             in_hands = state[0]
             
@@ -78,7 +80,7 @@ while(True):
         if turnover == False:
             turnover = state[2]
         
-        if violation_text == "":
+        if violation_text == "" and turnover:
             violation_text = rule_violations[i]
     
     txt2 = "Zinsgniu skaicius: " + str(step_count)

@@ -20,7 +20,7 @@
 \department{Programų sistemų bakalauro studijų programa}
 \papertype{Bakalauro baigiamasis darbas}
 \title{Krepšinio taisyklių pažeidimo automatinis nustatymas}
-\titleineng{Recognizing violations of basketball rules using computer vision}
+\titleineng{Recognizing Violations of Basketball Rules Using Computer Vision}
 \author{Lukas Cedronas}
 % \secondauthor{Vardonis Pavardonis}   % Pridėti antrą autorių
 \supervisor{partn. prof., dr. Vytautas Ašeris}
@@ -65,11 +65,12 @@ Santrauka anglų kalba. Santraukos apimtis ne didesnė nei 0,5 puslapio.
 % Darbo įvadas neturi būti dėstymo santrauka. Įvado apimtis 2 –– 4 puslapiai.
 
 
-Krepšinis - intensyvus ir dinamiškas žaidimas, iš žaidėjų reikalaujantis greičio, spartaus sprendimų darymo ir reakcijos laiko. Kaip ir visa kita, bėgant laikui krepšinis vystosi ir modernizuojasi - žaidėjai tampa stipresni bei greitesni. Žaidimo spartumas daro įtaką ir teisėjams, kurie nuolatos privalo stebėti žaidimo eigą bei realiu laiku nuspręsti, kada buvo pažeistos tam tikros taisyklės. Nenuostabu, jog šis darbas yra ne tik varginantis, bet ir neatsparus žmogiškosioms klaidoms. 2015 m. atliktame tyrime nustatyta, jog tų metų sezono paskutinėmis įtempto žaidimo minutėmis teisėjų tikslumas skiriant baudas tesiekė 80.1\% \cite{NBA_bias_Referee}. Tuo tarpu 2018 m. analizuojant pačios NBA išsaugotas statistikas apie kiekvieno žaidimo nuo 2015 m. paskutines 2 minutes nustatyta, jog teisėjai atlieka 1.49 klaidingus sprendimus kiekvieną žaidimą, o, pavyzdžiui, žingsnių taisyklę atpažįsta tik 20.6\% tikslumu \cite{SiglerK}. Negana to, teisingo ir tikslaus teisėjavimui trukdyti gali ir tokie faktoriai kaip šališkumas: NCAA (\textit{angl.} National Collegiate Athletic Association, viena populiariausių studentų krepšinio organizacijų JAV) lygoje nustatyta, jog teisėjai labiau linkę švilpti komandos, turinčioms mažiau baudų, žaidėjams, taip pat tos, kuri žaidžia svečiuose ar pirmauja \cite{OfficiatingBias}. 
+Krepšinis - intensyvus ir dinamiškas žaidimas, iš žaidėjų reikalaujantis greičio, gebėjimo sparčiai atlikti sprendimus bei greitos reakcijos. Žaidimo spartumas daro įtaką ir teisėjams, kurie nuolatos privalo stebėti žaidimo eigą bei realiu laiku nuspręsti, kada buvo pažeistos tam tikros taisyklės. Nenuostabu, jog šis darbas yra ne tik varginantis, bet ir neatsparus žmogiškosioms klaidoms. 2015 m. atliktame tyrime nustatyta, jog NBA lygoje tų metų sezono paskutinėmis įtempto žaidimo minutėmis teisėjų tikslumas skiriant baudas tesiekė 80.1\% \cite{NBA_bias_Referee}. Tuo tarpu 2018 m. analizuojant pačios NBA išsaugotas statistikas apie kiekvieno žaidimo nuo 2015 m. paskutines 2 minutes nustatyta, jog teisėjai atlieka 1.49 klaidingus sprendimus kiekvieną žaidimą, o, pavyzdžiui, dėl žingsnių taisyklės pažeidimo teisėjai sušvilpia tik 20.6\% atvejų \cite{SiglerK}, tad didžioji dalis šios taisyklės pažeidimų lieka nepastebėta. Negana to, teisingam ir tiksliam teisėjavimui trukdyti gali ir tokie faktoriai kaip šališkumas: NCAA (\textit{angl.} National Collegiate Athletic Association, viena populiariausių studentų krepšinio organizacijų JAV) lygoje nustatyta, jog teisėjai labiau linkę baudas skirti komandos, turinčios mažiau baudų, žaidėjams, taip pat tos, kuri žaidžia svečiuose ar pirmauja \cite{OfficiatingBias}. 
 
-Visa tai rodo, jog teisėjavimas yra sritis, galinti tobulėti. Daug naudos krepšinyje galima išgauti tam tikrus dalykus automatizuojant. Jau nuo 2014 m. NBA teisėjams padeda itin greitai vaizdo medžiagą kurti ir apdoroti galintis „Replay Center“, suteikiantis galimybę bet kada peržiūrėti paskutines kelias žaidimo minutes ir teisingai įvertinti, ar pažeidimas buvo nustatytas teisingai \cite{NBAReplay}. Žaidimo eigos pakartojimo technologijomis jau kuris laikas naudojasi ir kitos lygos, pavyzdžiui, Eurolyga \cite{EuroleagueReplay}. Jau dabar įvairūs kompiuterinės regos ir duomenų analizavimo metodai naudojami analizuojant jau įvykusių žaidimų įrašus, pavyzdžiui, žvalgantis potencialių būsimų žvaigždžių ar kuriant strategijas prieš priešininkes komandas \cite{THOMAS20173}, tačiau realiu laiku kompiuterinės regos metodai vis dar nėra plačiai naudojami. 
+Visa tai rodo, jog teisėjavimas yra sritis, galinti tobulėti. Vienas iš būdų išvengti žmogiškųjų klaidų bei šališkumo faktorių - automatizuoti sprendimų apie taisyklių pažeidimus atlikimą. Jau nuo 2014 m. NBA teisėjams padeda itin greitai vaizdo medžiagą kurti ir apdoroti galintis „Replay Center“, suteikiantis galimybę bet kada peržiūrėti paskutines kelias žaidimo minutes ir tiksliau įvertinti, ar pažeidimas buvo nustatytas teisingai \cite{NBAReplay}. Žaidimo eigos pakartojimo technologijomis jau kuris laikas naudojasi ir kitos lygos, pavyzdžiui, Eurolyga \cite{EuroleagueReplay}.
+Didžiosiose lygose taip pat naudojamos kompiuterinės regos technologijos, leidžiančios analizuoti žaidimus ne tik jiems įvykus, bet ir realiu laiku: NBA nuo 2009 metų naudoja „SportVU“, gebantį sekti žaidėjus bei jų atliekamus veiksmus \cite{NBAStatsVu} (nuo 2017 m. jį pakeitė „Second Spectrum“ \cite{SecondSpectrum}), o Eurolygoje ši technologija pirmą kartą panaudota 2017 metais \cite{EuroleagueStats}. Šių technologijų pagalba gaunama informacija naudojama ir žaidimo eigoje, pavyzdžiui, kuriant strategijas prieš priešininkes komandas, ir po žaidimo, pavyzdžiui, žvalgantis potencialių būsimų žvaigždžių \cite{THOMAS20173}.
 
-Šiame darbe bus bandoma išanalizuoti, ar teisėjavimas realiu laiku yra įmanomas su šiuolaikinėmis technologijomis bei žiniomis, bandant aprašyti algoritmus nustatančius, ar žaidėjas vaizdo įrašuose pažeidė tam tikras taisykles. Šio darbo tikslas yra sukurti ir įgyvendinti žingsnių bei dvigubo varymo taisklių pažeidimo atpažinimo algoritmą naudojantis kompiuterinės regos metodais. Tikslas bus įgyvendinamas įvykdžius šiuos uždavinius:
+Šiame darbe bus nagrinėjama, ar automatizuotas teisėjavimas realiu laiku yra įmanomas bei praktiškas sprendimas su šiuolaikinėmis technologijomis bei žiniomis, aprašant algoritmus, nustatančius, ar žaidėjas vaizdo įrašuose pažeidė tam tikras taisykles. Šio darbo tikslas yra sukurti ir įgyvendinti žingsnių bei dvigubo varymo taisklių pažeidimo atpažinimo algoritmą naudojantis kompiuterinės regos metodais. Tikslas bus įgyvendinamas įvykdžius šiuos uždavinius:
 
 \begin{itemize}
 	\item Išanalizuoti ir palyginti galimus metodus žmogaus kūno dalims vaizdinėje medžiagoje atpažinti.
@@ -80,7 +81,7 @@ Visa tai rodo, jog teisėjavimas yra sritis, galinti tobulėti. Daug naudos krep
 	\item Palyginti įgyvendintų algoritmų su vaizdine medžiaga korektiškumą.
 \end{itemize}
 
-Darbas pradedamas nagrinėjant kompiuterinės regos metodus, leidžiančius atpažinti tam tikrus objektus vaizdo įrašuose ar paveikslėliuose. Bus apžvelgiamas atpažinimas besiremiantis iš anksto žinomis spalvomis, taip pat ir kiti atpažinimo būdai. Aprašyti metodai taip pat palyginami sukuriant paprastą algoritmą, suskaičiuojantį žingsnius. Toliau darbe aprašomos nagrinėjamos taisyklės bei sukuriami algoritmai jų pažeidimui atpažinti. Aprašyti algoritmai įgyvendinami Python programavimo kalba kartu su OpenCV ir Pytorch bibliotekomis. Taip pat nufilmuota vaizdinė medžiaga, kurioje žaidėjai atlieka tam tikrus krepšinio veiksmus, dalis iš jų pažeidžia taisykles, dalis - ne. Vaizdo medžiaga paduodama į programą kaip įvesties informacija, gauti rezultatai išanalizuoti ir pasiektos išvados.
+Darbas pradedamas nagrinėjant kompiuterinės regos metodus, leidžiančius atpažinti tam tikrus objektus vaizdo įrašuose ar paveikslėliuose. Bus apžvelgiamas atpažinimas besiremiantis iš anksto žinomis spalvomis, taip pat ir kiti atpažinimo būdai. Aprašyti metodai taip pat palyginami sukuriant paprastą algoritmą, suskaičiuojantį žingsnius. Toliau darbe aprašomos nagrinėjamos taisyklės bei sukuriami algoritmai jų pažeidimui atpažinti. Aprašyti algoritmai įgyvendinami Python programavimo kalba kartu su OpenCV ir PyTorch bibliotekomis. Taip pat nufilmuota vaizdinė medžiaga, kurioje žaidėjai atlieka tam tikrus krepšinio veiksmus, dalis iš jų pažeidžia taisykles, dalis - ne. Vaizdo medžiaga paduodama į programą kaip įvesties informacija, gauti rezultatai išanalizuoti ir pasiektos išvados.
 
 
 \section{Naudoti įrankiai}
@@ -93,11 +94,33 @@ Python paketų, įgyvendinančių įvairius kompiuterinės regos algoritmus ir p
 
 Vaizdo apdorojimui neuroniniais tinklais naudojama PyTorch biblioteka \cite{pytorch}, skirta lengvai valdyti neuroninių tinklų modelius bei juos integruoti į Python kodą. Taip pat PyTorch įgalina vaizdo apdorojimą naudojantis GPU. 
 
-Vaizdo medžiaga rinkta filmuojant Xiaomi Redmi 8 Pro kamera.  
+Vaizdo medžiaga rinkta filmuojant Xiaomi Redmi 8 Pro bei Sony Xperia 5 kameromis.  
 
 \section{Vaizdo medžiagos paruošimas}
 
-Šio darbo metu sukurtai programinei įrangai paruošta vaizdo medžiaga, kurioje žaidėjas atlieka įvairius judesius su krepšinio kamuoliu. Siekiant supaprastinti vaizdo atpažinimo algoritmą, medžiagai keliami reikalavimai yra: aiškiai matomas žaidėjas, telpantis į kadrą ir užimantis nemažą dalį vaizdo. Vaizdo atpažinimui pagal spalvą algoritmui žaidėjas taip pat privalo dėvėti skirtingų spalvų pirštines, batus bei mušinėti atskiros spalvos kamuolį. Žaidėjas turi būti kiek galima labiau skirtis nuo fono, kad algoritmas veiktų kuo efektyviau, kadangi įvairių formų ir spalvų objektai fone pasunkina tikslų atpažinimą. Vaizdo medžiagoje žaidėjas mušinėja kamuolį ir atlieka įvairius judesius, dalis kurių pažeidžia taisykles, pavyzdžiui – pamušinėjęs kamuolį jį pasiima į rankas ir padaro keletą žingsnių. Programinė įranga turi atpažinti, jog tai – taisyklės pažeidimas. Vaizdo kokybė yra itin svarbi siekiant tikslių rezultatų, todėl buvo filmuojama kuo didesne raiška – Xiaomi Redmi Note 8 Pro kameros maksimali raiška yra 4K, 30 kadrų per sekundę. 
+Šio darbo metu sukurtai programinei įrangai paruošta vaizdo medžiaga, kurioje žaidėjas atlieka įvairius judesius su krepšinio kamuoliu. Vaizdo medžiagai yra keliami šie techniniai reikalavimai: 
+
+\begin{itemize}
+	\item Vaizdo įrašo raiška turi būti bent 360P. 
+	\item Vaizdo įrašas turi turėti bent 30 kadrų per sekundę. 
+	\item Vaizdo įrašas neturėtų būti ilgesnis nei 10 sekundžių, nebent ilgesnės trukmės reikalauja tam tikrų veiksmų atlikimas.
+	\item Vaizdo įrašas turėtų būti bent 3 sekundžių trukmės.
+\end{itemize}
+
+Įrašo turiniui keliami reikalavimai yra šie:
+
+\begin{itemize}
+	\item Aiškiai matomas žaidėjas, pilnai telpantis į kadrą. 
+	\item Žaidėjas turi mušinėti kamuolį ir atlikti įvairius judesius, dalis kurių pažeidžia taisykles, pavyzdžiui – pamušinėjęs kamuolį jį pasiima į rankas ir padaro keletą žingsnių. 
+	\item Kamuolį varantis žaidėjas yra vienas. 
+	\item Kamuolys yra vienas, jis yra ryškios, išsiskiriančios spalvos (šiame darbe pasirinktas žalias kamuolys). 
+	\item Vaizdo įrašuose, kuriuose yra pažeidžiama žingsnių taisyklė, žaidėjas filmuojamas iš šono. 
+	\item Žaidėjas turi būti kiek galima labiau skirtis nuo fono, t.y. dėvėti išsiskiriančios spalvos drabužius, ar būti tokioje aplinkoje, kur aplink nėra daug pašalinių objektų. 
+	\item Taisyklių pažeidimo algoritmų tikrinimui skirta vaizdinė medžiaga turi būti filmuojama lauke, siekiant išgauti kuo geresnį apšvietimą. 
+	\item Vaizdo atpažinimui pagal spalvą algoritmui skirtoje vaizdinėje medžiagoje žaidėjas privalo dėvėti skirtingų spalvų pirštines, batus bei mušinėti atskiros spalvos kamuolį. 
+\end{itemize}
+
+Programinė įranga turi atpažinti, jog tai – taisyklės pažeidimas. Vaizdo kokybė yra itin svarbi siekiant tikslių rezultatų, todėl, išskyrus kelis atvejus, kai tai nebuvo įmanoma dėl techninių kliūčių, filmuojama buvo kuo didesne raiška – Xiaomi Redmi Note 8 Pro kameros maksimali raiška yra 4K, 30 kadrų per sekundę. 
 
 \section{Vaizdo atpažinimo metodai}
 
@@ -422,7 +445,7 @@ Apibendrinus - spalviniai vaizdo atpažinimo metodai tinka tuomet, kai prie domi
 	\item Žaidėjas, varydamas kamuolį, gali padaryti du žingsnius prieš sustojant arba kamuolį metant ar atiduodant \cite{nba-rules}. 
 \end{itemize}
 
-Būdų pažeisti šią taisyklę yra gausu, tačiau šiame darbe fokusuojamasi į atvejį, kai žaidėjas suėmęs kamuolį atlieka daugiau nei du žingsnius. Tam, kad atlikti žingsniai būtų laikomi kaip pažeidžiantys taisyklę, kamuolys turi būti nemušamas į žemę, o laikomas rankose - krepšinyje tai dažniausiai nutinka prieš metant kamuolį į krepšį, kai yra atliekamas dvižingsnis. Taigi, algoritmas, siekiantis atpažinti šios taisyklės pažeidimą, privalo taip pat gebėti atpažinti, kada kamuolys yra rankose, ir tuomet skaičiuoti atliktų žingsnių skaičių. 
+Taisyklių knygelėje yra aprašyti keletas veiksmų, pažeidžiančių taisyklę (pavyzdžiui, ėjimas gavus kamuolį jo bent kartą nesumušant ar atraminės kojos pakėlimas sustabdžius varymą), tačiau šiame darbe fokusuojamasi į atvejį, kai žaidėjas suėmęs kamuolį atlieka daugiau nei du žingsnius. Tam, kad atlikti žingsniai būtų laikomi kaip pažeidžiantys taisyklę, kamuolys turi būti nemušamas į žemę, o laikomas rankose - krepšinyje tai dažniausiai nutinka prieš metant kamuolį į krepšį, kai yra atliekamas dvižingsnis. Taigi, algoritmas, siekiantis atpažinti šios taisyklės pažeidimą, privalo taip pat gebėti atpažinti, kada kamuolys yra rankose, ir tuomet skaičiuoti atliktų žingsnių skaičių. 
 
 \subsection{Žingsnių taisyklės pažeidimo atpažinimo algoritmas}
 
@@ -499,7 +522,6 @@ Išsaugojus būseną suskaičiuojama, kokia buvo jos vidutinė reikšmė per pas
 \begin{equation}\label{eq:avg_state}
 	M_{\textit{vid. būsena}} = \sum_{n=i-x}^{i} \frac{S(n)}{n},
 \end{equation}
-
 kur \textit{i} žymi einamo kadro numerį, \textit{x} - konstantą, nurodančią dominančių kadrų skaičių, \textit{S} - \textit{n}-tojo kadro būseną, kur 1 indikuoja kamuolio buvimą rankose, o 0 - atvirkščiai.
 
 Jei vidutinė būsena yra didesnė už tam tikrą iš anksto nustatytą konstantą, pvz., 0.3, galima teigti, jog kamuolys vis dar yra rankose - tam, kad ši reikšmė pasikeistų, turi praeiti bent keli kadrai, pakeičiantys būsenos vidurkį. 
@@ -536,6 +558,108 @@ Varymo sustabdymą indikuoja tai, jog po varymo kamuolys buvo suimtas abejomis r
 
 Laiko tarpui, kai kamuolys laikomas rankose, nustatymui galima pasinaudoti 4.2.1. poskyriuje aprašytu būsenos saugojimo algoritmu. 
 
+\section{Atlikti bandymai ir analizė}
+
+Įgyvendinus aprašytus algoritmus, jie buvo patikrinti su paruošta vaizdo medžiaga. Šiam darbui buvo nufilmuota 53 skirtingų vaizdo įrašų, atitinkančių 2 skyriuje keliamus reikalavimus. Dauguma jų filmuoti skirtingu dienos laiku, skirtingais kampais bei atstumu nuo žaidėjo. Kiekviename iš vaizdo įrašų žaidėjas pažeidžia arba dvigubo varymo taisyklę, arba žingsnių taisyklę, arba nepažeidžia nei vienos.  
+
+Vaizdo įrašai sugrupuoti į šias grupes: 
+
+\begin{enumerate}
+	\item Paprastas varymas, nepažeidžiantis taisyklių. Šiai grupei priklauso 18 vaizdo įrašai.
+	\item Varymas, kur žaidėjas beveik suima kamuolį, bet varo toliau. Tai - klaidinantis, bet nepažeidžiantis taisyklių, veiksmas. Šiai grupei priklauso 6 įrašai. 
+	\item Varymas, po kurio žaidėjas išmeta kamuolį ir jį pagauna nepažeidžiant taisyklių. Šiai grupei priklauso 4 įrašai. 
+	\item Žingsnių taisyklės pažeidimas. Šiai grupei priklauso 12 vaizdo įrašų.
+	\item Dvigubo varymo taisyklės pažeidimas kamuolį suemant į abi rankas ir tęsiant varymą. Šiai grupei priklauso 8 įrašai.
+	\item Dvigubo varymo taisyklės pažeidimas kamuolį išmetant ir tęsiant varymą. Šiai grupei priklauso 5 įrašai. 
+\end{enumerate}
+
+Pirmojo bandymo metu programinė įranga buvo išbandyta su 53 vaizdo įrašais. Bandymo rezultatai pateikti \ref{tab:first_trial} lentelėje, o \ref{tab:first_trial_percents} lentelėje pateikti tikslumo, jautrumo bei specifiškumo procentai (laikant, jog atpažinta ne ta taisyklė yra ekvivalentu pažeidimui, kai jo nebuvo, radimui (\textit{angl.} false positive)). 
+
+ \begin{table}[H]\footnotesize
+ 	\centering
+ 	\caption{Pirmojo bandymo atpažinimo rezultatai}
+ 	{\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{2cm}|} \hline
+ 			\textbf{Teisingai suklasifikuota kaip taisyklių pažeidimas} & \textbf{Teisingai suklasifikuota kaip taisyklių pažeidimo nebuvimas} & \textbf{Taisyklės pažeidimas rastas, nors jo nebuvo (angl. false positive)} & \textbf{Taisyklės pažeidimas nerastas, nors jis buvo (angl. false negative)} & \textbf{Atpažinta ne ta taisyklė} \\
+ 			\hline
+ 			13  & 15    & 13    & 7    & 5   \\
+
+ 			\hline
+ 	\end{tabular}}
+ 	\label{tab:first_trial}
+ \end{table}
+
+ \begin{table}[H]\footnotesize
+	\centering
+	\caption{Pirmojo bandymo atpažinimo tikslumas, jautrumas bei specifiškumas}
+	{\begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|} \hline
+			\textbf{Tikslumas} & \textbf{Jautrumas} & \textbf{Specifiškumas} \\
+			\hline
+			52.8\%  & 65\%    & 45.45 \%    \\
+			
+			\hline
+	\end{tabular}}
+	\label{tab:first_trial_percents}
+\end{table}
+
+Po šio bandymo buvo pastebėta, jog dvigubo varymo taisyklių pažeidimo algoritmas yra pernelyg jautrus pokyčiams atpažindamas, kada kamuolys yra rankose. Jei kamuolio pozicija bent trumpam yra prie abiejų rankų, algoritmas iš karto laiko, jog kamuolys buvo suimtas. Po šio bandymo buvo pakoreguoti 4.2.1 poskyriuje aprašytos būsenos saugojimo skaičiavimo parametrai taip, jog nuspręsti, ar kamuolys yra tikrai laikomas rankuose, būsenoje turi būti išsaugota daugiau kadrų, kada kamuolys užtikrintai buvo rankose, nei prieš tai.
+
+Antrasis bandymas buvo atliktas su tais pačiais vaizdo įrašais, tik pakoregavus parametrus. Antrojo bandymo rezultatai pateikti  \ref{tab:second_trial} bei \ref{tab:second_trial_percents} lentelėse.
+
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Antrojo bandymo atpažinimo rezultatai}
+	{\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{2cm}|} \hline
+			\textbf{Teisingai suklasifikuota kaip taisyklių pažeidimas} & \textbf{Teisingai suklasifikuota kaip taisyklių pažeidimo nebuvimas} & \textbf{Taisyklės pažeidimas rastas, nors jo nebuvo (angl. false positive)} & \textbf{Taisyklės pažeidimas nerastas, nors jis buvo (angl. false negative)} & \textbf{Atpažinta ne ta taisyklė} \\
+			\hline
+			10  & 25    & 3    & 10    & 5   \\
+			\hline
+	\end{tabular}}
+	\label{tab:second_trial}
+\end{table}
+
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Antrojo bandymo atpažinimo tikslumas, jautrumas bei specifiškumas}
+	{\begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|} \hline
+			\textbf{Tikslumas} & \textbf{Jautrumas} & \textbf{Specifiškumas} \\
+			\hline
+			66.04 \%  & 50\%    & 75.76 \%    \\
+			
+			\hline
+	\end{tabular}}
+	\label{tab:second_trial_percents}
+\end{table}
+
+Antrojo bandymo metu padidėjo algoritmo tikslumas bei ženkliai paaugo specifiškumas, tačiau sumažėjo jautrumas, kas indikuoja, jog nors algoritmo atpažinimas yra tikslesnis, atpažįstama mažiau tikrų pažeidimų. Taip yra todėl, kad sugriežtėjo tikrinimas, ar kamuolys yra rankose, todėl tai nėra atpažįstama visais atvejais ir atpažinimo algoritmas teisingai nesuveikia. 
+
+Toliau pateikiami antrojo bandymo rezultatai, sugrupuoti pagal vaizdo įrašų grupes.
+
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Antrojo bandymo atpažinimo rezultatai pagal vaizdo įrašų grupes}
+	{\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|} \hline
+			\textbf{Vaizdo įrašo grupė} & \textbf{Įrašų kiekis} & \textbf{Suklasifikuota teisingai} & \textbf{Suklasifikuota neteisingai} \\
+			\hline
+			1  & 18    & 16    & 2    \\
+			\hline
+			2  & 6    & 0  & 7196     \\
+			\hline
+			3  & 4    & 4   & 14565    \\
+			\hline
+			4  & 12    & 0  & 1257     \\
+			\hline
+			5  & 8    & 5  & 11638     \\
+			\hline
+			6  & 5    & 8  & 12438     \\
+			\hline
+	\end{tabular}}
+	\label{tab:recognizion_results_grouped}
+\end{table}
+
+
+\section{Tolimesni darbai}
+
+
 \sectionnonum{Rezultatai ir išvados}
 Rezultatų ir išvadų dalyje išdėstomi pagrindiniai darbo rezultatai (kažkas
 išanalizuota, kažkas sukurta, kažkas įdiegta), toliau pateikiamos išvados
@@ -543,6 +667,10 @@ išanalizuota, kažkas sukurta, kažkas įdiegta), toliau pateikiamos išvados
 rekomendacijos, akcentuojamos naujovės). Rezultatai ir išvados pateikiami
 sunumeruotų (gali būti hierarchiniai) sąrašų pavidalu. Darbo rezultatai turi
 atitikti darbo tikslą.
+
+Rezultatų skyriuje išdėstomi pagrindiniai darbo rezultatai: kažkas išanalizuota, kažkas sukurta, kažkas įdiegta. Rezultatai pateikiami sunumeruotų (gali būti hierarchiniai) sąrašų pavidalu. Darbo rezultatai turi atitikti darbo tikslą.
+Išvadų skyriuje daromi nagrinėtų problemų sprendimo metodų palyginimai, siūlomos rekomendacijos, akcentuojamos naujovės. Išvados pateikiamos sunumeruoto (gali būti hierarchinis) sąrašo pavidalu. Darbo išvados turi atitikti darbo tikslą. 
+
 
 \printbibliography[heading=bibintoc]  % Šaltinių sąraše nurodoma panaudota
 % literatūra, kitokie šaltiniai. Abėcėlės tvarka išdėstomi darbe panaudotų
@@ -553,11 +681,6 @@ atitikti darbo tikslą.
 % necituoti savo kursinio darbo, nes tai nėra oficialus literatūros šaltinis.
 % Jei tokių nuorodų reikia, pateikti jas tekste.
 
-% \sectionnonum{Sąvokų apibrėžimai}
-\sectionnonum{Santrumpos}
-Sąvokų apibrėžimai ir santrumpų sąrašas sudaromas tada, kai darbo tekste
-vartojami specialūs paaiškinimo reikalaujantys terminai ir rečiau sutinkamos
-santrumpos.
 
 \appendix  % Priedai
 % Prieduose gali būti pateikiama pagalbinė, ypač darbo autoriaus savarankiškai
@@ -570,29 +693,5 @@ https://github.com/LukasCed/basketball-rules-violation-thesis
 
 \section{Vaizdo įrašai, naudoti žingsnių skaičiavimui}
 https://drive.google.com/drive/folders/13BI-eH62bwaUmMGrrUmE752j4UVvtUKU?usp=sharing
-
-\section{Neuroninio tinklo struktūra}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{img/MLP}
-    \caption{Paveikslėlio pavyzdys}
-    \label{img:mlp}
-\end{figure}
-
-
-\section{Eksperimentinio palyginimo rezultatai}
-% tablesgenerator.com – converts calculators (e.g. excel) tables to LaTeX
-\begin{table}[H]\footnotesize
-  \centering
-  \caption{Lentelės pavyzdys}
-  {\begin{tabular}{|l|c|c|} \hline
-    Algoritmas & $\bar{x}$ & $\sigma^{2}$ \\
-    \hline
-    Algoritmas A  & 1.6335    & 0.5584       \\
-    Algoritmas B  & 1.7395    & 0.5647       \\
-    \hline
-  \end{tabular}}
-  \label{tab:table example}
-\end{table}
 
 \end{document}

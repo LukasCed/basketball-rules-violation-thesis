@@ -25,16 +25,20 @@ class DoubleDribbleDetectionAlgorithm:
         if this.dribble_stopped and this.in_hands == 1 and this.average_state(this.in_hand_state, 10) <= 0.3:
             this.double_dribble = True
         
-        if contour_count >= 2 and not this.dribble_stopped and this.average_state(this.in_hand_state, 5) >= 0.6:
+        if contour_count >= 2 and not this.dribble_stopped and this.average_state(this.in_hand_state, 6) >= 1.2:
+      #  if contour_count >= 2 and not this.dribble_stopped and this.average_state(this.in_hand_state, 5) >= 0.6:
+
             this.dribble_stopped = True
        
         this.in_hand_state.append(contour_count)
 
+        #print("------------------------------")
         #print("ar double dribble", this.double_dribble)
         #print("dribble stopped", this.dribble_stopped)
         #print("contour count", contour_count)
         #print("avg state", this.average_state(this.in_hand_state, 10))
-        
+        #print("------------------------------")
+        ##input()
         return [this.in_hands, -1, this.double_dribble]
         
     # calculates avg state since n steps back

@@ -46,9 +46,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4.}Dvigubo varymo taisyklės atpažinimo algoritmas}{22}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Rezultatai ir išvados}{24}{}%
+\contentsline {section}{\numberline {5.}Atlikti bandymai ir analizė}{24}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Literatūra}{25}{}%
+\contentsline {section}{\numberline {6.}Tolimesni darbai}{26}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Rezultatai ir išvados}{27}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Literatūra}{28}{}%
 \defcounter {refsection}{0}\relax 
 \bgroup 
 \defcounter {refsection}{0}\relax 
@@ -58,14 +62,8 @@
 \defcounter {refsection}{0}\relax 
 \selectlanguage *{lithuanian}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Santrumpos}{27}{}%
+\contentsline {section}{\MakeUppercase {Priedai}}{30}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\MakeUppercase {Priedai}}{27}{}%
+\contentsline {subsection}{1 priedas.\nobreakspace {}Sukurtos programinės įrangos kodo nuoroda}{31}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{1 priedas.\nobreakspace {}Sukurtos programinės įrangos kodo nuoroda}{28}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2 priedas.\nobreakspace {}Vaizdo įrašai, naudoti žingsnių skaičiavimui}{29}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{3 priedas.\nobreakspace {}Neuroninio tinklo struktūra}{30}{}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{4 priedas.\nobreakspace {}Eksperimentinio palyginimo rezultatai}{31}{}%
+\contentsline {subsection}{2 priedas.\nobreakspace {}Vaizdo įrašai, naudoti žingsnių skaičiavimui}{32}{}%

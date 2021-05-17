@@ -70,7 +70,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Sports Sciences}
       \field{number}{7}
-      \field{title}{Officiating bias: The effect of foul differential on foul calls in NCAA basketball}
+      \field{title}{{Officiating bias: The effect of foul differential on foul calls in NCAA basketball}}
       \field{volume}{27}
       \field{year}{2009}
       \field{pages}{687\bibrangedash 694}
@@ -242,6 +242,28 @@
       \field{note}{tikrinta 2021-05-10}
       \field{title}{{New instant replay system applied in Euroleague games}}
       \field{year}{2016}
+    \endentry
+    \entry{EuroleagueStats}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=fe9f997adb723206fb9c19873a8dd4a2}{%
+           family={{Euroleague.net}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{fe9f997adb723206fb9c19873a8dd4a2}
+      \strng{fullhash}{fe9f997adb723206fb9c19873a8dd4a2}
+      \strng{bibnamehash}{fe9f997adb723206fb9c19873a8dd4a2}
+      \strng{authorbibnamehash}{fe9f997adb723206fb9c19873a8dd4a2}
+      \strng{authornamehash}{fe9f997adb723206fb9c19873a8dd4a2}
+      \strng{authorfullhash}{fe9f997adb723206fb9c19873a8dd4a2}
+      \field{labelalpha}{Eur17}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.euroleague.net/final-four/istanbul-2017/news/i/7teydrw7cnyfrjcu/euroleague-basketball-brings-stats-sportvu-advanced-player-tracking-to-the-final-four/}}
+      \field{note}{tikrinta 2021-05-17}
+      \field{title}{{Euroleague Basketball brings STATS SportVU advanced player tracking to the Final Four}}
+      \field{year}{2017}
     \endentry
     \entry{4767941}{article}{}
       \name{author}{3}{}{%
@@ -648,6 +670,28 @@
       \verb 1811.12004
       \endverb
     \endentry
+    \entry{SecondSpectrum}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=44b5b0d55c15671e11bbf12f027d5ac1}{%
+           family={{Second Spectrum}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{44b5b0d55c15671e11bbf12f027d5ac1}
+      \strng{fullhash}{44b5b0d55c15671e11bbf12f027d5ac1}
+      \strng{bibnamehash}{44b5b0d55c15671e11bbf12f027d5ac1}
+      \strng{authorbibnamehash}{44b5b0d55c15671e11bbf12f027d5ac1}
+      \strng{authornamehash}{44b5b0d55c15671e11bbf12f027d5ac1}
+      \strng{authorfullhash}{44b5b0d55c15671e11bbf12f027d5ac1}
+      \field{labelalpha}{Sec21}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.secondspectrum.com/index.html/}}
+      \field{note}{tikrinta 2021-05-17}
+      \field{title}{{The Next Way of Seeing Sports}}
+      \field{year}{2021}
+    \endentry
     \entry{SiglerK}{article}{}
       \name{author}{1}{}{%
         {{hash=3e379b80eca6769f8da4cf3234e29aad}{%
@@ -669,7 +713,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{The Sport Journal}
       \field{langid}{english}
-      \field{title}{NBA referee missed calls: reasons and solutions}
+      \field{title}{{NBA referee missed calls: reasons and solutions}}
       \field{volume}{22}
       \field{year}{2019}
     \endentry
@@ -944,6 +988,28 @@
       \field{year}{2002}
       \field{pages}{957\bibrangedash 960 vol.2}
       \range{pages}{-1}
+    \endentry
+    \entry{NBAStatsVu}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=82a8cf976421bb8f3bf9aa1ad6a3ce39}{%
+           family={{Zach McCann}},
+           familyi={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{82a8cf976421bb8f3bf9aa1ad6a3ce39}
+      \strng{fullhash}{82a8cf976421bb8f3bf9aa1ad6a3ce39}
+      \strng{bibnamehash}{82a8cf976421bb8f3bf9aa1ad6a3ce39}
+      \strng{authorbibnamehash}{82a8cf976421bb8f3bf9aa1ad6a3ce39}
+      \strng{authornamehash}{82a8cf976421bb8f3bf9aa1ad6a3ce39}
+      \strng{authorfullhash}{82a8cf976421bb8f3bf9aa1ad6a3ce39}
+      \field{labelalpha}{Zac12}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.espn.com/blog/playbook/tech/post/_/id/492/492/}}
+      \field{note}{tikrinta 2021-05-17}
+      \field{title}{{Player tracking transforming NBA analytics}}
+      \field{year}{2012}
     \endentry
   \enddatalist
 \endrefsection
