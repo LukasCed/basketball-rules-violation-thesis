@@ -79,3 +79,5 @@
 \contentsline {subsection}{1 priedas.\nobreakspace {}Sukurtos programinės įrangos kodo nuoroda}{34}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{2 priedas.\nobreakspace {}Vaizdo įrašai, naudoti žingsnių skaičiavimui}{35}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{3 priedas.\nobreakspace {}Vaizdo įrašai, naudoti programinės įrangos bandymams}{36}{}%

@@ -65,7 +65,9 @@ Santrauka anglų kalba. Santraukos apimtis ne didesnė nei 0,5 puslapio.
 % Darbo įvadas neturi būti dėstymo santrauka. Įvado apimtis 2 –– 4 puslapiai.
 
 
-Krepšinis - intensyvus ir dinamiškas žaidimas, iš žaidėjų reikalaujantis greičio, gebėjimo sparčiai atlikti sprendimus bei greitos reakcijos. Žaidimo spartumas daro įtaką ir teisėjams, kurie nuolatos privalo stebėti žaidimo eigą bei realiu laiku nuspręsti, kada buvo pažeistos tam tikros taisyklės. Nenuostabu, jog šis darbas yra ne tik varginantis, bet ir neatsparus žmogiškosioms klaidoms. 2015 m. atliktame tyrime nustatyta, jog NBA lygoje tų metų sezono paskutinėmis įtempto žaidimo minutėmis teisėjų tikslumas skiriant baudas tesiekė 80.1\% \cite{NBA_bias_Referee}. Tuo tarpu 2018 m. analizuojant pačios NBA išsaugotas statistikas apie kiekvieno žaidimo nuo 2015 m. paskutines 2 minutes nustatyta, jog teisėjai atlieka 1.49 klaidingus sprendimus kiekvieną žaidimą, o, pavyzdžiui, dėl žingsnių taisyklės pažeidimo teisėjai sušvilpia tik 20.6\% atvejų \cite{SiglerK}, tad didžioji dalis šios taisyklės pažeidimų lieka nepastebėta. Negana to, teisingam ir tiksliam teisėjavimui trukdyti gali ir tokie faktoriai kaip šališkumas: NCAA (\textit{angl.} National Collegiate Athletic Association, viena populiariausių studentų krepšinio organizacijų JAV) lygoje nustatyta, jog teisėjai labiau linkę baudas skirti komandos, turinčios mažiau baudų, žaidėjams, taip pat tos, kuri žaidžia svečiuose ar pirmauja \cite{OfficiatingBias}. 
+Krepšinis - intensyvus ir dinamiškas žaidimas, iš žaidėjų reikalaujantis greičio, gebėjimo sparčiai atlikti sprendimus bei greitos reakcijos. Žaidimo spartumas daro įtaką ir teisėjams, kurie nuolatos privalo stebėti žaidimo eigą bei realiu laiku nuspręsti, kada buvo pažeistos tam tikros taisyklės. Nenuostabu, jog šis darbas yra ne tik varginantis, bet ir neatsparus žmogiškosioms klaidoms. 
+
+2015 m. atliktame tyrime nustatyta, jog NBA lygoje tų metų sezono paskutinėmis įtempto žaidimo minutėmis teisėjų tikslumas skiriant baudas tesiekė 80.1\% \cite{NBA_bias_Referee}. Tuo tarpu 2018 m. analizuojant pačios NBA išsaugotas statistikas apie kiekvieno žaidimo nuo 2015 m. paskutines 2 minutes nustatyta, jog teisėjai atlieka 1.49 klaidingus sprendimus kiekvieną žaidimą, o, pavyzdžiui, dėl žingsnių taisyklės pažeidimo teisėjai sušvilpia tik 20.6\% atvejų \cite{SiglerK}, tad didžioji dalis šios taisyklės pažeidimų lieka nepastebėta. Negana to, teisingam ir tiksliam teisėjavimui trukdyti gali ir tokie faktoriai kaip šališkumas: NCAA (\textit{angl.} National Collegiate Athletic Association, viena populiariausių studentų krepšinio organizacijų JAV) lygoje nustatyta, jog teisėjai labiau linkę baudas skirti komandos, turinčios mažiau baudų, žaidėjams, taip pat tos, kuri žaidžia svečiuose ar pirmauja \cite{OfficiatingBias}. 
 
 Visa tai rodo, jog teisėjavimas yra sritis, galinti tobulėti. Vienas iš būdų išvengti žmogiškųjų klaidų bei šališkumo faktorių - automatizuoti sprendimų apie taisyklių pažeidimus atlikimą. Jau nuo 2014 m. NBA teisėjams padeda itin greitai vaizdo medžiagą kurti ir apdoroti galintis „Replay Center“, suteikiantis galimybę bet kada peržiūrėti paskutines kelias žaidimo minutes ir tiksliau įvertinti, ar pažeidimas buvo nustatytas teisingai \cite{NBAReplay}. Žaidimo eigos pakartojimo technologijomis jau kuris laikas naudojasi ir kitos lygos, pavyzdžiui, Eurolyga \cite{EuroleagueReplay}.
 Didžiosiose lygose taip pat naudojamos kompiuterinės regos technologijos, leidžiančios analizuoti žaidimus ne tik jiems įvykus, bet ir realiu laiku: NBA nuo 2009 metų naudoja „SportVU“, gebantį sekti žaidėjus bei jų atliekamus veiksmus \cite{NBAStatsVu} (nuo 2017 m. jį pakeitė „Second Spectrum“ \cite{SecondSpectrum}), o Eurolygoje ši technologija pirmą kartą panaudota 2017 metais \cite{EuroleagueStats}. Šių technologijų pagalba gaunama informacija naudojama ir žaidimo eigoje, pavyzdžiui, kuriant strategijas prieš priešininkes komandas, ir po žaidimo, pavyzdžiui, žvalgantis potencialių būsimų žvaigždžių \cite{THOMAS20173}.
@@ -158,12 +160,12 @@ Turint intervalą užtenka nufiltruoti visus pikselius, kurių reikšmė nepaten
 \end{figure}
 
 \subsubsubsection{Dominančių objektų spalvų rėžiai}
-Atliekant bandymus pastebėta, jog net ir naudojantis HSV spalvų erdve, dominančių objektų spalvų rėžiai itin skiriasi priklausomai nuo apšvietimo. Šiame darbe naudoti spalvų rėžiai: //@todo correct the values
+Atliekant bandymus pastebėta, jog net ir naudojantis HSV spalvų erdve, dominančių objektų spalvų rėžiai itin skiriasi priklausomai nuo apšvietimo. Šiame darbe naudoti spalvų rėžiai:
 
 \begin{itemize} 
-	\item Žalsvo kamuolio - nuo [61, 20, 32] iki [84, 255, 200]
-	\item Geltonų pirštinių - nuo [,,] iki [,,]
-	\item Raudonų batų - nuo [,,] iki [,,]
+	\item Žalsvo kamuolio - nuo [73, 85, 38] iki [85, 230, 180],
+	\item Geltonų pirštinių - nuo [29,55,130] iki [56,140,255],
+	\item Raudonų batų - nuo [0,120,255] iki [10,255,200] ir nuo [170,120,255] iki [180,255,200].
 \end{itemize}
 
 Tinkamų HSV rėžių radimo procedūra buvo pasirinkus tam tikrą pradinį intervalą patikrinti, ar nufiltravus netinkamus pikselius, išskirtas regiono plotas atitinka dominančio objekto plotą. Jei išskirto regiono plotas yra mažesnis - vadinasi, rėžiai yra per siauri, tad jie buvo didinami, tuo tarpu jei plotas yra didesnis - rėžiai mažinami. 
@@ -508,7 +510,7 @@ Turint informaciją apie kamuolio laikymą tam tikrame laiko intervale ir per j�
 \subsubsection{Būsenos saugojimas}
 Atliekant pradinius bandymus su algoritmu pastebėta, jog nustatant, ar kamuolys yra rankose, išskirtų rankų bei kamuolio regionų plotai yra nepastovūs priklausomai nuo apšvietimo ir kitų faktorių. Tai reiškia, jog laiko intervalas, kada kamuolys yra laikomas rankose, gali būti su trūkiais, indikuojančiais, kad tą laiko momentą nepavyko nustatyti, ar kamuolys yra rankose. Žingsnių skaičiavimo algoritmas skaičiuoja žingsnius tik tada, kai kamuolys yra rankose, tad intervalui nutrūkus dėl netikslaus atpažinimo, skaičiavimas prasidės iš naujo. 
 
-Informacija apie kamuolio buvimą rankose yra renkama ne iš vieno kadro, o iš kelių, ir darant prielaidą, jog rankose esančio kamuolio judėjimo greitis yra arti nulio, galima teigti, jog tokia būsena turėtų nepasikeisti tam tikrą skaičių kadrų. Kitaip tariant, su kiekvienu kadru išsaugoma būsena, ar kamuolys yra rankose ar ne:
+Informacija apie kamuolio buvimą rankose yra renkama ne iš vieno kadro, o iš kelių, ir darant prielaidą, jog rankose esančio kamuolio judėjimo greitis yra arti nulio, galima teigti, jog tokia būsena turėtų nepasikeisti tam tikrą skaičių kadrų. Kitaip tariant, su kiekvienu kadru išsaugoma būsena, ar kamuolys yra rankose ar ne.
 
 \begin{figure}[H]
 	\centering
@@ -820,5 +822,8 @@ https://github.com/LukasCed/basketball-rules-violation-thesis
 
 \section{Vaizdo įrašai, naudoti žingsnių skaičiavimui}
 https://drive.google.com/drive/folders/13BI-eH62bwaUmMGrrUmE752j4UVvtUKU?usp=sharing
+
+\section{Vaizdo įrašai, naudoti programinės įrangos bandymams}
+https://drive.google.com/drive/folders/1DhaJ8jNA3UDzxzZMwFsx9E0gr7lm0GAk?usp=sharing
 
 \end{document}
