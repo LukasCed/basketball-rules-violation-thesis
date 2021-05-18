@@ -1,5 +1,6 @@
 import numpy as np
 import cv2
+import math
 from PIL import Image
 from NeuralNetworkRecognitionAlgorithm import NeuralNetworkRecognitionAlgorithm
 from TravelDetectionAlgorithm import TravelDetectionAlgorithm
@@ -10,10 +11,11 @@ def proccess_turnover_test(video_path):
 
     vid = cv2.VideoCapture(video_path)
     recognition_algorithm = NeuralNetworkRecognitionAlgorithm()
-    rule_violation_algorithms = [DoubleDribbleDetectionAlgorithm()]
-    rule_violations = ["Double dribble violation"]
+    rule_violation_algorithms = [TravelDetectionAlgorithm(), DoubleDribbleDetectionAlgorithm()]
+    rule_violations = ["Travel violation", "Double dribble violation"]
     
     ret, frame = vid.read()
+
     turnover = False
     index = -1
 
