@@ -19,7 +19,7 @@
 \institute{Informatikos institutas}  % Užkomentavus šią eilutę – institutas neįtraukiamas į titulinį
 \department{Programų sistemų bakalauro studijų programa}
 \papertype{Bakalauro baigiamasis darbas}
-\title{Krepšinio taisyklių pažeidimo automatinis nustatymas}
+\title{Krepšinio taisyklių pažeidimo automatinis nustatymas	}
 \titleineng{Recognizing Violations of Basketball Rules Using Computer Vision}
 \author{Lukas Cedronas}
 % \secondauthor{Vardonis Pavardonis}   % Pridėti antrą autorių
@@ -560,6 +560,20 @@ Laiko tarpui, kai kamuolys laikomas rankose, nustatymui galima pasinaudoti 4.2.1
 
 \section{Atlikti bandymai ir analizė}
 
+\subsection{Įgyvendinta programinė įranga}
+
+Aprašyti kompiuterinės regos metodai bei taisyklių atpažinimo algoritmai buvo įgyvendinti sukuriant programinę įrangą. Žaidėjo kūno dalių identifikavimui buvo pasirinktas skeleto atpažinimas neuroninio tinklo pagalba, kamuolio radimui - atpažinimas pagal spalvą. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{img/program_architecture}
+	\caption{Taisyklių pažeidimo atpažinimo programinės įrangos architektūra aukštu lygmeniu}
+	\label{img:program_architecture}
+\end{figure}
+
+Taip pat buvo sukurti ir įgyvendinti testavimo scenarijai, kurių kiekviename vaizdo medžiaga yra pateikiama įgyvendintai programinei įrangai ir laukiama tam tikro rezultato, nusakančio, ar taisyklė buvo pažeista ir jei taip - kuri.  
+
+\subsection{Atlikti bandymai}
 Įgyvendinus aprašytus algoritmus, jie buvo patikrinti su paruošta vaizdo medžiaga. Šiam darbui buvo nufilmuota 53 skirtingų vaizdo įrašų, atitinkančių 2 skyriuje keliamus reikalavimus. Dauguma jų filmuoti skirtingu dienos laiku, skirtingais kampais bei atstumu nuo žaidėjo. Kiekviename iš vaizdo įrašų žaidėjas pažeidžia arba dvigubo varymo taisyklę, arba žingsnių taisyklę, arba nepažeidžia nei vienos.  
 
 Vaizdo įrašai sugrupuoti į šias grupes: 
@@ -573,7 +587,9 @@ Vaizdo įrašai sugrupuoti į šias grupes:
 	\item Dvigubo varymo taisyklės pažeidimas kamuolį išmetant ir tęsiant varymą. Šiai grupei priklauso 5 įrašai. 
 \end{enumerate}
 
-Pirmojo bandymo metu programinė įranga buvo išbandyta su 53 vaizdo įrašais. Bandymo rezultatai pateikti \ref{tab:first_trial} lentelėje, o \ref{tab:first_trial_percents} lentelėje pateikti tikslumo, jautrumo bei specifiškumo procentai (laikant, jog atpažinta ne ta taisyklė yra ekvivalentu pažeidimui, kai jo nebuvo, radimui (\textit{angl.} false positive)). 
+\subsubsection{Pirmasis bandymas}
+
+Pirmojo bandymo metu programinė įranga, įgyvendinanti kamuolio atpažinimą remiantis spalva, kūno dalių atpažinimą neuroninio tinklo pagalba bei abu aprašytus taisyklių pažeidimo atpažinimo algoritmus, buvo išbandyta su 53 vaizdo įrašais. Bandymo rezultatai pateikti \ref{tab:first_trial} lentelėje, o \ref{tab:first_trial_percents} lentelėje pateikti tikslumo, jautrumo bei specifiškumo procentai (laikant, jog atpažinta ne ta taisyklė yra ekvivalentu pažeidimui, kai jo nebuvo, radimui (\textit{angl.} false positive)). 
 
  \begin{table}[H]\footnotesize
  	\centering
@@ -581,7 +597,7 @@ Pirmojo bandymo metu programinė įranga buvo išbandyta su 53 vaizdo įrašais.
  	{\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{2cm}|} \hline
  			\textbf{Teisingai suklasifikuota kaip taisyklių pažeidimas} & \textbf{Teisingai suklasifikuota kaip taisyklių pažeidimo nebuvimas} & \textbf{Taisyklės pažeidimas rastas, nors jo nebuvo (angl. false positive)} & \textbf{Taisyklės pažeidimas nerastas, nors jis buvo (angl. false negative)} & \textbf{Atpažinta ne ta taisyklė} \\
  			\hline
- 			13  & 15    & 13    & 7    & 5   \\
+ 			14  & 16    & 12    & 6    & 5   \\
 
  			\hline
  	\end{tabular}}
@@ -594,16 +610,18 @@ Pirmojo bandymo metu programinė įranga buvo išbandyta su 53 vaizdo įrašais.
 	{\begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|} \hline
 			\textbf{Tikslumas} & \textbf{Jautrumas} & \textbf{Specifiškumas} \\
 			\hline
-			52.8\%  & 65\%    & 45.45 \%    \\
+			45.16\%  & 70\%    & 48.48 \%    \\
 			
 			\hline
 	\end{tabular}}
 	\label{tab:first_trial_percents}
 \end{table}
 
-Po šio bandymo buvo pastebėta, jog dvigubo varymo taisyklių pažeidimo algoritmas yra pernelyg jautrus pokyčiams atpažindamas, kada kamuolys yra rankose. Jei kamuolio pozicija bent trumpam yra prie abiejų rankų, algoritmas iš karto laiko, jog kamuolys buvo suimtas. Po šio bandymo buvo pakoreguoti 4.2.1 poskyriuje aprašytos būsenos saugojimo skaičiavimo parametrai taip, jog nuspręsti, ar kamuolys yra tikrai laikomas rankuose, būsenoje turi būti išsaugota daugiau kadrų, kada kamuolys užtikrintai buvo rankose, nei prieš tai.
+Po šio bandymo buvo pastebėta, jog dvigubo varymo taisyklių pažeidimo algoritmas yra pernelyg jautrus pokyčiams atpažindamas, kada kamuolys yra rankose. Jei kamuolio pozicija bent trumpam yra prie abiejų rankų, algoritmas iš karto laiko, jog kamuolys buvo suimtas. Po šio bandymo buvo pakoreguoti 4.2.1 poskyryje aprašytos būsenos saugojimo skaičiavimo parametrai taip, jog nuspręsti, ar kamuolys yra tikrai laikomas rankuose, būsenoje turi būti išsaugota daugiau kadrų, kada kamuolys užtikrintai buvo rankose, nei prieš tai.
 
-Antrasis bandymas buvo atliktas su tais pačiais vaizdo įrašais, tik pakoregavus parametrus. Antrojo bandymo rezultatai pateikti  \ref{tab:second_trial} bei \ref{tab:second_trial_percents} lentelėse.
+\subsubsection{Antrasis bandymas}
+
+Antrasis bandymas buvo atliktas su tais pačiais vaizdo įrašais, kaip ir pirmasis, tik pakoregavus parametrus. Antrojo bandymo rezultatai pateikti  \ref{tab:second_trial} bei \ref{tab:second_trial_percents} lentelėse.
 
 \begin{table}[H]\footnotesize
 	\centering
@@ -611,7 +629,7 @@ Antrasis bandymas buvo atliktas su tais pačiais vaizdo įrašais, tik pakoregav
 	{\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{2cm}|} \hline
 			\textbf{Teisingai suklasifikuota kaip taisyklių pažeidimas} & \textbf{Teisingai suklasifikuota kaip taisyklių pažeidimo nebuvimas} & \textbf{Taisyklės pažeidimas rastas, nors jo nebuvo (angl. false positive)} & \textbf{Taisyklės pažeidimas nerastas, nors jis buvo (angl. false negative)} & \textbf{Atpažinta ne ta taisyklė} \\
 			\hline
-			10  & 25    & 3    & 10    & 5   \\
+			11  & 26    & 2    & 9    & 5   \\
 			\hline
 	\end{tabular}}
 	\label{tab:second_trial}
@@ -623,14 +641,14 @@ Antrasis bandymas buvo atliktas su tais pačiais vaizdo įrašais, tik pakoregav
 	{\begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|} \hline
 			\textbf{Tikslumas} & \textbf{Jautrumas} & \textbf{Specifiškumas} \\
 			\hline
-			66.04 \%  & 50\%    & 75.76 \%    \\
+			84.62 \%  & 55\%    & 92.86 \%    \\
 			
 			\hline
 	\end{tabular}}
 	\label{tab:second_trial_percents}
 \end{table}
 
-Antrojo bandymo metu padidėjo algoritmo tikslumas bei ženkliai paaugo specifiškumas, tačiau sumažėjo jautrumas, kas indikuoja, jog nors algoritmo atpažinimas yra tikslesnis, atpažįstama mažiau tikrų pažeidimų. Taip yra todėl, kad sugriežtėjo tikrinimas, ar kamuolys yra rankose, todėl tai nėra atpažįstama visais atvejais ir atpažinimo algoritmas teisingai nesuveikia. 
+Antrojo bandymo metu padidėjo algoritmo tikslumas bei ženkliai paaugo specifiškumas, tačiau sumažėjo jautrumas, kas indikuoja, jog nors algoritmo atpažinimas yra tikslesnis, atpažįstama mažiau tikrų pažeidimų. Taip yra todėl, kad sugriežtėjo tikrinimas, ar kamuolys yra rankose, todėl pažeidimas nėra atpažįstamas visais atvejais. 
 
 Toliau pateikiami antrojo bandymo rezultatai, sugrupuoti pagal vaizdo įrašų grupes.
 
@@ -642,20 +660,129 @@ Toliau pateikiami antrojo bandymo rezultatai, sugrupuoti pagal vaizdo įrašų g
 			\hline
 			1  & 18    & 16    & 2    \\
 			\hline
-			2  & 6    & 0  & 7196     \\
+			2  & 6    & 5  & 1     \\
 			\hline
-			3  & 4    & 4   & 14565    \\
+			3  & 4    & 4   & 0    \\
 			\hline
-			4  & 12    & 0  & 1257     \\
+			4  & 12    & 4  & 8     \\
 			\hline
-			5  & 8    & 5  & 11638     \\
+			5  & 8    & 5  & 3     \\
 			\hline
-			6  & 5    & 8  & 12438     \\
+			6  & 5    & 3  & 2     \\
 			\hline
 	\end{tabular}}
 	\label{tab:recognizion_results_grouped}
 \end{table}
 
+Iš 11 lentelės matyti, jog mažiausiai teisingai suklasifikuoti vaizdo įrašai, kuriuose yra žingsnių taisyklės pažeidimas.  
+
+\subsubsection{Trečiasis ir ketvirtas bandymai}
+
+Trečiasis ir ketvirtasis bandymai buvo atlikti siekiant patikrinti kiekvieną taisyklės pažeidimo algoritmą individualiai, t.y. kiekvieno bandymo metu vaizdo medžiaga patikrinta arba tik su dvigubo varymo, arba tik su žingsnių taisyklės pažeidimo atpažinimo algoritmu. Lyginant su prieš tai atliktais bandymais, kiekvieno bandymo metu testai buvo pamodifikuoti, jog vienos taisyklės pažeidimo atpažinimą, testas nesitikėtų, kad bus atpažinti kitos taisyklės pažeidimai. 
+
+Trečiojo bei ketvirtojo bandymo rezultatai pateikiami \ref{tab:third_trial}, \ref{tab:fourth_trial}, \ref{tab:third_trial_percents}, \ref{tab:fourth_trial_percents}, \ref{tab:third_trial_recognizion_results_grouped} bei \ref{tab:fourth_trial_recognizion_results_grouped} lentelėse. 
+
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Trečiojo bandymo žingsnių taisyklės pažeidimo atpažinimo rezultatai}
+	{\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{2cm}|} \hline
+			\textbf{Teisingai suklasifikuota kaip taisyklių pažeidimas} & \textbf{Teisingai suklasifikuota kaip taisyklių pažeidimo nebuvimas} & \textbf{Taisyklės pažeidimas rastas, nors jo nebuvo (angl. false positive)} & \textbf{Taisyklės pažeidimas nerastas, nors jis buvo (angl. false negative)} \\
+			\hline
+			4  & 40    & 1    & 8      \\
+			\hline
+	\end{tabular}}
+	\label{tab:third_trial}
+\end{table}
+
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Ketvirtojo bandymo dvigubo varymo taisyklės pažeidimo atpažinimo rezultatai}
+	{\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{2cm}|} \hline
+			\textbf{Teisingai suklasifikuota kaip taisyklių pažeidimas} & \textbf{Teisingai suklasifikuota kaip taisyklių pažeidimo nebuvimas} & \textbf{Taisyklės pažeidimas rastas, nors jo nebuvo (angl. false positive)} & \textbf{Taisyklės pažeidimas nerastas, nors jis buvo (angl. false negative)} \\
+			\hline
+			7  & 32    & 8    & 6   \\
+			\hline
+	\end{tabular}}
+	\label{tab:fourth_trial}
+\end{table}
+
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Trečiojo bandymo rezultatų tikslumas, jautrumas bei specifiškumas}
+	{\begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|} \hline
+			\textbf{Tikslumas} & \textbf{Jautrumas} & \textbf{Specifiškumas} \\
+			\hline
+			80 \%  & 33 \%    & 97.56 \%    \\
+			
+			\hline
+	\end{tabular}}
+	\label{tab:third_trial_percents}
+\end{table}
+
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Ketvirtojo bandymo rezultatų tikslumas, jautrumas bei specifiškumas}
+	{\begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|} \hline
+			\textbf{Tikslumas} & \textbf{Jautrumas} & \textbf{Specifiškumas} \\
+			\hline
+			46.6 \%  & 53.8 \%    & 80 \%    \\
+			
+			\hline
+	\end{tabular}}
+	\label{tab:fourth_trial_percents}
+\end{table}
+
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Trečiojo bandymo žingsnių taisyklės pažeidimo atpažinimo rezultatai pagal vaizdo įrašų grupes}
+	{\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|} \hline
+			\textbf{Vaizdo įrašo grupė} & \textbf{Įrašų kiekis} & \textbf{Suklasifikuota teisingai} & \textbf{Suklasifikuota neteisingai} \\
+			\hline
+			1  & 18    & 17    & 1    \\
+			\hline
+			2  & 6    & 5  & 1     \\
+			\hline
+			3  & 4    & 4   & 0    \\
+			\hline
+			4  & 12    & 4  & 8     \\
+			\hline
+			5  & 8    & 8  & 0     \\
+			\hline
+			6  & 5    & 5  & 0    \\
+			\hline
+	\end{tabular}}
+	\label{tab:third_trial_recognizion_results_grouped}
+\end{table}
+
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Ketvirtojo bandymo dvigubo varymo taisyklės pažeidimo atpažinimo rezultatai pagal vaizdo įrašų grupes}
+	{\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|} \hline
+			\textbf{Vaizdo įrašo grupė} & \textbf{Įrašų kiekis} & \textbf{Suklasifikuota teisingai} & \textbf{Suklasifikuota neteisingai} \\
+			\hline
+			1  & 18    & 16    & 2    \\
+			\hline
+			2  & 6    & 6  & 0     \\
+			\hline
+			3  & 4    & 4   & 0    \\
+			\hline
+			4  & 12    & 5  & 7     \\
+			\hline
+			5  & 8    & 5  & 3     \\
+			\hline
+			6  & 5    & 2  & 3     \\
+			\hline
+	\end{tabular}}
+	\label{tab:fourth_trial_recognizion_results_grouped}
+\end{table}
+
+Lyginant 12 bei 13 lentelę galima pastebėti, jog žingsnių taisyklės pažeidimo atpažinimo algoritmas yra griežtesnis, nei dvigubo varymo atpažinimo algoritmas, t.y. jis linkęs mažiau rasti teigiamų atvejų, bet tuo pačiu ir mažiau klaidingai teigiamų. Toks algoritmas, nors ir praleidžiantis ne mažą dalį nusižengimų, labai retai juos atpažintų neteisingai, taip nepelnytai nubausdamas žaidėjus bei sustabdydamas žaidimo tėkmę. 
+
+Žingsnių taisyklės pažeidimo sąlygos yra griežtesnės, nei dvigubo varymo (t.y. daugiau nei 2 žingsniai per tam tikrą intervalą, kuris gali trūkinėti, taip pat - žingsnių skaičiavimo priklausomumas nuo idealių žingsniavimo sąlygų), todėl žingsnių taisyklės pažeidimas yra pastebimas rečiau. Praktikoje žingsnių taisyklės pažeidimas taip pat yra pastebimas gan retai \cite{SiglerK}, trečiojo bandymo metu pasiektas jautrumas yra didesnis, nei vidutinis teisėjų tikruose NBA žaidimuose. 
+
+\subsection{Klaidingų bandymų rezultatų analizė}
+
+Šiame poskyryje pateikiami keletas klaidingų rezultatų ir jų priežastys. 
 
 \section{Tolimesni darbai}
 

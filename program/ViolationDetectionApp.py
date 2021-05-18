@@ -10,7 +10,7 @@ from ImageProcessingUtils import *
 import time
 import math
 
-vid = cv2.VideoCapture('vids/videos/travel_1.mp4')
+vid = cv2.VideoCapture('vids/videos/double_dribble_9.mp4')
 
 # recognition_algorithm = ColorBasedRecognitionAlgorithm()
 recognition_algorithm = NeuralNetworkRecognitionAlgorithm()
@@ -69,8 +69,8 @@ while(True):
         # 0 in hands - 0 no, 1 yes, 2 bal not found, 3 hands not found
         # 1 step count - 0 - inf. -1 - no information
         # 2 turnover - true/false
-        state = algorithm.execute(ball_mask, left_hand_mask, right_hand_mask, left_shoe_mask, right_shoe_mask)
-
+        state = algorithm.execute(ball_mask.copy(), left_hand_mask.copy(), right_hand_mask.copy(), left_shoe_mask.copy(), right_shoe_mask.copy())
+        
         if in_hands == -1:
             in_hands = state[0]
             

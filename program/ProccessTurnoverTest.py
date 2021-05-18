@@ -10,8 +10,8 @@ def proccess_turnover_test(video_path):
 
     vid = cv2.VideoCapture(video_path)
     recognition_algorithm = NeuralNetworkRecognitionAlgorithm()
-    rule_violation_algorithms = [TravelDetectionAlgorithm(), DoubleDribbleDetectionAlgorithm()]
-    rule_violations = ["Travelling violation", "Double dribble violation"]
+    rule_violation_algorithms = [DoubleDribbleDetectionAlgorithm()]
+    rule_violations = ["Double dribble violation"]
     
     ret, frame = vid.read()
     turnover = False
@@ -36,7 +36,7 @@ def proccess_turnover_test(video_path):
         # 0 in hands - 0 no, 1 yes, 2 bal not found, 3 hands not found
         # 1 step count - 0 - inf. -1 - no information
         # 2 turnover - true/false
-            state = algorithm.execute(ball_mask, left_hand_mask, right_hand_mask, left_shoe_mask, right_shoe_mask)
+            state = algorithm.execute(ball_mask.copy(), left_hand_mask.copy(), right_hand_mask.copy(), left_shoe_mask.copy(), right_shoe_mask)
             if turnover == False:
                 turnover = state[2]
                 index = i
