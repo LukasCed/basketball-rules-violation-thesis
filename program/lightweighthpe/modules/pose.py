@@ -93,27 +93,27 @@ class Pose:
        
         if global_kpt_a_id != -1:
             x_a, y_a = self.keypoints[4]
-            cv2.circle(img, (int(x_a), int(y_a)), 30, [0, 127, 0], -1)
+            cv2.circle(img, (int(x_a), int(y_a)), 42, [0, 127, 0], -1)
             
         if global_kpt_b_id != -1:
             x_a, y_a = self.keypoints[7]
-            cv2.circle(img, (int(x_a), int(y_a)), 30, [0, 255, 0], -1)
+            cv2.circle(img, (int(x_a), int(y_a)), 39, [0, 255, 0], -1)
             
         if global_kpt_c_id != -1:
             x_a, y_a = self.keypoints[10]
-            cv2.circle(img, (int(x_a), int(y_a)), 23, [0, 0, 127], -1)
+            cv2.circle(img, (int(x_a), int(y_a)), 42, [0, 0, 127], -1)
             self.prev_shoe_1 = x_a, y_a
         elif self.prev_shoe_1 is not None:
             x_a, y_a = self.prev_shoe_1
-            cv2.circle(img, (int(x_a), int(y_a)), 23, [0, 0, 127], -1)
+            cv2.circle(img, (int(x_a), int(y_a)), 42, [0, 0, 127], -1)
 
         if global_kpt_d_id != -1:
             x_a, y_a = self.keypoints[13]
-            cv2.circle(img, (int(x_a), int(y_a)), 20, [0, 0, 255], -1)
+            cv2.circle(img, (int(x_a), int(y_a)), 39, [0, 0, 255], -1)
             self.prev_shoe_2 = x_a, y_a
         elif self.prev_shoe_2 is not None:
             x_a, y_a = self.prev_shoe_2
-            cv2.circle(img, (int(x_a), int(y_a)), 20, [0, 0, 255], -1)
+            cv2.circle(img, (int(x_a), int(y_a)), 39, [0, 0, 255], -1)
             
 
 

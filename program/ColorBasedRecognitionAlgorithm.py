@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 import sys
 
-lower_green = np.array([73, 85, 38])
+lower_green = np.array([65, 10, 10])
 upper_green = np.array([85, 230, 180])
 
 lower_yellow_left = np.array([29,55,130])
@@ -73,7 +73,7 @@ class ColorBasedRecognitionAlgorithm:
     def get_ball_mask(this, hsv):
         mask_for_ball = segment_by_color(hsv, lower_green, upper_green)
         mask_for_ball = morph_dilate(morph_open(mask_for_ball))
-        mask_for_ball = erode(dilate(erode(mask_for_ball, 2), 17), 3)
+        mask_for_ball = erode(dilate(erode(mask_for_ball, 100), 30), 3)
         #cv2.imshow("mask for shoes", mask_for_shoes)
         return mask_for_ball
         

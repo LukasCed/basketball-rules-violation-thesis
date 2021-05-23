@@ -11,8 +11,8 @@ right_hand_color_range = np.array([60, 255, 127])
 left_leg_color_range = np.array([0, 255, 255]) #red
 right_leg_color_range = np.array([0, 255, 127])
 
-lower_green = np.array([65, 80, 38])
-upper_green = np.array([84, 240, 255])
+lower_green = np.array([65, 53, 38])
+upper_green = np.array([84, 250, 255])
 
 class NeuralNetworkRecognitionAlgorithm:
 
@@ -51,8 +51,8 @@ class NeuralNetworkRecognitionAlgorithm:
     def get_ball_mask(this, hsv):
         mask_for_ball = segment_by_color(hsv, lower_green, upper_green)
         mask_for_ball = morph_dilate(morph_open(mask_for_ball))
-        mask_for_ball = erode(dilate(mask_for_ball, 15), 3)
-        #cv2.imshow("mask_for_ball", mask_for_ball)
+        mask_for_ball = erode(dilate(erode(mask_for_ball, 5), 25), 3)
+        #cv2.imshow("mask for shoes", mask_for_shoes)
         return mask_for_ball
         
     def setup_lightweight(this, cpu): 

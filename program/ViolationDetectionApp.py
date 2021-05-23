@@ -10,13 +10,13 @@ from ImageProcessingUtils import *
 import time
 import math
 
-vid = cv2.VideoCapture('vids/videos/double_dribble_9.mp4')
+vid = cv2.VideoCapture('vids/videos/travel_1.mp4')
 
 # recognition_algorithm = ColorBasedRecognitionAlgorithm()
 recognition_algorithm = NeuralNetworkRecognitionAlgorithm()
 
-rule_violation_algorithms = [TravelDetectionAlgorithm(), DoubleDribbleDetectionAlgorithm()]
-rule_violations = ["Travelling violation", "Double dribble violation"]
+rule_violation_algorithms = [TravelDetectionAlgorithm()]
+rule_violations = ["Travelling violation"]
 
 ts1 = time.time()
 
