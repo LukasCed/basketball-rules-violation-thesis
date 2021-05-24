@@ -46,18 +46,18 @@
 %     Padėkos asmenims ir/ar organizacijoms
 % \end{center}
 
+\MA{
 \sectionnonumnocontent{Santrauka}
-Glaustai aprašomas darbo turinys: pristatoma nagrinėta problema ir padarytos
-išvados. Santraukos apimtis ne didesnė nei 0,5 puslapio. Santraukų gale
-nurodomi darbo raktiniai žodžiai. 
+Šiame darbe yra nagrinėjamas kompiuterinės regos metodų panaudojamumas krepšinio taisyklių pažeidimo atpažinime. Darbas pradedamas pristatant segmentavimą, morfologinės operacijas, kontūrų radimą objektų atpažinimo pagal spalvą kontekste, nagrinėjamas žmogaus atpažinimas neuroninio tinklo pagalba, apsvarstytas kadrų skirtumais paremtas metodas bei kamuolio atpažinimas Hough transformacijomis. Išnagrinėti metodai yra patikrinami praktiškai, įvertinant jų spartumą bei tikslumą žingsnių skaičiavime. Apibrėžiami dvigubo varymo bei žingsnių taisyklių pažeidimo algoritmai. Aprašyti algoritmai yra įgyvendinami bei įvertinami atliekant bandymus su parinkta vaizdo medžiaga. 
+
 % Nurodomi iki 5 svarbiausių temos raktinių žodžių (terminų).
 % Vienas terminas gali susidėti iš kelių žodžių.
-\raktiniaizodziai{raktinis žodis 1, raktinis žodis 2, raktinis žodis 3, raktinis žodis 4, raktinis žodis 5}   
+\raktiniaizodziai{kompiuterinė rega, krepšinio taisyklės, taisyklių pažeidimo nustatymas, dvigubas varymas, žingsniai}   
 
 \sectionnonumnocontent{Summary}
-Santrauka anglų kalba. Santraukos apimtis ne didesnė nei 0,5 puslapio.
-\keywords{keyword 1, keyword 2, keyword 3, keyword 4, keyword 5}
-
+This paper analyses the practical use of computer vision methods in recognizing the violations of basketball rules. Several recognition techniques are presented, starting with segmentation, morphology operations and finding contours for color-based recognition, neural network based method for human body recognition, frame difference based techniques for movement detection and Hough transformations for ball detection. The methods are evaluated and compared in real life use case of step counting, based on the accuracy and processing time. Double dribble and travel detection  algorithms are defined and implemented. Several trials are performed with real-life video material. 
+\keywords{computer vision, basketball rules, rules violation detection, double dribble, travel}
+}
 \tableofcontents
 
 \sectionnonum{Įvadas}
@@ -70,11 +70,11 @@ Santrauka anglų kalba. Santraukos apimtis ne didesnė nei 0,5 puslapio.
 % Darbo įvadas neturi būti dėstymo santrauka. Įvado apimtis 2 –– 4 puslapiai.
 
 
-Krepšinis - intensyvus ir dinamiškas žaidimas, iš žaidėjų reikalaujantis greičio, gebėjimo sparčiai atlikti sprendimus bei greitos reakcijos. Žaidimo spartumas daro įtaką ir teisėjams, kurie nuolatos privalo stebėti žaidimo eigą bei realiu laiku nuspręsti, kada buvo pažeistos tam tikros taisyklės. Nenuostabu, jog šis darbas yra ne tik varginantis, bet ir neatsparus žmogiškosioms klaidoms. 
+Krepšinis – intensyvus ir dinamiškas žaidimas, iš žaidėjų reikalaujantis greičio, gebėjimo sparčiai atlikti sprendimus bei greitos reakcijos. Žaidimo spartumas daro įtaką ir teisėjams, kurie nuolatos privalo stebėti žaidimo eigą bei realiu laiku nuspręsti, kada buvo pažeistos tam tikros taisyklės. Nenuostabu, jog šis darbas yra ne tik varginantis, bet ir neatsparus žmogiškosioms klaidoms. 
 
 2015 m. atliktame tyrime nustatyta, jog NBA lygoje tų metų sezono paskutinėmis įtempto žaidimo minutėmis teisėjų tikslumas skiriant baudas tesiekė 80.1\% \cite{NBA_bias_Referee}. Tuo tarpu 2018 m. analizuojant pačios NBA išsaugotas statistikas apie kiekvieno žaidimo nuo 2015 m. paskutines 2 minutes nustatyta, jog teisėjai atlieka 1.49 klaidingus sprendimus kiekvieną žaidimą, o, pavyzdžiui, dėl žingsnių taisyklės pažeidimo teisėjai sušvilpia tik 20.6\% atvejų \cite{SiglerK}, tad didžioji dalis šios taisyklės pažeidimų lieka nepastebėta. Negana to, teisingam ir tiksliam teisėjavimui trukdyti gali ir tokie faktoriai kaip šališkumas: NCAA (\textit{angl.} National Collegiate Athletic Association, viena populiariausių studentų krepšinio organizacijų JAV) lygoje nustatyta, jog teisėjai labiau linkę baudas skirti komandos, turinčios mažiau baudų, žaidėjams, taip pat tos, kuri žaidžia svečiuose ar pirmauja \cite{OfficiatingBias}. 
 
-Visa tai rodo, jog teisėjavimas yra sritis, galinti tobulėti. Vienas iš būdų išvengti žmogiškųjų klaidų bei šališkumo faktorių - automatizuoti sprendimų apie taisyklių pažeidimus atlikimą. Jau nuo 2014 m. NBA teisėjams padeda itin greitai vaizdo medžiagą kurti ir apdoroti galintis „Replay Center“, suteikiantis galimybę bet kada peržiūrėti paskutines kelias žaidimo minutes ir tiksliau įvertinti, ar pažeidimas buvo nustatytas teisingai \cite{NBAReplay}. Žaidimo eigos pakartojimo technologijomis jau kuris laikas naudojasi ir kitos lygos, pavyzdžiui, Eurolyga \cite{EuroleagueReplay}.
+Visa tai rodo, jog teisėjavimas yra sritis, galinti tobulėti. Vienas iš būdų išvengti žmogiškųjų klaidų bei šališkumo faktorių – automatizuoti sprendimų apie taisyklių pažeidimus atlikimą. Jau nuo 2014 m. NBA teisėjams padeda itin greitai vaizdo medžiagą kurti ir apdoroti galintis „Replay Center“, suteikiantis galimybę bet kada peržiūrėti paskutines kelias žaidimo minutes ir tiksliau įvertinti, ar pažeidimas buvo nustatytas teisingai \cite{NBAReplay}. Žaidimo eigos pakartojimo technologijomis jau kuris laikas naudojasi ir kitos lygos, pavyzdžiui, Eurolyga \cite{EuroleagueReplay}.
 
 Didžiosiose lygose taip pat naudojamos kompiuterinės regos technologijos, leidžiančios analizuoti žaidimus ne tik jiems įvykus, bet ir realiu laiku: NBA nuo 2009 metų naudoja „SportVU“, gebantį sekti žaidėjus bei jų atliekamus veiksmus {\cite{NBAStatsVu}} (nuo 2017 m. jį pakeitė „Second Spectrum“ {\cite{SecondSpectrum})}, o Eurolygoje ši technologija pirmą kartą panaudota 2017 metais {\cite{EuroleagueStats}}. Šių technologijų pagalba gaunama informacija naudojama ir žaidimo eigoje, pavyzdžiui, tobulinant strategiją prieš priešininkes komandas, ir po žaidimo, pavyzdžiui, žvalgantis potencialių būsimų žvaigždžių {\cite{THOMAS20173}}.
 
@@ -82,14 +82,14 @@ Didžiosiose lygose taip pat naudojamos kompiuterinės regos technologijos, leid
 
 \begin{itemize}
 	\item išanalizuoti ir palyginti galimus metodus žmogaus kūno dalims vaizdinėje medžiagoje atpažinti,
-	\item apibrėžti ir įgyvendinti algoritmus, nustatytu tikslumu atpažįstančius žingsnių taisyklės pažeidimą
+	\item apibrėžti ir įgyvendinti algoritmus, atpažįstančius žingsnių taisyklės pažeidimą
 	trimatėje erdvėje iš skirtingų kampų,
-	\item apibrėžti ir įgyvendinti algoritmus, nustatytu tikslumu sugebančius atskirti dvigubo varymo
+	\item apibrėžti ir įgyvendinti algoritmus, sugebančius atskirti dvigubo varymo
 	taisyklės pažeidimą nuo kitų veiksmų, nepažeidžiančių taisyklės,
-	\item palyginti įgyvendintų algoritmų su vaizdine medžiaga korektiškumą.
+	\item įvertinti įgyvendintų algoritmų korektiškumą naudojantis vaizdine medžiaga.
 \end{itemize}
 
-Darbas pradedamas nagrinėjant kompiuterinės regos metodus, leidžiančius atpažinti tam tikrus objektus vaizdo įrašuose ar paveikslėliuose. Bus apžvelgiamas atpažinimas besiremiantis iš anksto žinomis spalvomis, taip pat ir kiti atpažinimo būdai. Aprašyti metodai taip pat palyginami sukuriant paprastą algoritmą, suskaičiuojantį žingsnius. Toliau darbe aprašomos nagrinėjamos taisyklės bei sukuriami algoritmai jų pažeidimui atpažinti. Aprašyti algoritmai įgyvendinami Python programavimo kalba kartu su OpenCV ir PyTorch bibliotekomis. Taip pat nufilmuota vaizdinė medžiaga, kurioje žaidėjai atlieka tam tikrus krepšinio veiksmus, dalis iš jų pažeidžia taisykles, dalis - ne. Vaizdo medžiaga paduodama į programą kaip įvesties informacija, gauti rezultatai išanalizuoti ir pasiektos išvados.
+Darbas pradedamas nagrinėjant kompiuterinės regos metodus, leidžiančius atpažinti tam tikrus objektus vaizdo įrašuose ar paveikslėliuose. Bus apžvelgiamas atpažinimas besiremiantis iš anksto žinomis spalvomis, taip pat ir kiti atpažinimo būdai. Aprašyti metodai taip pat palyginami sukuriant paprastą algoritmą, suskaičiuojantį žingsnius. Toliau darbe aprašomos nagrinėjamos taisyklės bei sukuriami algoritmai jų pažeidimui atpažinti. Aprašyti algoritmai įgyvendinami Python programavimo kalba kartu su OpenCV ir PyTorch bibliotekomis. Taip pat nufilmuota vaizdinė medžiaga, kurioje žaidėjai atlieka tam tikrus krepšinio veiksmus, dalis iš jų pažeidžia taisykles, dalis – ne. Vaizdo medžiaga paduodama į programą kaip įvesties informacija, gauti rezultatai išanalizuoti ir pasiektos išvados.
 
 
 \section{Naudoti įrankiai}
@@ -137,8 +137,8 @@ Nagrinėjamus metodus galima sugrupuoti į tris grupes:
 
 \begin{itemize}
 	\item metodai, kurių pagalba remiantis kadre iš anksto žinomi spalvomis galima išskirti dominančius regionus (pvz. segmentavimas) bei metodai, papildomai apdorojantys gautus rezultatus (pvz. atliekant morfologines operacijas ar randant regionus apimančius kontūrus);
-	\item metodai, kuriais naudojantis atpažinimą vykdyti galima nepriklausomai nuo spalvų, pavyzdžiui, kamuolio atpažinimo algoritmas paremtas Hough transformacijomis, taip pat - judesio atpažinimas remiantis fono pašalinimu ir skirtumų tarp kadrų atradimu;
-	\item metodai paremti neuroniniais tinklais - žmogaus skeleto atpažinimas naudojantis OpenPose bei Lightweight modeliais. 
+	\item metodai, kuriais naudojantis atpažinimą vykdyti galima nepriklausomai nuo spalvų, pavyzdžiui, kamuolio atpažinimo algoritmas paremtas Hough transformacijomis, taip pat – judesio atpažinimas remiantis fono pašalinimu ir skirtumų tarp kadrų atradimu;
+	\item metodai paremti neuroniniais tinklais – žmogaus skeleto atpažinimas naudojantis OpenPose bei Lightweight modeliais. 
 \end{itemize}
 
 Skyriaus pabaigoje visi šie metodai palyginami praktiškai, sukuriant minimalų žingsnių skaičiavimo algoritmą, įgyvendintą minėtais metodais, išryškinant jų privalumus bei trūkumus. 
@@ -151,11 +151,11 @@ Tačiau tai, jog siekiant atpažinti ranką ar kamuolį būtina iš anksto žino
 Dėl šių limitacijų siekiant ištirti spalvinių metodų efektyvumą ir pritaikomumą krepšinio žaidėjas turėtų iš anksto dėvėti tam tikros spalvos pirštines, batus bei valdyti ryškios spalvos kamuolį, tačiau realiame pasaulyje žaidėjus priversti nešioti skirtingų spalvų batus, pirštines būtų itin nepraktiška. Todėl šiame darbe taip pat bus nagrinėjami dar keli kompiuterinės regos atpažinimo būdai, nepriklausantys nuo spalvų. 
 
 \subsubsection{Segmentavimas}
-Segmentavimą kompiuterinėje regoje galima suprasti kaip radimą grupės panašių pikselių. Kai paveikslėliai segmentuojami pagal spalvą, panašumą galima išmatuoti pagal reikšmių skirtumą remiantis RGB arba HSV spalvų erdvėmis. Naudojantis vienu iš segmentavimo būdų - spalvos slenksčio (arba rėžių) nustatymu – OpenCV įgalina ganėtinai paprastai išskirti dominantį regioną, kadangi užtenka apsibrėžti tam tikrą intervalą spalvų paveikslėlyje, reprezentuotame trimate matrica, ir nufiltruoti matricos reikšmes nepatenkančias į duotąjį intervalą. 
+Segmentavimą kompiuterinėje regoje galima suprasti kaip radimą grupės panašių pikselių. Kai paveikslėliai segmentuojami pagal spalvą, panašumą galima išmatuoti pagal reikšmių skirtumą remiantis RGB arba HSV spalvų erdvėmis. Naudojantis vienu iš segmentavimo būdų – spalvos slenksčio (arba rėžių) nustatymu – OpenCV įgalina ganėtinai paprastai išskirti dominantį regioną, kadangi užtenka apsibrėžti tam tikrą intervalą spalvų paveikslėlyje, reprezentuotame trimate matrica, ir nufiltruoti matricos reikšmes nepatenkančias į duotąjį intervalą. 
 
-RGB modelyje spalvą koduoja trimis reikšmėmis, nusakančiomis raudonumą, žalsvumą ir mėlynumą. Tačiau naudoti jį spalvinio atpažinimo metoduose yra sudėtinga - keičiantis apšvietimui nenuspėjamai gali pasikeisti spalvos RGB reikšmė. Egzistuoja algoritmai, gebantys atskirti apšvietimo pokyčius RGB modelyje \cite{1220504}, tačiau HSV modelis leidžia informacija apie atspalvį, ryškumą ir šviesumą saugoti kaip atskiras reikšmes. Šis modelis puikiai tinka spalvų atpažinimui, kadangi H (atspalvio) reikšmė mažai kinta paveikslėliuose atsiradus šešėliams \cite{1039893} ar miglotumui \cite{7457892}. Atspalvis dažniausiai išlieka tas pats nepriklausomai nuo pašalinių efektų, todėl lengva nusistatyti reikšmių intervalą. Konvertavimas iš RGB ir HSV yra pakankamai trivialus, OpenCV jis yra įgyvendintas cvtColor() funkcija. 
+RGB modelyje spalvą koduoja trimis reikšmėmis, nusakančiomis raudonumą, žalsvumą ir mėlynumą. Tačiau naudoti jį spalvinio atpažinimo metoduose yra sudėtinga – keičiantis apšvietimui nenuspėjamai gali pasikeisti spalvos RGB reikšmė. Egzistuoja algoritmai, gebantys atskirti apšvietimo pokyčius RGB modelyje \cite{1220504}, tačiau HSV modelis leidžia informacija apie atspalvį, ryškumą ir šviesumą saugoti kaip atskiras reikšmes. Šis modelis puikiai tinka spalvų atpažinimui, kadangi H (atspalvio) reikšmė mažai kinta paveikslėliuose atsiradus šešėliams \cite{1039893} ar miglotumui \cite{7457892}. Atspalvis dažniausiai išlieka tas pats nepriklausomai nuo pašalinių efektų, todėl lengva nusistatyti reikšmių intervalą. Konvertavimas iš RGB ir HSV yra pakankamai trivialus, OpenCV jis yra įgyvendintas cvtColor() funkcija. 
 
-Turint intervalą užtenka nufiltruoti visus pikselius, kurių reikšmė nepatenka į duotą intervalą. Tiems, kurie patenka, loginėje matricoje priskiriamas 1, o tiems, kurie ne - 0. Rezultate gauname išskirtą regioną kur žinome, kad tai - tam tikras dominantis objektas, su sąlyga, kad jis vienintelis kadre buvo tos spalvos, pagal kurią vyko filtravimas. 
+Turint intervalą užtenka nufiltruoti visus pikselius, kurių reikšmė nepatenka į duotą intervalą. Tiems, kurie patenka, loginėje matricoje priskiriamas 1, o tiems, kurie ne – 0. Rezultate gauname išskirtą regioną kur žinome, kad tai – tam tikras dominantis objektas, su sąlyga, kad jis vienintelis kadre buvo tos spalvos, pagal kurią vyko filtravimas. 
 \begin{figure}[H]
 	\centering
 	\subfloat[\centering Vaizdas prieš segmentavimo pagal pirštinės spalvą]{{\includegraphics[width=5cm]{img/hand_before_segmentation} }}
@@ -169,16 +169,16 @@ Turint intervalą užtenka nufiltruoti visus pikselius, kurių reikšmė nepaten
 Atliekant bandymus pastebėta, jog net ir naudojantis HSV spalvų erdve, dominančių objektų spalvų rėžiai itin skiriasi priklausomai nuo apšvietimo. Šiame darbe naudoti spalvų rėžiai:
 
 \begin{itemize} 
-	\item žalsvo kamuolio - nuo [73, 85, 38] iki [85, 230, 180],
-	\item geltonų pirštinių - nuo [29,55,130] iki [56,140,255],
-	\item raudonų batų - nuo [0,120,255] iki [10,255,200] ir nuo [170,120,255] iki [180,255,200].
+	\item žalsvo kamuolio – nuo [73, 85, 38] iki [85, 230, 180],
+	\item geltonų pirštinių – nuo [29,55,130] iki [56,140,255],
+	\item raudonų batų – nuo [0,120,255] iki [10,255,200] ir nuo [170,120,255] iki [180,255,200].
 \end{itemize}
 
-Tinkamų HSV rėžių radimo procedūra buvo pasirinkus tam tikrą pradinį intervalą patikrinti, ar nufiltravus netinkamus pikselius, išskirtas regiono plotas atitinka dominančio objekto plotą. Jei išskirto regiono plotas yra mažesnis - vadinasi, rėžiai yra per siauri, tad jie buvo didinami, tuo tarpu jei plotas yra didesnis - rėžiai mažinami. 
+Tinkamų HSV rėžių radimo procedūra buvo pasirinkus tam tikrą pradinį intervalą patikrinti, ar nufiltravus netinkamus pikselius, išskirtas regiono plotas atitinka dominančio objekto plotą. Jei išskirto regiono plotas yra mažesnis – vadinasi, rėžiai yra per siauri, tad jie buvo didinami, tuo tarpu jei plotas yra didesnis – rėžiai mažinami. 
 
 Šitaip bandymų būdu buvo sukalibruoti paruoštai vaizdo medžiagai labiausiai tinkami spalvų rėžiai. Dėl galimų artifaktų atsiradimo (pvz. triuškmo ar nesusijusių objektų) nufiltravus pikselius pagal spalvos rėžius, buvo bandoma juos turėti kuo siauresnius, tačiau kaip vėliau pasirodė iš rezultatų, net ir menkiausias apšvietimo pokytis turėjo itin didelę įtaką spalvoms. Kiekvienai vaizdo medžiagai, nufilmuotai skirtingose aplinkose, ieškomų spalvų reikšmes gali tekti kalibruoti iš naujo.
 
-Taip pat buvo pastebėta, jog lauke filmuotuose vaizdo įrašuose spalvos kito mažiau, nei kambaryje - tai, galimai, yra geresnio apšvietimo pasėkmė. 
+Taip pat buvo pastebėta, jog lauke filmuotuose vaizdo įrašuose spalvos kito mažiau, nei kambaryje – tai, galimai, yra geresnio apšvietimo pasėkmė. 
 
 \subsubsection{Morfologinės transformacijos}
 Atlikus segmentavimą pagal spalvą, rezultate dažnai lieka triukšmo ar bereikalingų artifaktų, kurie gali neigiamai paveikti tolimesnį apdorojimą.
@@ -189,7 +189,7 @@ Tokiais atvejais apsivalyti nuo triukšmo gan dažnai naudojamos slenkstinės (\
 	A \ominus B = \bigcap_ {b \in B } (A)_{-b} .
 \end{equation}
 
-\ref{eq:erozija} lygtyje A žymi dominantį paveikslėlį, išreikštą matrica, o B - filtrą arba kitaip - struktūrinį elementą, su kuriuo A matricoje pakartotinai atliekamos sankirtos.  
+\ref{eq:erozija} lygtyje A žymi dominantį paveikslėlį, išreikštą matrica, o B – filtrą arba kitaip – struktūrinį elementą, su kuriuo A matricoje pakartotinai atliekamos sankirtos.  
 
 Erozijai priešinga operacija yra plėstis \cite{4767941}. Ši operacija leidžia padidinti išskirtų regionų plotą. Plėstis naudinga tuomet, kai po erozijos operacijos objektai praranda per daug ploto. Plėstį galima užrašyti šitaip:
 
@@ -199,13 +199,13 @@ Erozijai priešinga operacija yra plėstis \cite{4767941}. Ši operacija leidži
 
 Atliekant bandymus pastebėta, jog siekiant geriausių rezultatų šalinant triukšmą, plėstį reikėtų vykdyti po erozijos, priešingu atveju triukšmas gali nebūti panaikintas. 
 
-OpenCV įgyvendina funkcijas erode ir dilate, kurios priema paveikslėlio matricą ir struktūrinį elementą. Taip pat egzistuoja funkcija morphologyEx(), kuri, priklausomai nuo paduodamų parametrų keičia savo veikimą: su MORPH\_OPEN atliekama plėstis po erozijos, su MORPH\_CLOSE - atvirkščiai. 
+OpenCV įgyvendina funkcijas erode ir dilate, kurios priema paveikslėlio matricą ir struktūrinį elementą. Taip pat egzistuoja funkcija morphologyEx(), kuri, priklausomai nuo paduodamų parametrų keičia savo veikimą: su MORPH\_OPEN atliekama plėstis po erozijos, su MORPH\_CLOSE – atvirkščiai. 
 
 \subsubsection{Kamuolio kontūrų radimas}
 
-Siekiant iš paveikslikų išgauti daugiau kontekstualios informacijos, pavyzdžiui, ar kamuolys yra rankose, išsiskirti tarpusavy nesusikertančius regionus neužtenka. Tam, kad gauti šią informacijos dalį, reikia rasti, kada rankos ir kamuolio regionai susikerta, t.y. jų matricų sankirta yra netuščia. Tam reikia žinoti, kokią erdvę apima kamuolys - šios informacijos trūksta po segmentavimo pagal spalvą, jei kamuolys yra uždengtas, pavyzdžiui, rankos. 
+Siekiant iš paveikslikų išgauti daugiau kontekstualios informacijos, pavyzdžiui, ar kamuolys yra rankose, išsiskirti tarpusavy nesusikertančius regionus neužtenka. Tam, kad gauti šią informacijos dalį, reikia rasti, kada rankos ir kamuolio regionai susikerta, t.y. jų matricų sankirta yra netuščia. Tam reikia žinoti, kokią erdvę apima kamuolys – šios informacijos trūksta po segmentavimo pagal spalvą, jei kamuolys yra uždengtas, pavyzdžiui, rankos. 
 
-Vienas iš būdų šią problemą išspręsti - pabandyti atspėti, kokią sritį užima kamuolys randant jo kontūrus. Skritulių kontūrams rasti 1991 metais E. Welzl pasiūlė algoritmą, rekursiškai apskaičiuojantį tam tikrai taškų aibei mažiausią ją apimantį apskritimą \cite{Welzl91smallestenclosing}. Šis algoritmas - tiesinio kompleksiškumo, jį įgyvendina OpenCV funkcija minEnclosingCircle().       
+Vienas iš būdų šią problemą išspręsti – pabandyti atspėti, kokią sritį užima kamuolys randant jo kontūrus. Skritulių kontūrams rasti 1991 metais E. Welzl pasiūlė algoritmą, rekursiškai apskaičiuojantį tam tikrai taškų aibei mažiausią ją apimantį apskritimą \cite{Welzl91smallestenclosing}. Šis algoritmas – tiesinio kompleksiškumo, jį įgyvendina OpenCV funkcija minEnclosingCircle().       
 
 \begin{figure}[H]
 	\centering
@@ -280,15 +280,15 @@ Atliekant bandymus su vaizdo medžiaga pastebėta, jog Lightweight modelis žaid
 	\label{tab:openposevslightweight}
 \end{table}
 
-Dalį Lightweight modelio tikslumo pranašumo galėjo lemti OpenPose parametrų ir paduodamo kadro dimensijų neatitikimas, o spartumo - tai, jog duomenų apskaičiavimas OpenPose tinklu buvo įgyvendintas su OpenCV dnn moduliu, kuris bandymų metu nebuvo sukonfigūruotas naudoti GPU akceleravimą. Kadangi po optimizacijos Lightweight modelis tenkino tikslumo ir greičio lūkesčius, toliau naudoti jį. 
+Dalį Lightweight modelio tikslumo pranašumo galėjo lemti OpenPose parametrų ir paduodamo kadro dimensijų neatitikimas, o spartumo – tai, jog duomenų apskaičiavimas OpenPose tinklu buvo įgyvendintas su OpenCV dnn moduliu, kuris bandymų metu nebuvo sukonfigūruotas naudoti GPU akceleravimą. Kadangi po optimizacijos Lightweight modelis tenkino tikslumo ir greičio lūkesčius, toliau naudoti jį. 
 
 \subsubsection{Atpažinimo neuroniniais tinklais optimizavimas}
 
-Atliekant bandymus pastebėta, jog atpažinimą Lightweight modeliu galima optimizuoti. Viena iš optimizacijų, kuri buvo atlikta, tai skaičiavimo naštos perkėlimas ant GPU. Tam panaudota CUDA - NVIDIA sukurtas API paraleliems skaičiavimams \cite{cuda}. Integravus OpenCV su CUDA, paveikslėlių apdorojimas gali pagreitėti iki 30 kartų \cite{opencv-cuda}. Be GPU akceleracijos Lightweight tinklas vieną kadrą užtrukdavo apdoroti iki 680 ms. 
+Atliekant bandymus pastebėta, jog atpažinimą Lightweight modeliu galima optimizuoti. Viena iš optimizacijų, kuri buvo atlikta, tai skaičiavimo naštos perkėlimas ant GPU. Tam panaudota CUDA – NVIDIA sukurtas API paraleliems skaičiavimams \cite{cuda}. Integravus OpenCV su CUDA, paveikslėlių apdorojimas gali pagreitėti iki 30 kartų \cite{opencv-cuda}. Be GPU akceleracijos Lightweight tinklas vieną kadrą užtrukdavo apdoroti iki 680 ms. 
 
-Pastebėta, jog apdorojimo greičiui įtakos turi ir kadro dimensijos. Jei į neuroninį tinklą paduodamo kadro plotis yra didesnis, nei jo aukštis, apdorojimo greitis pakyla iki 5 kartų. Tačiau tai buvo mitiguota atnaujinus OpenCV versiją iš 4.0.1 į 4.5.1 - po šio atnaujinimo, apdorojimo greičiai tapo nebepriklausomi nuo santykio tarp paveikslėlio aukščio ir pločio. 
+Pastebėta, jog apdorojimo greičiui įtakos turi ir kadro dimensijos. Jei į neuroninį tinklą paduodamo kadro plotis yra didesnis, nei jo aukštis, apdorojimo greitis pakyla iki 5 kartų. Tačiau tai buvo mitiguota atnaujinus OpenCV versiją iš 4.0.1 į 4.5.1 – po šio atnaujinimo, apdorojimo greičiai tapo nebepriklausomi nuo santykio tarp paveikslėlio aukščio ir pločio. 
 
-Dar viena išbandyta optimizacija - neuroninio tinklo pradinio sluoksnio įvesties dydžio sumažinimas. Dvigubai sumažinus įvesties kanalų skaičių iš 256 į 128 rezultatų tikslumas pasikeitė sąlyginai nedaug. Žiūrint į vaizdo įrašą, plika akimi galima pamatyti, jog atpažintas skeletas yra labiau „klibantis“, t.y. kiekvienos kūno dalies koordinatės nežymiai skiriasi, kai įvesties dydis yra mažesnis, tačiau pačios kūno dalys dažnai lieka atpažintos teisingai. Siekiant tikslesnių rezultatų, siūloma pasilikti prie 256 kanalų skaičiaus, tačiau norint vaizdą apdoroti realiu laiku, galima rasti kompromisą tarp tikslumo ir greičio. 
+Dar viena išbandyta optimizacija – neuroninio tinklo pradinio sluoksnio įvesties dydžio sumažinimas. Dvigubai sumažinus įvesties kanalų skaičių iš 256 į 128 rezultatų tikslumas pasikeitė sąlyginai nedaug. Žiūrint į vaizdo įrašą, plika akimi galima pamatyti, jog atpažintas skeletas yra labiau „klibantis“, t.y. kiekvienos kūno dalies koordinatės nežymiai skiriasi, kai įvesties dydis yra mažesnis, tačiau pačios kūno dalys dažnai lieka atpažintos teisingai. Siekiant tikslesnių rezultatų, siūloma pasilikti prie 256 kanalų skaičiaus, tačiau norint vaizdą apdoroti realiu laiku, galima rasti kompromisą tarp tikslumo ir greičio. 
 
 Atliekant žmogaus skeleto atpažinimo bandymus su mažesnės rezoliucijos kadrais spartumo bei tikslumo pagerėjimų nepastebėta.
 
@@ -311,7 +311,7 @@ Atliekant žmogaus skeleto atpažinimo bandymus su mažesnės rezoliucijos kadra
 Kompiuterinės regos srityje vieni iš pirmųjų algoritmų, skirtų atpažinti objektus pagal jų formas, yra Hough transformacijos.
 Hough transformacija paremtas algoritmas, skirtas skritulių bei apskritimų radimui, buvo aprašytas H. K. Yuen, J. Princen, J. Illingworth ir kitų \cite{YUEN199071}. Būtent šį algoritmą OpenCV įgyvendina kaip numatytąjį, bandant rasti apskritimų kontūrus paveikslėliuose.
 
-Patikrinus algoritmą su vaizdo įrašu tapo akivaizdu, jog šis jis tinka tik idealios formoms sferoms ir apskritimams, tačiau judėdamas kamuolys praranda apvalią formą. Darant prielaidą, jog tokiu atveju kamuolio forma tampa panaši į elipsės, kamuolio radimui išbandytas Hough transformacija paremtas algoritmas elipsėms rasti \cite{1048464}, tačiau šio algoritmo sparta pasirodė itin prasta - atlikus bandymus su keliais vaizdo įrašais, vienam kadrui apdoroti užtrukdavo iki 10 minučių.
+Patikrinus algoritmą su vaizdo įrašu tapo akivaizdu, jog šis jis tinka tik idealios formoms sferoms ir apskritimams, tačiau judėdamas kamuolys praranda apvalią formą. Darant prielaidą, jog tokiu atveju kamuolio forma tampa panaši į elipsės, kamuolio radimui išbandytas Hough transformacija paremtas algoritmas elipsėms rasti \cite{1048464}, tačiau šio algoritmo sparta pasirodė itin prasta – atlikus bandymus su keliais vaizdo įrašais, vienam kadrui apdoroti užtrukdavo iki 10 minučių.
 
 \begin{figure}[H]
 	\centering
@@ -322,17 +322,17 @@ Patikrinus algoritmą su vaizdo įrašu tapo akivaizdu, jog šis jis tinka tik i
 	\label{fig:contours}
 \end{figure}
 
-Dėl šių trūkumų tolimesniam vaizdo atpažinimui nuspręsta taikyti kamuolio atpažimo pagal spalvą metodus, kadangi preliminarūs rezultatai parodė, jog kadrus apdoroti spalviniu atpažinimu paremtais algoritmais užtrunka šimtus kartų mažiau laiko, nei elipsių paieškos algoritmas, taip pat - jie yra tikslesni, pasirinkus teisingus spalvos rėžius. 
+Dėl šių trūkumų tolimesniam vaizdo atpažinimui nuspręsta taikyti kamuolio atpažimo pagal spalvą metodus, kadangi preliminarūs rezultatai parodė, jog kadrus apdoroti spalviniu atpažinimu paremtais algoritmais užtrunka šimtus kartų mažiau laiko, nei elipsių paieškos algoritmas, taip pat – jie yra tikslesni, pasirinkus teisingus spalvos rėžius. 
 
 \subsection{Nagrinėtų atpažinimo metodų palyginimas}
 
-Tam, kad būtų palygintas šių metodų spartumas bei tikslumas tarpusavy, nuspręsta juos panaudoti sprendžiant praktinę problemą: vaizdo įraše suskaičiuoti, kiek žmogus atliko žingsnių. Žingsnių skaičiavimo algoritmas - gana paprastas, nereikalaujantis daug papildomų sudėtingų skaičiavimų, tad jis puikiai tinka įvertinti pačio vaizdo atpažinimo metodo tinkamumą.  
+Tam, kad būtų palygintas šių metodų spartumas bei tikslumas tarpusavy, nuspręsta juos panaudoti sprendžiant praktinę problemą: vaizdo įraše suskaičiuoti, kiek žmogus atliko žingsnių. Žingsnių skaičiavimo algoritmas – gana paprastas, nereikalaujantis daug papildomų sudėtingų skaičiavimų, tad jis puikiai tinka įvertinti pačio vaizdo atpažinimo metodo tinkamumą.  
 
-Žingsnių skaičiavimo algoritmas yra žingsnių taisyklės pažeidimo atpažinimo dalis, plačiau apibūdintas 4 skyriuje. Žmogaus skeleto (pozos) bei spalvinio atpažinimo metodai įgyvendinti tuo pačiu algoritmu, kurio metu pėdų (batų) regionai yra išskiriami, ir laikoma, jog žingsnis yra atliktas tada, kai išskirti regionai persikloja - tai reiškia, jog žiūrint iš šono, įprasto vaikščiojimo metu viena koja trumpai pridengė kitą. Neuroninių tinklų atpažinimo metu prie atpažintų kojų priskiriamos spalvos, tolimesnis atpažinimas panašus į spalvinį.
+Žingsnių skaičiavimo algoritmas yra žingsnių taisyklės pažeidimo atpažinimo dalis, plačiau apibūdintas 4 skyriuje. Žmogaus skeleto (pozos) bei spalvinio atpažinimo metodai įgyvendinti tuo pačiu algoritmu, kurio metu pėdų (batų) regionai yra išskiriami, ir laikoma, jog žingsnis yra atliktas tada, kai išskirti regionai persikloja – tai reiškia, jog žiūrint iš šono, įprasto vaikščiojimo metu viena koja trumpai pridengė kitą. Neuroninių tinklų atpažinimo metu prie atpažintų kojų priskiriamos spalvos, tolimesnis atpažinimas panašus į spalvinį.
 
 Metodo, besiremiančio skirtumais tarp kadrų, žingsnių atpažinimo procesas aprašytas 3.2.2 poskyryje.
 
-Visuose vaizdo įrašuose žmogus dėvi raudonus batus, tam, kad veiktų spalvomis paremti atpažinimo metodai ir juos būtų galima lyginti su kitais. Vaizdo įrašų sukurta septyni, juose - skirtingas apšvietimas, nuotolis iki žmogaus, žingsniai atliekami skirtingu tempu ir kamera filmuoja skirtingais kampais. 
+Visuose vaizdo įrašuose žmogus dėvi raudonus batus, tam, kad veiktų spalvomis paremti atpažinimo metodai ir juos būtų galima lyginti su kitais. Vaizdo įrašų sukurta septyni, juose – skirtingas apšvietimas, nuotolis iki žmogaus, žingsniai atliekami skirtingu tempu ir kamera filmuoja skirtingais kampais. 
 
 Algoritmai buvo patikrinti kelis kartus su tais pačiais įrašais, siekiant sumažinti įvairių kitų kompiuteryje vykstančių procesų įtaką vaizdo apdorojimo greičiui. 
 
@@ -434,13 +434,13 @@ Algoritmai buvo patikrinti kelis kartus su tais pačiais įrašais, siekiant sum
 	\label{tab:poseresults}
 \end{table}
 
-Palyginę rezultatus matome, jog neuroniniais tinklais paremtas atpažinimas yra tiksliausias, nors ir apdoroti vaizdo įrašą užtrunka daugiausiai laiko. Atpažinimas remiantis skirtumais - greičiausias, tačiau mažiausias yra jo tikslumas, o atpažinimas paremtas spalvomis yra per vidurį. 
+Palyginę rezultatus matome, jog neuroniniais tinklais paremtas atpažinimas yra tiksliausias, nors ir apdoroti vaizdo įrašą užtrunka daugiausiai laiko. Atpažinimas remiantis skirtumais – greičiausias, tačiau mažiausias yra jo tikslumas, o atpažinimas paremtas spalvomis yra per vidurį. 
 
-Spalvomis paremtas atpažinimas yra mažiausiai tikslus, kai varijuoja apšvietimas arba jis yra prastas, taip pat - jei kadre yra kitų objektų ar žaidėjų, kurių spalvos sutampa su dominančiomis spalvomis. Taip pat šiuo atpažinimu paremtas algoritmas vienintelis, galintis apskaičiuoti žaidėjo atliktus žingsnius iš priekio. 
+Spalvomis paremtas atpažinimas yra mažiausiai tikslus, kai varijuoja apšvietimas arba jis yra prastas, taip pat – jei kadre yra kitų objektų ar žaidėjų, kurių spalvos sutampa su dominančiomis spalvomis. Taip pat šiuo atpažinimu paremtas algoritmas vienintelis, galintis apskaičiuoti žaidėjo atliktus žingsnius iš priekio. 
 
 Iš rezultatų apdorojant vaizdo įrašą nr. 4 pastebima, jog neuroniniais tinklais paremtas atpažinimo metodas neatpažįsta žingsnių, kai žaidėjas yra per arti kameros ir nebesimato jo pilnos figūros, tuo tarpu vaizdo įrašas nr. 7 parodo, jog šis atpažinimo metodas puikiai susidoroja su atvejais, kai yra daugiau žmonių, nei vienas. 
 
-Apibendrinus - spalviniai vaizdo atpažinimo metodai tinka tuomet, kai prie dominančių objektų galime priskirti unikalias spalvas, jos nekinta, neatsiranda naujų, o apšvietimas išlieka puikus - visa tai indikuoja, jog vaizdo įraše fonas ir aplinka turi būti griežtai kontroliuojami ir iš anksto paruošti. Skirtumais paremti atpažinimo metodai labiausiai tinka tais atvejais, kai juos naudojantys algoritmai yra paprasti bei nereikalaujantys didelio tikslumo, siekiant išgauti didžiausią spartumą. Neuroniniais tinklais paremti atpažinimo metodai yra itin tikslūs, tačiau apdorojimo trukmė yra šiek tiek ilgesnė.
+Apibendrinus – spalviniai vaizdo atpažinimo metodai tinka tuomet, kai prie dominančių objektų galime priskirti unikalias spalvas, jos nekinta, neatsiranda naujų, o apšvietimas išlieka puikus – visa tai indikuoja, jog vaizdo įraše fonas ir aplinka turi būti griežtai kontroliuojami ir iš anksto paruošti. Skirtumais paremti atpažinimo metodai labiausiai tinka tais atvejais, kai juos naudojantys algoritmai yra paprasti bei nereikalaujantys didelio tikslumo, siekiant išgauti didžiausią spartumą. Neuroniniais tinklais paremti atpažinimo metodai yra itin tikslūs, tačiau apdorojimo trukmė yra šiek tiek ilgesnė.
 
 \section{Krepšinio taisyklių pažeidimo atpažinimas}
 
@@ -453,7 +453,7 @@ Apibendrinus - spalviniai vaizdo atpažinimo metodai tinka tuomet, kai prie domi
 	\item Žaidėjas, varydamas kamuolį, gali padaryti du žingsnius prieš sustojant arba kamuolį metant ar atiduodant \cite{nba-rules}. 
 \end{itemize}
 
-Taisyklių knygelėje yra aprašyti keletas veiksmų, pažeidžiančių taisyklę (pavyzdžiui, ėjimas gavus kamuolį jo bent kartą nesumušant ar atraminės kojos pakėlimas sustabdžius varymą), tačiau šiame darbe fokusuojamasi į atvejį, kai žaidėjas suėmęs kamuolį atlieka daugiau nei du žingsnius. Tam, kad atlikti žingsniai būtų laikomi kaip pažeidžiantys taisyklę, kamuolys turi būti nemušamas į žemę, o laikomas rankose - krepšinyje tai dažniausiai nutinka prieš metant kamuolį į krepšį, kai yra atliekamas dvižingsnis. Taigi, algoritmas, siekiantis atpažinti šios taisyklės pažeidimą, privalo taip pat gebėti atpažinti, kada kamuolys yra rankose, ir tuomet skaičiuoti atliktų žingsnių skaičių. 
+Taisyklių knygelėje yra aprašyti keletas veiksmų, pažeidžiančių taisyklę (pavyzdžiui, ėjimas gavus kamuolį jo bent kartą nesumušant ar atraminės kojos pakėlimas sustabdžius varymą), tačiau šiame darbe fokusuojamasi į atvejį, kai žaidėjas suėmęs kamuolį atlieka daugiau nei du žingsnius. Tam, kad atlikti žingsniai būtų laikomi kaip pažeidžiantys taisyklę, kamuolys turi būti nemušamas į žemę, o laikomas rankose – krepšinyje tai dažniausiai nutinka prieš metant kamuolį į krepšį, kai yra atliekamas dvižingsnis. Taigi, algoritmas, siekiantis atpažinti šios taisyklės pažeidimą, privalo taip pat gebėti atpažinti, kada kamuolys yra rankose, ir tuomet skaičiuoti atliktų žingsnių skaičių. 
 
 \subsection{Žingsnių taisyklės pažeidimo atpažinimo algoritmas}
 
@@ -463,14 +463,14 @@ Algoritmo reikalavimai yra nustatytos rankų, kojų bei kamuolio vietos paveiksl
 	\item nuskaitomas kadras,
 	\item nustatoma, ar kamuolys yra laikomas rankose,
 	\item tol, kol kamuolys yra rankose, vykdomas žingsnių skaičiavimo algoritmas,
-	\item jei per intervalą, kai kamuolys yra laikomas rankose, buvo atlikti daugiau nei 2 žingsniai - grąžinamas rezultatas, jog taisyklė pažeista.
+	\item jei per intervalą, kai kamuolys yra laikomas rankose, buvo atlikti daugiau nei 2 žingsniai – grąžinamas rezultatas, jog taisyklė pažeista.
 \end{enumerate}
 
 Algoritmui vienas po kito pateikiami vaizdo įrašo kadrai, kurie yra apdorojami po vieną. Po anksčiau aprašytų atpažinimo metodų turima pakankamai informacijos nustatyti, kur kiekviename kadre yra ranka, kojos ir kamuolys. OpenCV įgalina visų minėtųjų metodų metu išgautą informaciją reprezentuoti loginėse vienetų bei nulių matricose, kur vienetai žymi objekto buvimą tam tikrame plote. 
 
 Tam, kad būtų nustatyta, ar kamuolys yra laikomas rankose, su išskirtomis kamuolio ir rankų užimamą erdvę kadre reprezentuojančiomis loginėmis matricomis atliekama Hadamardo daugyba, t.y. kiekvienam matricos elementui atliekama disjunkcija su toje pačioje vietoje esančiu elementu iš kitos matricos.
 
-Spalvinio atpažinimo metodų sukurtos matricos yra pačių kūno dalių projekcija, tačiau naudotas neuroninių tinklų modelis grąžina apytikslias sąnarių koordinates (riešo, kulkšnies), aplink kuriuos nupiešiamas skritulys - iš to galima spręsti, kur maždaug yra ranka ar pėda.  
+Spalvinio atpažinimo metodų sukurtos matricos yra pačių kūno dalių projekcija, tačiau naudotas neuroninių tinklų modelis grąžina apytikslias sąnarių koordinates (riešo, kulkšnies), aplink kuriuos nupiešiamas skritulys – iš to galima spręsti, kur maždaug yra ranka ar pėda.  
 
 Rezultate gaunama matrica, žyminti sritį, kur rankos bei kamuolys persikloja. Tai reiškia, jog kamuolio ir rankų pozicija kadre sutampa, tačiau tam tikra rankos dalis yra arčiau kameros ir šiek tiek užstoja kamuolį. 
 
@@ -487,15 +487,15 @@ Rezultate gaunama matrica, žyminti sritį, kur rankos bei kamuolys persikloja. 
 	\label{fig:hand_and_ball}
 \end{figure}
 
-Šiek tiek sunkiau apibrėžti universalų būdą atpažinti atliktus žingsnius iš bet kokio kampo. Paprastumo dėlei nuspręsta žingsniųs skaičiuoti tik žiūrint iš šono. Žingsnių skaičiavimo algoritmas remiasi išskirtų kojų regionų kontūrų skaičiavimu. Jei kontūrų suskaičiuojama vienas, kai prieš tai jų buvo du, galima teigti kad: 1) nerasta informacijos apie vieną iš pėdų (išėjo iš kadro arba nepavyko atpažinimas) arba 2) žingsnis, žiūrint iš šono, yra toje fazėje, kai viena pėda pridengia (arba yra netoli) kitą. Tam, kad būtų galima atmesti pirmąjį atvejį, laikoma informacija apie atpažintus objektus - jei jų yra vienas, tuomet tai, kad rastas tik vienas kontūras, nekeičia turimų suskaičiuotų žingsnių kiekio. 
+Šiek tiek sunkiau apibrėžti universalų būdą atpažinti atliktus žingsnius iš bet kokio kampo. Paprastumo dėlei nuspręsta žingsniųs skaičiuoti tik žiūrint iš šono. Žingsnių skaičiavimo algoritmas remiasi išskirtų kojų regionų kontūrų skaičiavimu. Jei kontūrų suskaičiuojama vienas, kai prieš tai jų buvo du, galima teigti kad: 1) nerasta informacijos apie vieną iš pėdų (išėjo iš kadro arba nepavyko atpažinimas) arba 2) žingsnis, žiūrint iš šono, yra toje fazėje, kai viena pėda pridengia (arba yra netoli) kitą. Tam, kad būtų galima atmesti pirmąjį atvejį, laikoma informacija apie atpažintus objektus – jei jų yra vienas, tuomet tai, kad rastas tik vienas kontūras, nekeičia turimų suskaičiuotų žingsnių kiekio. 
 
 Žingsnių skaičiavimo algoritmą, kuris taikytinas reikiamą informaciją išgavus spalviniais atpažinimo metodais arba neuroninių tinklų pagalba, galima apibrėžti taip:
 
 \begin{enumerate}
 	\item Išskiriami kojų (batų) regionai.
 	\item Suskaičiuojami kontūrai.
-	\item Jei kontūrų yra daugiau nei vienas - pasižymima, jog sankirta neįvyko. 
-	\item Jei kontūras yra vienas, sankirta dar nebuvo įvykus ir išskirtų regionų skaičius yra daugiau, nei vienas- pasižymima, jog sankirta įvyko ir padidinamas žingsnių skaičius. 
+	\item Jei kontūrų yra daugiau nei vienas – pasižymima, jog sankirta neįvyko. 
+	\item Jei kontūras yra vienas, sankirta dar nebuvo įvykus ir išskirtų regionų skaičius yra daugiau, nei vienas – pasižymima, jog sankirta įvyko ir padidinamas žingsnių skaičius. 
 \end{enumerate}
 
 \begin{figure}[H]
@@ -530,9 +530,9 @@ Išsaugojus būseną suskaičiuojama, kokia buvo jos vidutinė reikšmė per pas
 \begin{equation}\label{eq:avg_state}
 	M_{\textit{vid. būsena}} = \sum_{n=i-x}^{i} \frac{S(n)}{n},
 \end{equation}
-kur \textit{i} žymi einamo kadro numerį, \textit{x} - konstantą, nurodančią dominančių kadrų skaičių, \textit{S} - \textit{n}-tojo kadro būseną, kur 1 indikuoja kamuolio buvimą rankose, o 0 - atvirkščiai.
+kur \textit{i} žymi einamo kadro numerį, \textit{x} – konstantą, nurodančią dominančių kadrų skaičių, \textit{S} – \textit{n}-tojo kadro būseną, kur 1 indikuoja kamuolio buvimą rankose, o 0 – atvirkščiai.
 
-Jei vidutinė būsena yra didesnė už tam tikrą iš anksto nustatytą konstantą, pvz., 0.3, galima teigti, jog kamuolys vis dar yra rankose - tam, kad ši reikšmė pasikeistų, turi praeiti bent keli kadrai, pakeičiantys būsenos vidurkį. 
+Jei vidutinė būsena yra didesnė už tam tikrą iš anksto nustatytą konstantą, pvz., 0.3, galima teigti, jog kamuolys vis dar yra rankose – tam, kad ši reikšmė pasikeistų, turi praeiti bent keli kadrai, pakeičiantys būsenos vidurkį. 
 
 Šis būsenos skaičiavimo būdas atliekant pradinius bandymus su programinės įrangos kodu pasirodė gana naudingas siekiant sumažinti įvarius būsenų svyravymus, kylančius iš atpažinimo netikslumo, tad jis taip pat yra įgyvendintas ir kitame taisyklės pažeidimo algoritme. 
 
@@ -541,11 +541,11 @@ Pagal NBA taisyklių knygelės 10 taisyklės 2 skyriaus c dalį, žaidėjas nega
 
 Žaidėjas varymą gali tęsti jei kamuolį atidavus komandos draugui jis buvo grąžintas atgal, taip pat jei po metimo į krepšį žaidėjas pats kamuolį atsikovoja. Visus taisyklei aktualius varymo scenarijus galima supaprastinti į vieną: kamuolys yra suimamas abejomis rankomis. Tam įvykus, žaidėjas gali tik atiduoti kamuolį, mesti į krepšį arba laukti, kol pasibaigs atakai skirtas laikas. 
 
-Taisyklės pažeidimo atpažinimo algoritmas turi atpažinti, jog varymas yra sustojęs, taip pat nustatyti, kada kamuolys buvo išmestas iš rankų ir vėl pagautas (pvz. atliekant varymą antrą kartą). Paprastumo dėlei kuriant algoritmą priimta, jog situacija, kai sustabdžius varymą kamuolys yra išmetamas į orą ir vėl pagaunamas yra taisyklės pažeidimas - tokį veiksmą iš algoritminio atpažinimo perspektyvos sunku atskirti nuo pasavimo ar metimo į krepšį dėl tikslesnių apibrėžimų trūkumo bei subjektyvumo vertinant veiksmo intenciją. Panašus scenarijus apibūdinamas NBA taisyklių 13 skyriuje - žaidėjas metęs ar atidavęs kamuolį negali jo paliesti nepažeidęs taisyklės, jei kamuolio prieš tai nepalietė komandos draugas, priešininkas ar kamuolys neatsimušė nuo lentos ar lanko. Taigi, sustabdžius varymą, kamuolio pagavimas jį išmetus aukštyn ar žemyn yra laikytinas kaip pažeidžiantis taisykles. 
+Taisyklės pažeidimo atpažinimo algoritmas turi atpažinti, jog varymas yra sustojęs, taip pat nustatyti, kada kamuolys buvo išmestas iš rankų ir vėl pagautas (pvz. atliekant varymą antrą kartą). Paprastumo dėlei kuriant algoritmą priimta, jog situacija, kai sustabdžius varymą kamuolys yra išmetamas į orą ir vėl pagaunamas yra taisyklės pažeidimas – tokį veiksmą iš algoritminio atpažinimo perspektyvos sunku atskirti nuo pasavimo ar metimo į krepšį dėl tikslesnių apibrėžimų trūkumo bei subjektyvumo vertinant veiksmo intenciją. Panašus scenarijus apibūdinamas NBA taisyklių 13 skyriuje – žaidėjas metęs ar atidavęs kamuolį negali jo paliesti nepažeidęs taisyklės, jei kamuolio prieš tai nepalietė komandos draugas, priešininkas ar kamuolys neatsimušė nuo lentos ar lanko. Taigi, sustabdžius varymą, kamuolio pagavimas jį išmetus aukštyn ar žemyn yra laikytinas kaip pažeidžiantis taisykles. 
 
 \subsection{Dvigubo varymo taisyklės atpažinimo algoritmas}
 
-Šiam algoritmui, kaip ir žingsnių taisyklės atpažinimo algoritmui, būtina sąlyga - informacija apie kojų (pėdų), kamuolio ir rankų padėtį kadre. Supaprastinta algoritmo versija atrodo taip: 
+Šiam algoritmui, kaip ir žingsnių taisyklės atpažinimo algoritmui, būtina sąlyga – informacija apie kojų (pėdų), kamuolio ir rankų padėtį kadre. Supaprastinta algoritmo versija atrodo taip: 
 
 \begin{enumerate}
  	\item nuskaitomas kadras,
@@ -562,7 +562,7 @@ Varymo sustabdymą indikuoja tai, jog po varymo kamuolys buvo suimtas abejomis r
 
 \ref{eq:double_dribble} lygtyje M reiškia loginę matricą, reprezentuojančią tam tikros kūno dalies sritį kadre. 
 
-Šis būdas netinkamas tada, kai žaidėjas yra filmuojamas iš šono - tuomet spalviniais bei žmogaus pozos atpažinimo metodais neįmanoma nustatyti, kur yra žaidėjo užstojama ranka, nes jos tiesiog nesimato. Tam, kad dalinai išspręsti šią problemą, galima pasinaudoti įžvalga, jog sustabdžius varymą ir kamuolį suėmus abejomis rankomis, kamuolys bent tam tikrą laiko tarpą lieka rankose. Šis laiko tarpas yra pakankamai reikšmingas, kad būtų galima jį atpažinti apdorojant kadrus vienas po kito. 
+Šis būdas netinkamas tada, kai žaidėjas yra filmuojamas iš šono – tuomet spalviniais bei žmogaus pozos atpažinimo metodais neįmanoma nustatyti, kur yra žaidėjo užstojama ranka, nes jos tiesiog nesimato. Tam, kad dalinai išspręsti šią problemą, galima pasinaudoti įžvalga, jog sustabdžius varymą ir kamuolį suėmus abejomis rankomis, kamuolys bent tam tikrą laiko tarpą lieka rankose. Šis laiko tarpas yra pakankamai reikšmingas, kad būtų galima jį atpažinti apdorojant kadrus vienas po kito. 
 
 Laiko tarpui, kai kamuolys laikomas rankose, nustatymui galima pasinaudoti 4.2.1. poskyriuje aprašytu būsenos saugojimo algoritmu. 
 
@@ -570,7 +570,7 @@ Laiko tarpui, kai kamuolys laikomas rankose, nustatymui galima pasinaudoti 4.2.1
 
 \subsection{Įgyvendinta programinė įranga}
 
-Aprašyti kompiuterinės regos metodai bei taisyklių atpažinimo algoritmai buvo įgyvendinti sukuriant programinę įrangą. Žaidėjo kūno dalių identifikavimui buvo pasirinktas skeleto atpažinimas neuroninio tinklo pagalba, kamuolio radimui - atpažinimas pagal spalvą. 
+Aprašyti kompiuterinės regos metodai bei taisyklių atpažinimo algoritmai buvo įgyvendinti sukuriant programinę įrangą. Žaidėjo kūno dalių identifikavimui buvo pasirinktas skeleto atpažinimas neuroninio tinklo pagalba, kamuolio radimui – atpažinimas pagal spalvą. 
 
 \begin{figure}[H]
 	\centering
@@ -579,7 +579,7 @@ Aprašyti kompiuterinės regos metodai bei taisyklių atpažinimo algoritmai buv
 	\label{img:program_architecture}
 \end{figure}
 
-Taip pat buvo sukurti ir įgyvendinti testavimo scenarijai, kurių kiekviename vaizdo medžiaga yra pateikiama įgyvendintai programinei įrangai ir laukiama tam tikro rezultato, nusakančio, ar taisyklė buvo pažeista ir jei taip - kuri.  
+Taip pat buvo sukurti ir įgyvendinti testavimo scenarijai, kurių kiekviename vaizdo medžiaga yra pateikiama įgyvendintai programinei įrangai ir laukiama tam tikro rezultato, nusakančio, ar taisyklė buvo pažeista ir jei taip – kuri.  
 
 \subsection{Atlikti bandymai}
 Įgyvendinus aprašytus algoritmus, jie buvo patikrinti su paruošta vaizdo medžiaga. Šiam darbui su Sony Xperia 5 buvo nufilmuota 53 skirtingų vaizdo įrašų, atitinkančių 2 skyriuje keliamus reikalavimus. Dauguma jų filmuoti skirtingu dienos laiku, skirtingais kampais bei atstumu nuo žaidėjo. Kiekviename iš vaizdo įrašų žaidėjas pažeidžia arba dvigubo varymo taisyklę, arba žingsnių taisyklę, arba nepažeidžia nei vienos.  
@@ -631,7 +631,7 @@ Pirmojo bandymo metu programinė įranga, įgyvendinanti kamuolio atpažinimą r
 	{\begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|} \hline
 			\textbf{Tikslumas} & \textbf{Jautrumas} & \textbf{Specifiškumas} \\
 			\hline
-			45.16\%  & 70\%    & 48.48 \%    \\
+			56.6\%  & 70\%    & 48.48 \%    \\
 			
 			\hline
 	\end{tabular}}
@@ -640,7 +640,9 @@ Pirmojo bandymo metu programinė įranga, įgyvendinanti kamuolio atpažinimą r
 
 \subsubsection{Antrasis bandymas}
 
-Po pirmojo bandymo buvo pastebėta, jog dvigubo varymo taisyklių pažeidimo algoritmas yra pernelyg jautrus pokyčiams atpažindamas, kada kamuolys yra rankose. Jei kamuolio pozicija bent trumpam yra prie abiejų rankų, algoritmas iš karto laiko, jog kamuolys buvo suimtas. Antrajam bandymui buvo pakoreguoti 4.2.1 poskyryje aprašytos būsenos saugojimo skaičiavimo parametrai taip, jog nuspręsti, ar kamuolys yra tikrai laikomas rankuose, būsenoje turi būti išsaugota daugiau kadrų, kada kamuolys užtikrintai buvo rankose, nei prieš tai. Antrasis bandymas buvo atliktas su tais pačiais vaizdo įrašais, kaip ir pirmasis, tik pakoregavus parametrus. Antrojo bandymo rezultatai pateikti  \ref{tab:second_trial} bei \ref{tab:second_trial_percents} lentelėse.
+Po pirmojo bandymo buvo pastebėta, jog dvigubo varymo taisyklių pažeidimo algoritmas yra pernelyg jautrus pokyčiams atpažindamas, kada kamuolys yra rankose. Jei kamuolio pozicija bent trumpam yra prie abiejų rankų, algoritmas iš karto laiko, jog kamuolys buvo suimtas. Antrajam bandymui buvo pakoreguoti 4.2.1 poskyryje aprašytos būsenos saugojimo skaičiavimo parametrai taip, jog nuspręsti, ar kamuolys yra tikrai laikomas rankuose, būsenoje turi būti išsaugota daugiau kadrų, kada kamuolys užtikrintai buvo rankose, nei prieš tai.
+
+Antrasis bandymas buvo atliktas su tais pačiais vaizdo įrašais, kaip ir pirmasis, tik pakoregavus algoritmo būsenos saugojimo tikrinamų kadro skaičių parametrą į didesnį. Antrojo bandymo rezultatai pateikti  \ref{tab:second_trial} bei \ref{tab:second_trial_percents} lentelėse.
 
 \begin{table}[H]\footnotesize
 	\centering
@@ -660,7 +662,7 @@ Po pirmojo bandymo buvo pastebėta, jog dvigubo varymo taisyklių pažeidimo alg
 	{\begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|} \hline
 			\textbf{Tikslumas} & \textbf{Jautrumas} & \textbf{Specifiškumas} \\
 			\hline
-			84.62 \%  & 55\%    & 92.86 \%    \\
+			69.81 \%  & 55\%    & 74.29 \%    \\
 			
 			\hline
 	\end{tabular}}
@@ -731,7 +733,7 @@ Trečiojo bei ketvirtojo bandymo rezultatai pateikiami \ref{tab:third_trial}, \r
 	{\begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|} \hline
 			\textbf{Tikslumas} & \textbf{Jautrumas} & \textbf{Specifiškumas} \\
 			\hline
-			80 \%  & 33 \%    & 97.56 \%    \\
+			83.02 \%  & 33 \%    & 97.56 \%    \\
 			
 			\hline
 	\end{tabular}}
@@ -744,7 +746,7 @@ Trečiojo bei ketvirtojo bandymo rezultatai pateikiami \ref{tab:third_trial}, \r
 	{\begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|} \hline
 			\textbf{Tikslumas} & \textbf{Jautrumas} & \textbf{Specifiškumas} \\
 			\hline
-			46.6 \%  & 53.8 \%    & 80 \%    \\
+			73.58 \%  & 53.8 \%    & 80 \%    \\
 			
 			\hline
 	\end{tabular}}
@@ -797,11 +799,12 @@ Trečiojo bei ketvirtojo bandymo rezultatai pateikiami \ref{tab:third_trial}, \r
 
 Lyginant 12 bei 13 lentelę pastebima, jog žingsnių taisyklės pažeidimo atpažinimo algoritmas yra griežtesnis, nei dvigubo varymo atpažinimo algoritmas, t.y. jis linkęs mažiau rasti teigiamų atvejų, bet tuo pačiu ir mažiau klaidingai teigiamų. Toks algoritmas, nors ir praleidžiantis ne mažą dalį nusižengimų, labai retai juos atpažintų neteisingai, taip nepelnytai nubausdamas žaidėjus bei sustabdydamas žaidimo tėkmę. 
 
-Žingsnių taisyklės pažeidimo sąlygos yra griežtesnės, nei dvigubo varymo (t.y. daugiau nei 2 žingsniai per tam tikrą intervalą, kuris gali trūkinėti, taip pat - žingsnių skaičiavimo priklausomumas nuo idealių žingsniavimo sąlygų), todėl žingsnių taisyklės pažeidimas yra pastebimas rečiau. Praktikoje žingsnių taisyklės pažeidimas taip pat yra pastebimas gan retai \cite{SiglerK}, trečiojo bandymo metu pasiektas jautrumas yra didesnis, nei vidutinis teisėjų tikruose NBA žaidimuose. 
+Žingsnių taisyklės pažeidimo sąlygos yra griežtesnės, nei dvigubo varymo (t.y. daugiau nei 2 žingsniai per tam tikrą intervalą, kuris gali trūkinėti, taip pat – žingsnių skaičiavimo priklausomumas nuo idealių žingsniavimo sąlygų), todėl žingsnių taisyklės pažeidimas yra pastebimas rečiau. Praktikoje žingsnių taisyklės pažeidimas taip pat yra pastebimas gan retai \cite{SiglerK}, trečiojo bandymo metu pasiektas jautrumas yra didesnis, nei vidutinis teisėjų tikruose NBA žaidimuose. 
 
+\MA{
 \subsubsection{Penktasis bandymas}
 
-Penktajam bandymui buvo paruošta papildomi 33 vaizdo įrašai. Jie filmuoti aukštesnesne raiška, nei praeituose bandymuose bei kita kamera (Xiaomi Redmi 8 Pro su 4K raiškos kamera), taip pat kitoje vietoje, tad vaizdo įrašų fonas kitoks, nei praeituose bandymuose - juose mažiau trukdžių. Taip pat buvo bandoma filmuoti kuo arčiau, kad atpažinimo algoritmams būtų kuo lengviau atpažinti rankas, kojas bei kamuolį. 12 iš vaizdo įrašų atliekami dvigubo varymo taisyklės pažeidimai, 11 - žingsnių taisyklės pažeidimai, 10 - jokių pažeidimų nėra. 
+Penktajam bandymui buvo paruošta papildomi 33 vaizdo įrašai. Jie filmuoti aukštesnesne raiška, nei praeituose bandymuose bei kita kamera (Xiaomi Redmi 8 Pro su 4K raiškos kamera), taip pat kitoje vietoje, tad vaizdo įrašų fonas kitoks, nei praeituose bandymuose – juose mažiau trukdžių. Taip pat buvo bandoma filmuoti kuo arčiau, kad atpažinimo algoritmams būtų kuo lengviau atpažinti rankas, kojas bei kamuolį. 12 iš vaizdo įrašų atliekami dvigubo varymo taisyklės pažeidimai, 11 – žingsnių taisyklės pažeidimai, 10 – jokių pažeidimų nėra. 
 
 Kaip ir praeituose bandymuose, skaičiuojant tikslumą, jautrumą bei specifiškumą, vaizdo įrašai, suklasifikuoti ne ta taisykle, kuria turėtų, laikomi klaidingai teigiamais. 
 
@@ -830,7 +833,7 @@ Kaip ir praeituose bandymuose, skaičiuojant tikslumą, jautrumą bei specifišk
 	\label{tab:fifth_trial_percents}
 \end{table}
 
-Šie rezultatai geresni, nei praeituose bandymuose, nes paruošta vaizdo medžiaga buvo labiau kontroliuojama, t.y. filmuojama stengiantis rankas, kojas bei kamuolį padaryti kuo labiau matomais.
+Šie rezultatai geresni, nei praeituose bandymuose, nes paruoštos vaizdo medžiagos turinys buvo labiau kontroliuojamas, t.y. filmuojama stengiantis rankas, kojas bei kamuolį padaryti kuo labiau matomais.
 
 \subsection{Klaidingų bandymų rezultatų analizė}
 
@@ -861,7 +864,7 @@ Buvo bandoma keisti laikymo rankose būsenos parametrus padidinant reikiamų kad
 
 \ref{img:double_dribble_fault} paveikslėlyje matyti, kad nors 1 ir 3 kadre akivaizdu, jog kamuolys nėra laikomas abejose rankose, tą patį nustatyti 2 kadre galime tik žinodami kontekstą, pvz., alkūnės linkį, kamuolio atstumą nuo rankos ir pan.  
 
-Dėl šio neefektyvumo bent 6 vaizdo įrašų klaidingai klasifikuoti kaip pažeidžiantys dvigubo varymo taisyklę, algoritmui nusprendus, kad kamuolys buvo suimtas ir vėl paleistas. 
+Dėl šio neefektyvumo bent 6 vaizdo įrašai 4 grupėje klaidingai klasifikuoti kaip pažeidžiantys dvigubo varymo taisyklę, algoritmui nusprendus, kad kamuolys buvo suimtas ir vėl paleistas. 
 
 \subsubsection{Neuroninio tinklo atpažinimo netikslumai}
 
@@ -870,43 +873,81 @@ Atliekant bandymus pastebėta, jog šiame darbe naudotas neuroninio tinklo model
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.6]{img/neural_network_fault.png}
-	\caption{ Kūno dalių atpažinimo netikslumas naudojantis neuroniniu tinklu }
+	\caption{ Neuroninio tinklo kojos atpažinimo netikslumas }
 	\label{img:neural_network_fault}
 \end{figure}
 
 Šis netiksumas turėjo įtaką bent 4 vaizdo įrašams, kuriuose atliekamas žingsnių taisyklės pažeidimas. Pastebėta, kad šiek tiek sumažėjo klaidingai neigiamų rezultatų dvigubai padidinus neuroninio tinklo įvesties dydį, tačiau apdorojimo laikas bei naudojami kompiuteriniai resursai išaugo tiek, jog tolimesnių bandymų su daugiau vaizdo medžiagos atlikti nebepavyko.
 
-Kitas gan svarbus netikslumas - kūno dalių pozicijos. Šiame darbe naudotas žmogaus skeletą atpažįstantis neuroninis tinklas nurodo ne pačių rankų ar pėdų pozicijas, bet riešo bei kulkšnies. Tai apsunkina atpažinimą, kai siekiama nustatyti, ar kamuolys yra laikomas bent vienoje rankoje. Beveik visuose vaizdo įrašuose pastebėta, jog neuroninio tinklo rasta riešo pozicija kai kuriuose kadruose buvo per toli nuo kamuolio, tad algoritmas nustatydavo, jog kamuolys nėra laikomas rankose, dėl ko vienu atveju buvo nutraukiamas žingsnių skaičiavimas. 
+Kitas gan svarbus netikslumas – kūno dalių pozicijos. Šiame darbe naudotas žmogaus skeletą atpažįstantis neuroninis tinklas nurodo ne pačių rankų ar pėdų pozicijas, bet riešo bei kulkšnies. Tai apsunkina atpažinimą, kai siekiama nustatyti, ar kamuolys yra laikomas bent vienoje rankoje. Beveik visuose vaizdo įrašuose pastebėta, jog neuroninio tinklo rasta riešo pozicija kai kuriuose kadruose buvo per toli nuo kamuolio, tad algoritmas nustatydavo, jog kamuolys nėra laikomas rankose, dėl ko vienu atveju buvo nutraukiamas žingsnių skaičiavimas. 
 
 \subsection{Galutiniai bandymų rezultatai}
 
-\section{Tolimesni darbai ir rekomendacijos}
+Šiame poskyriuje pateikiami galutiniai rezultatai, programinę įrangą patikrinus su visais 86 vaizdo įrašais. 
 
-Iš atliktos analizės matyti, jog vaizdų atpažinimo metoduose bei taisyklių pažeidimo algoritmuose galimi patobulinimai. 
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Galutiniai dvigubo varymo taisyklės pažeidimo atpažinimo rezultatai}
+	{\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{2cm}|} \hline
+			\textbf{Teisingai suklasifikuota kaip taisyklių pažeidimas} & \textbf{Teisingai suklasifikuota kaip taisyklių pažeidimo nebuvimas} & \textbf{Taisyklės pažeidimas rastas, nors jo nebuvo (angl. false positive)} & \textbf{Taisyklės pažeidimas nerastas, nors jis buvo (angl. false negative)} & \textbf{Atpažinta ne ta taisyklė} \\
+			\hline
+			21  & 36    & 2    & 12  &  9 \\
+			\hline
+	\end{tabular}}
+	\label{tab:final_results}
+\end{table}
 
-\begin{itemize}
-	\item Siūloma išnagrinėti ne žmogaus skeletą atpažįstančius neuroninių tinklų modelius, bet kūno dalių segmentavimo neuroninius tinklus, siekiant išgauti tikslesnes kūno dalių pozicijas.
-	\item Neuroninių tinklų modelį siūloma ištreniruoti su kuo daugiau duomenų, siekiant išvengti neatpažintų kūno dalių. 
-	\item Tokiais atvejais, kai kūno dalių, pvz., pėdų neuroninis tinklas atpažinti negali, siūloma sekti kūno dalių pozicijų pokyčius ir nustatyti jų galimą buvimo vietą į ateitį. Taip bus dalinai apsisaugoma nuo atvejų, kai nežinoma, kurioje vietoje yra žaidėjo koja ar ranka. Tai itin aktualu sekant žaidėjo žingsnį.
-	\item Kamuolio atpažinimas spalva yra svarbus trūkumas, kadangi ne tik tokiu atveju vaizdo medžiaga turi būti iš anksto paruošta, joje neturi būti jokių tos pačios spalvos trukdžių, bet ir spalvos kintamumas lemia tai, jog objektas gali likti neatpažintas. 
-\end{itemize}
+\begin{table}[H]\footnotesize
+	\centering
+	\caption{Galutinių rezultatų tikslumas, jautrumas bei specifiškumas}
+	{\begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|} \hline
+			\textbf{Tikslumas} & \textbf{Jautrumas} & \textbf{Specifiškumas} \\
+			\hline
+			71.25 \%  & 63.64 \%    & 76.60 \%    \\
+			\hline
+	\end{tabular}}
+	\label{tab:final_results_percents}
+\end{table}
 
 \sectionnonum{Rezultatai}
-Rezultatų ir išvadų dalyje išdėstomi pagrindiniai darbo rezultatai (kažkas
-išanalizuota, kažkas sukurta, kažkas įdiegta), toliau pateikiamos išvados
-(daromi nagrinėtų problemų sprendimo metodų palyginimai, siūlomos
-rekomendacijos, akcentuojamos naujovės). Rezultatai ir išvados pateikiami
-sunumeruotų (gali būti hierarchiniai) sąrašų pavidalu. Darbo rezultatai turi
-atitikti darbo tikslą.
 
-Rezultatų skyriuje išdėstomi pagrindiniai darbo rezultatai: kažkas išanalizuota, kažkas sukurta, kažkas įdiegta. Rezultatai pateikiami sunumeruotų (gali būti hierarchiniai) sąrašų pavidalu. Darbo rezultatai turi atitikti darbo tikslą.
-Išvadų skyriuje daromi nagrinėtų problemų sprendimo metodų palyginimai, siūlomos rekomendacijos, akcentuojamos naujovės. Išvados pateikiamos sunumeruoto (gali būti hierarchinis) sąrašo pavidalu. Darbo išvados turi atitikti darbo tikslą. 
+Šio darbo metu buvo:
+
+\begin{enumerate}
+	\item išnagrinėti kompiuterinės regos metodai, skirti žmogaus bei kamuolio atpažinimui – segmentavimas pagal spalvą, atpažinimas remiantis paveikslėlio skirtumais bei atpažinimas neuroniniu tinklu,
+	\item atliktas eksperimentas lyginantis nagrinėtų kompiuterinės regos metodų atpažinimo spartą bei tikslumą juos pritaikant žingsnių skaičiavimo algoritmui, 
+	\item apibrėžti krepšinio taisyklių pažeidimo algoritmai, pritaikantys nagrinėtus kompiuterinės regos metodus:
+	\begin{enumerate}
+		\item apibrėžtas žingsnių taisyklės pažeidimo atpažinimo algoritmas,
+		\item apibrėžtas dvigubo varymo taisyklės pažeidimo atpažinimo algoritmas;
+	\end{enumerate}
+	\item aprašyti algoritmai bei kompiuterinės regos pritaikyti sukūrus juos įgyvendinančią programinę įrangą,
+	\item programinė įranga išbandyta su vaizdo medžiaga. Žingsnių bei dvigubo varymo taisyklių pažeidimai buvo nustatyti 71.25\% tikslumu, jautrumas 63.64\%, specifiškumas 76.60\%.
+\end{enumerate}
 
 \sectionnonum{Išvados}
 
-Išvadų skyriuje daromi nagrinėtų problemų sprendimo metodų palyginimai, siūlomos rekomendacijos, akcentuojamos naujovės. Išvados pateikiamos sunumeruoto (gali būti hierarchinis) sąrašo pavidalu. Darbo išvados turi atitikti darbo tikslą. 
+Darbo metu pasiektos šios išvados:
 
-\printbibliography[heading=bibintoc]  % Šaltinių sąraše nurodoma panaudota
+\begin{enumerate}
+	\item pateiktieji taisyklių pažeidimo atpažinimo algoritmai, OpenPose neuroninio tinklo modelis bei kamuolio atpažinimas segmentavimo metodu yra tinkami siekiant taisyklių pažeidimus nustatyti bent 70 procentų tikslumu;
+	\item atpažinimo remiantis spalva metodai nepasiekia tokio tikslumo, kaip atpažinimas naudojantis neuroniniu tinklu, tačiau yra spartesni. Šių metodų teikiamas tikslumas kenčia dėl nuolat besikeičiančio apšvietimo vaizdo įrašuose;
+	\item atpažinimas remiantis kadrų skirtumais yra tinkamas siekiant atpažinti judesį, pavyzdžiui, skaičiuojant atliktus žingsnius. Šis būdas yra greičiausias iš nagrinėtų, tačiau tuo pačiu ir netiksliausias;
+	\item dvigubo varymo taisyklės pažeidimo algoritmas yra mažiau tikslus, nei žingsnių taisyklės, tačiau jautresnis, kadangi įvykus netikslumui atpažinimo metu griežtesnės žingsnio atpažinimo sąlygos nėra tenkinamos, tuo tarpu dvigubo varymo sąlygos yra tenkinamos dažniau, nei tikėtasi. Tai sąlygojo, jog dalis vaizdo įrašų algoritmo buvo suklasifikuoti kaip klaidingai teigiami.
+	\item taisyklių pažeidimo atpažinimą neigiamai veikia fono trukdžiai, apšvietimo bei objektų nuotolio pokyčiai, neuroninio tinklo netikslumai atpažįstant žmogaus skeletą;
+	\item aprašytas kamuolio laikymo abejose rankose nustatymas gali sąlygoti klaidingai teigiamus rezultatus dėl papildomos informacijos apie rankų poziciją trimatėje erdvėje trūkumo.
+\end{enumerate}
+
+Toliau pateikiamos rekomendacijos bei tolimesni darbai.
+
+\begin{enumerate}
+	\item Siūloma išnagrinėti ne žmogaus skeletą atpažįstančius neuroninių tinklų modelius, bet kūno dalių segmentavimo neuroninius tinklus, siekiant išgauti tikslesnes kūno dalių pozicijas.
+	\item Tokiais atvejais, kai kūno dalių, pvz., pėdų neuroninis tinklas atpažinti negali, siūloma sekti kūno dalių pozicijų pokyčius ir nustatyti jų galimą buvimo vietą į ateitį. Taip bus dalinai apsisaugoma nuo atvejų, kai nežinoma, kurioje vietoje yra žaidėjo koja ar ranka.
+	\item Kamuolio atpažinimas spalva yra svarbus trūkumas, kadangi ne tik tokiu atveju vaizdo medžiaga turi būti iš anksto paruošta, joje neturi būti jokių tos pačios spalvos trukdžių, bet ir spalvos kintamumas lemia tai, jog objektas gali likti neatpažintas. 
+	\item Taisyklių pažeidimo algoritmai galėtų būti lankstesni ir praktiškesni, siekiant sumažinti klaidingų neigiamų atpažinimų skaičių. Šiame darbe apibrėžtas žingsnių taisyklės pažeidimo algoritmas labiausiai veiksmingas tada, kai į žaidėją žiūrima iš šono, o dvigubo varymo – tada, kai į žaidėją žiūrima iš priekio. 
+\end{enumerate}
+}
+\printbibliography[heading=bibintoc,title=Šaltiniai]  % Šaltinių sąraše nurodoma panaudota
 % literatūra, kitokie šaltiniai. Abėcėlės tvarka išdėstomi darbe panaudotų
 % (cituotų, perfrazuotų ar bent paminėtų) mokslo leidinių, kitokių publikacijų
 % bibliografiniai aprašai. Šaltinių sąrašas spausdinamas iš naujo puslapio.
