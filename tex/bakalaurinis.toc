@@ -14,15 +14,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.1.1.}Segmentavimas}{10}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {3.1.1.1.}Dominančių objektų spalvų rėžiai}{10}{}%
+\contentsline {paragraph}{\numberline {3.1.1.1.}Dominančių objektų spalvų rėžiai}{11}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.1.2.}Morfologinės transformacijos}{11}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.1.3.}Kamuolio kontūrų radimas}{12}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.}Atpažinimas remiantis skirtumais}{12}{}%
+\contentsline {subsection}{\numberline {3.2.}Atpažinimas remiantis skirtumais}{13}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.1.}Fono pašalinimas}{12}{}%
+\contentsline {subsubsection}{\numberline {3.2.1.}Fono pašalinimas}{13}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.2.2.}Judesio atpažinimas}{13}{}%
 \defcounter {refsection}{0}\relax 
@@ -30,7 +30,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.3.1.}Atpažinimo neuroniniais tinklais optimizavimas}{16}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.4.}Kamuolio atpažinimas Hough transformacija}{16}{}%
+\contentsline {subsection}{\numberline {3.4.}Kamuolio atpažinimas Hough transformacija}{17}{}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.5.}Nagrinėtų atpažinimo metodų palyginimas}{17}{}%
 \defcounter {refsection}{0}\relax 
@@ -40,43 +40,45 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.}Žingsnių taisyklės pažeidimo atpažinimo algoritmas}{20}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.2.1.}Būsenos saugojimas}{22}{}%
+\contentsline {subsection}{\numberline {4.3.}Žingsnių skaičiavimo algoritmas}{22}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.}Dvigubo varymo taisyklė}{23}{}%
+\contentsline {subsubsection}{\numberline {4.3.1.}Būsenos saugojimas}{25}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.}Dvigubo varymo taisyklės atpažinimo algoritmas}{23}{}%
+\contentsline {subsection}{\numberline {4.4.}Dvigubo varymo taisyklė}{25}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.}Atlikti bandymai ir analizė}{25}{}%
+\contentsline {subsection}{\numberline {4.5.}Dvigubo varymo taisyklės atpažinimo algoritmas}{26}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.}Įgyvendinta programinė įranga}{25}{}%
+\contentsline {section}{\numberline {5.}Atlikti bandymai ir analizė}{29}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.}Atlikti bandymai}{25}{}%
+\contentsline {subsection}{\numberline {5.1.}Įgyvendinta programinė įranga}{29}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.1.}Pirmasis bandymas}{26}{}%
+\contentsline {subsection}{\numberline {5.2.}Atlikti bandymai}{29}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.2.}Antrasis bandymas}{26}{}%
+\contentsline {subsubsection}{\numberline {5.2.1.}Pirmasis bandymas}{30}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.3.}Trečiasis ir ketvirtas bandymai}{27}{}%
+\contentsline {subsubsection}{\numberline {5.2.2.}Antrasis bandymas}{30}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.4.}Penktasis bandymas}{29}{}%
+\contentsline {subsubsection}{\numberline {5.2.3.}Trečiasis ir ketvirtas bandymai}{31}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.}Klaidingų bandymų rezultatų analizė}{30}{}%
+\contentsline {subsubsection}{\numberline {5.2.4.}Penktasis bandymas}{33}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.3.1.}Fono trukdžiai}{30}{}%
+\contentsline {subsection}{\numberline {5.3.}Klaidingų bandymų rezultatų analizė}{34}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.3.2.}Atpažinimo pagal spalvą netikslumas}{30}{}%
+\contentsline {subsubsection}{\numberline {5.3.1.}Fono trukdžiai}{34}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.3.3.}Kamuolio suėmimo atpažinimo metodo neefektyvumas}{30}{}%
+\contentsline {subsubsection}{\numberline {5.3.2.}Atpažinimo pagal spalvą netikslumas}{34}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.3.4.}Neuroninio tinklo atpažinimo netikslumai}{31}{}%
+\contentsline {subsubsection}{\numberline {5.3.3.}Kamuolio suėmimo atpažinimo metodo neefektyvumas}{34}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4.}Galutiniai bandymų rezultatai}{32}{}%
+\contentsline {subsubsection}{\numberline {5.3.4.}Neuroninio tinklo atpažinimo netikslumai}{35}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Rezultatai}{33}{}%
+\contentsline {subsection}{\numberline {5.4.}Galutiniai bandymų rezultatai}{36}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Išvados}{34}{}%
+\contentsline {section}{Rezultatai}{37}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Šaltiniai}{35}{}%
+\contentsline {section}{Išvados}{38}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Šaltiniai}{39}{}%
 \defcounter {refsection}{0}\relax 
 \bgroup 
 \defcounter {refsection}{0}\relax 
@@ -86,10 +88,10 @@
 \defcounter {refsection}{0}\relax 
 \selectlanguage *{lithuanian}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\MakeUppercase {Priedai}}{37}{}%
+\contentsline {section}{\MakeUppercase {Priedai}}{41}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{1 priedas.\nobreakspace {}Sukurtos programinės įrangos kodo nuoroda}{38}{}%
+\contentsline {subsection}{1 priedas.\nobreakspace {}Sukurtos programinės įrangos kodo nuoroda}{42}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2 priedas.\nobreakspace {}Vaizdo įrašai, naudoti žingsnių skaičiavimui}{39}{}%
+\contentsline {subsection}{2 priedas.\nobreakspace {}Vaizdo įrašai, naudoti žingsnių skaičiavimui}{43}{}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{3 priedas.\nobreakspace {}Vaizdo įrašai, naudoti programinės įrangos bandymams}{40}{}%
+\contentsline {subsection}{3 priedas.\nobreakspace {}Vaizdo įrašai, naudoti programinės įrangos bandymams}{44}{}%

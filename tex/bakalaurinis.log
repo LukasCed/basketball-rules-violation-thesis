@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.1) (format=lualatex 2021.2.28)  25 MAY 2021 01:14
+This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.1) (format=lualatex 2021.2.28)  27 MAY 2021 02:17
  restricted system commands enabled.
 **bakalaurinis.tex
 (./bakalaurinis.tex
@@ -213,11 +213,11 @@ braces):
 >  {lithuanian/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {lithuanian/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 Module polyglossia Info: Language data for lithuanian
-(polyglossia)            righthyphenmin	2
 (polyglossia)            loader	loadhyph-lt.tex
 (polyglossia)            hyphenation	
-(polyglossia)            lefthyphenmin	2
+(polyglossia)            righthyphenmin	2
 (polyglossia)            patterns	hyph-lt.pat.txt
+(polyglossia)            lefthyphenmin	2
 (polyglossia)            synonyms	 on input line 11
 Module polyglossia Info: Language lithuanian was not yet loaded; created with id
  2 on input line 11
@@ -945,15 +945,12 @@ LaTeX Warning: Label `tab:openposevslightweight' multiply defined.
 
 LaTeX Warning: Label `tab:openposevslightweight' multiply defined.
 
-
-LaTeX Warning: Label `fig:hand_and_ball' multiply defined.
-
-LaTeX Info: Redefining \rmfamily on input line 211.
-LaTeX Info: Redefining \sffamily on input line 211.
-LaTeX Info: Redefining \ttfamily on input line 211.
-LaTeX Info: Redefining \rmfamily on input line 219.
-LaTeX Info: Redefining \sffamily on input line 219.
-LaTeX Info: Redefining \ttfamily on input line 219.
+LaTeX Info: Redefining \rmfamily on input line 218.
+LaTeX Info: Redefining \sffamily on input line 218.
+LaTeX Info: Redefining \ttfamily on input line 218.
+LaTeX Info: Redefining \rmfamily on input line 226.
+LaTeX Info: Redefining \sffamily on input line 226.
+LaTeX Info: Redefining \ttfamily on input line 226.
 )
 \openout1 = bakalaurinis.aux
 
@@ -1170,7 +1167,6 @@ LaTeX Info: Redefining \ttfamily on input line 38.
  [1
 
 {C:/Users/Lukas/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-Lua-only attribute luaul1 = 5
 [2
 
 ] [3
@@ -1179,12 +1175,12 @@ Lua-only attribute luaul1 = 5
 LaTeX Info: Redefining \rmfamily on input line 3.
 LaTeX Info: Redefining \sffamily on input line 3.
 LaTeX Info: Redefining \ttfamily on input line 3.
-LaTeX Info: Redefining \rmfamily on input line 83.
-LaTeX Info: Redefining \sffamily on input line 83.
-LaTeX Info: Redefining \ttfamily on input line 83.
-LaTeX Info: Redefining \rmfamily on input line 87.
-LaTeX Info: Redefining \sffamily on input line 87.
-LaTeX Info: Redefining \ttfamily on input line 87.
+LaTeX Info: Redefining \rmfamily on input line 85.
+LaTeX Info: Redefining \sffamily on input line 85.
+LaTeX Info: Redefining \ttfamily on input line 85.
+LaTeX Info: Redefining \rmfamily on input line 89.
+LaTeX Info: Redefining \sffamily on input line 89.
+LaTeX Info: Redefining \ttfamily on input line 89.
 )
 \tf@toc=\write4
 
@@ -1204,429 +1200,450 @@ LaTeX Info: Redefining \ttfamily on input line 87.
 File: img/hand_before_segmentation.png Graphic file (type png)
 <use img/hand_before_segmentation.png>
 Package luatex.def Info: img/hand_before_segmentation.png  used on input line 1
-61.
+63.
 (luatex.def)             Requested size: 142.26378pt x 213.7226pt.
 <img/hand_after_segmentation.png, id=33, 170.88844pt x 257.46187pt>
 File: img/hand_after_segmentation.png Graphic file (type png)
 <use img/hand_after_segmentation.png>
 Package luatex.def Info: img/hand_after_segmentation.png  used on input line 16
-3.
+5.
 (luatex.def)             Requested size: 142.26378pt x 214.34935pt.
  [10<./img/hand_before_segmentation.png><./img/hand_after_segmentation.png>] [1
 1]
 <img/ball_contours_before.png, id=49, 169.38281pt x 251.43938pt>
 File: img/ball_contours_before.png Graphic file (type png)
 <use img/ball_contours_before.png>
-Package luatex.def Info: img/ball_contours_before.png  used on input line 212.
+Package luatex.def Info: img/ball_contours_before.png  used on input line 214.
 (luatex.def)             Requested size: 142.26378pt x 211.18845pt.
 <img/ball_contours_after.png, id=50, 161.10187pt x 239.39438pt>
 File: img/ball_contours_after.png Graphic file (type png)
 <use img/ball_contours_after.png>
-Package luatex.def Info: img/ball_contours_after.png  used on input line 214.
+Package luatex.def Info: img/ball_contours_after.png  used on input line 216.
 (luatex.def)             Requested size: 142.26378pt x 211.40923pt.
  [12<./img/ball_contours_before.png><./img/ball_contours_after.png>]
 <img/background-substraction-before.png, id=55, 251.43938pt x 411.03563pt>
 File: img/background-substraction-before.png Graphic file (type png)
 <use img/background-substraction-before.png>
 Package luatex.def Info: img/background-substraction-before.png  used on input 
-line 225.
+line 227.
 (luatex.def)             Requested size: 142.26378pt x 232.56169pt.
 <img/background-substraction.png, id=56, 251.43938pt x 411.03563pt>
 File: img/background-substraction.png Graphic file (type png)
 <use img/background-substraction.png>
 Package luatex.def Info: img/background-substraction.png  used on input line 22
-7.
+9.
 (luatex.def)             Requested size: 142.26378pt x 232.56169pt.
-<img/steps.png, id=57, 450.9347pt x 352.31625pt>
+ [13<./img/background-substraction-before.png><./img/background-substraction.png
+>]
+<img/steps.png, id=61, 450.9347pt x 352.31625pt>
 File: img/steps.png Graphic file (type png)
 <use img/steps.png>
-Package luatex.def Info: img/steps.png  used on input line 241.
+Package luatex.def Info: img/steps.png  used on input line 243.
 (luatex.def)             Requested size: 360.74825pt x 281.85338pt.
- [13<./img/background-substraction-before.png><./img/background-substraction.png
->] [14<./img/steps.png>]
+ [14<./img/steps.png>]
 <img/body-parts-better.png, id=65, 205.5178pt x 362.85562pt>
 File: img/body-parts-better.png Graphic file (type png)
 <use img/body-parts-better.png>
-Package luatex.def Info: img/body-parts-better.png  used on input line 258.
+Package luatex.def Info: img/body-parts-better.png  used on input line 260.
 (luatex.def)             Requested size: 164.41446pt x 290.28488pt.
  [15<./img/body-parts-better.png>] [16]
 <img/ball_circled.png, id=73, 93.34875pt x 109.91063pt>
 File: img/ball_circled.png Graphic file (type png)
 <use img/ball_circled.png>
-Package luatex.def Info: img/ball_circled.png  used on input line 318.
+Package luatex.def Info: img/ball_circled.png  used on input line 320.
 (luatex.def)             Requested size: 142.26378pt x 167.51196pt.
 <img/ball_notfound.png, id=74, 74.52844pt x 91.84312pt>
 File: img/ball_notfound.png Graphic file (type png)
 <use img/ball_notfound.png>
-Package luatex.def Info: img/ball_notfound.png  used on input line 320.
+Package luatex.def Info: img/ball_notfound.png  used on input line 322.
 (luatex.def)             Requested size: 142.26378pt x 175.34456pt.
  [17<./img/ball_circled.png><./img/ball_notfound.png>]
-Underfull \hbox (badness 3635) in paragraph at lines 343--343
+Underfull \hbox (badness 3635) in paragraph at lines 345--345
 []\TU/texgyretermes(0)/b/n/10 Vaiz-do įra-šo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 369--369
+Underfull \hbox (badness 10000) in paragraph at lines 371--371
 []\TU/texgyretermes(0)/b/n/10 Al-go-rit-mo su-skai-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 369--370
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
 []\TU/texgyretermes(0)/b/n/10 Vi-du-ti-nė vaiz-do
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 393--393
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
 []\TU/texgyretermes(0)/b/n/10 Al-go-rit-mo su-skai-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 393--394
+Underfull \hbox (badness 10000) in paragraph at lines 395--396
 []\TU/texgyretermes(0)/b/n/10 Vi-du-ti-nė vaiz-do
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 417--417
+Underfull \hbox (badness 10000) in paragraph at lines 419--419
 []\TU/texgyretermes(0)/b/n/10 Al-go-rit-mo su-skai-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--418
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
 []\TU/texgyretermes(0)/b/n/10 Vi-du-ti-nė vaiz-do
  []
 
-[19] [20
+[19]
+<img/travel_algorithm.png, id=86, 277.035pt x 760.8425pt>
+File: img/travel_algorithm.png Graphic file (type png)
+<use img/travel_algorithm.png>
+Package luatex.def Info: img/travel_algorithm.png  used on input line 473.
+(luatex.def)             Requested size: 166.22227pt x 456.50902pt.
+ [20
 
-]
-<img/hand.png, id=89, 366.61969pt x 324.46219pt>
+] [21<./img/travel_algorithm.png>]
+<img/hand.png, id=95, 366.61969pt x 324.46219pt>
 File: img/hand.png Graphic file (type png)
 <use img/hand.png>
-Package luatex.def Info: img/hand.png  used on input line 479.
+Package luatex.def Info: img/hand.png  used on input line 488.
 (luatex.def)             Requested size: 142.26378pt x 125.90602pt.
-<img/ball.png, id=90, 367.3725pt x 322.95656pt>
+<img/ball.png, id=96, 367.3725pt x 322.95656pt>
 File: img/ball.png Graphic file (type png)
 <use img/ball.png>
-Package luatex.def Info: img/ball.png  used on input line 481.
+Package luatex.def Info: img/ball.png  used on input line 490.
 (luatex.def)             Requested size: 142.26378pt x 125.06552pt.
-<img/hand_or_ball.png, id=91, 364.36125pt x 323.70938pt>
+<img/hand_or_ball.png, id=97, 364.36125pt x 323.70938pt>
 File: img/hand_or_ball.png Graphic file (type png)
 <use img/hand_or_ball.png>
-Package luatex.def Info: img/hand_or_ball.png  used on input line 483.
+Package luatex.def Info: img/hand_or_ball.png  used on input line 492.
 (luatex.def)             Requested size: 142.26378pt x 126.38939pt.
-<img/hand_and_ball.png, id=92, 366.61969pt x 322.95656pt>
+<img/hand_and_ball.png, id=98, 366.61969pt x 322.95656pt>
 File: img/hand_and_ball.png Graphic file (type png)
 <use img/hand_and_ball.png>
-Package luatex.def Info: img/hand_and_ball.png  used on input line 485.
+Package luatex.def Info: img/hand_and_ball.png  used on input line 494.
 (luatex.def)             Requested size: 142.26378pt x 125.32178pt.
- [21<./img/hand.png><./img/ball.png><./img/hand_or_ball.png><./img/hand_and_ball
-.png>]
-<img/step_contours1.png, id=101, 569.87906pt x 197.98969pt>
+<img/step_contours1.png, id=99, 569.87906pt x 197.98969pt>
 File: img/step_contours1.png Graphic file (type png)
 <use img/step_contours1.png>
-Package luatex.def Info: img/step_contours1.png  used on input line 503.
+Package luatex.def Info: img/step_contours1.png  used on input line 505.
 (luatex.def)             Requested size: 142.26378pt x 49.42479pt.
-<img/step_contours2.png, id=102, 569.87906pt x 197.23688pt>
+<img/step_contours2.png, id=100, 569.87906pt x 197.23688pt>
 File: img/step_contours2.png Graphic file (type png)
 <use img/step_contours2.png>
-Package luatex.def Info: img/step_contours2.png  used on input line 505.
+Package luatex.def Info: img/step_contours2.png  used on input line 507.
 (luatex.def)             Requested size: 142.26378pt x 49.23686pt.
-<img/step_contours3.png, id=103, 566.115pt x 194.22563pt>
+<img/step_contours3.png, id=101, 566.115pt x 194.22563pt>
 File: img/step_contours3.png Graphic file (type png)
 <use img/step_contours3.png>
-Package luatex.def Info: img/step_contours3.png  used on input line 507.
+Package luatex.def Info: img/step_contours3.png  used on input line 509.
 (luatex.def)             Requested size: 142.26378pt x 48.80818pt.
-<img/state.png, id=104, 673.51625pt x 70.2625pt>
+ [22<./img/hand.png><./img/ball.png><./img/hand_or_ball.png><./img/hand_and_ball
+.png>]
+<img/steps_algorithm.png, id=109, 541.02126pt x 859.21pt>
+File: img/steps_algorithm.png Graphic file (type png)
+<use img/steps_algorithm.png>
+Package luatex.def Info: img/steps_algorithm.png  used on input line 526.
+(luatex.def)             Requested size: 324.61525pt x 515.52998pt.
+ [23<./img/step_contours1.png><./img/step_contours2.png><./img/step_contours3.pn
+g>] [24<./img/steps_algorithm.png>]
+<img/state.png, id=118, 673.51625pt x 70.2625pt>
 File: img/state.png Graphic file (type png)
 <use img/state.png>
-Package luatex.def Info: img/state.png  used on input line 523.
+Package luatex.def Info: img/state.png  used on input line 542.
 (luatex.def)             Requested size: 404.11287pt x 42.1578pt.
- [22<./img/step_contours1.png><./img/step_contours2.png><./img/step_contours3.pn
-g><./img/state.png>] [23] [24]
-<img/program_architecture.png, id=117, 402.50375pt x 563.10374pt>
+ [25<./img/state.png>]
+<img/doubledrible_algorithm.png, id=124, 447.6725pt x 885.3075pt>
+File: img/doubledrible_algorithm.png Graphic file (type png)
+<use img/doubledrible_algorithm.png>
+Package luatex.def Info: img/doubledrible_algorithm.png  used on input line 578
+.
+(luatex.def)             Requested size: 268.60556pt x 531.1886pt.
+ [26] [27<./img/doubledrible_algorithm.png>]
+[28]
+<img/program_architecture.png, id=135, 402.50375pt x 563.10374pt>
 File: img/program_architecture.png Graphic file (type png)
 <use img/program_architecture.png>
-Package luatex.def Info: img/program_architecture.png  used on input line 577.
+Package luatex.def Info: img/program_architecture.png  used on input line 603.
 (luatex.def)             Requested size: 241.5041pt x 337.86485pt.
 
-Underfull \hbox (badness 4621) in paragraph at lines 593--594
+Underfull \hbox (badness 4621) in paragraph at lines 619--620
 []\TU/texgyretermes(0)/b/n/10 Vaiz-do įra-šų skai-
  []
 
-[25
+[29
 
 <./img/program_architecture.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 619--619
+Underfull \hbox (badness 10000) in paragraph at lines 645--645
 []\TU/texgyretermes(0)/b/n/10 Tei-sin-gai su-kla-si-fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 619--619
+Underfull \hbox (badness 10000) in paragraph at lines 645--645
 []\TU/texgyretermes(0)/b/n/10 Tei-sin-gai su-kla-si-fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 619--619
+Underfull \hbox (badness 10000) in paragraph at lines 645--645
 \TU/texgyretermes(0)/b/n/10 pa-žei-di-mo ne-bu-vi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 619--619
+Underfull \hbox (badness 10000) in paragraph at lines 645--645
 []\TU/texgyretermes(0)/b/n/10 Tai-syk-lės pa-žei-di-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 619--619
+Underfull \hbox (badness 10000) in paragraph at lines 645--645
 []\TU/texgyretermes(0)/b/n/10 Tai-syk-lės pa-žei-di-
  []
 
 
-Underfull \hbox (badness 1014) in paragraph at lines 619--619
+Underfull \hbox (badness 1014) in paragraph at lines 645--645
 \TU/texgyretermes(0)/b/n/10 mas ne-ras-tas, nors
  []
 
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 651--651
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 677--677
 []\TU/texgyretermes(0)/b/n/10 Tei-sin-gai su-kla-si-fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 651--651
+Underfull \hbox (badness 10000) in paragraph at lines 677--677
 []\TU/texgyretermes(0)/b/n/10 Tei-sin-gai su-kla-si-fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 651--651
+Underfull \hbox (badness 10000) in paragraph at lines 677--677
 \TU/texgyretermes(0)/b/n/10 pa-žei-di-mo ne-bu-vi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 651--651
+Underfull \hbox (badness 10000) in paragraph at lines 677--677
 []\TU/texgyretermes(0)/b/n/10 Tai-syk-lės pa-žei-di-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 651--651
+Underfull \hbox (badness 10000) in paragraph at lines 677--677
 []\TU/texgyretermes(0)/b/n/10 Tai-syk-lės pa-žei-di-
  []
 
 
-Underfull \hbox (badness 1014) in paragraph at lines 651--651
+Underfull \hbox (badness 1014) in paragraph at lines 677--677
 \TU/texgyretermes(0)/b/n/10 mas ne-ras-tas, nors
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--680
+Underfull \hbox (badness 10000) in paragraph at lines 706--706
 []\TU/texgyretermes(0)/b/n/10 Su-kla-si-fi-kuo-ta tei-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 680--681
+Underfull \hbox (badness 10000) in paragraph at lines 706--707
 []\TU/texgyretermes(0)/b/n/10 Su-kla-si-fi-kuo-ta ne-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--710
+Underfull \hbox (badness 10000) in paragraph at lines 736--736
 []\TU/texgyretermes(0)/b/n/10 Tei-sin-gai su-kla-si-fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--710
+Underfull \hbox (badness 10000) in paragraph at lines 736--736
 []\TU/texgyretermes(0)/b/n/10 Tei-sin-gai su-kla-si-fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--710
+Underfull \hbox (badness 10000) in paragraph at lines 736--736
 \TU/texgyretermes(0)/b/n/10 pa-žei-di-mo ne-bu-vi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--710
+Underfull \hbox (badness 10000) in paragraph at lines 736--736
 []\TU/texgyretermes(0)/b/n/10 Tai-syk-lės pa-žei-di-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--711
+Underfull \hbox (badness 10000) in paragraph at lines 736--737
 []\TU/texgyretermes(0)/b/n/10 Tai-syk-lės
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--711
+Underfull \hbox (badness 10000) in paragraph at lines 736--737
 \TU/texgyretermes(0)/b/n/10 pa-žei-di-mas
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--711
+Underfull \hbox (badness 10000) in paragraph at lines 736--737
 \TU/texgyretermes(0)/b/n/10 ne-ras-tas,
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 710--711
+Underfull \hbox (badness 1953) in paragraph at lines 736--737
 \TU/texgyretermes(0)/b/n/10 (angl. fal-se
  []
 
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 722--722
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 748--748
 []\TU/texgyretermes(0)/b/n/10 Tei-sin-gai su-kla-si-fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 722--722
+Underfull \hbox (badness 10000) in paragraph at lines 748--748
 []\TU/texgyretermes(0)/b/n/10 Tei-sin-gai su-kla-si-fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 722--722
+Underfull \hbox (badness 10000) in paragraph at lines 748--748
 \TU/texgyretermes(0)/b/n/10 pa-žei-di-mo ne-bu-vi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 722--722
+Underfull \hbox (badness 10000) in paragraph at lines 748--748
 []\TU/texgyretermes(0)/b/n/10 Tai-syk-lės pa-žei-di-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 722--723
+Underfull \hbox (badness 10000) in paragraph at lines 748--749
 []\TU/texgyretermes(0)/b/n/10 Tai-syk-lės
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 722--723
+Underfull \hbox (badness 10000) in paragraph at lines 748--749
 \TU/texgyretermes(0)/b/n/10 pa-žei-di-mas
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 722--723
+Underfull \hbox (badness 10000) in paragraph at lines 748--749
 \TU/texgyretermes(0)/b/n/10 ne-ras-tas,
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 722--723
+Underfull \hbox (badness 1953) in paragraph at lines 748--749
 \TU/texgyretermes(0)/b/n/10 (angl. fal-se
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 760--760
+Underfull \hbox (badness 10000) in paragraph at lines 786--786
 []\TU/texgyretermes(0)/b/n/10 Su-kla-si-fi-kuo-ta tei-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 760--761
+Underfull \hbox (badness 10000) in paragraph at lines 786--787
 []\TU/texgyretermes(0)/b/n/10 Su-kla-si-fi-kuo-ta ne-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 782--782
+Underfull \hbox (badness 10000) in paragraph at lines 808--808
 []\TU/texgyretermes(0)/b/n/10 Su-kla-si-fi-kuo-ta tei-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 782--783
+Underfull \hbox (badness 10000) in paragraph at lines 808--809
 []\TU/texgyretermes(0)/b/n/10 Su-kla-si-fi-kuo-ta ne-
  []
 
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 949--949
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 840--840
 []\TU/texgyretermes(0)/b/n/10 Tei-sin-gai su-kla-si-fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--949
+Underfull \hbox (badness 10000) in paragraph at lines 840--840
 []\TU/texgyretermes(0)/b/n/10 Tei-sin-gai su-kla-si-fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--949
+Underfull \hbox (badness 10000) in paragraph at lines 840--840
 \TU/texgyretermes(0)/b/n/10 pa-žei-di-mo ne-bu-vi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--949
+Underfull \hbox (badness 10000) in paragraph at lines 840--840
 []\TU/texgyretermes(0)/b/n/10 Tai-syk-lės pa-žei-di-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--949
+Underfull \hbox (badness 10000) in paragraph at lines 840--841
 []\TU/texgyretermes(0)/b/n/10 Tai-syk-lės
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--949
+Underfull \hbox (badness 10000) in paragraph at lines 840--841
 \TU/texgyretermes(0)/b/n/10 pa-žei-di-mas
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--949
+Underfull \hbox (badness 10000) in paragraph at lines 840--841
 \TU/texgyretermes(0)/b/n/10 ne-ras-tas,
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 949--949
+Underfull \hbox (badness 1953) in paragraph at lines 840--841
 \TU/texgyretermes(0)/b/n/10 (angl. fal-se
  []
 
-[29]
-<img/double_dribble_fault.png, id=134, 1314.41063pt x 282.30469pt>
+[33]
+<img/double_dribble_fault.png, id=153, 1314.41063pt x 282.30469pt>
 File: img/double_dribble_fault.png Graphic file (type png)
 <use img/double_dribble_fault.png>
-Package luatex.def Info: img/double_dribble_fault.png  used on input line 949.
+Package luatex.def Info: img/double_dribble_fault.png  used on input line 885.
 (luatex.def)             Requested size: 394.32623pt x 84.69205pt.
- [30]
-<img/neural_network_fault.png, id=138, 386.94562pt x 314.67563pt>
+ [34]
+<img/neural_network_fault.png, id=157, 386.94562pt x 314.67563pt>
 File: img/neural_network_fault.png Graphic file (type png)
 <use img/neural_network_fault.png>
-Package luatex.def Info: img/neural_network_fault.png  used on input line 949.
+Package luatex.def Info: img/neural_network_fault.png  used on input line 900.
 (luatex.def)             Requested size: 232.16916pt x 188.80682pt.
- [31<./img/double_dribble_fault.png><./img/neural_network_fault.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 949--949
+ [35<./img/double_dribble_fault.png><./img/neural_network_fault.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 917--917
 []\TU/texgyretermes(0)/b/n/10 Tei-sin-gai su-kla-si-fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--949
+Underfull \hbox (badness 10000) in paragraph at lines 917--917
 []\TU/texgyretermes(0)/b/n/10 Tei-sin-gai su-kla-si-fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--949
+Underfull \hbox (badness 10000) in paragraph at lines 917--917
 \TU/texgyretermes(0)/b/n/10 pa-žei-di-mo ne-bu-vi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--949
+Underfull \hbox (badness 10000) in paragraph at lines 917--917
 []\TU/texgyretermes(0)/b/n/10 Tai-syk-lės pa-žei-di-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--949
+Underfull \hbox (badness 10000) in paragraph at lines 917--917
 []\TU/texgyretermes(0)/b/n/10 Tai-syk-lės pa-žei-di-
  []
 
 
-Underfull \hbox (badness 1014) in paragraph at lines 949--949
+Underfull \hbox (badness 1014) in paragraph at lines 917--917
 \TU/texgyretermes(0)/b/n/10 mas ne-ras-tas, nors
  []
 
-[32] [33
+[36] [37
 
-] [34
+] [38
 
-] [35
+] [39
 
 ]
-Underfull \hbox (badness 5490) in paragraph at lines 950--950
+Underfull \hbox (badness 5490) in paragraph at lines 975--975
 []\TU/texgyretermes(0)/m/n/12 Se-cond Spect-rum. The Ne-xt Way of Se-eing Sports
 . $\TU/lmtt/m/n/12 https : / / www .
  []
 
-LaTeX Info: Redefining \rmfamily on input line 950.
-LaTeX Info: Redefining \sffamily on input line 950.
-LaTeX Info: Redefining \ttfamily on input line 950.
-LaTeX Info: Redefining \rmfamily on input line 950.
-LaTeX Info: Redefining \sffamily on input line 950.
-LaTeX Info: Redefining \ttfamily on input line 950.
-[36] [37] [38
+LaTeX Info: Redefining \rmfamily on input line 975.
+LaTeX Info: Redefining \sffamily on input line 975.
+LaTeX Info: Redefining \ttfamily on input line 975.
+LaTeX Info: Redefining \rmfamily on input line 975.
+LaTeX Info: Redefining \sffamily on input line 975.
+LaTeX Info: Redefining \ttfamily on input line 975.
+[40] [41] [42
 
-] [39
+] [43
 
 ]
 The property list \polyglossia@langsetup contains the pairs (without outer
@@ -1679,18 +1696,18 @@ braces):
 >  {english/babelname}  =>  {american}
 >  {english/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {english/Localnumeral}  =>  {polyglossia@C@localnumeral}.
- [40
+ [44
 
 ] (./bakalaurinis.aux
 LaTeX Info: Redefining \rmfamily on input line 6.
 LaTeX Info: Redefining \sffamily on input line 6.
 LaTeX Info: Redefining \ttfamily on input line 6.
-LaTeX Info: Redefining \rmfamily on input line 211.
-LaTeX Info: Redefining \sffamily on input line 211.
-LaTeX Info: Redefining \ttfamily on input line 211.
-LaTeX Info: Redefining \rmfamily on input line 219.
-LaTeX Info: Redefining \sffamily on input line 219.
-LaTeX Info: Redefining \ttfamily on input line 219.
+LaTeX Info: Redefining \rmfamily on input line 218.
+LaTeX Info: Redefining \sffamily on input line 218.
+LaTeX Info: Redefining \ttfamily on input line 218.
+LaTeX Info: Redefining \rmfamily on input line 226.
+LaTeX Info: Redefining \sffamily on input line 226.
+LaTeX Info: Redefining \ttfamily on input line 226.
 )
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1701,14 +1718,14 @@ Package logreq Info: Writing requests to 'bakalaurinis.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 19559 strings out of 478819
- 156304,1373583 words of node,token memory allocated
- 2206 words of node memory still in use:
-   6 hlist, 2 vlist, 3 rule, 3 glue, 4 kern, 1 glyph, 499 attribute, 100 glue_sp
-ec, 246 attribute_list, 1 write nodes
-   avail lists: 1:4,2:17940,3:434,4:51,5:558,6:193,7:8794,8:166,9:1290,10:38,11:
-1350
- 38345 multiletter control sequences out of 65536+200000
+ 19610 strings out of 478819
+ 125038,1373583 words of node,token memory allocated
+ 786 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 28 attribute, 100 glue_spe
+c, 15 attribute_list, 1 write nodes
+   avail lists: 1:2,2:1258,3:434,4:49,5:568,6:193,7:8371,8:166,9:1290,10:38,11:1
+270
+ 38369 multiletter control sequences out of 65536+200000
  112 fonts using 15054159 bytes
  125i,12n,141p,1349b,2929s stack positions out of 5000i,500n,10000p,200000b,50000s
 <//?/c:/users/lukas/appdata/local/programs/miktex/fonts/opentype/public/lm/lmmon
@@ -1724,9 +1741,9 @@ X/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lukas/AppData/Local/Program
 s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lukas/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lukas/AppData
 /Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on bakalaurinis.pdf (40 pages, 2192115 bytes).
+Output written on bakalaurinis.pdf (44 pages, 2248772 bytes).
 
-PDF statistics: 219 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 238 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 

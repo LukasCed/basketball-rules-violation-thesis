@@ -36,6 +36,7 @@ class DoubleDribbleDetectionAlgorithm:
             this.in_hands = 0
 
         #checks if average state 10 frames back to now is less than 0.3, 0 indicating the ball wasnt in hands
+        #If someone will read this: change this.average_state(this.in_hand_state, 5) <= 0.3 to check not last 5 frames but something like last 10 to last 5 or something for better results
         if this.dribble_stopped and this.in_hands == 1 and this.average_state(this.in_hand_state, 5) <= 0.3:
             this.double_dribble = True
         
