@@ -847,7 +847,7 @@ Kaip ir praeituose bandymuose, skaičiuojant tikslumą, jautrumą bei specifišk
 
 \begin{table}[H]\footnotesize
 	\centering
-	\caption{Trečiojo bandymo rezultatų tikslumas, jautrumas bei specifiškumas}
+	\caption{Penktojo bandymo rezultatų tikslumas, jautrumas bei specifiškumas}
 	{\begin{tabular}{|p{5cm}|p{5cm}|p{5cm}|} \hline
 			\textbf{Tikslumas} & \textbf{Jautrumas} & \textbf{Specifiškumas} \\
 			\hline
@@ -939,15 +939,15 @@ Kitas gan svarbus netikslumas – kūno dalių pozicijos. Šiame darbe naudotas 
 Šio darbo metu buvo:
 
 \begin{enumerate}
-	\item išnagrinėti kompiuterinės regos metodai, skirti žmogaus bei kamuolio atpažinimui – segmentavimas pagal spalvą, atpažinimas remiantis paveikslėlio skirtumais bei atpažinimas neuroniniu tinklu,
-	\item atliktas eksperimentas lyginantis nagrinėtų kompiuterinės regos metodų atpažinimo spartą bei tikslumą juos pritaikant žingsnių skaičiavimo algoritmui, 
-	\item apibrėžti krepšinio taisyklių pažeidimo algoritmai, pritaikantys nagrinėtus kompiuterinės regos metodus:
+	\item Išnagrinėti kompiuterinės regos metodai, skirti žmogaus bei kamuolio atpažinimui – segmentavimas pagal spalvą, atpažinimas remiantis paveikslėlio skirtumais bei atpažinimas neuroniniu tinklu.
+	\item Atliktas eksperimentas lyginantis nagrinėtų kompiuterinės regos metodų atpažinimo spartą bei tikslumą juos pritaikant žingsnių skaičiavimo algoritmui.
+	\item Apibrėžti krepšinio taisyklių pažeidimo algoritmai, pritaikantys nagrinėtus kompiuterinės regos metodus:
 	\begin{enumerate}
-		\item apibrėžtas žingsnių taisyklės pažeidimo atpažinimo algoritmas,
-		\item apibrėžtas dvigubo varymo taisyklės pažeidimo atpažinimo algoritmas;
+		\item Apibrėžtas žingsnių taisyklės pažeidimo atpažinimo algoritmas.
+		\item Apibrėžtas dvigubo varymo taisyklės pažeidimo atpažinimo algoritmas.
 	\end{enumerate}
-	\item aprašyti algoritmai bei kompiuterinės regos pritaikyti sukūrus juos įgyvendinančią programinę įrangą,
-	\item programinė įranga išbandyta su vaizdo medžiaga. Žingsnių bei dvigubo varymo taisyklių pažeidimai buvo nustatyti 71.25\% tikslumu, jautrumas 63.64\%, specifiškumas 76.60\%.
+	\item Aprašyti algoritmai bei kompiuterinės regos pritaikyti sukūrus juos įgyvendinančią programinę įrangą.
+	\item Programinė įranga išbandyta su vaizdo medžiaga. Žingsnių bei dvigubo varymo taisyklių pažeidimai buvo nustatyti 71.25\% tikslumu, jautrumas 63.64\%, specifiškumas 76.60\%.
 \end{enumerate}
 
 \sectionnonum{Išvados}
@@ -955,12 +955,12 @@ Kitas gan svarbus netikslumas – kūno dalių pozicijos. Šiame darbe naudotas 
 Darbo metu pasiektos šios išvados:
 
 \begin{enumerate}
-	\item pateiktieji taisyklių pažeidimo atpažinimo algoritmai, OpenPose neuroninio tinklo modelis bei kamuolio atpažinimas segmentavimo metodu yra tinkami siekiant taisyklių pažeidimus nustatyti bent 70 procentų tikslumu;
-	\item atpažinimo remiantis spalva metodai nepasiekia tokio tikslumo, kaip atpažinimas naudojantis neuroniniu tinklu, tačiau yra spartesni. Šių metodų teikiamas tikslumas kenčia dėl nuolat besikeičiančio apšvietimo vaizdo įrašuose;
-	\item atpažinimas remiantis kadrų skirtumais yra tinkamas siekiant atpažinti judesį, pavyzdžiui, skaičiuojant atliktus žingsnius. Šis būdas yra greičiausias iš nagrinėtų, tačiau tuo pačiu ir netiksliausias;
-	\item dvigubo varymo taisyklės pažeidimo algoritmas yra mažiau tikslus, nei žingsnių taisyklės, tačiau jautresnis, kadangi įvykus netikslumui atpažinimo metu griežtesnės žingsnio atpažinimo sąlygos nėra tenkinamos, tuo tarpu dvigubo varymo sąlygos yra tenkinamos dažniau, nei tikėtasi. Tai sąlygojo, jog dalis vaizdo įrašų algoritmo buvo suklasifikuoti kaip klaidingai teigiami.
-	\item taisyklių pažeidimo atpažinimą neigiamai veikia fono trukdžiai, apšvietimo bei objektų nuotolio pokyčiai, neuroninio tinklo netikslumai atpažįstant žmogaus skeletą;
-	\item aprašytas kamuolio laikymo abejose rankose nustatymas gali sąlygoti klaidingai teigiamus rezultatus dėl papildomos informacijos apie rankų poziciją trimatėje erdvėje trūkumo.
+	\item Pateiktieji taisyklių pažeidimo atpažinimo algoritmai, OpenPose neuroninio tinklo modelis bei kamuolio atpažinimas segmentavimo metodu yra tinkami siekiant taisyklių pažeidimus nustatyti bent 70 procentų tikslumu.
+	\item Atpažinimo remiantis spalva metodai nepasiekia tokio tikslumo, kaip atpažinimas naudojantis neuroniniu tinklu, tačiau yra spartesni. Šių metodų teikiamas tikslumas kenčia dėl nuolat besikeičiančio apšvietimo vaizdo įrašuose.
+	\item Atpažinimas remiantis kadrų skirtumais yra tinkamas siekiant atpažinti judesį, pavyzdžiui, skaičiuojant atliktus žingsnius. Šis būdas yra greičiausias iš nagrinėtų, tačiau tuo pačiu ir netiksliausias.
+	\item Dvigubo varymo taisyklės pažeidimo algoritmas yra mažiau tikslus, nei žingsnių taisyklės, tačiau jautresnis dėl savo specifikos.
+	\item Taisyklių pažeidimo atpažinimą neigiamai veikia fono trukdžiai, apšvietimo bei objektų nuotolio pokyčiai, neuroninio tinklo netikslumai atpažįstant žmogaus skeletą.
+	\item Aprašytas kamuolio laikymo abejose rankose nustatymas gali sąlygoti klaidingai teigiamus rezultatus dėl papildomos informacijos apie rankų poziciją trimatėje erdvėje trūkumo.
 \end{enumerate}
 
 Toliau pateikiamos rekomendacijos bei tolimesni darbai.

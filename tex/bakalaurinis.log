@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.1) (format=lualatex 2021.2.28)  27 MAY 2021 02:17
+This is LuaHBTeX, Version 1.13.0 (MiKTeX 21.1) (format=lualatex 2021.2.28)  27 MAY 2021 16:59
  restricted system commands enabled.
 **bakalaurinis.tex
 (./bakalaurinis.tex
@@ -213,12 +213,12 @@ braces):
 >  {lithuanian/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {lithuanian/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 Module polyglossia Info: Language data for lithuanian
-(polyglossia)            loader	loadhyph-lt.tex
-(polyglossia)            hyphenation	
+(polyglossia)            synonyms	
 (polyglossia)            righthyphenmin	2
-(polyglossia)            patterns	hyph-lt.pat.txt
 (polyglossia)            lefthyphenmin	2
-(polyglossia)            synonyms	 on input line 11
+(polyglossia)            hyphenation	
+(polyglossia)            loader	loadhyph-lt.tex
+(polyglossia)            patterns	hyph-lt.pat.txt on input line 11
 Module polyglossia Info: Language lithuanian was not yet loaded; created with id
  2 on input line 11
 )
@@ -1723,7 +1723,7 @@ Here is how much of LuaTeX's memory you used:
  786 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 28 attribute, 100 glue_spe
 c, 15 attribute_list, 1 write nodes
-   avail lists: 1:2,2:1258,3:434,4:49,5:568,6:193,7:8371,8:166,9:1290,10:38,11:1
+   avail lists: 1:2,2:1246,3:434,4:49,5:568,6:193,7:8371,8:166,9:1290,10:38,11:1
 270
  38369 multiletter control sequences out of 65536+200000
  112 fonts using 15054159 bytes
@@ -1741,7 +1741,7 @@ X/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lukas/AppData/Local/Program
 s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Lukas/AppData/Local/P
 rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lukas/AppData
 /Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on bakalaurinis.pdf (44 pages, 2248772 bytes).
+Output written on bakalaurinis.pdf (44 pages, 2248545 bytes).
 
 PDF statistics: 238 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)

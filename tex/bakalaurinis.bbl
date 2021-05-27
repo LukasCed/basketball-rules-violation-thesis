@@ -215,7 +215,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Sports Analytics}
       \field{month}{12}
-      \field{title}{No referee bias in the NBA: New evidence with leagues’ assessment data}
+      \field{title}{{No referee bias in the NBA: New evidence with leagues’ assessment data}}
       \field{volume}{1}
       \field{year}{2015}
       \field{pages}{91\bibrangedash 96}
@@ -525,6 +525,30 @@
       \field{pages}{II\bibrangedash II}
       \range{pages}{1}
     \endentry
+    \entry{NBAStatsVu}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6c207a1eef12b6d17daff0ef9418461c}{%
+           family={McCann},
+           familyi={M\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{6c207a1eef12b6d17daff0ef9418461c}
+      \strng{fullhash}{6c207a1eef12b6d17daff0ef9418461c}
+      \strng{bibnamehash}{6c207a1eef12b6d17daff0ef9418461c}
+      \strng{authorbibnamehash}{6c207a1eef12b6d17daff0ef9418461c}
+      \strng{authornamehash}{6c207a1eef12b6d17daff0ef9418461c}
+      \strng{authorfullhash}{6c207a1eef12b6d17daff0ef9418461c}
+      \field{labelalpha}{McC12}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.espn.com/blog/playbook/tech/post/_/id/492/492/}}
+      \field{note}{tikrinta 2021-05-17}
+      \field{title}{{Player tracking transforming NBA analytics}}
+      \field{year}{2012}
+    \endentry
     \entry{NBAReplay}{misc}{}
       \name{author}{1}{}{%
         {{hash=52b6d6fc82db6aef110362f4755a1fe8}{%
@@ -664,7 +688,7 @@
       \field{labeltitlesource}{title}
       \field{eprintclass}{cs.CV}
       \field{eprinttype}{arXiv}
-      \field{title}{Real-time 2D Multi-Person Pose Estimation on CPU: Lightweight OpenPose}
+      \field{title}{{Real-time 2D Multi-Person Pose Estimation on CPU: Lightweight OpenPose}}
       \field{year}{2018}
       \verb{eprint}
       \verb 1811.12004
@@ -747,38 +771,38 @@
     \endentry
     \entry{THOMAS20173}{article}{}
       \name{author}{5}{}{%
-        {{hash=61f4b19bff51a26e78b55f3bf8ef58b7}{%
+        {{hash=075198971c9be351ed6c549965193cd6}{%
            family={Thomas},
            familyi={T\bibinitperiod},
-           given={Graham},
+           given={G.},
            giveni={G\bibinitperiod}}}%
-        {{hash=8a6f95fb8cf7f124fcc284305d72a038}{%
+        {{hash=9e4c34c0ddbd69d27613e7c2f365c8e0}{%
            family={Gade},
            familyi={G\bibinitperiod},
-           given={Rikke},
+           given={R.},
            giveni={R\bibinitperiod}}}%
-        {{hash=13bab869a6231c2e4e4c5a51a8120dbb}{%
+        {{hash=3166f26e2907cef753105f576fc79a25}{%
            family={Moeslund},
            familyi={M\bibinitperiod},
-           given={Thomas\bibnamedelima B.},
+           given={T.\bibnamedelimi B.},
            giveni={T\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
-        {{hash=8f942ac1911200f60a35f4a6a69cf793}{%
+        {{hash=8769b562d9e2ed12d5cb826068e384c9}{%
            family={Carr},
            familyi={C\bibinitperiod},
-           given={Peter},
+           given={P.},
            giveni={P\bibinitperiod}}}%
-        {{hash=5dea3144ba12b0f069a5735888879d6d}{%
+        {{hash=aa95c363fb514bcb984edc256be345ef}{%
            family={Hilton},
            familyi={H\bibinitperiod},
-           given={Adrian},
+           given={A.},
            giveni={A\bibinitperiod}}}%
       }
-      \strng{namehash}{19247a0d518ee7983302e09d5ef29fef}
-      \strng{fullhash}{19247a0d518ee7983302e09d5ef29fef}
-      \strng{bibnamehash}{19247a0d518ee7983302e09d5ef29fef}
-      \strng{authorbibnamehash}{19247a0d518ee7983302e09d5ef29fef}
-      \strng{authornamehash}{19247a0d518ee7983302e09d5ef29fef}
-      \strng{authorfullhash}{19247a0d518ee7983302e09d5ef29fef}
+      \strng{namehash}{abbbe950d7921cb4b5a23d9cf6350809}
+      \strng{fullhash}{abbbe950d7921cb4b5a23d9cf6350809}
+      \strng{bibnamehash}{abbbe950d7921cb4b5a23d9cf6350809}
+      \strng{authorbibnamehash}{abbbe950d7921cb4b5a23d9cf6350809}
+      \strng{authornamehash}{abbbe950d7921cb4b5a23d9cf6350809}
+      \strng{authorfullhash}{abbbe950d7921cb4b5a23d9cf6350809}
       \field{labelalpha}{TGM\textsuperscript {+}17}
       \field{sortinit}{T}
       \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
@@ -786,7 +810,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Computer Vision and Image Understanding}
       \field{note}{Computer Vision in Sports}
-      \field{title}{Computer vision for sports: Current applications and research topics}
+      \field{title}{{Computer vision for sports: Current applications and research topics}}
       \field{volume}{159}
       \field{year}{2017}
       \field{pages}{3\bibrangedash 18}
@@ -988,28 +1012,6 @@
       \field{year}{2002}
       \field{pages}{957\bibrangedash 960 vol.2}
       \range{pages}{-1}
-    \endentry
-    \entry{NBAStatsVu}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=82a8cf976421bb8f3bf9aa1ad6a3ce39}{%
-           family={{Zach McCann}},
-           familyi={Z\bibinitperiod}}}%
-      }
-      \strng{namehash}{82a8cf976421bb8f3bf9aa1ad6a3ce39}
-      \strng{fullhash}{82a8cf976421bb8f3bf9aa1ad6a3ce39}
-      \strng{bibnamehash}{82a8cf976421bb8f3bf9aa1ad6a3ce39}
-      \strng{authorbibnamehash}{82a8cf976421bb8f3bf9aa1ad6a3ce39}
-      \strng{authornamehash}{82a8cf976421bb8f3bf9aa1ad6a3ce39}
-      \strng{authorfullhash}{82a8cf976421bb8f3bf9aa1ad6a3ce39}
-      \field{labelalpha}{Zac12}
-      \field{sortinit}{Z}
-      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\url{https://www.espn.com/blog/playbook/tech/post/_/id/492/492/}}
-      \field{note}{tikrinta 2021-05-17}
-      \field{title}{{Player tracking transforming NBA analytics}}
-      \field{year}{2012}
     \endentry
   \enddatalist
 \endrefsection
