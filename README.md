@@ -1,6 +1,6 @@
 # Basketball Rule Violation Detection
 
-My bachelor thesis about basketball rules violation recognition
+This is a project for basketball rules violation recognition that I did for my bachelor thesis. 
 
 ### How to install and run the app: ###
 
