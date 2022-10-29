@@ -6,8 +6,11 @@ The video parsing algorithm parses specific body parts (hands, ankles etc), and 
 
 #### The rule violation detection algorithm: ####
 
-1) Counts steps using step counting algorithm
-2) Detects whether the ball is the hands or not
+1) Detects whether the ball is the hands or not
+2) If ball is in hands:
+3.1) Count steps using step counting algorithm
+3.2) If 3 or more steps counted, return rule violation 
+4) The ball is not in hands - step count is set to 0 
 
 #### The step counting algorithm: ####
 
