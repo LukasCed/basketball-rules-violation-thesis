@@ -17,4 +17,4 @@ This is a project for basketball rules violation recognition that I did for my b
 
 ### References ###
 
-I used [Lightweight OpenPose](https://github.com/Daniil-Osokin/lightweight-human-pose-estimation.pytorch)
+I used [Lightweight OpenPose](https://github.com/Daniil-Osokin/lightweight-human-pose-estimation.pytorch) to detect body parts in video frames
