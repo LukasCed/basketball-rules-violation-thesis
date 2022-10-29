@@ -1,4 +1,4 @@
-# Bachelor Thesis
+# Basketball Rule Violation Detection
 
 My bachelor thesis about basketball rules violation recognition
 
