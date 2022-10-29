@@ -14,3 +14,7 @@ This is a project for basketball rules violation recognition that I did for my b
 
 ### How to run the tests: ###
 1) After completing installation steps, run "python TestSuite.py". Might need to change the assertions according to which videos you're testing.
+
+### References ###
+
+I used [Lightweight OpenPose](https://github.com/Daniil-Osokin/lightweight-human-pose-estimation.pytorch)
